@@ -3,7 +3,7 @@
 This repository contain all information about the lectures and serve as central repository to submit all your class works.
 
 ## Structure
-You need to create a repo in the `homeworks` folder. The name should be `firstName-lastName`. E.g. for a developer Dmitry Mishin the name would be `dmitry-mishin`. Sub-folder should have the same name as a lecture name.
+You need to create a folder in the `homeworks` folder. The name should be `firstName-lastName`. E.g. for a developer Dmitry Mishin the name would be `dmitry-mishin`. Sub-folder should have the same name as a lecture name.
 
 ## Pull Requests
 ### Naming
