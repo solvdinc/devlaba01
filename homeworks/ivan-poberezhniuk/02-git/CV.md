@@ -19,17 +19,17 @@ making good working relationships.
 * **Operating systems**: Linux/Windows
 * **Languages**: Ukrainian, Russian, English
 ## Projects
-* **Posts**: [Demo](), [Code]()
+* **Posts**: [Demo](https://ivanpoberezhniuk.github.io/react_dynamic-list-of-posts/), [Code](https://github.com/ivanpoberezhniuk/react_dynamic-list-of-posts/tree/develop)
 Technologies: HTML, CSS, JS, React + Redux
-* **PhonesCatalog**: [Demo](), [Code]()
+* **PhonesCatalog**: [Demo](https://ivanpoberezhniuk.github.io/react_phone-my-phone-catalog/#/), [Code](https://github.com/IvanPoberezhniuk/react_phone-my-phone-catalog/pull/1/files)
 Technologies: HTML, CSS, JS, React
-* **Todos**: [Demo](), [Code]()
+* **Todos**: [Demo](https://ivanpoberezhniuk.github.io/todos_2/), [Code](https://github.com/IvanPoberezhniuk/todos_2/pull/1/files)
 *Technologies*: HTML, CSS, JS, React,
-* **Restaurant**: [Demo](), [Code]()
+* **Restaurant**: [Demo](https://ivanpoberezhniuk.github.io/uber_eats/src/restaurant.html), [Code](https://github.com/ivanpoberezhniuk/uber_eats)
 Technologies: HTML, CSS, NPM, Gulp.js
-* **Simple Trello**:[Demo]()
+* **Simple Trello**:[Demo](https://poberezhniuk.github.io/trello-app/)
 Technologies: HTML, CSS, JS, Angular, Angular Material, Angular Icons
-* **Tic-Tac-Toe**: [Demo](), [Code]()
+* **Tic-Tac-Toe**: [Demo](https://poberezhniuk.github.io/tictactoe/), [Code](https://github.com/poberezhniuk/tictactoe/tree/develop)
 Technologies: HTML, CSS, JS
 ## Education
 * Chernivtsi Polytechnic College
