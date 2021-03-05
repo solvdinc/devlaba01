@@ -40,3 +40,5 @@ Radio engineering, bachelor degree
 * Mate.Academy remote course
 * OSF Global Service remote course
 * freeCodeCamp online course
+
+![image](https://i.imgur.com/WCefhkZ.png)
