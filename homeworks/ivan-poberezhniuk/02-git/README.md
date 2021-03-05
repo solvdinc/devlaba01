@@ -41,4 +41,4 @@ Radio engineering, bachelor degree
 * OSF Global Service remote course
 * freeCodeCamp online course
 
-![image](https://i.imgur.com/WCefhkZ.png)
+![image](https://i.imgur.com/6eZz0rY.png)
