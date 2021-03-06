@@ -5,6 +5,8 @@
 
 My name is Ilya, I am 20 years old studend of State University of Telecommunications in Kyiv.
 
+---------------------
+
 ### Contacts
 
 GitHub: https://github.com/ilya07092000
@@ -13,6 +15,8 @@ E-mail: ischenko2012@gmail.com
 
 Phone number: +380-67-584-93-28
 
+---------------------
+
 ### Hobbies
 
 - Programming
@@ -20,6 +24,7 @@ Phone number: +380-67-584-93-28
 - Computers
 - Aquariums
 
+---------------------
 
 ### Hard Skills
 
