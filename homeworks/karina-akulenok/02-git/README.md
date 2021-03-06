@@ -2,7 +2,7 @@
 
 ## Personal Information
 ***
-1. Mobile phone: +375(29)858-38-53
+1. Mobile phone: [+375(29)858-38-53](+375(29)858-38-53)
 2. E-mail: karina_akulenok@mail.ru
 3. GitHub: [Freshaku](https://github.com/Freshaku)
 4. telegram: [@fresh_aku](https://t.me/fresh_aku)
