@@ -3,7 +3,7 @@
 
 ## Frontend Developer
 
-My name is Ilya, I am 20 years old studend of State University of Telecommunications in Kyiv.
+My name is Ilya, I am 20 years old studend of State University of Telecommunications in Kyiv. I've been studying frontend development for a year, I like make layouts with interest design, animations and logic.
 
 ---------------------
 
@@ -35,6 +35,16 @@ Phone number: +380-67-584-93-28
 - Node.js (basics)
 - Express (basics)
 - Webpack
+
+---------------------
+
+### Soft Skills
+
+- Responsible
+- Honest
+- Friendly
+
+
 
 
 
