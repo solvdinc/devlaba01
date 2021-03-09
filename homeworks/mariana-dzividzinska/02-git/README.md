@@ -24,5 +24,7 @@
 
 **Source code:** https://github.com/DzividzinskaM/social-network
 ## Hobby
+- Travelling
+- Cooking
 
 ## Contacts
