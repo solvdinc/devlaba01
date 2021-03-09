@@ -1,16 +1,15 @@
-#Shimanskaya Darya
+# Shimanskaya Darya
 **Frontend  Developer**
 * Minsk, Belarus
 * +375 (25) 967-34-66
-* 16.10.2003
 
-# Education
+## Education
 BSUIR affiliate  “Minsk Radioengineering College”,
 Minsk  Information Technology Software,
 Sep 2019 – Jun 2023
 
-#Work
-__Pet project__
+## Work
+**Pet project**
 
 _june 2020-september 2020_
 
@@ -23,26 +22,26 @@ I worked with:
 - bootstrap
 - vanilla js (callbacks buttons)
 
-#Contacts 
-* telegram - @va_stya  (preferable for communication)
-* shimanskayada@gmail.com
-* github.com/vastya
+## Contacts 
+- telegram [@va_stya](https://t.me/va_stya)
+- email shimanskayada@gmail.com
+- github [vastya](https://github.com/vastya)
 
-#Skills
-* HTML
-* CSS 
-* SCSS
-* SASS
-* HAML
-* Figma
-* Bootstrap
-* Git
+## Skills
+- HTML
+- CSS 
+- SCSS
+- SASS
+- HAML
+- Figma
+- Bootstrap
+- Git
 
-#Courses
-* Freecodecamp
-* HTML academy
+## Courses
+- Freecodecamp
+- HTML academy
 
-#Languages
-* Russian (native)
-* English (B1) 
-* Polish (A2-B1)
+## Languages
+- Russian (native)
+- English (B1) 
+- Polish (A2-B1)
