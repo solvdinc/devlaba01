@@ -28,3 +28,6 @@
 - Cooking
 
 ## Contacts
+- **Email:** marianadzividzinska04@gmail.com
+- [GitHub](https://github.com/DzividzinskaM)
+- [LinkedIn](https://www.linkedin.com/in/mariana-dzividzinska-3a2b4b1a3/)
