@@ -8,6 +8,12 @@
 **Specialty:** Software engineering
 
 ## Skills
+- HTML/CSS/JS
+- Basic knowledge of React and Redux
+- Basic knowledge of OOP
+- C#, C++ programming languages
+- Relational database management system - SQL Server
+- GCP
 
 ## Work experience
 
