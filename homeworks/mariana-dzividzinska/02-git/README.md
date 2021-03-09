@@ -16,7 +16,13 @@
 - GCP
 
 ## Work experience
+***Social network***
 
+*Social network for developers*
+
+**Technologies:** React, Redux, Axios
+
+**Source code:** https://github.com/DzividzinskaM/social-network
 ## Hobby
 
 ## Contacts
