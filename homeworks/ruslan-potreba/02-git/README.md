@@ -10,6 +10,7 @@ Junior Web Developer
 - Redux
 - Git
 - Figma
+- Photoshop
 - English (B2+)
 - VS Code / Webstorm
 - Chrome Dev Tools
