@@ -18,8 +18,8 @@ Junior Web Developer
 
 - Responsible
 - Self-organized
-- Team-player
 - Fast learner
+- Team-player
 - Stress-tolerant
 
 ## Experience
@@ -44,7 +44,7 @@ Bachelor's degree in Computer Science
 
 ## Contact information
 
-- Email: rupotreba@gmail.com
 - Telegram: t.me/finefella
+- Email: rupotreba@gmail.com
 - Linkedin: linkedin.com/in/rupotreba
 - GitHub: github.com/wavyyyru
