@@ -25,5 +25,10 @@ Was a participant of RS SCHOOL courses
 Belarussian State University  
 Faculty of International Relations (2017-2021)   
 
-  
+## Languages:
 
+* Russian (native)
+* English (C1)
+* German (B1)
+* Belarusian (native)
+ 
