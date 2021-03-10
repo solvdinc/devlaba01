@@ -4,7 +4,8 @@
 
 Email: [shaikovadmail@gmail.com](mailto:shaikovadmail@gmail.com)  
 Phone: +375333081998    
-Telegram: [@deirdre_a](https://telegram.im/@deirdre_a)    
+Telegram: [@deirdre_a](https://telegram.im/@deirdre_a)      
+
 ## Skills
 
 * HTML  
@@ -12,7 +13,8 @@ Telegram: [@deirdre_a](https://telegram.im/@deirdre_a)
 * GIT
 * Figma
 * Photoshop
-* JavaScript (basics)
+* JavaScript (basics)    
+  
 ## Courses
 
 HTMLAcademy  
