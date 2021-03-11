@@ -10,6 +10,7 @@ Here's you can find materials about HTML/CSS: semantics, box model, specificity
 
 Useful links
 
+* [Emmet syntax](https://docs.emmet.io/abbreviations/syntax/)
 * [HTML5 Doctor, helping you implement HTML5 today](http://html5doctor.com)
 * [CSS text styling](https://html5book.ru/css3-oformlenie-teksta/)
 * [CSS fonts](https://html5book.ru/css3-shrifty/)
