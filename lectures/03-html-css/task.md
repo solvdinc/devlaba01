@@ -15,16 +15,16 @@ You have to create smth like this.
 
 You can use your own values but here's what I used:
 
-- gray color: `#f1f1f1`
-- image example: `https://fakeimg.pl/190x100/`
-- container width: `800px`
-- sidebar width: `200px`
-- space between the sidebar and the content: `10px`
+* gray color: `#f1f1f1`
+* image example: `https://fakeimg.pl/190x100/`
+* container width: `800px`
+* sidebar width: `200px`
+* space between the sidebar and the content: `10px`
 
 ### Definition of done
 
-- **Semantic Elements**. The page structure should be semantically correct and includes most of HTML5 elements (header, nav, section, main and footer)
-- **Floats or inline-blocks**. Your template should use floats or inline-blocks for positioning of elements
+* **Semantic Elements**. The page structure should be semantically correct and includes most of HTML5 elements (header, nav, section, main and footer)
+* **Floats or inline-blocks**. Your template should use floats or inline-blocks for positioning of elements
 
 ## 2. CV
 
@@ -32,6 +32,6 @@ Create a CV using pure HTML5 and CSS. It should be a page with [good but not com
 
 ### Definition of done
 
-- The HTML and CSS should pass W3C [HTML](https://validator.w3.org/#validate_by_uri) and [CSS](https://jigsaw.w3.org/css-validator/) validations
-- The page structure should be semantically correct and includes most of HTML5 elements (header, nav, section, main and footer)
-- On the page should be used different types of CSS includes
+* The HTML and CSS should pass W3C [HTML](https://validator.w3.org/#validate_by_uri) and [CSS](https://jigsaw.w3.org/css-validator/) validations
+* The page structure should be semantically correct and includes most of HTML5 elements (header, nav, section, main and footer)
+* On the page should be used different types of CSS includes
