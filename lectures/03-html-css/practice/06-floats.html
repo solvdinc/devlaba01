@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .parent {
+      width: 300px;
+    }
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .child {
+      float: left;
+      background: red;
+      width: 100px;height: 30px;
+    }
+    .child._2 {
+      background: blue;
+    }
+  </style>
+  <header>
+    <h1>hello world!</h1>
+  </header>
+  <div class="parent clearfix">
+    <div class="child _1"></div>
+    <div class="child _2"></div>
+  </div>
+  <footer>
+    (c) Copytight
+  </footer>
+</body>
+</html>

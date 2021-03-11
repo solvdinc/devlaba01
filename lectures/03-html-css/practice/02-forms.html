@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+  </head>
+  <body>
+    <form action="#" method="POST">
+      <input name="hello" type="text" value="qweqwe"
+        required
+        minlength="10"
+        maxlength="15">
+      <input name="checkbox" type="checkbox" checked>some text
+      <input type="color" value="#ff00ff">
+      <input type="date">
+      <input type="email">
+      <input type="file">
+      <input type="number" min="10" max="100"> number
+      <input type="password">
+      <input type="radio">
+      <input type="range">
+      <input type="search">
+      <input type="tel" pattern="\d+">
+
+      <br>
+      <br>
+
+      <input id="name" name="username" type="text">
+      <label for="name">Username</label>
+      <br><br>
+
+
+      <fieldset>
+        <legend>title</legend>
+        <label>
+          <input type="checkbox" name="privacy" value="1">
+          click me! 1
+        </label>
+        <label>
+          <input type="checkbox" name="privacy" value="2">
+          click me! 2
+        </label>
+        <br><br>
+        <label>
+          <input type="radio" name="privacy2" value="1">
+          radio 1
+        </label>
+        <label>
+          <input type="radio" name="privacy2" value="2">
+          <span class="checkbox"></span>
+          radio 2
+        </label>
+      </fieldset>
+      <br><br>
+
+      <select name="cars">
+        <optgroup label="Cars">
+          <option value="1">audi</option>
+          <option value="2">bmw</option>
+        </optgroup>
+        <optgroup label="Not Cars">
+          <option value="3" selected>lada</option>
+        </optgroup>
+      </select>
+
+      <br><br>
+
+      <textarea name="description" cols="30" rows="10">
+        hello
+      </textarea>
+
+      <button type="button">click on me! Button</button>
+      <button aria-label="Submit the form" type="submit">click on me! Submit</button>
+      <button type="reset">click on me! Reset</button>
+    </form>
+  </body>
+</html>
