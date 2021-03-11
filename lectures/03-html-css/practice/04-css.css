@@ -1,0 +1,137 @@
+.parent > .child2 {
+  font-weight: 600;
+}
+
+.child._11 + .child {
+  background: blue;
+}
+
+.child._1 ~ .child {
+  background: blue;
+}
+
+.pseudo:before {
+  content: 'before ';
+}
+.pseudo:after {
+  content: ' after';
+}
+.pseudo:first-letter {
+  color: red;
+}
+.pseudo:first-line {
+  color: red;
+}
+
+.pseudoclasses:hover {
+  color: red;
+}
+
+a {
+  color: red;
+}
+
+a:link, a:visited, a:active {
+  color: green;
+}
+
+a:focus {}
+
+input:valid,
+input:invalid,
+.checkbox:checked,
+input:enabled,
+input:disabled {}
+
+.pseudoclasses._disabled  {
+  /* background: gray; */
+}
+.pseudoclasses:not(._disabled) {
+  /* background: red; */
+}
+
+.child:nth-child(3n + 1) {
+  /* background: red; */
+}
+
+.child:first-child {}
+.child:last-child {}
+.child:empty {}
+
+:root {
+  font-size: calc(10em / 16);
+}
+
+.parent *:last-of-type {
+  background: red;
+}
+.parent *:last-child {
+  background: green;
+}
+
+.parent {
+  width: 50%;
+  font-size: 18px;
+}
+
+.child {
+  color: blue !important;
+}
+
+.child {
+  color: green !important;
+}
+
+html {
+  color: red;
+}
+
+/* 0 1 1 3 */
+html body div#parent .child {
+  color: gray;
+}
+
+/* 0 0 2 3 */
+html body div.parent .child {
+  color: orange;
+}
+
+/* 0 1 1 3 */
+
+/* 0 0 1 0
+10 */
+
+/* categories:
+1. inline
+2. identifiers
+3. classes
+4. tags */
+
+html {
+  width: 100px;
+  /* cm mm pt */
+  width: 100%;
+  /* em, rem, vw, vh */
+}
+
+html {
+  font-size: 10px;
+}
+
+.parent {
+  font-size: 10px;
+}
+
+.child {
+  font-size: 1.2em;
+}
+
+.child2 {
+  font-size: 1.4rem;
+  width: 10rem;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
