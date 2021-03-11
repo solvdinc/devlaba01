@@ -2,8 +2,6 @@
 Phone: +380978555097; \
 E-mail:n0tapr0b13m@gmail.com; \
 Skype: live:cf0760c2f1916e70; 
-
-
 ## Experience
 * #### JS Developer 
  __02.2020 – Now.__   
@@ -20,24 +18,16 @@ Get new experience as construction worker and scaffolder. Improved my skills at 
 __*Evrosota*, Chernivtsi.__  
  __11.2012 - 09.2015 (2 years 10 months).__  
 Selling of electronics.  
-It was a start of my career as a seller. I have learned many new things to me. Get experience in communication with people, organization of store functioning. Learned some selling techniques.   
-
+It was a start of my career as a seller. I have learned many new things to me. Get experience in communication with people, organization of store functioning. Learned some selling techniques.
 ## Education  
 __Chernivtsi National University 09.2007 - 06.2012__  
 Department of Physics, Masters degree  in Information security.
-Studied: Engineering and Computer Graphics; Electricity and magnetism; Information theory; Cryptography and steganography; Protection of objects;  Telecommunication Systems and networks.  
-
-## Courses  
-
-Samsung academy, EPAM University FRONT-END AUTUMN 2020  
-
-
-
+Studied: Engineering and Computer Graphics; Electricity and magnetism; Information theory; Cryptography and steganography; Protection of objects;  Telecommunication Systems and networks.
+## Courses
+Samsung academy, EPAM University FRONT-END AUTUMN 2020 
 ## Languages  
 Ukrainian, Russian – native/fluent.  
-English – B1.  
-
-
+English – B1. 
 ## About myself  
 Persistent, careful, love to study and learn something new to me.
 Curious about modern technologies, electronics, software. Like sports, also competitive and active rest.
