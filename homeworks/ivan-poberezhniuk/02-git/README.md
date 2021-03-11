@@ -27,7 +27,7 @@ Technologies: HTML, CSS, JS, React
 *Technologies*: HTML, CSS, JS, React,
 * **Restaurant**: [Demo](https://ivanpoberezhniuk.github.io/uber_eats/src/restaurant.html), [Code](https://github.com/ivanpoberezhniuk/uber_eats)
 Technologies: HTML, CSS, NPM, Gulp.js
-* **Simple Trello**:[Demo](https://poberezhniuk.github.io/trello-app/)
+* **Simple Trello**: [Demo](https://poberezhniuk.github.io/trello-app/)
 Technologies: HTML, CSS, JS, Angular, Angular Material, Angular Icons
 * **Tic-Tac-Toe**: [Demo](https://poberezhniuk.github.io/tictactoe/), [Code](https://github.com/poberezhniuk/tictactoe/tree/develop)
 Technologies: HTML, CSS, JS
