@@ -1,6 +1,7 @@
 # Inna Smiiun
 ## Contact Information
  * Phone: +380 (68) 645 40 03
+ * Address: Kovalskyi Lane, 5, Kyiv
  * Email: <innasmiyun@gmail.com>
  * Telegram: <https://t.me/inna_smiyun>
 ## Summary
