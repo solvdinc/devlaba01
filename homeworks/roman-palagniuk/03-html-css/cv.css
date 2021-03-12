@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+aside {
+    background-color: khaki;
+    width: 23vw;
+    padding: 3vw 2vw  3vw  3vw;
+    clip-path: ellipse(100% 100% at 0% 50%);
+}
+
+h3 {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+i {
+    background-color: khaki;
+}
+
+
+header {
+    background-color: rgb(59, 55, 20);
+    color: khaki;
+    padding: 1vw 3vw 2vw 3vw;
+    text-align: center;
+}
+
+.contacts, .skills {
+    color: rgb(59, 55, 20);
+    font-weight: bolder;
+}
+
+.contacts>ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+
+.skills>ul {
+    list-style:square;   
+    margin: 4rem 0 1rem 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(59, 55, 20);
+    font-weight: bolder;
+}
+
+main {    
+    display: flex;
+    justify-content: center;
+}
+
+main>section {
+    width: 90vw;
+    margin-left: 10vw;
+   display: flex;
+   flex-direction: column;
+}
