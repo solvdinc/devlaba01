@@ -1,6 +1,8 @@
 # Daria Movchan
 #### Front-end developer
 
+![](./photo.png)
+
 ___
 ##### **Contacts**
 📍 Kyiv  
