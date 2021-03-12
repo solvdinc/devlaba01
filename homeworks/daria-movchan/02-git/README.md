@@ -1,22 +1,22 @@
 # Daria Movchan
-#### front-end developer
+#### Front-end developer
 
 ___
-##### **contacts**
+##### **Contacts**
 📍 Kyiv  
-☎️ 380661497429  
+☎️ 380661497429
 ✉️ dasabot@outlook.com  
 📠 tg: @dasalink  
 👾 github.com/dasabot  
 ___
-##### **education**
+##### **Education**
 
 - **Master's degree in Cybersecurity** Taras Shevchenko National University of Kyiv  
   2020-2022
 - **Bachelor's degree in Cybersecurity** Dnipro University of Technology  
   2016-2020
 ___
-##### **skills**
+##### **Skills**
 
 ⚫️⚫️⚫️⚪️⚪️⚪️ **english**  
 ⚫️⚫️⚫️⚫️⚪️⚪️️ **HTML/CSS**  
