@@ -1,0 +1,29 @@
+@import "./variables.css";
+@import "./header.css";
+@import "./aside.css";
+@import "./main.css";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--main-text-color);
+}
