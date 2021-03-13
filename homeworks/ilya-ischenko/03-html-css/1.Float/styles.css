@@ -1,0 +1,169 @@
+/* MAIN STYLES ===== */
+
+:root {
+    --gray: #f1f1f1;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 840px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+/* HEADER ===== */
+
+.header {
+    padding: 10px 0;
+    background: var(--gray);
+}
+
+.header__title {
+    float: left;
+}
+
+.header-nav {
+    float: right;
+}
+
+.header-nav__item {
+    display: inline-block;
+    line-height: 34px;
+}
+
+.header-nav__link {
+    position: relative;
+    padding: 3px 0;
+    margin-left: 15px;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.header-nav__link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform .2s linear;
+}
+
+.header-nav__link:hover:before {
+    transform: scale(1);
+}
+
+/* ASIDE ===== */
+
+aside {
+    float: left;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.aside-nav__link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+    background: var(--gray);
+    border-radius: 4px;
+    font-size: 20px;
+    color: #000;
+    transition: opacity .2s linear;
+}
+
+.aside-nav__link:hover {
+    opacity: .8;
+}
+
+/* CONTENT ===== */
+
+main {
+    margin-top: 10px;
+}
+
+.content {
+    float: left;
+    width: calc(100% - 210px);
+}
+
+/* ABOUT ===== */
+
+.about__text {
+    font-size: 18px;
+}
+
+.about__text:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+/* PORTFOLIO ===== */
+
+.portfolio__item {
+    float: left;
+    width: calc(33.333% - 7px);
+    margin-bottom: 20px;
+}
+
+.portfolio__item img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.portfolio__item-title {
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.portfolio__item-desc {
+    margin-top: 5px;
+}
+
+.portfolio__item:not(:nth-child(3n)) {
+    margin-right: 10px;
+}
+
+
