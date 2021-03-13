@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     color: #000000;
     font-size: 14px;
@@ -16,6 +16,207 @@ body{
     background: #FFF;
 }
 
-.container{
-    margin: 0 auto;
+/* header */
+
+.avatar{
+    width: 30%;
+    background-color: #2d2d2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-container{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: url(./images/avatar.jpg) no-repeat -56px -72px;
+    border: 1px solid rgb(247, 243, 233);
+    background-size: auto 450px;
+}
+
+.logo-container{
+    background-color: rgb(247, 243, 233);
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo{
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-left: 50px;
+}
+
+.sub-logo{
+    margin-left: 50px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* main */
+
+.left-side{
+    width: 30%;
+    background-color: #2d2d2d;
+    color: rgb(247, 243, 233);
+}
+
+.title{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 50px;
+    border-bottom: 2px solid rgb(247, 243, 233);
+    padding-bottom: 20px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+
+.sub-title{
+    margin-left: 100px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.desc{
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.about-desc{
+    margin-left: 100px;
+    margin-right: 10px;
+}
+
+.fact{
+    list-style-type: none;
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.fact:before{
+    content: "⚝ ";
+    padding-right: 5px;
+}
+
+.social-item{
+    margin-left: 100px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.contact-title{
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+.img-link{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.social-link{
+    text-decoration: none;
+    color: rgb(247, 243, 233);
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.social-link:hover{
+    color: rgb(250, 236, 201);
+}
+
+
+.right-side{
+    width: 70%;
+    background-color: rgb(247, 243, 233);
+    padding-right: 100px;
+    color: #000;
+}
+
+.title-right{
+    border-bottom: 2px solid #2d2d2d;
+    margin-left: 50px;
+}
+
+.skill-lists {
+    display: flex;
+    margin-left: 50px;
+}
+  
+.first-skills {
+    width: 45%;
+    display: inline-block;
+}
+
+.list-type-skill{
+    list-style-type: none;
+}
+  
+.second-skills {
+    width: 45%;
+    display: inline-block;
+    margin-left: 72px;
+}
+  
+.list-margin {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+  
+.skill-name {
+    opacity: 0.7;
+}
+  
+.align-right {
+    float: right;
+    color: #301a33;
+}
+  
+.grey {
+    color: #8c8c8c;
+}
+
+.project{
+    list-style-type: none;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.project:before{
+    content: "⚝ ";
+    padding-right: 5px;
+}
+
+.project-link{
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.project-link:hover{
+    text-decoration: underline;
+}
+
+.description{
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    opacity: 0.7;
+    margin-left: 50px;
+    margin-bottom: 10px;
 }
