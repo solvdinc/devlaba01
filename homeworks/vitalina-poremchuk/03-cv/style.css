@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./fonts/opensanslight.woff") format("woff2"),
+      url("../fonts/opensanslight.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./fonts/opensans.woff2") format("woff2"),
+      url("./fonts/opensans.woff") format("woff");
+  }
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+}
+.header__photo{
+    height: 300px;
+}
+.header__info{
+    flex-grow:1;
+    padding: 60px;
+    background-color: #babbc7;
+}
+.header__title{
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight: 300;
+    text-transform: uppercase;
+    
+}
+.header__text{
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.header__desc{
+    padding-top: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.content{
+    display: flex;
+}
+main{
+    background-color: #babbc7;
+    flex-grow:1;
+    padding-left: 60px;
+    padding-bottom: 50px;
+}
+.main__title{
+    font-weight: bold;
+}
+.emain__paragraph{
+    font-style: italic;
+    font-size: 13px;
+}
+.main__paragraph{
+    font-style: italic;
+    font-size: 13px;
+}
+.main__container{
+    display: flex;
+margin-bottom: 20px;
+}
+.main__box{
+    display: block;
+    width: 40%;
+    background-color: #ddd;
+}
+.width{
+    width: 100px;
+}
+.html {
+    width: 80%;
+     background-color: #000;}
+.css {
+    width: 80%; 
+    background-color: #000;}
+.js {
+    width: 50%; 
+    background-color: #000;}
+.php {
+    width: 10%; 
+    background-color: #000;}
+
+
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ddd;
+    color:  #000000; 
+    padding: 18px;
+}
+.aside__country{
+padding-bottom: 5px;
+}
+.aside__phone{
+    padding-bottom: 5px;
+}
+.aside__media{
+    padding-top: 20px;
+}
+.aside__contact{
+    padding-top: 50px;
+}
+.footer__copy{
+    text-align: right;
+}
