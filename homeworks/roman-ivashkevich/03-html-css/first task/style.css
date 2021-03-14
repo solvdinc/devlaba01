@@ -1,0 +1,128 @@
+/* Common */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 10px;
+}
+
+/* body {
+  width: 800px;
+  margin: 0 auto;
+} */
+
+/* /Common */
+
+/* Header */
+.header {
+  display: inline-block;
+  width: 100%;
+  background-color: #f1f1f1;
+  font-size: 2rem;
+}
+.logo {
+  display: inline-block;
+  font-size: 2.5rem;
+  padding: 10px;
+}
+#nav {
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+#nav .nav-item {
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-item:last-child {
+  margin-left: 10px;
+}
+
+.nav-item:hover {
+  color: goldenrod;
+}
+/* /Header */
+
+/* Aside */
+#aside {
+  font-size: 2rem;
+  display: inline-block;
+  width: 200px;
+  float: left;
+}
+
+#aside .aside-item {
+  padding: 7px;
+  background: #f1f1f1;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.aside-item:hover {
+  background: #e2e2e2;
+}
+/* /Aside */
+
+/* Main */
+.main {
+  font-size: 2rem;
+  float: right;
+  width: 580px;
+}
+
+.title {
+  margin: 10px 0;
+}
+
+/* About us */
+.about-us {
+  width: 580px;
+}
+
+.about-us .about-us-item {
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+/* /About us */
+
+/* Portfolio */
+.portfolio {
+  margin-bottom: 20px;
+}
+
+.project {
+  display: inline-block;
+  width: 190px;
+}
+
+.project .project-name {
+  font-weight: bold;
+}
+
+.project:nth-child(1n + 5) {
+  margin-top: 20px;
+}
+
+.project .project-description {
+  font-size: 1.6rem;
+}
+/* /Portfolio */
+
+/* /Main */
+
+/* Footer */
+/* .footer {
+  font-size: 2rem;
+  clear: both;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #f1f1f1;
+} */
+/* /Footer */
