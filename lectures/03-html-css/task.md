@@ -1,4 +1,4 @@
-# HTML/CSS basics practice
+# HTML & CSS basics practice
 
 Your code should work good only for new browsers (e.g. last version of Chrome) and only for desktop versions. We will not try to test your solution on small devices.
 
