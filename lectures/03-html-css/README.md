@@ -1,4 +1,4 @@
-# HTML/CSS Basics
+# HTML & CSS Basics
 
 Here's you can find materials about HTML/CSS: semantics, box model, specificity
 

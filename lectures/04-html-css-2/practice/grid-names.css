@@ -1,0 +1,41 @@
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template:
+    "header header" 50px
+    "sidebar content" 1fr
+    "footer footer" 30px
+    / 200px 1fr;
+  /* grid-template-rows: 50px 1fr 30px;
+  grid-template-columns: 200px 1fr; */
+}
+
+.header {
+  border: 1px dashed #ccc;
+  grid-area: header;
+}
+
+.content {
+  border: 1px dashed #ccc;
+  grid-area: content;
+}
+
+.sidebar {
+  border: 1px dashed #ccc;
+  grid-area: sidebar;
+}
+
+.footer {
+  border: 1px dashed #ccc;
+  grid-area: footer;
+}

@@ -1,0 +1,37 @@
+.row {
+  border: 20px solid gray;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-direction: column;
+  /* height: 500px; */
+}
+
+.column {
+  margin: 10px 0;
+  border: 20px solid yellow;
+  /* flex-basis: 100px; */
+  /* flex-grow: 1; */
+  /* flex-shrink: 0; */
+  /* flex: 1; */
+  /* flex: 1 0 auto */
+}
+
+._1 {
+  /* align-self: flex-start; */
+  /* flex-grow: 1; */
+}
+
+._2 {
+  font-size: 30px;
+}
+
+._3 {
+  /* align-self: flex-end; */
+}
+
+.item {
+  background: purple;
+  color: #fff;
+  padding: 30px;
+}
