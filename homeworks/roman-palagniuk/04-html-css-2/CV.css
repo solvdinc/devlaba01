@@ -19,16 +19,16 @@
     grid-area: header;
     display: flex;
     justify-content: space-around;
-  }
+}
   
 .mn {   
     padding: 3rem;      
     grid-area: mn;
-  }
+}
   
 .side {    
     grid-area: side;
-  }
+}
   
 .footer {  
     width: 100vw;
@@ -38,7 +38,7 @@
     background-color: rgb(7, 58, 26);
     color:  rgb(119, 224, 243);
     grid-area: footer;
-  }
+}
   
 .logo {
     margin: 3rem 3rem;
@@ -138,9 +138,7 @@ a {
     color:rgb(7, 58, 26);
 }
 
-
-@media (max-width: 600px) {
-    
+@media (max-width: 600px) {    
 
     .container {
         font-size: xx-small;
@@ -162,7 +160,6 @@ a {
         height: 35vh;    
     }
 
-
     .top {
         text-decoration: none;
         display: block;
@@ -208,15 +205,14 @@ a {
         height: 5px;
         width: 40px;
         margin: 2px auto;
-        background-color: rgb(255, 255, 255);
-       
+        background-color: rgb(255, 255, 255);       
     }
+
 }
 
 
 
-@media (max-width: 1024px) and (min-width: 600px) {
-    
+@media (max-width: 1024px) and (min-width: 600px) {    
 
     .container {
         font-size: x-small;
@@ -232,7 +228,6 @@ a {
         height: 30vh;    
     }
 
-
     .top {
         text-decoration: none;
         display: block;
@@ -260,7 +255,6 @@ a {
         display: none;
     }
 
-
     .burger {
         margin-top: 1.2rem;
         display: block;
@@ -279,7 +273,7 @@ a {
         height: 5px;
         width: 40px;
         margin: 2px auto;
-        background-color: rgb(255, 255, 255);
-       
+        background-color: rgb(255, 255, 255);       
     }
+
 }

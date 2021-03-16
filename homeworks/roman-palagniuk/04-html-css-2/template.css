@@ -27,7 +27,6 @@ h1 {
     padding-left: 20px;
 }
 
-
 a, p {
     text-decoration: none;
     font-size: larger;
@@ -71,7 +70,6 @@ footer {
     grid-area: footer;
 }
 
-
 .small {
     height: 280px;
     width: 300px;
@@ -98,10 +96,7 @@ footer {
     margin: 0;
 }
 
-
-
-@media (max-width: 600px) {
-    
+@media (max-width: 600px) {    
 
     .container {
         font-size: xx-small;
@@ -122,8 +117,6 @@ footer {
        
         height: 15vh;    
     }
-
-
    
     aside {
         margin-top: 1rem;
@@ -139,8 +132,6 @@ footer {
     .for_im {
       margin-top: 5vh;  
     }
-
-
     
     .small {
         height: 30vh;
@@ -152,7 +143,6 @@ footer {
         width: 85vw;
     }
 
-
     .image_section {
         align-items: center;
         flex-direction: column;
@@ -160,10 +150,7 @@ footer {
    
 }
 
-
-
-@media (max-width: 1270px) and (min-width: 600px) {
-    
+@media (max-width: 1270px) and (min-width: 600px) {    
 
     .container {
         font-size: x-small;
@@ -182,7 +169,6 @@ footer {
         
     }
 
-
     .image_section {
         width: 65vw;
         align-items: center;
@@ -194,8 +180,5 @@ footer {
         font-size: smaller;
         align-items: center;
     }
-
-   
-
    
 }
