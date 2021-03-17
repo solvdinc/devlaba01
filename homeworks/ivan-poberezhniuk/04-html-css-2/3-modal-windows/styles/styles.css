@@ -1,13 +1,27 @@
 .modal {
   z-index: 33;
-  position: fixed;
+  position: relative;
   padding: 1rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 25%;
+  width: 50%;
+  margin-top: 2rem;
   background-color: #ffffff;
   border: 1px solid gray;
-  border-radius: 5px;
+  border-radius: 1rem;
   overflow-y: auto;
-  max-height: 50vh;
+}
+
+.modal__wrapper {
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+body {
+  overflow: hidden;
+  position: fixed;
+  background-color: lightgray;
 }
