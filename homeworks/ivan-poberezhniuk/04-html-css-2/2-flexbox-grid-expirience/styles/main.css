@@ -1,0 +1,53 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  padding: 80px 20% 0;
+  gap: 20px;
+}
+
+.gallery__img-1 {
+  grid-area: img1;
+}
+
+.gallery__img-2 {
+  grid-area: img2;
+}
+
+.gallery__img-3 {
+  grid-area: img3;
+}
+
+.gallery__img-4 {
+  grid-area: img4;
+}
+
+.gallery__img-5 {
+  grid-area: img5;
+}
+
+.gallery__img-6 {
+  grid-area: img6;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  flex-shrink: 1;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "img1 img1 img2"
+    "img1 img1 img3"
+    "img4 img6 img6"
+    "img5 img6 img6";
+}
+
+.gallery__info {
+  flex-shrink: 1.5;
+  min-width: 30%;
+}
