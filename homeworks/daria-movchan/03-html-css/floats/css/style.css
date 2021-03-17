@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 800px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+header span {
+  font-size: 24px;
+}
+header a {
+  float: right;
+  padding: 5px;
+}
+
+aside {
+  float: left;
+  height: 100%;
+  width: 25%;
+  padding: 0 10px;
+}
+aside a {
+  display: block;
+  padding: 5px;
+  width: 90%;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+main {
+  overflow: auto;
+}
+main section article {
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+}
+
+footer {
+  text-align: center;
+  width: 90%;
+  padding: 10px;
+  border-top: 2px solid #f1f1f1;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
