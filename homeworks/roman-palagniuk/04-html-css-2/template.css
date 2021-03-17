@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "header header"
+    "main side"
+    "footer footer";
+}
+
+header {
+  width: 100vw;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 20px 0 0 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+a,
+p {
+  text-decoration: none;
+  font-size: larger;
+  color: rgb(0, 0, 0);
+}
+
+a {
+  margin-left: 15px;
+  padding-bottom: 10px;
+}
+
+._active {
+  color: royalblue;
+  border-bottom: 2px solid royalblue;
+}
+
+nav {
+  padding-top: 55px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  padding: 3rem;
+  grid-area: main;
+}
+
+aside {
+  margin-top: 35px;
+  margin-left: 0;
+  padding: 20px 20px 30px 0px;
+  grid-area: side;
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+}
+
+.small {
+  height: 280px;
+  width: 300px;
+}
+
+.big {
+  height: 565px;
+  width: 610px;
+}
+
+.big:nth-child(2n) {
+  margin-left: 5px;
+}
+
+.image_section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.for_im {
+  flex-direction: column;
+  width: 305px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    font-size: xx-small;
+    text-align: center;
+    display: grid;
+    margin: 0 auto;
+    grid-template-areas:
+      "header "
+      "side"
+      "main"
+      "footer";
+  }
+
+  header {
+    flex-direction: column;
+    top: 0px;
+    background-color: rgba(255, 255, 255, 1);
+
+    height: 15vh;
+  }
+
+  aside {
+    margin-top: 1rem;
+    font-size: smaller;
+    align-items: center;
+  }
+
+  main {
+    width: 95%;
+    padding: 0.3rem;
+  }
+
+  .for_im {
+    margin-top: 5vh;
+  }
+
+  .small {
+    height: 30vh;
+    width: 40vw;
+  }
+
+  .big {
+    height: 55vh;
+    width: 85vw;
+  }
+
+  .image_section {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1270px) and (min-width: 600px) {
+  .container {
+    font-size: x-small;
+    text-align: center;
+    display: grid;
+    margin: 0 auto;
+    grid-template-areas:
+      "header "
+      "side"
+      "main"
+      "footer";
+  }
+
+  header {
+    top: 10px;
+  }
+
+  .image_section {
+    width: 65vw;
+    align-items: center;
+    margin-left: 8vw;
+  }
+
+  aside {
+    margin-top: 1rem;
+    font-size: smaller;
+    align-items: center;
+  }
+}
