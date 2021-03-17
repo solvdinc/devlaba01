@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    margin:0;
     padding: 0;
 }
 ul li a  {
@@ -18,8 +17,8 @@ body {
     font-size: 14px;
     background: #FFF;
     font-family: sans-serif;
-    text-align: center;
-  }
+    margin: 0;
+  } 
 .container {
     width: 820px;
     height: auto;
@@ -27,6 +26,7 @@ body {
 }
 /*header*/
 .logo {
+    margin: 0 ;
     font-size: 20px;
     float:left
 }
@@ -35,14 +35,18 @@ body {
     height: 3rem;
     padding: 15px;
 }
-
+/*nav*/
 .navigation {
     float:right;
 }
-
+.navigation-items {
+    margin: 0;
+}
 .navigation-item {
     display: inline-block;
-    margin-right: 10px;
+}
+.navigation-item:last-child {
+    margin: 0 10px;
 }
 .navigation-link {
     text-decoration: none;
@@ -50,10 +54,18 @@ body {
 
 /* main*/
 
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
 .main {
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+/*sidebar*/
 
 aside {
     text-align: start;
@@ -75,10 +87,13 @@ aside {
 .sidebar-item:not(:first-child) {
     margin-top: 15px;
 }
-.about{
+
+/*content*/
+
+.content{
     margin-bottom: 25px;
     width: 600px;
-    float:right;
+    float: right;
     text-align: start;
 }
 .about-header {
@@ -89,23 +104,30 @@ aside {
     font-weight: 500;
     font-size: 1rem;
 }
-.portfolio {
-    clear:both
-}
+
 .portfolio-card {
-    margin-right:8px;
+    margin-bottom: 10px;
     width: 190px;
-    height: 175px;
+   
     float:left;
 }
+.portfolio-card > h3 {
+    margin: 0
+}
+.portfolio-card:nth-child(3n + 2) {
+    margin:0 8px;
+}
+
 .card-img {
     width: 190px;
     height: 100px;
 }
-footer {
-    clear: both;
+
+footer .container {
+    padding: 10px 0;
+    border-top: 1px solid grey;
+    text-align: center;
 }
-footer  article {
-    padding-top: 15px;
-    border-top: 1px solid black;
+.footer-text {
+    margin: 10px;
 }
