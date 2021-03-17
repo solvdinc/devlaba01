@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.wrapper img {
+  width: 200px;
+}
+.wrapper section:nth-of-type(1) {
+  width: 30%;
+  background-color: #36496d;
+  color: white;
+  padding: 10px;
+}
+.wrapper section:nth-of-type(1) .photo {
+  width: 100%;
+}
+.wrapper section:nth-of-type(1) .photo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 2px white;
+}
+.wrapper section:nth-of-type(1) .skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.wrapper section:nth-of-type(1) .skills progress {
+  width: 100%;
+}
+.wrapper section:nth-of-type(2) {
+  width: 70%;
+  padding: 10px;
+}
+.wrapper section:nth-of-type(2) h3:not(:first-of-type) {
+  width: fit-content;
+  border-bottom: 2px solid #868686;
+}
+.wrapper section:nth-of-type(2) table th, .wrapper section:nth-of-type(2) table td {
+  padding: 10px;
+}
+.wrapper section:nth-of-type(2) .interests {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.wrapper section:nth-of-type(2) .interests span {
+  width: 30%;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
