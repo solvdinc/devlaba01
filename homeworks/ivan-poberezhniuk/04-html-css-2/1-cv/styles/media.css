@@ -12,6 +12,13 @@
     width: 100%;
     text-align: center;
   }
+
+  .wrapper {
+    grid-template-areas:
+      "header header header"
+      "aside aside aside"
+      "main main main";
+  }
 }
 
 @media (max-width: 600px) {
@@ -48,7 +55,6 @@
     height: 20px;
     position: absolute;
     left: 45%;
-
     z-index: 33;
   }
 

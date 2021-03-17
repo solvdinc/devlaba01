@@ -1,8 +1,8 @@
 .aside {
   background-color: var(--main-bg-color-alt);
-  width: 35%;
   padding: 1rem 3rem 1rem 2rem;
   text-align: end;
+  grid-area: aside;
 }
 
 .side-list__outer > li {

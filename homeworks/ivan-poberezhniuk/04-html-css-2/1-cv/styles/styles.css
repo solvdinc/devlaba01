@@ -37,8 +37,3 @@ h2,
 h3 {
   margin: 0;
 }
-
-.wrapper {
-  display: flex;
-  border: 1px #e9e9e9 solid;
-}
