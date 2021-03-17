@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 li, header {
     background-color: #f1f1f1;
     align-items: center;
@@ -32,8 +31,6 @@ h2 {
 header>nav {
     margin-left: 80%;   
 }
-
-
 
 aside {
     width: 200px;
