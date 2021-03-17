@@ -5,25 +5,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 0;
+  align-items: center;
+  padding: 5rem 1rem 5rem 1rem;
 }
 
-.name {
-  margin: auto;
+.header__name {
   padding: 1rem 2rem;
   border: 3px solid var(--main-bg-color-white);
   text-transform: uppercase;
   letter-spacing: 1.2rem;
 }
 
-.position {
+.header__position {
   position: relative;
   margin: 3rem auto 0 auto;
   text-transform: uppercase;
   letter-spacing: 0.8rem;
 }
 
-.position::after {
+.header__position::after {
   content: "";
   width: 50%;
   position: absolute;

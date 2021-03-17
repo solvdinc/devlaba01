@@ -1,6 +1,7 @@
 .main {
   padding: 3rem 3rem 3rem 3rem;
   letter-spacing: 0.05rem;
+  position: relative;
 }
 
 .article {
