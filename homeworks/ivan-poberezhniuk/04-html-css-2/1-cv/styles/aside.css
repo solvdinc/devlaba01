@@ -23,3 +23,7 @@
 .side-list__email {
   text-transform: lowercase;
 }
+
+.side__toggle {
+  display: none;
+}
