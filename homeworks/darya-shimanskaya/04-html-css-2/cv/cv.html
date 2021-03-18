@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="cv.css">
 </head>
 <body>
-<button onclick="topFunction()" id="scroll-to-top">Top</button>
+<button class="scroll-to-top"><a href="#" class="scroll-to-top__link">Top</a></button>
     <div class="wrapper">
         <header class="header">
             <div class="header__content">
@@ -67,22 +67,5 @@
             </section>
         </div>
     </div>
-    <script>
-        var mybutton = document.getElementById("scroll-to-top");
-
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
 </body>
 </html>

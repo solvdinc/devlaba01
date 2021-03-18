@@ -91,7 +91,7 @@ h1.header__item {
     text-decoration-line: underline;
 }
 
-#scroll-to-top {
+.scroll-to-top {
     display: none;
 }
 
@@ -114,20 +114,28 @@ h1.header__item {
         width: 20px;
     }
     
-    #scroll-to-top {
-        display: none;
+    .scroll-to-top {
+        display: block;
         position: fixed;
         bottom: 20px;
         right: 30px;
         z-index: 99;
-        font-size: 20px;
+        font-size: 15px;
         border: none;
         outline: none;
         background-color: black;
-        color: white;
         cursor: pointer;
         padding: 20px;
         border-radius: 4px;
+    }
+
+    .scroll-to-top__link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .scroll-to-top:hover {
+        background: gray;
     }
 
     .wrapper {
