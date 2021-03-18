@@ -4,14 +4,14 @@
 }
 
 body {
-    background: #fff;
     color: #373741;
     margin: 0;
 }
 
-a {    
+a {
     color: #373741;
 }
+
 
 .wrapper {
     width: 1000px;
@@ -21,19 +21,26 @@ a {
 }
 
 .title {
-    width: 150px;
+    width: 200px;
     height: 20px;
-    font-size: 18px;
-    background: #373741;
-    color: #e1d8cf;
+    font-size: 1.8rem;
+    background: #5c2020fd;
+    color: #f8d9c4;
     text-align: left;
     padding-left: 10px;
 }
 
+.contacts__title {
+    width: 150px;
+}
+
 .sidebar {
-    background-color: #e7d8c8;
+    background-color: #f8d9c4;
     width: 400px;
     padding-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cv__photo {
@@ -44,15 +51,18 @@ a {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border: 2px solid #5c2020fd;
 }
 
+
 .contact__item {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 700;
+    margin: 10px 0;
 }
 
 .contact__item a {
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .main-info {
@@ -66,14 +76,14 @@ a {
 .header {
     margin-top: 20px;
     height: 150px;
-    background-color: #373741;
+    background-color: #5c2020fd;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header-name{
-    font-size: 32px;
+.header__name{
+    font-size: 3.2rem;
     color: #e1d8cf;
 }
 
@@ -85,12 +95,12 @@ a {
 
 .education__university-name {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .education__faculty-name, .education__speciality {
     font-size: 1.6rem;
-   font-style: italic;
+    font-style: italic;
 }
 
 .skills__item {
@@ -98,7 +108,7 @@ a {
 }
 
 .project__name {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .project__description, .project__source-code {
