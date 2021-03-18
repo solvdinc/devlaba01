@@ -3,11 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+    color:inherit
+}
 
 body {
-    max-width:100vw;
     background-color: rgb(172, 190, 122);
-    margin: 0 auto;
     color:white;
     font-size: 20px;
     font-family: 'Recursive', sans-serif;
@@ -17,7 +19,6 @@ ul > li {
 }
 /*header*/
 header {
-    padding: auto;
     background-color: darkslategrey;
 }
 .heading {
@@ -28,13 +29,8 @@ header {
     align-items: center;
     border-bottom: 1px solid red;
 }
-.heading-name {
-    display: flex;
-    flex-direction: column;
-}
 .line {
-    margin-top: 20px;
-    width: 200px;
+    width: 35%;
 }
 .container {
     max-width: 1600px;
@@ -43,22 +39,19 @@ header {
 .heading-name {
     background-color: darkcyan;
     color: white;
-    width: 450px;
-    height: 100px;
-    margin: 40px auto;
+    max-width: 45%;
+    width: 100%;
+    margin: 40px 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.heading-contacts {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
+
 .contact {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     
 }
 .contact-text {
@@ -103,9 +96,6 @@ header {
 .info-card {
     width: 45%;
     margin: 15px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     border: 2px solid black;
     margin: 10px;
     padding: 10px;
@@ -119,12 +109,25 @@ header {
 /*footer*/
 footer .container {
     margin-top: 40px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
-@media screen and (max-width: 700px) {
+@media (max-width: 850px) {
     .info-card {
         width: 100%;
-
+    }
+    .heading-name__title {
+        font-size: 5.5vw;
+    }
+    .heading-name__role {
+        font-size: 3.5vw;
+    }
+    .footer-text {
+        font-size: 2.4vw;
+    }
+    .info-cards-title {
+        font-size: 3.4vw;
+    }
+    .info-card > p, .info-card > ul, .contact-text {
+        font-size: 2.9vw;
     }
 }
