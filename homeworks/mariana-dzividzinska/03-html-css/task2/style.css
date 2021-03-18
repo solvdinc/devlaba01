@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+body {
+    background: #fff;
+    color: #373741;
+    margin: 0;
+}
+
+a {    
+    color: #373741;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+}
+
+.title {
+    width: 150px;
+    height: 20px;
+    font-size: 18px;
+    background: #373741;
+    color: #e1d8cf;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.sidebar {
+    background-color: #e7d8c8;
+    width: 400px;
+    padding-left: 20px;
+}
+
+.cv__photo {
+    margin-top: 20px;
+}
+
+.cv__photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.contact__item {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.contact__item a {
+    font-size: 14px;
+}
+
+.main-info {
+    width: 600px;
+}
+
+.main-info article {
+    margin-left: 20px;
+}
+
+.header {
+    margin-top: 20px;
+    height: 150px;
+    background-color: #373741;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-name{
+    font-size: 32px;
+    color: #e1d8cf;
+}
+
+
+.education__period {
+    font-style: italic;
+    font-size: 1.8rem;
+}
+
+.education__university-name {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.education__faculty-name, .education__speciality {
+    font-size: 1.6rem;
+   font-style: italic;
+}
+
+.skills__item {
+    font-size: 1.6rem;
+}
+
+.project__name {
+    font-size: 2rem;
+}
+
+.project__description, .project__source-code {
+    font-style: italic;
+    font-size: 1.6rem;
+}
+
+.project__technologies {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.hobby__item {
+    font-size: 1.6rem;
+}
+
+
+
+
+
+
+
+
+
