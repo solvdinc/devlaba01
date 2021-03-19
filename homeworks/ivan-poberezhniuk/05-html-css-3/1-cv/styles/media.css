@@ -1,7 +1,6 @@
 @media (max-width: 1024px) {
   .header__name {
     width: 100%;
-
     word-wrap: break-word;
   }
 
@@ -18,7 +17,19 @@
     grid-template-areas:
       "header header header"
       "aside aside aside"
+      "gallery gallery gallery"
       "main main main";
+  }
+
+  .gallery {
+    flex-direction: column;
+    max-height: none;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .gallery__image-container {
+    max-width: none;
   }
 }
 
