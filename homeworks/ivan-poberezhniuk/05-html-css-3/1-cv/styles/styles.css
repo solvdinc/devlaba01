@@ -34,6 +34,11 @@ a:visited {
   color: var(--main-text-color);
 }
 
+a:focus {
+  background-color: yellow;
+  outline: none;
+}
+
 h2,
 h3 {
   margin: 0;
