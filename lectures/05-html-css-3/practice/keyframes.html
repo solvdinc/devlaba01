@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="./styles.css"> -->
+  <!-- <script>
+    requestAnimationFrame(() => {
+      console.log(document.documentElement.offsetHeight);
+    });
+  </script> -->
+  <script>
+    // function a() {
+    //   let i = 0;
+    //   for (; i < 100000000;) {
+    //     i++;
+    //   }
+    //   console.log(i);
+
+    //   setTimeout(a, 200);
+    // }
+
+    // setTimeout(a, 200);
+  </script>
+  <style>
+    @keyframes update-background {
+      /* from {}
+      0% {} */
+      from {
+        margin-left: 0;
+        /* transform: translateX(0); */
+        /* background: red; */
+      }
+      to {
+        margin-left: 100px;
+        /* transform: translateX(100px); */
+        /* background: blue; */
+      }
+    }
+
+    .animated-block {
+      width: 100px;
+      height: 100px;
+      background: green;
+      transform: translateZ(0);
+      animation: update-background 2s cubic-bezier(0.11, 1.83, 0.88, 0.05) infinite alternate;
+    }
+
+    .animated-block:hover {
+      animation-play-state: paused;
+      /* animation: update-background 2s linear 1 alternate forwards; */
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-block"></div>
+</body>
+</html>

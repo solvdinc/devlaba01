@@ -1,0 +1,81 @@
+body {
+    font-family: "Helvetica Neue";
+    font-size: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+.header {
+    background: #f1f1f1;
+    padding: 10px;
+    width: 100%;
+}
+
+.logo {
+    margin: 0;
+    display: inline-block;
+}
+
+.navigation {
+    float: right;
+    margin-right: 10px;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+ul {
+    margin-right: 10px;
+    margin-left: -30px;
+}
+.main-content {
+    width: 600px;
+    float: right;
+    margin-top: -85px;
+}
+
+.container {
+    width: 800px;
+}
+
+.link {
+    text-decoration: none;
+    color: #323335;
+    font-size: 14px ;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 1.2rem;
+}
+
+.footer {
+    clear: both;
+    text-align: center;
+    font-size: 0.8rem;
+    weight: 300px;
+}
+
+li {
+    background-color: #f1f1f1;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    list-style-type: none;
+}
+
+article {
+    font-size: 0.9rem;
+}
+
+.content-item {
+    display: inline-block;
+    width: 195px;
+    margin-right: 3px;
+    margin-bottom: 20px;
+}
+
+.label{
+    font-size: 0.9rem;
+}
