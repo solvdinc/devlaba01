@@ -93,6 +93,7 @@ body {
   color: #000;
   text-decoration: none;
   transition: 0.3s ease-in-out;
+  margin-top: 7px;
 }
 
 .info-item:hover {
@@ -174,15 +175,18 @@ body {
 }
 
 .education-item .credential {
-  color: #000;
   margin: 10px 0;
-  text-decoration: none;
-  transition: 0.3s ease-in-out;
+  animation: shake 1.5s infinite alternate;
 }
 
-.credential:hover {
+.credential .credential__item {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.2s ease-in-out;
+}
+
+.credential__item:hover {
   color: crimson;
-  animation: shake 1.5s;
 }
 
 .education-item .education-period {
