@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+      rel="stylesheet"
+    />
+    <title>Flexbox/Grid</title>
+  </head>
+  <body>
+    <header class="header container">
+      <div class="header__logo">Hello world</div>
+      <input type="checkbox" name="menu" id="menu" class="menu">
+      <label for="menu" class="menu">
+        <span class="menu__button"></span>
+        <span class="menu__button"></span>
+        <span class="menu__button"></span>
+      </label>
+      <nav class="header__menu">
+        <a href="/" class="header__link">Click me</a>
+        <a href="/" class="header__link">Click me</a>
+        <a href="/" class="header__link">Click me</a>
+        <a href="/" class="header__link">Click me</a>
+      </nav>
+    </header>
+    <div class="content container">
+      <main class="main">
+        <div class="block">
+          <div class="block__big">
+            <img class="block__image __big" src="assets/image.jpg" alt="" />
+          </div>
+          <div class="block__small">
+            <img class="block__image" src="assets/image.jpg" alt="" />
+            <img class="block__image" src="assets/image.jpg" alt="" />
+          </div>
+        </div>
+        <div class="block block__reverse">
+          <div class="block__small">
+            <img class="block__image" src="assets/image.jpg" alt="" />
+            <img class="block__image" src="assets/image.jpg" alt="" />
+          </div>
+          <div class="block__big">
+            <img class="block__image __big" src="assets/image.jpg" alt="" />
+          </div>
+        </div>
+      </main>
+      <aside class="aside">
+        <h3 class="aside__title">Hi, I’m Inna Smiiun. Nice to meet you.</h3>
+        <p class="aside__text">
+          Since beginning my journey as a freelance designer nearly N years ago,
+          I've done remote work for agencies, consulted for startups, and
+          collaborated with talented people to create digital products for both
+          business and consumer use. I'm quietly confident, naturally curious,
+          and perpetually working on improving my chops one design problem at a
+          time.
+        </p>
+      </aside>
+    </div>
+    <footer class="footer">(c) 2021</footer>
+  </body>
+</html>
