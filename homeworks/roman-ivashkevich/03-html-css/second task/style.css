@@ -11,15 +11,6 @@
   font-size: 10px;
 }
 
-body {
-  font-family: "EB Garamond", serif;
-  font-size: 2rem;
-  max-width: 1920px;
-  width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden;
-}
-
 .title {
   color: goldenrod;
   margin-right: 10px;
@@ -36,8 +27,9 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: 12%;
-  width: 1200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
   border-top: 1px solid #f1f1f1;
 }
 
@@ -132,8 +124,7 @@ body {
 
 .skills .skill {
   font-weight: bold;
-  /* list-style-type: none; */
-  margin-left: 10px;
+  list-style-type: none;
 }
 .center {
   margin: 0 20px;
@@ -176,13 +167,17 @@ body {
 
 .education-item .credential {
   margin: 10px 0;
-  animation: shake 1.5s infinite alternate;
 }
 
 .credential .credential__item {
+  font-weight: 600;
   text-decoration: none;
   color: #000;
   transition: color 0.2s ease-in-out;
+}
+
+.credential:hover {
+  animation: shake 1.5s;
 }
 
 .credential__item:hover {
@@ -199,6 +194,11 @@ body {
 
 .languages-section .languages-container {
   flex: 2;
+}
+
+.language {
+  font-weight: bold;
+  list-style-type: none;
 }
 /* /Languages */
 /* /Main */
