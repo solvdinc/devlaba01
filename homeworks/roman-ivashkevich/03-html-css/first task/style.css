@@ -9,34 +9,31 @@
   font-size: 10px;
 }
 
-/* body {
-  width: 800px;
-  margin: 0 auto;
-} */
-
 /* /Common */
 
 /* Header */
 .header {
-  display: inline-block;
   width: 100%;
   background-color: #f1f1f1;
   font-size: 2rem;
 }
+
 .logo {
   display: inline-block;
   font-size: 2.5rem;
   padding: 10px;
 }
-#nav {
-  display: inline-block;
+
+.nav {
   float: right;
   padding: 10px;
 }
-#nav .nav-item {
+
+.nav .nav-item {
   display: inline-block;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  vertical-align: middle;
 }
 
 .nav-item:last-child {
@@ -49,14 +46,14 @@
 /* /Header */
 
 /* Aside */
-#aside {
-  font-size: 2rem;
-  display: inline-block;
-  width: 200px;
+.aside {
+  font-size: 1.8rem;
+  width: 25%;
   float: left;
+  padding: 0 10px;
 }
 
-#aside .aside-item {
+.aside .aside-item {
   padding: 7px;
   background: #f1f1f1;
   border-radius: 6px;
@@ -73,8 +70,7 @@
 /* Main */
 .main {
   font-size: 2rem;
-  float: right;
-  width: 580px;
+  overflow: hidden;
 }
 
 .title {
@@ -82,10 +78,6 @@
 }
 
 /* About us */
-.about-us {
-  width: 580px;
-}
-
 .about-us .about-us-item {
   font-size: 1.8rem;
   margin-top: 10px;
@@ -116,13 +108,3 @@
 /* /Portfolio */
 
 /* /Main */
-
-/* Footer */
-/* .footer {
-  font-size: 2rem;
-  clear: both;
-  text-align: center;
-  padding-top: 10px;
-  border-top: 1px solid #f1f1f1;
-} */
-/* /Footer */
