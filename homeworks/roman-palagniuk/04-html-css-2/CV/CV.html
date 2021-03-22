@@ -15,12 +15,12 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="logo">
-                <i class="fa fa-user-secret">&#xf2be;</i>
-                <h1>
+            <div class="header__logo">
+                <i class="header__icon fa fa-user-secret">&#xf2be;</i>
+                <h1 class="header__title">
                     Roman Palagniuk
                 </h1>
-                <h2>
+                <h2 class="header__subtitle">
                     WEB DEVELOPER
                 </h2>
             </div>
@@ -30,61 +30,65 @@
                 <div class="burger_line"></div>
                 <div class="burger_line"></div>
             </div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
+            <nav class="header__nav">
+                <a href="#about" class="header__link">About</a>
+                <a href="#experience" class="header__link">Experience</a>
             </nav>
         </header>
         <aside class="side">
-            <section id="top" class="contacts">
-                <h3>
+            <section id="top" class="side__section">
+                <h3 class="side__section__title">
                     Contacts
                 </h3>
-                <ul>
-                    <li>
-                        <i class="fa fa-phone-square" aria-hidden="true"></i> +380507575460;<br />
-                        <i class="fa fa-phone-square" aria-hidden="true"></i> +380978555097;
+                <ul class="side__section__list">
+                    <li class="side__section__list-item">
+                        <i class="side__section__icon fa fa-phone-square" aria-hidden="true"></i>+380507575460;<br />
+                        <i class="side__section__icon fa fa-phone-square" aria-hidden="true"></i>+380978555097;
                     </li>
-                    <li>
-                        <i class="fa fa-envelope" aria-hidden="true"></i>n0tapr0b13m@gmail.com;
+                    <li class="side__section__list-item">
+                        <i class="side__section__icon fa fa-envelope" aria-hidden="true"></i>n0tapr0b13m@gmail.com;
                     </li>
-                    <li>
-                        <i class="fa fa-rocket" aria-hidden="false"></i> live:cf0760c2f1916e70;
+                    <li class="side__section__list-item">
+                        <i class="side__section__icon fa fa-rocket" aria-hidden="false"></i>live:cf0760c2f1916e70;
                     </li>
-                    <li>
-                        <i class="fa fa-share-alt-square" aria-hidden="true"></i> <a
-                            href="https://github.com/RomanPalagniuk">GitHub</a>
+                    <li class="side__section__list-item">
+                        <i class="side__section__icon fa fa-share-alt-square" aria-hidden="true"></i>
+                        <a href="https://github.com/RomanPalagniuk" class="side__section__link">
+                            GitHub
+                        </a>
                     </li>
-                    <li>
-                        <i class="fa fa-info-circle" aria-hidden="true"></i> <a
-                            href="https://www.linkedin.com/in/roman-palagniuk-a0364813a/">LinkedIn</a>
+                    <li class="side__section__list-item">
+                        <i class="side__section__icon fa fa-info-circle" aria-hidden="true"></i>
+                        <a href="https://www.linkedin.com/in/roman-palagniuk-a0364813a/" class="side__section__link">
+                            LinkedIn
+                        </a>
                     </li>
-                    <li>
-                        <i class="fa fa-map-marker" aria-hidden="true"></i> Chernivtsi
+                    <li class="side__section__list-item">
+                        <i class="side__section__icon fa fa-map-marker" aria-hidden="true"></i>Chernivtsi
                     </li>
                 </ul>
             </section>
-            <section class="skills">
-                <h3>
+            <section class="side__section">
+                <h3 class="side__section__title">
                     Skills
                 </h3>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS, SASS, Bootstrap</li>
-                    <li>JavaScript</li>
-                    <li>Node.js, Express, Koa.js</li>
-                    <li>React, Redux</li>
-                    <li>PostgreSQL, MongoDB</li>
-                    <li>Git, Webpack, Postman</li>
+                <ul class="side__section__list side__section__list--square">
+                    <li class="side__section__list-item">HTML</li>
+                    <li class="side__section__list-item">CSS, SASS, Bootstrap</li>
+                    <li class="side__section__list-item">JavaScript</li>
+                    <li class="side__section__list-item">Node.js, Express, Koa.js</li>
+                    <li class="side__section__list-item">React, Redux</li>
+                    <li class="side__section__list-item">PostgreSQL, MongoDB</li>
+                    <li class="side__section__list-item">Git, Webpack, Postman</li>
                 </ul>
             </section>
         </aside>
         <main class="mn">
-            <section class="about">
-                <h2 id="about">
+            <section class="mn__section mn__section-about">
+                <h2 class="mn__section__header" id="about">
                     About Me
                 </h2>
-                <p>
+                <p class="mn__section__text">
                     So far I learned a lot as Developer during last year. Have a bit of experience working as team
                     member, as well by myself.
                     Speaking about professional skills - I have basic knowledge of HTML, CSS, Bootstrap, JavaScript.
@@ -96,7 +100,7 @@
                     But I seeing myself as
                     future full-stack developer.
                 </p>
-                <p>
+                <p class="mn__section__text">
                     To the list of life acomplishments I would put Masters degree at information security. Wide working
                     experience in different
                     companies including abroad.
@@ -106,42 +110,42 @@
                     Think I am good at communication with people. Good worker.
                 </p>
             </section>
-            <section class="experience">
-                <h2 id="experience">
+            <section class="mn__section mn__section-experience">
+                <h2 class="mn__section__header" id="experience">
                     Experience
                 </h2>
-                <article class="experience_article">
-                    <h3>
+                <article class="mn__article">
+                    <h3 class="mn__section__subheader">
                         Web Deweloper (02.2020 - Now)
                     </h3>
-                    <p>
+                    <p class="mn__section__text">
                         Learning and doing small projects both in team and by myself. Basic knowledge of HTML, CSS,
                         JavaScript, some popular frameworks.
                     </p>
                 </article>
-                <article class="experience_article">
-                    <h3>
+                <article class="mn__article">
+                    <h3 class="mn__section__subheader">
                         Construction worker, scaffolder (11.2018 – 01.2020)
                     </h3>
-                    <p>
+                    <p class="mn__section__text">
                         Get new experience as construction worker and scaffolder. Improved my skills at work, and
                         communication with people. Also gained in speaking english.
                     </p>
                 </article>
-                <article class="experience_article">
-                    <h3>
+                <article class="mn__article">
+                    <h3 class="mn__section__subheader">
                         Inspector at bank security department of region (“Oschadbank”, 06.2017 – 06.2018)
                     </h3>
-                    <p>
+                    <p class="mn__section__text">
                         Сontrolling of opening and closing departments, ATMs. Сommunication with the police and the
                         collection service. Video monitoring using video surveillance system.
                     </p>
                 </article>
-                <article class="experience_article">
-                    <h3>
+                <article class="mn__article">
+                    <h3 class="mn__section__subheader">
                         Seller ("Evrosota", 11.2012 - 09.2015)
                     </h3>
-                    <p>
+                    <p class="mn__section__text">
                         Selling of electronics.
                         It was a start of my career as a seller. I have learned many new things to me. Get experience in
                         communication with people, organization of store functioning.
@@ -150,32 +154,32 @@
                 </article>
             </section>
             <section class="education">
-                <h2>
+                <h2 class="mn__section__header">
                     Education
                 </h2>
-                <h3>
+                <h3 class="mn__section__subheader">
                     Chernivtsi National University (2007-2012)
                 </h3>
-                <p>
+                <p class="mn__section__text">
                     DEPARTMENT OF PHYSICS. MASTER'S DEGREE AT INFORMATION SECURITY.
                 </p>
-                <p>
+                <p class="mn__section__text">
                     Studied: Engineering and Computer Graphics; Electricity and magnetism; Information theory;
                     Cryptography and steganography; Protection of objects;
                     Telecommunication Systems and networks.
                 </p>
-                <h3>
+                <h3 class="mn__section__subheader">
                     Courses:
                 </h3>
-                <p>
+                <p class="mn__section__text">
                     SAMSUNG ACADEMY.
                 </p>
-                <p>
+                <p class="mn__section__text">
                     EPAM UNIVERSITY FRONT-END AUTUMN 2020
                 </p>
             </section>
         </main>
-        <a href="#top" class="top">Scroll to top /\</a>
+        <a href="#top" class="top">Scroll to top</a>
         <footer class="footer">
             <p>(c) 2021</p>
         </footer>
