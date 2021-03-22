@@ -98,8 +98,16 @@ a {
 }
 .main__item {
   float: left;
-  width: 33.333%;
+  width: calc(100% / 3 - 6px);
   margin-bottom: 20px;
+  margin-right: 3px;
+}
+.main__item img {
+  max-width: 100%;
+  height: auto;
+}
+.main__item:first-child {
+  margin-right: 0;
 }
 .main__title {
   margin-bottom: 10px;
@@ -111,7 +119,7 @@ a {
   margin: 0;
 }
 .main__paragraph {
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .footer__inner {
