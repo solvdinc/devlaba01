@@ -11,40 +11,6 @@
 
 /* /Common */
 
-/* Header */
-.header {
-  width: 100%;
-  background-color: #f1f1f1;
-  font-size: 2rem;
-}
-
-.logo {
-  display: inline-block;
-  font-size: 2.5rem;
-  padding: 10px;
-}
-
-.nav {
-  float: right;
-  padding: 10px;
-}
-
-.nav .nav-item {
-  display: inline-block;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  vertical-align: middle;
-}
-
-.nav-item:last-child {
-  margin-left: 10px;
-}
-
-.nav-item:hover {
-  color: goldenrod;
-}
-/* /Header */
-
 /* Aside */
 .aside {
   font-size: 1.8rem;

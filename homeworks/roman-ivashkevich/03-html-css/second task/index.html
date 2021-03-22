@@ -12,6 +12,29 @@
 
 <body
   style="font-family: 'EB Garamond', serif; font-size: 2rem; max-width: 1920px; width: 100%; margin: 0 auto; overflow-x: hidden;">
+  <style>
+    .title {
+      color: goldenrod;
+      margin-right: 10px;
+      flex: 1;
+    }
+
+    .section {
+      position: relative;
+      display: flex;
+      padding: 20px;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      border-top: 1px solid #f1f1f1;
+    }
+  </style>
   <!-- Header -->
   <header class="header">
     <div class="personal-container">
