@@ -373,11 +373,11 @@ main {
     }
 
     .timeline_done::before {
-        left: 33%;
+        left: 31%;
     }
 
     .timeline__item::after {
-        left: 33%;
+        left: 31%;
     }
 }
 
