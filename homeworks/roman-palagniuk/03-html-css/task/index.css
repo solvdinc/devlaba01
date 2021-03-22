@@ -31,6 +31,7 @@ h2 {
 
 header > nav {
   margin-left: 80%;
+  margin-top: -25px;
 }
 
 aside {
@@ -41,7 +42,7 @@ aside {
 
 section {
   width: 800px;
-  margin-left: 240px;
+  margin-left: 340px;
 }
 
 article {
@@ -81,5 +82,6 @@ a {
 
 footer > p {
   margin: 0 auto;
+  padding: 10px 10px;
   text-align: center;
 }
