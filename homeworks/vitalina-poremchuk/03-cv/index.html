@@ -11,30 +11,27 @@
 </head>
 
 <body>
-    <header class="header container">
-        <img class='header__photo' src="./image/photo1.jpg" alt="">
-        <div class="header__info">
-            <div class="header__title">Vitalina</b></div>
-            <div class="header__text">Poremchuk</div>
-            <div class="header__desc">Frontend developer</div>
-        </div>
-    </header>
-    <div class="content container">
+    <div class="container">
         <aside class="aside">
-            <div class="aside__profile">
+            <div class="aside__img">
+                <img src="./image/photo.jpg" alt="CV photo">
+            </div>
+            <div class="aside__info">
                 <h2 class="aside__title">Contact</h2>
-                <div class="aside__info">
-                    <div class="aside__country"> Kyiv, Ukraine</div>
-                    <div class="aside__phone">+380932714475 </div>
-                    <div class="aside__email">vitalinaporemchuk@ukr.net</div>
+                <div class="aside__city"> Kyiv, Ukraine</div>
+                <div class="aside__phone">
+                    <a href="tel:+380932714475">+380932714475</a>
+                </div>
+                <div class="aside__email">
+                    <a href="mailto:vitalinaporemchuk@ukr.net">vitalinaporemchuk@ukr.net</a>
                 </div>
             </div>
             <div class="aside__contact">
                 <h2 class="aside__title">Language</h2>
-                <ul class="aside__item">
-                    <li class="aside__list" type="circle">English - Intermidate</li>
-                    <li class="aside__list" type="circle">Ukrainian - Native</li>
-                    <li class="aside__list" type="circle">Russian - Native</li>
+                <ul class="aside__list">
+                    <li class="aside__item">English - Intermidate</li>
+                    <li class="aside__item">Ukrainian - Native</li>
+                    <li class="aside__item">Russian - Native</li>
                 </ul>
             </div>
             <div class="aside__media">
@@ -46,61 +43,65 @@
                 <a href="mailto:kvitka147@gmail.com"><img src="./image/gmail.png" alt="logo gmail"></a>
             </div>
         </aside>
-        <main class="main">
-            <section class="main__education">
-                <h2>Education</h2>
-                <div class="main__title">National Aviation University</div>
-                <div class="main__text">Bachelor degree, Applied Mathematics.</div>
-                <div class="main__paragraph">09/2014 - 06/2018 </div>
-                <br>
-                <div class="main__title">National Aviation University</div>
-                <div class="main__text">Master's degree, Consolidated information.</div>
-                <div class="main__paragraph">09/2018 - 02/2020</div>
-            </section>
-            <section class="main__certificates">
-                <h2>Certificates</h2>
-                <div class="main__title">Infopulse</div>
-                <div class="main__text">Frontend разработчик (HTML, CSS, Bootstrap).</div>
-                <div class="main__paragraph">07/2019 - 10/2019</div>
-                <br>
-                <div class="main__title">Infopulse</div>
-                <div class="main__text">Frontend разработчик (JavaScript).</div>
-                <div class="main__paragraph">10/2019 - 03/2020</div>
-            </section>
-            <section class="main__skills">
-                <h2>Skills</h2>
-                <div class="main__container">
-                    <p class="main__text width">Html</p>
-                    <div class="main__box">
-                        <div class="main__line html">70%</div>
+        <div class="content">
+            <header class="header">
+                <h2 class="header__text">Vitalina</h2>
+                <h1 class="header__title">Poremchuk</h1>
+                <div class="header__text">Frontend developer</div>
+            </header>
+            <main class="main">
+                <section class="main__education">
+                    <div class="main__line">
                     </div>
-                </div>
-                <div class="main__container">
-                    <p class="main__text width">CSS</p>
-                    <div class="main__box">
-                        <div class="main__line css">70%</div>
+                    <div class="main__info">
+                        <h2 class="main__head">Education</h2>
+                        <div class="main__title">National Aviation University</div>
+                        <div class="main__text">Bachelor degree, Applied Mathematics.</div>
+                        <div class="main__paragraph">09/2014 - 06/2018 </div>
+                        <br>
+                        <div class="main__title">National Aviation University</div>
+                        <div class="main__text">Master's degree, Consolidated information.</div>
+                        <div class="main__paragraph ">09/2018 - 02/2020</div>
                     </div>
-                </div>
-                <div class="main__container">
-                    <p class="main__text width">JavaScript</p>
-                    <div class="main__box">
-                        <div class="main__line js">50%</div>
+                </section>
+                <section class="main__certificates">
+                    <div class="main__line">
                     </div>
-                </div>
-                <div class="main__container">
-                    <p class="main__text width">PHP</p>
-                    <div class="main__box">
-                        <div class="main__line php">5%</div>
+                    <div class="main__info">
+                        <h2 class="main__head">Certificates</h2>
+                        <div class="main__title">Infopulse</div>
+                        <div class="main__text">Frontend разработчик (HTML, CSS, Bootstrap).</div>
+                        <div class="main__paragraph">07/2019 - 10/2019</div>
+                        <br>
+                        <div class="main__title">Infopulse</div>
+                        <div class="main__text">Frontend разработчик (JavaScript).</div>
+                        <div class="main__paragraph">10/2019 - 03/2020</div>
                     </div>
-                </div>
-            </section>
-        </main>
-    </div>
-    <footer class="footer container">
-        <div class="footer__inner">
-            <p class="footer__copy">&copy;Vitalina Poremchuk</p>
+                </section>
+                <section class="main__skills">
+                    <h2 class="main__head">Skills</h2>
+                    <div class="main__container">
+                        <div class="main__box">
+                            <p class="main__txt">Html</p>
+                            <div class="main__html"></div>
+                        </div>
+                        <div class="main__box">
+                            <p class="main__text">CSS</p>
+                            <div class="main__css"></div>
+                        </div>
+                        <div class="main__box">
+                            <p class="main__txt">JavaScript</p>
+                            <div class="main__js"></div>
+                        </div>
+                        <div class="main__box">
+                            <p class="main__txt">PHP</p>
+                            <div class="main__php"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
-    </footer>
+    </div>
 </body>
 
 </html>
