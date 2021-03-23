@@ -1,12 +1,3 @@
-/* html, body {
-    box-sizing: border-box;
-    font-size: 10px;
-}
-
-*, *::after, *::before {
-    box-sizing: inherit;
-} */
-
 * {
     box-sizing: border-box;
 }
@@ -80,7 +71,6 @@ main {
     float: right;
     width: 600px;
 }
-
 
 .portfolio__project {
     display: inline-block;
