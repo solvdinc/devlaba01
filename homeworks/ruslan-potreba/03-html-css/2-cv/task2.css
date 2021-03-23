@@ -28,7 +28,7 @@ body {
   grid-template-columns: 200px 1fr;
   grid-template-rows: 150px 1fr 1fr 50px;
   grid-template-areas:
-    'subheader header'
+    'photo header'
     'sidebar main'
     'sidebar main'
     'sidebar footer';
@@ -59,7 +59,7 @@ body {
 /*subheader*/
 
 .photo {
-  grid-area: subheader;
+  grid-area: photo;
   background-color: var(--main-navy-color);
   color: var(--main-grey-color);
   display: flex;
