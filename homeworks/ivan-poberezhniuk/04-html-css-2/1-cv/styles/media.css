@@ -1,19 +1,13 @@
+/* main, desktop */
 .wrapper {
   padding: 0 20%;
 }
 
-@media (max-width: 1024px) {
-  .wrapper {
-    padding: 0;
-  }
-
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
   .header__name {
     width: 100%;
-
     word-wrap: break-word;
-  }
-  .wrapper {
-    flex-direction: column;
   }
 
   .aside {
@@ -22,6 +16,8 @@
   }
 
   .wrapper {
+    flex-direction: column;
+    padding: 0;
     grid-template-areas:
       "header header header"
       "aside aside aside"
@@ -29,7 +25,22 @@
   }
 }
 
+/* mobile */
 @media (max-width: 600px) {
+  .aside {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wrapper {
+    padding: 0;
+    flex-direction: column;
+    grid-template-areas:
+      "header header header"
+      "aside aside aside"
+      "main main main";
+  }
+
   .header {
     width: 100%;
     position: sticky;
@@ -38,6 +49,8 @@
   }
 
   .header__name {
+    width: 100%;
+    word-wrap: break-word;
     font-size: 1.3rem;
   }
 
