@@ -4,132 +4,130 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="styles/style.css"/>
     <script src="index.js" defer></script>
     <title>Inna Smiiun CV</title>
 </head>
 <body>
-<header style="background: #dcac89;">
-    <div class="container header">
-        <img class="header__photo" src="assets/photo.jpg" alt="photo"/>
-        <div class="header__text">
-            <h1 class="header__title">Inna Smiiun</h1>
-            <p class="header__desc">Front-end Developer</p>
-            <button onclick="showContacts()" id="button__contacts" class="button__contacts">Contacts</button>
+    <header style="background: #dcac89;">
+        <div class="container header">
+            <img class="header__photo" src="assets/photo.jpg" alt="photo"/>
+            <div class="header__text">
+                <h1 class="header__title">Inna Smiiun</h1>
+                <p class="header__desc">Front-end Developer</p>
+                <button onclick="showContacts()" id="button__contacts" class="button__contacts">Contacts</button>
+            </div>
+        </div>
+    </header>
+    <div class="content__background">
+        <div class="container content">
+            <nav class="contacts">
+                <section class="block contacts__container" id="contacts">
+                    <h2 class="block__header">Contacts</h2>
+                    <ul class="contacts__list">
+                        <li class="contacts__block">
+                            <img src="assets/icons/telephone.svg" alt="icon-phone" class="contacts__icon"/>
+                            <div class="contacts__text">
+                                <h4 class="contacts__title">Phone:</h4>
+                                <a class="contacts__inf" target="_blank" href="tel:0686454003">+380 (68) 645 40 03</a>
+                            </div>
+                        </li>
+                        <li class="contacts__block">
+                            <img src="assets/icons/email.svg" alt="icon-email" class="contacts__icon"/>
+                            <div class="contacts__text">
+                                <h4 class="contacts__title">Email:</h4>
+                                <a class="contacts__inf" target="_blank" href="mailto:innasmiyun@gmail.com">innasmiyun@gmail.com</a>
+                            </div>
+                        </li>
+                        <li class="contacts__block">
+                            <img src="assets/icons/home.svg" alt="" class="contacts__icon"/>
+                            <div class="contacts__text">
+                                <h4 class="contacts__title">Address:</h4>
+                                <a class="contacts__inf" target="_blank" href="https://goo.gl/maps/AWiMftiNZYTKnBm36">Kovalskyi Lane, 5, Kyiv</a>
+                            </div>
+                        </li>
+                        <li class="contacts__block">
+                            <img src="assets/icons/github-logo.svg" alt="" class="contacts__icon"/>
+                            <div class="contacts__text">
+                                <h4 class="contacts__title">GitHub:</h4>
+                                <a class="contacts__inf" href="https://github.com/innasmiiun">https://github.com/innasmiiun</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="block qualities__container">
+                    <h2 class="block__header">Personal Qualities:</h2>
+                    <div class="section__content">
+                        <ul class="section__list">
+                            <li>Fast learner</li>
+                            <li>Ambitious</li>
+                            <li>Sociable</li>
+                            <li>Reliable</li>
+                        </ul>
+                    </div>
+                </section>
+            </nav>
+            <main class="main">
+                <section class="block">
+                    <h2 class="block__header">Summary</h2>
+                    <div class="section__content">
+                        I am young, responsible, self-driven, inspired person who wants to
+                        learn to work in team and always looks forward to acquiring new
+                        knowledge and techniques.
+                    </div>
+                </section>
+                <section class="block">
+                    <h2 class="block__header">Education</h2>
+                    <div class="section__content">
+                        <ul class="section__list">
+                            <li class="section__item">
+                                <p><b><i>2016-2020:</i></b></p>
+                                <p>Bachelor’s degree in Computer Engineering</p>
+                                <p><b>National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"</b></p>
+                                <p>Faculty of Applied Mathematics</p>
+                                <p><i>Specialization - System Programming</i></p>
+                            </li>
+                            <li class="section__item">
+                                <p><b><i>2020-2021:</i></b></p>
+                                <p>Master’s degree in Computer Engineering</p>
+                                <p><b>National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"</b></p>
+                                <p>Faculty of Applied Mathematics</p>
+                                <p><i>Specialization - System Programming</i></p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="block">
+                    <h2 class="block__header">Skills</h2>
+                    <div class="section__content">
+                        <ul class="section__list">
+                            <li>HTML</li>
+                            <li>CSS, SCSS</li>
+                            <li>Methodology BEM</li>
+                            <li>JavaScript (basic)</li>
+                            <li>Bootstrap</li>
+                            <li>Webpack</li>
+                            <li>Figma, Zeplin</li>
+                            <li>Git</li>
+                            <li>Alghorithms and Data Structures</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="block">
+                    <h2 class="block__header">Languages Skills</h2>
+                    <div class="section__content">
+                        <ul class="section__list">
+                            <li>English: Intermediate</li>
+                            <li>Russian: Native</li>
+                            <li>Ukrainian: Native</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
-</header>
-<div class="content__background">
-    <div class="container content">
-        <nav class="contacts">
-            <section class="block contacts__container" id="contacts">
-                <h2 class="block__header">Contacts</h2>
-              <ul class="contacts__list">
-                <li class="contacts__block">
-                  <img src="assets/icons/telephone.svg" alt="icon-phone" class="contacts__icon"/>
-                  <div class="contacts__text">
-                    <h4 class="contacts__title">Phone:</h4>
-                    <a class="contacts__inf" target="_blank" href="tel:0686454003">+380 (68) 645 40 03</a>
-                  </div>
-                </li>
-                <li class="contacts__block">
-                  <img src="assets/icons/email.svg" alt="icon-email" class="contacts__icon"/>
-                  <div class="contacts__text">
-                    <h4 class="contacts__title">Email:</h4>
-                    <a class="contacts__inf" target="_blank" href="mailto:innasmiyun@gmail.com">innasmiyun@gmail.com</a>
-                  </div>
-                </li>
-                <li class="contacts__block">
-                  <img src="assets/icons/home.svg" alt="" class="contacts__icon"/>
-                  <div class="contacts__text">
-                    <h4 class="contacts__title">Address:</h4>
-                    <a class="contacts__inf" target="_blank" href="https://goo.gl/maps/AWiMftiNZYTKnBm36">Kovalskyi Lane, 5, Kyiv</a>
-                  </div>
-                </li>
-                <li class="contacts__block">
-                  <img src="assets/icons/github-logo.svg" alt="" class="contacts__icon"/>
-                  <div class="contacts__text">
-                    <h4 class="contacts__title">GitHub:</h4>
-                    <a class="contacts__inf" href="https://github.com/innasmiiun">https://github.com/innasmiiun</a>
-                  </div>
-                </li>
-              </ul>
-            </section>
-            <section class="block qualities__container">
-                <h2 class="block__header">Personal Qualities:</h2>
-                <div class="section__content">
-                    <ul class="section__list">
-                        <li>Fast learner</li>
-                        <li>Ambitious</li>
-                        <li>Sociable</li>
-                        <li>Reliable</li>
-                    </ul>
-                </div>
-            </section>
-        </nav>
-        <main class="main">
-            <section class="block">
-                <h2 class="block__header">Summary</h2>
-                <div class="section__content">
-                    I am young, responsible, self-driven, inspired person who wants to
-                    learn to work in team and always looks forward to acquiring new
-                    knowledge and techniques.
-                </div>
-            </section>
-            <section class="block">
-                <h2 class="block__header">Education</h2>
-                <div class="section__content">
-                    <ul class="section__list">
-                        <li class="section__item">
-                            <p><b><i>2016-2020:</i></b></p>
-                            <p>Bachelor’s degree in Computer Engineering</p>
-                            <p><b>National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"</b>
-                            </p>
-                            <p>Faculty of Applied Mathematics</p>
-                            <p><i>Specialization - System Programming</i></p>
-                        </li>
-                        <li class="section__item">
-                            <p><b><i>2020-2021:</i></b></p>
-                            <p>Master’s degree in Computer Engineering</p>
-                            <p><b>National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"</b></p>
-                            <p>Faculty of Applied Mathematics</p>
-                            <p><i>Specialization - System Programming</i></p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="block">
-                <h2 class="block__header">Skills</h2>
-                <div class="section__content">
-                    <ul class="section__list">
-                        <li>HTML</li>
-                        <li>CSS, SCSS</li>
-                        <li>Methodology BEM</li>
-                        <li>JavaScript (basic)</li>
-                        <li>Bootstrap</li>
-                        <li>Webpack</li>
-                        <li>Figma, Zeplin</li>
-                        <li>Git</li>
-                        <li>Alghorithms and Data Structures</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="block">
-                <h2 class="block__header">Languages Skills</h2>
-                <div class="section__content">
-                    <ul class="section__list">
-                        <li>English: Intermediate</li>
-                        <li>Russian: Native</li>
-                        <li>Ukrainian: Native</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-    </div>
-</div>
-<footer style="background: #dcac89;"><p>Inna Smiiun - 2021</p></footer>
-<button onclick="onTop()" id="btn-top">Top</button>
+    <footer style="background: #dcac89;"><p>Inna Smiiun - 2021</p></footer>
+    <button onclick="onTop()" id="btn-top">Top</button>
 </body>
 </html>
