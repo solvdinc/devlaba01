@@ -1,0 +1,44 @@
+@import "./variables.css";
+@import "./header.css";
+@import "./gallery.css";
+@import "./aside.css";
+@import "./main.css";
+@import "./scroll-to-top.css";
+/* @import "./media.css"; */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-color);
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--main-text-color);
+}
+
+a:focus {
+  background-color: yellow;
+  outline: none;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
