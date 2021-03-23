@@ -5,6 +5,15 @@
 
 /* tablet */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 0;
+    grid-template-areas:
+      "header header header"
+      "aside aside aside"
+      "main main main";
+  }
+
   .header__name {
     width: 100%;
     word-wrap: break-word;
@@ -14,24 +23,10 @@
     width: 100%;
     text-align: center;
   }
-
-  .wrapper {
-    flex-direction: column;
-    padding: 0;
-    grid-template-areas:
-      "header header header"
-      "aside aside aside"
-      "main main main";
-  }
 }
 
 /* mobile */
 @media (max-width: 600px) {
-  .side {
-    width: 100%;
-    text-align: center;
-  }
-
   .wrapper {
     padding: 0;
     flex-direction: column;
@@ -58,6 +53,11 @@
     font-size: 1.1rem;
     padding: 0;
     margin: 0;
+  }
+
+  .side {
+    width: 100%;
+    text-align: center;
   }
 
   .side-list__outer {
