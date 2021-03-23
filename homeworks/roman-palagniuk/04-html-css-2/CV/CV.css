@@ -97,11 +97,11 @@
 .mn__article,
 .mn__section__text,
 .mn__section__subheader {
-  margin-top: 5rem;
+  margin-top: 15px;
 }
 
 .mn__section {
-  padding: 2rem;
+  padding: 40px;
   color: rgb(7, 58, 26);
   background-color: rgba(119, 224, 243, 0.2);
   border-radius: 0.5rem;
@@ -112,14 +112,14 @@
 }
 
 .side__section {
-  margin-top: 14rem;
-  margin-left: 2rem;
-  padding: 2rem 0;
+  margin-top: 200px;
+  margin-left: 30px;
+  padding: 30px 0;
   font-size: 1.3rem;
 }
 
 .side__section__title {
-  padding: 1rem 0;
+  padding: 20px 0;
   color: rgb(119, 224, 243);
   background-color: rgb(7, 58, 26);
   text-align: center;
@@ -164,7 +164,7 @@
     top: 0px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 3;
-    height: 10rem;
+    height: 200px;
   }
 
   .top {
@@ -185,10 +185,16 @@
     font-size: smaller;
   }
 
+  .side__section {
+    margin: 50px auto;
+    padding: 30px 0;
+    font-size: 1.3rem;
+  }
+
   .mn {
     width: 95%;
-    padding: 0.3rem;
-    margin: 1rem auto;
+    padding: 15px;
+    margin: 15px auto;
   }
 
   .header__nav {
@@ -210,7 +216,7 @@
 
   .burger_line {
     display: inline-block;
-    height: 5px;
+    height: 8px;
     width: 40px;
     margin: 2px auto;
     background-color: rgb(255, 255, 255);
@@ -224,7 +230,7 @@
     background-color: rgb(7, 58, 26);
     color: rgb(119, 224, 243);
     grid-area: footer;
-    padding: 2rem;
+    padding: 20px;
   }
 }
 
@@ -240,7 +246,7 @@
     top: 0px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 3;
-    height: 10rem;
+    height: 300px;
   }
 
   .top {
@@ -248,13 +254,13 @@
   }
 
   .side {
-    margin-top: 1rem;
+    margin-top: 15px;
     font-size: smaller;
   }
 
   .mn {
     width: 95%;
-    padding: 0.3rem;
+    padding: 15px;
   }
 
   .header__nav {
@@ -276,7 +282,7 @@
 
   .burger_line {
     display: inline-block;
-    height: 5px;
+    height: 8px;
     width: 40px;
     margin: 2px auto;
     background-color: rgb(255, 255, 255);
@@ -290,6 +296,6 @@
     background-color: rgb(7, 58, 26);
     color: rgb(119, 224, 243);
     grid-area: footer;
-    padding: 2rem;
+    padding: 20px;
   }
 }
