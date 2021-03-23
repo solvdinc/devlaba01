@@ -23,7 +23,7 @@ a {
     width: 200px;
     height: 20px;
     font-size: 1.8rem;
-    background: #5c2020fd;
+    background: #5c2020;
     color: #f8d9c4;
     text-align: left;
     padding-left: 10px;
@@ -50,7 +50,7 @@ a {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid #5c2020fd;
+    border: 2px solid #5c2020;
 }
 
 .contact__item {
@@ -74,7 +74,7 @@ a {
 .header {
     margin-top: 20px;
     height: 150px;
-    background-color: #5c2020fd;
+    background-color: #5c2020;
     display: flex;
     align-items: center;
     justify-content: center;
