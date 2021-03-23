@@ -1,0 +1,86 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    font-size: 10px;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    height: 100%;
+    display: grid;
+    grid-template:
+    "header header" 160px
+    "block-left block-right" auto
+    /400px;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 8px;
+    background: #000;
+    color: #cccccc;
+    letter-spacing: 5px;
+    font-size: 2rem;
+}
+
+.block-right {
+    grid-area: block-right;
+    display: flex;
+    padding: 20px 25px 0 30px;
+    flex-direction: column;
+    font-size: 2.4rem;
+}
+
+.block-left {
+    grid-area: block-left;
+    display: flex;
+    background-color: #c9e4dc;
+    flex-direction: column;
+    padding: 20px 30px 0 25px;
+    text-align: right;
+    font-size: 2.2rem;
+    color: #38485C;
+}
+
+.header__item-1 {
+    border: 3px solid whitesmoke;
+    padding: 10px;
+    margin-bottom: 0;
+    animation: update-border-color 2s infinite;
+}
+
+.skills, .contacts, .languages, .courses {
+    margin-bottom: 20px;
+}
+
+.contacts__item {
+    color: #2C3A4B;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.contacts__item:hover {
+    color: #579280;
+}
+
+.scroll-to-top {
+    display: none;
+}
+
+@keyframes update-border-color {
+    50% {
+        border-color: #579280;
+    }
+    100% {
+        border-color: #c9e4dc;
+    }
+}
