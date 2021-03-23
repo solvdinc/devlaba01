@@ -1,4 +1,12 @@
+.wrapper {
+  padding: 0 20%;
+}
+
 @media (max-width: 1024px) {
+  .wrapper {
+    padding: 0;
+  }
+
   .header__name {
     width: 100%;
 
