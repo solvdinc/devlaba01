@@ -1,0 +1,132 @@
+.container {
+  font-size: xx-small;
+  text-align: center;
+  display: grid;
+  margin: 0 auto;
+  grid-template-areas:
+    "header "
+    "side"
+    "mn"
+    "footer";
+}
+
+.header {
+  position: sticky;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 3;
+  height: 10rem;
+  width: 100%;
+}
+
+.top {
+  text-decoration: none;
+  display: block;
+  position: fixed;
+  right: 18%;
+  bottom: 10%;
+  font-weight: 600;
+  color: rgb(119, 224, 243);
+  background-color: rgb(7, 58, 26);
+  border-radius: 0.5rem;
+  z-index: 5;
+}
+
+.side {
+  margin: 1rem auto;
+  font-size: smaller;
+}
+
+.mn {
+  width: 95%;
+  padding: 0.3rem;
+  margin: 1rem auto;
+}
+
+.header__nav {
+  display: none;
+}
+
+.burger {
+  margin: 1.2rem;
+  display: block;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.burger__label {
+  margin-top: 1rem;
+  width: 50px;
+  height: 10px;
+  background-color: rgb(7, 58, 26);
+  position: absolute;
+  cursor: pointer;
+}
+
+.burger__label::before,
+.burger__label::after {
+  content: "";
+  width: 50px;
+  height: 10px;
+  background-color: rgb(7, 58, 26);
+  position: absolute;
+  display: block;
+  color: rgb(7, 58, 26);
+  transition: all 0.6s cubic-bezier(1, 0, 0, 1);
+}
+
+.burger__label::before {
+  top: -250%;
+  left: 0%;
+  transform: rotateZ(0deg);
+  transform-origin: left top;
+}
+
+.burger__label::after {
+  bottom: -250%;
+  left: 0%;
+  transform: rotateZ(0deg);
+  transform-origin: left bottom;
+}
+
+.burger__toggle:checked ~ .burger__label::before {
+  content: "";
+  background-color: rgb(7, 58, 26);
+  transform: rotateZ(65deg);
+  left: 10%;
+}
+
+.burger__toggle:checked ~ .burger__label::after {
+  content: "";
+  background-color: rgb(7, 58, 26);
+  transform: rotateZ(-65deg);
+  left: 10%;
+}
+
+.burger__toggle:checked ~ .burger__label {
+  background-color: white;
+}
+
+.burger__toggle ~ .burger__label {
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+input {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(7, 58, 26);
+  color: rgb(119, 224, 243);
+  grid-area: footer;
+  padding: 2rem;
+}
