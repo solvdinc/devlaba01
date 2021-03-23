@@ -10,7 +10,7 @@
     word-wrap: break-word;
   }
 
-  .aside {
+  .side {
     width: 100%;
     text-align: center;
   }
@@ -27,7 +27,7 @@
 
 /* mobile */
 @media (max-width: 600px) {
-  .aside {
+  .side {
     width: 100%;
     text-align: center;
   }
