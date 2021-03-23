@@ -47,7 +47,7 @@ section {
 
 article {
   float: left;
-  margin: 1% 1%;
+  margin: 5px 5px;
   width: calc(100% / 3.2);
 }
 

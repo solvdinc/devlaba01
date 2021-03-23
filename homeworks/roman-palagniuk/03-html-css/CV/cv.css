@@ -7,12 +7,12 @@
 aside {
   background-color: khaki;
   width: 23%;
-  padding: 18% 2% 3% 3%;
+  padding: 300px 30px 30px 50px;
   clip-path: ellipse(100% 100% at 0% 50%);
 }
 
 h3 {
-  margin: 1.5rem 0 0 5rem;
+  margin: 20px 0 0 50px;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ header {
   height: 6rem;
   background-color: rgb(59, 55, 20);
   color: khaki;
-  padding: 1% 3% 1% 3%;
+  padding: 20px 20px 20px 20px;
   text-align: center;
 }
 
@@ -72,18 +72,18 @@ main {
   display: flex;
   flex-direction: column;
   margin-left: 6%;
-  padding: 2% 3%;
+  padding: 20px 20px;
   font-size: 1.1rem;
   font-weight: 500;
   color: rgb(59, 55, 20);
 }
 
 .wrap > h3 {
-  margin-bottom: 2%;
+  margin-bottom: 20px;
 }
 
 .wrap > .line {
-  margin-bottom: 2%;
+  margin-bottom: 20px;
 }
 
 article > h3 {
@@ -99,16 +99,16 @@ footer {
 
 footer > p {
   margin: 0 auto;
-  padding: 2% 2%;
+  padding: 20px 20px;
   color: khaki;
 }
 
 .line {
   background-color: khaki;
   width: 100%;
-  height: 2%;
+  height: 5px;
 }
 
 section {
-  margin: 7% 0;
+  margin: 50px 50px;
 }
