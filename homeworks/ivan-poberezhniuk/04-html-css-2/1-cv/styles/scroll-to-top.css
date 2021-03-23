@@ -1,4 +1,5 @@
 .scroll-to-top {
+  display: none;
   height: 3rem;
   width: 3rem;
   z-index: 333;

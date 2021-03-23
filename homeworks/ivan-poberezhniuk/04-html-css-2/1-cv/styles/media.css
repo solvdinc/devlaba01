@@ -65,4 +65,8 @@
   .side__toggle:checked ~ .side-list__outer {
     display: block;
   }
+
+  .scroll-to-top {
+    display: block;
+  }
 }
