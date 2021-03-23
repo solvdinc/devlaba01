@@ -67,7 +67,7 @@ a {
     width: 600px;
 }
 
-.main-info article {
+.main-info article, section {
     margin-left: 20px;
 }
 
