@@ -32,7 +32,6 @@ html, body {
   grid-area: header;
   color:black;
   background-color:slateblue;
-  border: 1px dashed red ;
   display: grid;
   justify-content: space-around;
   align-content: center;
@@ -85,7 +84,6 @@ html, body {
 .sidebar {
   grid-area: sidebar;
   background: grey;
-  border: 1px dashed red ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,10 +146,9 @@ ul {
 
 /*FOOTER*/
 .footer {
-  font-size: 10px;
+  font-size: 15px;
   color: black;
   grid-area: footer ;
-  border: 1px dashed red ;
   justify-content: space-around;
   display: flex;
   align-items: center;
@@ -175,7 +172,6 @@ ul {
     top:0;
     bottom: 0;
     grid-area: header;
-    border: 1px dashed red ;
     color: #fff;
     display: flex;
     flex-direction: column;
