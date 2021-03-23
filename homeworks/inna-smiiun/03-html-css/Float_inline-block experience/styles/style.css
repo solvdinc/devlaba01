@@ -3,27 +3,33 @@
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
   color: black;
 }
+
 ul {
   list-style: none;
 }
+
 header {
   background: #f1f1f1;
   display: inline-block;
   width: 100%;
   padding: 20px;
 }
+
 .header-title {
   float: left;
   font-size: 36px;
 }
+
 .header-nav {
   float: right;
   display: inline-block;
 }
+
 .header-nav-list {
   display: inline-block;
 }
@@ -33,32 +39,39 @@ header {
   line-height: 40px;
   border-bottom: 2px solid transparent;
 }
+
 .header-nav-item:hover {
   opacity: 0.8;
   border-bottom: 2px solid black;
 }
+
 .header-nav-item_left {
   float: left;
   margin-right: 30px;
 }
+
 .header-nav-item_right {
   float: right;
 }
+
 .main-container {
   margin: auto;
   display: inline-block;
   padding: 10px 10%;
 }
+
 .main-nav {
   float: left;
   width: 25%;
   height: auto;
 }
+
 .main-content {
   float: right;
   width: 75%;
   padding: 0 10px;
 }
+
 .main-item {
   background: #f1f1f1;
   font-size: 26px;
@@ -67,35 +80,47 @@ header {
   padding: 0 10px;
   line-height: 1.8;
 }
+
 .section-title {
   font-size: 38px;
 }
+
 .section-about_text {
   font-size: 26px;
   margin: 20px 0;
 }
+
+.portfolio-list {
+  list-style: none;
+}
+
 .portfolio-title {
   margin-bottom: 16px;
 }
+
 .portfolio-item {
   float: left;
-  width: calc(31%);
-  margin-bottom: 28px;
-  margin-right: 2%;
+  width: 31%;
+  margin: 0 2% 28px 0;
 }
-.portfolio-item:nth-child(4n){
+
+.portfolio-item:nth-child(3n) {
   margin-right: 0;
 }
+
 .portfolio-item_image {
   width: 100%;
   height: auto;
 }
+
 .portfolio-item_title {
   font-size: 26px;
 }
+
 .portfolio-item_text {
   font-size: 26px;
 }
+
 footer {
   border-top: 1px solid #929292;
   font-size: 26px;
