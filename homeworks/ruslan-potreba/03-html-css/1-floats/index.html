@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="container">
         <h1 class="logo">Hello world!</h1>
         <nav class="header-navigation">
@@ -24,13 +24,13 @@
       </div>
     </header>
     <div class="container main-container">
-      <aside>
-        <nav class="aside-navigation">
-          <ul class="aside-naviation__menu">
-            <li class="aside-navigation__item">
+      <aside class="aside">
+        <nav class="aside__navigation">
+          <ul class="aside__menu">
+            <li class="aside__nav-item">
               <a href="#" class="aside-navigation__link">About us</a>
             </li>
-            <li class="aside-navigation__item">
+            <li class="aside__nav-item">
               <a href="#" class="aside-navigation__link">Portfolio</a>
             </li>
           </ul>
@@ -40,60 +40,54 @@
         <section class="about-us">
           <h1>About us</h1>
           <p class="about-us__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio hic
-            saepe inventore iusto quasi maiores, soluta sequi consequatur quas aliquid
-            sapiente, aperiam at consequuntur exercitationem architecto praesentium
-            asperiores optio?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio hic saepe inventore iusto quasi maiores, soluta sequi
+            consequatur quas aliquid sapiente, aperiam at consequuntur exercitationem architecto praesentium asperiores optio?
           </p>
           <p class="about-us__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio hic
-            saepe inventore iusto quasi maiores, soluta sequi consequatur quas aliquid
-            sapiente, aperiam at consequuntur exercitationem architecto praesentium
-            asperiores optio?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio hic saepe inventore iusto quasi maiores, soluta sequi
+            consequatur quas aliquid sapiente, aperiam at consequuntur exercitationem architecto praesentium asperiores optio?
           </p>
           <p class="about-us__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio hic
-            saepe inventore iusto quasi maiores, soluta sequi consequatur quas aliquid
-            sapiente, aperiam at consequuntur exercitationem architecto praesentium
-            asperiores optio?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio hic saepe inventore iusto quasi maiores, soluta sequi
+            consequatur quas aliquid sapiente, aperiam at consequuntur exercitationem architecto praesentium asperiores optio?
           </p>
         </section>
         <section class="portfolio">
           <h1>Portfolio</h1>
-          <article class="portfolio__card">
+          <div class="portfolio__card">
+            <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
+            <h2 class="portfolio__title">Project name</h2>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+          </div>
+          <div class="portfolio__card">
             <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
             <h2 class="portfolio__title">Project name</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </article>
-          <article class="portfolio__card">
+          </div>
+          <div class="portfolio__card">
             <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
             <h2 class="portfolio__title">Project name</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </article>
-          <article class="portfolio__card">
+          </div>
+          <div class="portfolio__card">
             <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
             <h2 class="portfolio__title">Project name</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </article>
-          <article class="portfolio__card">
+          </div>
+          <div class="portfolio__card">
             <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
             <h2 class="portfolio__title">Project name</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </article>
-          <article class="portfolio__card">
+          </div>
+          <div class="portfolio__card">
             <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
             <h2 class="portfolio__title">Project name</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </article>
-          <article class="portfolio__card">
-            <img src="https://fakeimg.pl/190x100/" alt="fakeimg" />
-            <h2 class="portfolio__title">Project name</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </article>
+          </div>
         </section>
       </main>
-      <footer>
-        <p class="copyright-sign">(c) Development Laba 2021</p>
+      <footer class="footer">
+        <span>(c) Development Laba 2021</span>
       </footer>
     </div>
   </body>

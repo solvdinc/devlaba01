@@ -22,8 +22,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-header {
-  width: 100%;
+.header {
   background-color: var(--main-grey-color);
 }
 
@@ -68,17 +67,18 @@ header {
 
 /*aside*/
 
-aside {
+.aside {
   width: 200px;
   height: 95%;
   margin-right: 10px;
   float: left;
 }
 
-.aside-naviation__menu {
+.aside__menu {
   list-style-type: none;
 }
-.aside-navigation__item {
+
+.aside__nav-item {
   width: 100%;
   height: 30px;
   background-color: var(--main-grey-color);
@@ -86,7 +86,8 @@ aside {
   padding: 5px 0 5px 15px;
   margin-top: 8px;
 }
-.aside-navigation__item:first-of-type {
+
+.aside__nav-item:first-of-type {
   margin-top: 0;
 }
 
@@ -110,17 +111,15 @@ aside {
   display: inline-block;
   margin-top: 15px;
 }
+
 .portfolio__title {
   font-size: 1.1rem;
 }
 
 /*footer*/
 
-footer {
+.footer {
   border-top: 2px solid var(--main-grey-color);
-}
-
-.copyright-sign {
-  margin-top: 10px;
   text-align: center;
+  padding-top: 5px;
 }

@@ -27,7 +27,6 @@ body {
   height: 100%;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 150px 1fr 1fr 50px;
-  gap: 0px 0px;
   grid-template-areas:
     'subheader header'
     'sidebar main'
@@ -51,7 +50,6 @@ body {
   font-size: 1.6rem;
   padding-bottom: 5px;
   border-bottom: 2px solid var(--main-navy-color);
-  /* margin: 50px 0 0 50px; */
 }
 
 .header__sub-title {
@@ -60,7 +58,7 @@ body {
 
 /*subheader*/
 
-.subheader {
+.photo {
   grid-area: subheader;
   background-color: var(--main-navy-color);
   color: var(--main-grey-color);
@@ -69,7 +67,7 @@ body {
   align-items: center;
 }
 
-.subheader__avatar {
+.photo__img {
   width: 120px;
   border-radius: 50%;
 }
@@ -93,7 +91,6 @@ body {
 .sidebar__title {
   font-size: 1.1rem;
   font-weight: 600;
-  /* text-transform: uppercase; */
 }
 
 .sidebar__contacts {
@@ -101,7 +98,6 @@ body {
   display: grid;
   grid-template-columns: 0.2fr 1fr;
   grid-template-rows: 1fr;
-  gap: 0px 0px;
   grid-template-areas: 'icon icon-text';
 }
 
@@ -118,10 +114,14 @@ body {
   font-size: 0.8rem;
 }
 
-.sidebar__soft-skills {
+.sidebar__list {
   margin-top: 8px;
-  padding-left: 10px;
   list-style: none;
+  list-style-type: '';
+}
+
+.items-pl {
+  padding-left: 30px;
 }
 
 /*main*/
@@ -141,6 +141,21 @@ body {
   margin-top: 20px;
 }
 
+.main__unordered-list {
+  margin-top: 8px;
+  list-style-type: '';
+  padding-left: 16px;
+  font-size: 0.8rem;
+}
+
+.main__ul-item {
+  margin-left: 10px;
+}
+
+.main__ul-item::marker {
+  font-weight: 600;
+}
+
 .main__section-title {
   font-size: 1.4rem;
   font-weight: 600;
@@ -158,10 +173,8 @@ body {
   margin-top: 5px;
 }
 
-.main__unordered-list {
-  margin-top: 8px;
-  list-style-type: none;
-  font-size: 0.8rem;
+.negative-ml {
+  margin-left: -24px;
 }
 
 /*footer*/
@@ -177,4 +190,18 @@ body {
   align-items: center;
   background-color: var(--main-grey-color);
   color: var(--main-navy-color);
+}
+
+/*list markers*/
+
+.ul-bluecheckbox {
+  list-style-type: '☑️ ';
+}
+
+.ul-fingerpoint {
+  list-style-type: '👉 ';
+}
+
+.ul-classicalbuilding {
+  list-style-type: '🏛️ ';
 }
