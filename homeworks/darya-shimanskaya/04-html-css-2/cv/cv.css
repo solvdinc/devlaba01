@@ -32,10 +32,6 @@ html, body {
     font-size: 2rem;
 }
 
-.header__menu{
-    display: none;
-}
-
 .block-right {
     grid-area: block-right;
     display: flex;
@@ -87,15 +83,19 @@ html, body {
         flex-direction: row;
     }
 
-    #header__menu {
-        padding: 2px;
-        margin: 35px 1px auto 10px;
-        flex-grow: 0.05;
-        border-bottom: 10px double white;
-        border-top: 3px solid white;
+    .header__menu {
+        margin: 30px 0 auto 10px;
+        width: 25px;
+    }
+
+    .header__menu:after,
+    .header__menu:before,
+    .header__menu .header__menu-content {
+        background-color: #fff;
         content: "";
-        height: 5px;
-        width: 20px;
+        display: block;
+        height: 2px;
+        margin: 7px 0;
     }
     
     .scroll-to-top {
