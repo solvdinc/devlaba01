@@ -24,6 +24,23 @@
   text-transform: lowercase;
 }
 
-.side__toggle {
+.side__humburger-toggle {
   display: none;
+}
+
+.side__humburger-icon {
+  display: none;
+}
+
+.side__humburger-icon {
+  width: 35px;
+  height: 4px;
+  position: relative;
+  background-color: var(--main-bg-color);
+  margin-bottom: 5px;
+}
+
+.side__humburger-icon:hover {
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) ease;
 }
