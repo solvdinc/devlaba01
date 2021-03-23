@@ -8,10 +8,6 @@ body {
     margin: 0;
 }
 
-a {
-    color: #373741;
-}
-
 .wrapper {
     width: 1000px;
     margin: 0 auto;
@@ -42,10 +38,6 @@ a {
     flex-direction: column;
 }
 
-.cv__photo {
-    margin-top: 20px;
-}
-
 .cv__photo img {
     width: 150px;
     height: 150px;
@@ -71,22 +63,12 @@ a {
     margin-left: 20px;
 }
 
-.header {
-    margin-top: 20px;
-    height: 150px;
-    background-color: #5c2020;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .header__name{
     font-size: 3.2rem;
     color: #e1d8cf;
 }
 
 .education__period {
-    font-style: italic;
     font-size: 1.8rem;
 }
 
