@@ -11,15 +11,17 @@
 
 <body>
     <div class="container">
-        <header class="header" id='top'>
-            <div class="header__img">
-                <img class="header__photo" src="photo.jpg" alt="CV photo">
-            </div>
-            <div class="header__info">
-                <h1 class="header__title"> Vitalina Poremchuk</h1>
-                <div class="header__text">Frontend developer</div>
-            </div>
-        </header>
+        <div class="header">
+            <header class="header__wrapper" id='top'>
+                <div class="header__img">
+                    <img class="header__photo" src="photo.jpg" alt="CV photo">
+                </div>
+                <div class="header__info">
+                    <h1 class="header__title"> Vitalina Poremchuk</h1>
+                    <div class="header__text">Frontend developer</div>
+                </div>
+            </header>
+        </div>
 
         <aside class="aside">
             <div class="aside__info">
@@ -32,13 +34,24 @@
             </div>
             <div class="aside__contact">
                 <h2 class="aside__title">Contact</h2>
-                <div class="aside__city"> Kyiv, Ukraine</div>
-                <div class="aside__phone">
-                    <a href="tel:+380932714475">+380932714475</a>
+                <div class="aside__wrapper">
+                    <div class="aside__box">
+                        <div class="aside__city"> Kyiv, Ukraine</div>
+                        <div class="aside__phone">
+                            <a href="tel:+380932714475">+380932714475</a>
+                        </div>
+                    </div>
+                    <div class="aside__box">
+                        <div class="aside__email">
+                            <a href="mailto:vitalinaporemchuk@ukr.net">vitalinaporemchuk@ukr.net</a>
+                        </div>
+                        <div class="aside__linkedin">
+                            <a href="www.linkedin.com/in/vitalina-poremchuk">Linkedin</a>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="aside__email">
-                    <a href="mailto:vitalinaporemchuk@ukr.net">vitalinaporemchuk@ukr.net</a>
-                </div>
+
             </div>
         </aside>
         <main class="main">
@@ -92,7 +105,7 @@
                 <h2 class="main__head">Language</h2>
                 <div class="main__info">
                     <ul class="amain__list">
-                        <li class="main__item">English - Intermidate</li>
+                        <li class="main__item">English - Intermediate</li>
                         <li class="main__item">Ukrainian - Native</li>
                         <li class="main__item">Russian - Native</li>
                     </ul>
