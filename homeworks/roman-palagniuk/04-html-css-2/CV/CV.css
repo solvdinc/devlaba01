@@ -15,7 +15,7 @@
 }
 
 .header {
-  width: 100vw;
+  width: 100%;
   height: 10rem;
   margin-bottom: 2rem;
   grid-area: header;
@@ -33,7 +33,7 @@
 }
 
 .footer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,7 +217,7 @@
   }
 
   .footer {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -283,7 +283,7 @@
   }
 
   .footer {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
