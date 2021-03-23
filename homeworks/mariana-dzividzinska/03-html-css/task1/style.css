@@ -15,7 +15,7 @@ a {
 }
 
 .container {
-    width: 810px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -70,6 +70,7 @@ main {
 .content {
     float: right;
     width: 600px;
+    padding: 10px;
 }
 
 .portfolio__project {
