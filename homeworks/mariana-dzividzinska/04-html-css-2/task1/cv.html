@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV by Mariana Dzividzinska</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body id="body">
+        <div class="wrapper">
+            <header class="header">
+                <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox"/>
+                    <label class="menu__btn" for="menu__toggle">
+                        <span class="menu__line"></span>
+                        <span class="menu__line"></span>
+                        <span class="menu__line"></span>
+                    </label>
+                    <nav class="header__navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__item"><a href="#education">Education</a></li>
+                            <li class="navigation__item"><a href="#skills">Skills</a></li>
+                            <li class="navigation__item"><a href="#experience">Experience</a></li>
+                            <li class="navigation__item"><a href="#hobby">Hobby</a></li>
+                            <li class="navigation__item"><a href="#contacts">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="intro">
+                    <img src="./assets/cv-photo.jpg" class="intro__photo" alt="cv photo">
+                    <h1 class="intro__name">Mariana Dzividzinska</h1>
+                </div>
+            </header>
+            <aside class="sidebar">
+                <article class="contacts" id="contacts">
+                    <div class="title">
+                        <h2 class="title__name contacts__title">Get in touch</h2>
+                        <div class="title__line"></div>
+                    </div>
+                    <ul class="contacts__list">
+                        <li class="contact__item">
+                            Email: mdzividzinska@ukr.net
+                        </li>
+                        <li class="contact__item">
+                            <a href="https://github.com/DzividzinskaM" class="link">GitHub</a>
+                        </li>
+                        <li class="contact__item">
+                            <a href="https://www.linkedin.com/in/mariana-dzividzinska-3a2b4b1a3/" class="link">LinkedIn</a>
+                        </li>
+                    </ul>
+                </article>
+            </aside>
+            <main class="main">
+                <section class="education" id="education">
+                    <div class="title">
+                        <h2 class="title__name contacts__title">Education</h2>
+                        <div class="title__line"></div>
+                    </div>
+                    <div class="education__period">2018-2022</div>
+                    <div class="education__university-name">National Technical University of Ukraine “Igor Sikorsky Kyiv Polytechnic Institute”</div>
+                    <div class="education__faculty-name">Faculty of Informatics and Computer Science</div>
+                    <div class="education__speciality">Specialty: Software engineering</div>
+                </section>
+                <article class="skills" id="skills">
+                    <div class="title">
+                        <h2 class="title__name contacts__title">Skills</h2>
+                        <div class="title__line"></div>
+                    </div>
+                    <ul class="skills__list">
+                        <li class="skills__item">HTML/CSS/JS</li>
+                        <li class="skills__item">Basic knowledge of React and Redux</li>
+                        <li class="skills__item">Basic knowledge of OOP</li>
+                        <li class="skills__item">C#, C++ programming languages</li>
+                        <li class="skills__item">Relational database management system - SQL Server</li>
+                        <li class="skills__item">GCP</li>
+                    </ul>
+                </article>
+                <article class="experience" id="experience">
+                    <div class="title">
+                        <h2 class="title__name contacts__title">Experience</h2>
+                        <div class="title__line"></div>
+                    </div>
+                    <div class="project">
+                        <h2 class="project__name">Social network</h2>
+                        <div class="project__description">Social network for developers</div>
+                        <div class="project__technologies">Technologies: React, Redux, Axios</div>
+                        <div class="project__source-code"><a href="https://github.com/DzividzinskaM/social-network" class="link">Source code</a></div>
+                    </div>
+                </article>
+                <article class="hobby" id="hobby">
+                    <div class="title">
+                        <h2 class="title__name contacts__title">Hobby</h2>
+                        <div class="title__line"></div>
+                    </div>
+                    <ul class="hobby__list">
+                        <li class="hobby__item">Travelling</li>
+                        <li class="hobby__item">Cooking</li>
+                    </ul>
+                </article>
+            </main>
+            <div class="to-top"><a href="#body">
+                <img class="to-top__img" src="https://ps.w.org/wpfront-scroll-top/assets/icon-256x256.png?rev=1534312" alt="to top button">
+            </a></div>
+        </div>
+    </body>
+</html>
