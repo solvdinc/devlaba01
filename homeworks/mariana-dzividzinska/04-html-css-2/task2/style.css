@@ -16,6 +16,7 @@ ul {
 .container {
     width: 960px;
     margin: 0 auto;
+    padding-left: 10px;
 }
 
 .header {
@@ -135,6 +136,7 @@ ul {
 @media(max-width: 768px){
     .main {
         flex-direction: column;
+        padding-left: 10px;
     }
     .photos {
         margin: 0 auto;
@@ -143,12 +145,13 @@ ul {
 
 @media(max-width: 600px) {
     .photos {
-        grid-template-columns: 400px;
-        grid-template-rows: repeat(6, 400px);
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(6, 300px);
+        column-gap: 0;
     }
     .photo__item {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
     }
     .photo__item_left-large {
         grid-column-end: 2;
