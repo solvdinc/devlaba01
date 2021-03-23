@@ -1,6 +1,5 @@
 html, body {
     box-sizing: border-box;
-    font-family: SansSerif;
     margin: 0;
     height: 100%;
     font-size: 10px;
@@ -22,41 +21,25 @@ html, body {
 .header {
     grid-area: header;
     display: flex;
-    flex-direction: row;
     text-align: center;
+    align-items: center;
+    flex-direction: column;
     justify-content: space-around;
     padding: 0 8px;
     background: #000;
     color: #cccccc;
     letter-spacing: 5px;
     font-size: 2rem;
-    font-family: "Shippori Mincho B1"
 }
 
 .header__menu{
     display: none;
 }
 
-@media (min-width: 601px) {
-    .header {
-        grid-area: header;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        padding: 0 8px;
-        background: #000;
-        color: #cccccc;
-        letter-spacing: 5px;
-        font-size: 2rem;
-        font-family: "Shippori Mincho B1"
-    }
-}
-
 .block-right {
     grid-area: block-right;
     display: flex;
-    padding: 20px 25px 0px 30px;
+    padding: 20px 25px 0 30px;
     flex-direction: column;
     font-size: 2.4rem;
 }
@@ -66,13 +49,13 @@ html, body {
     display: flex;
     background-color: #c9e4dc;
     flex-direction: column;
-    padding: 20px 30px 0px 25px;
+    padding: 20px 30px 0 25px;
     text-align: right;
     font-size: 2.2rem;
     color: #38485C;
 }
 
-h1.header__item {
+.header__item-1 {
     border: 2px solid whitesmoke;
     padding: 10px;
     margin-bottom: 0;
@@ -95,12 +78,13 @@ h1.header__item {
     display: none;
 }
 
-@media (max-width: 600px) and (min-width: 380px) {
+@media (max-width: 600px) {
     .header {
         position: sticky;
-        top: 1px;
+        top: 0;
         width: 100%;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        flex-direction: row;
     }
 
     #header__menu {
@@ -158,5 +142,3 @@ h1.header__item {
         font-size: 1.8rem;
     }
 }
-
-
