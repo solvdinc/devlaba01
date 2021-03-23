@@ -44,6 +44,7 @@
   color: #7ea4f2;
   border-bottom: 1px solid #7ea4f2;
 }
+
 .menu[type="checkbox"] {
   display: none;
 }
@@ -54,11 +55,13 @@
   cursor: pointer;
   z-index: 1;
 }
+
 .menu__button {
   width: 30px;
   height: 4px;
   background: black;
 }
+
 input.menu:checked ~ .header__menu {
   display: grid;
   grid-auto-flow: row;
@@ -78,66 +81,84 @@ input.menu:checked ~ .header__menu {
   justify-content: space-between;
   padding: 20px 20px 40px 20px;
 }
+
 .aside__title {
   margin-bottom: 10px;
 }
+
 .aside__text {
   text-align: justify;
 }
+
 .main {
   display: grid;
   grid-row-gap: 10px;
 }
+
 .block {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 10px;
 }
+
 .block__small {
   display: grid;
   grid-gap: 10px;
 }
+
 .block__image {
   width: 100%;
   height: auto;
 }
+
 .__big {
   height: 100%;
 }
+
 .block__reverse {
   grid-template-columns: 1fr 2fr;
 }
+
 .footer {
   text-align: center;
 }
+
 @media (max-width: 768px) {
   .header__menu {
     grid-gap: 16px;
   }
+
   .content {
     grid-template-columns: 1fr;
     grid-template-areas: "aside" "main";
   }
+
   .aside {
     grid-area: aside;
   }
+
   .aside__title {
     text-align: center;
   }
+
   .main {
     grid-area: main;
   }
 }
+
 @media (max-width: 567px) {
   .header__menu {
     display: none;
   }
+
   .header__link {
     border-bottom: 1px solid black;
   }
+
   .menu {
     display: grid;
   }
+
   .block {
     grid-template-columns: 1fr;
   }
