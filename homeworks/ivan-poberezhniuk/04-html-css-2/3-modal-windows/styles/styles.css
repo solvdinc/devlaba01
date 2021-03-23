@@ -1,0 +1,32 @@
+.modal {
+  z-index: 33;
+  padding: 1rem;
+  width: 60%;
+  margin-top: 2rem;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  overflow-y: auto;
+  margin: auto;
+}
+
+.modal__wrapper {
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+body {
+  overflow: hidden;
+  position: fixed;
+  background-color: lightgray;
+}
+
+@media screen and (max-width: 1000px) {
+  .modal {
+    margin: auto;
+    width: 90%;
+  }
+}
