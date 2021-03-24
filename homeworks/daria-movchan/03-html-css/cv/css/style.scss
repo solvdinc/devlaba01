@@ -10,7 +10,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
 .wrapper {
   width: 80%;
   display: flex;
@@ -34,26 +33,19 @@ body {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        border:  solid 2px white;
+        border: solid 2px white;
       }
     }
-
 
     .skills {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
 
-      label {
-
-      }
-
       progress {
         width: 100%;
-
       }
     }
-
   }
 
   section:nth-of-type(2) {
