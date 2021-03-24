@@ -38,6 +38,7 @@
   align-items: center;
   font-weight: bold;
   font-size: 2rem;
+  color: black;
 }
 
 .gallery__image-container:hover .gallery__image {
