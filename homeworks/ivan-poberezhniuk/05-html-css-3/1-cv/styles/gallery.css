@@ -39,6 +39,7 @@
   font-weight: bold;
   font-size: 2rem;
   color: black;
+  border-top: none;
 }
 
 .gallery__image-container:hover .gallery__image {
