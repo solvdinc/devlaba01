@@ -14,7 +14,7 @@
 
     .header__menu:after,
     .header__menu:before,
-    .header__menu .header__menu-content {
+    .header__menu-content {
         background-color: #fff;
         content: "";
         display: block;
@@ -68,11 +68,11 @@
         height: 100%;
         display: grid;
         grid-template:
-        "header" 110px
-        "block-left" 1fr
-        "block-right" 1fr
-        "footer" 30px
-        /auto;
+            "header" 110px
+            "block-left" 1fr
+            "block-right" 1fr
+            "footer" 30px
+            /auto;
     }
 
     .block-left {
@@ -95,9 +95,5 @@
 
     .footer {
         font-size: 1.4rem;
-    }
-
-    .portfolio__content {
-        justify-content: center;
     }
 }
