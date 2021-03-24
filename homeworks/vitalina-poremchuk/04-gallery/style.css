@@ -41,7 +41,7 @@ li {
 
 .nav__icon {
   display: none;
-  margin-right: 50px;
+  margin-right: 30px;
 }
 
 .active {
@@ -105,8 +105,21 @@ img {
     display: none;
   }
 
+  .content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .aside {
+    order: -1;
+  }
+
   .nav__icon {
     display: block;
+    justify-content: center;
+  }
+  .header {
+    width: 100%;
   }
 
   .header__title {
@@ -128,6 +141,9 @@ img {
   .main__img-left {
     grid-column: span 1;
     grid-row: span 1;
+  }
+  .footer {
+    width: 100%;
   }
 }
 
