@@ -144,7 +144,7 @@
 
 .side__section__list-item:hover {
   background: rgb(23, 29, 25);
-  background: linear-gradient(0deg, rgb(23, 29, 25) 0%, rgb(12, 199, 80) 100%);
+  background: linear-gradient(0deg, rgb(70, 71, 70) 0%, rgb(107, 122, 113) 100%);
 }
 
 .side__section__list {
