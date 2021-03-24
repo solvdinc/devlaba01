@@ -3,14 +3,15 @@
     box-sizing: border-box;
 }
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
 }
 .wrapper {
     background-color: grey;
-    padding: 0 10px;
+    padding: 10px 10px;
     height: 100%;
     font-size: 20px;
+
 }
 .wrapper > p:first-child{
     margin-top:0
@@ -34,16 +35,17 @@ h1{
     так что юзать flex-start + on child margin:auto */
     /* justify-content: center; */
     align-items: center;
-    padding: 0;
+    padding: 10px;
 }
 .modal-box {
     border-radius: 5px;
-    width: 65%;
+    max-width: 100%;
+    width: 100%;
     margin: auto;
-    height: 400px;
+    height: 80%;
     overflow-y: auto;
     background-color: honeydew;
-    padding: 0 10px 10px 10px;
+    padding: 10px;
 }
 .box__button {
     width: 100%;
@@ -53,10 +55,11 @@ h1{
     border-radius: 5px;
 }
 @media (max-width: 500px) {
-    .modal-box > p:not(:first-of-type) {
+    /* .modal-box > p:not(:first-of-type) {
         display: none;
-    }
+    } */
     .modal-box {
-        height: auto;
+        height: 100%;
+        width: 100%;
     }
 }

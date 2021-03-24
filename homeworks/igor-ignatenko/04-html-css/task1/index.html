@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +8,12 @@
     <title>My CV</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <div class="wrapper">
-        <header name='top' class='header'>
-            <section class='header__avatar-box'>
+    <div id='top' class="wrapper">
+        <header  class='header'>
+            <div class='header__avatar-box'>
                 <img class='header__image' src="./avatar.jpg" alt="avatar">
-            </section>
+            </div>
             <div class="header__title">
                 <h1 class="title__name">Ihor Ihnatenko</h1>
                 <hr style='width: 200px; border: 1px solid black;'>
@@ -29,11 +26,11 @@
                     <label class='navigation__btn' for="checkbox">
                         <span></span>
                     </label>
-                    <section class='navigation__list'>
+                    <nav class='navigation__list'>
                         <a class='navigation__item' href="#">Home</a>
                         <a class='navigation__item' href="#">Contacts</a>
                         <a class='navigation__item' href="#">About</a>
-                    </section>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -82,23 +79,25 @@
             <section class='sidebar__contacts'>
                 <h2 class='sidebar__title'>Contacts :</h2>
                 <div class="sidebar__contacts-list">
-                    <section class='sidebar__contact'>
+                    <div class='sidebar__contact'>
                         <img class='sidebar__imgage'
                             src='https://www.ixbt.com/img/n1/news/2019/1/4/Create-Gmail-Account_large.png' alt="email">
                         <article class='sidebar__link'><a
                                 href='mailto:ignatenko.igor.ol@gmail.com'>ignatenko.igor.ol@gmail.com</a></article>
-                    </section>
-                    <section class='sidebar__contact'>
+                    </div>
+                    <div class='sidebar__contact'>
                         <img class='sidebar__imgage'
-                            src='https://p7.hiclipart.com/preview/982/427/634/telephone-call-computer-icons-iphone-symbol-telefono-thumbnail.jpg' alt="tel">
-                        <article class='sidebar__link'><a
-                                href='tel:ignatenko.igor.ol@gmail.com'>+38(095)-943-44-82</a></article>
-                    </section>
-                    <section class='sidebar__contact'>
-                        <img class='sidebar__imgage' src='https://avatars.githubusercontent.com/u/9919?s=200&v=4' alt="github">
+                            src='https://p7.hiclipart.com/preview/982/427/634/telephone-call-computer-icons-iphone-symbol-telefono-thumbnail.jpg'
+                            alt="tel">
+                        <article class='sidebar__link'><a href='tel:ignatenko.igor.ol@gmail.com'>+38(095)-943-44-82</a>
+                        </article>
+                    </div>
+                    <div class='sidebar__contact'>
+                        <img class='sidebar__imgage' src='https://avatars.githubusercontent.com/u/9919?s=200&v=4'
+                            alt="github">
                         <article class='sidebar__link'><a
                                 href='https://github.com/Memoriarty1'>https://github.com/Memoriarty1</a></article>
-                    </section>
+                    </div>
                 </div>
             </section>
         </aside>
@@ -134,10 +133,12 @@
             <p>(c)Created by Ihor Ihnatenko 2021</p>
         </footer>
     </div>
-    <button class='button-up'
-        style='text-align: center; background-color: black; color: white; text-decoration: none; border-radius: 50%;'><a
-            style='color:wheat; text-decoration: none; width: 50px; height: 50px;' href="#top"> UP </a></button>
-
+    <div class='button-up'>
+        <a style=' text-decoration: none; 
+        text-align: center; background-color: black; color: white; height: 60px; width: 60px;
+        display: flex; justify-content: center; align-items: center;
+        ' href="#top"> UP </a>
+    </div>
 </body>
 
 </html>

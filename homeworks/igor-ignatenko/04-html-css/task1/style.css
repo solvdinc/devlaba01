@@ -139,9 +139,9 @@ ul {
   position: fixed;
   bottom:20px;
   right:20px;
-  height: 30px ; 
-  width: 30px;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*FOOTER*/
