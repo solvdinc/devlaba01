@@ -58,8 +58,8 @@ body {
   flex-wrap: wrap;
 }
 .wrapper section:nth-of-type(2) .interests span {
-  width: 30%;
   padding: 5px;
+  width: 30%;
 }
 
 /*# sourceMappingURL=style.css.map */
