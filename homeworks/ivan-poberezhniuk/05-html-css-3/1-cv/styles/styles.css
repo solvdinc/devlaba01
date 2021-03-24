@@ -1,4 +1,5 @@
 @import "./variables.css";
+@import "./animations.css";
 @import "./header.css";
 @import "./gallery.css";
 @import "./aside.css";
@@ -26,6 +27,7 @@ ul {
 a {
   color: var(--main-text-color);
   text-decoration: none;
+  display: block;
 }
 
 a:visited {
@@ -33,8 +35,13 @@ a:visited {
 }
 
 a:focus {
-  background-color: yellow;
   outline: none;
+  background-color: var(--main-bg-color-yellow);
+}
+
+a:hover {
+  animation: 0.5s linear 0s alternate flip;
+  background-color: var(--main-bg-color-yellow);
 }
 
 h2,

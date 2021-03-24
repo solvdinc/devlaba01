@@ -16,6 +16,13 @@
   border: 3px solid var(--main-bg-color-white);
   text-transform: uppercase;
   letter-spacing: 1.2rem;
+  transition-duration: 0.3s;
+}
+
+.header__name:hover {
+  color: var(--main-bg-color);
+  background-color: var(--main-bg-color-white);
+  transform: scale(1.05);
 }
 
 .header__position {
