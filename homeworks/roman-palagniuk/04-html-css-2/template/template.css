@@ -103,7 +103,7 @@
 
 @media (max-width: 600px) {
   .container {
-    font-size: xx-small;
+    font-size: small;
     text-align: center;
     display: grid;
     margin: 0 auto;
@@ -124,7 +124,7 @@
 
   .side {
     margin-top: 1rem;
-    font-size: smaller;
+    font-size: small;
     align-items: center;
   }
 
@@ -140,7 +140,10 @@
   }
 
   .mn__img__wrapper {
-    margin-top: 3rem;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .mn__img-small {
@@ -151,6 +154,7 @@
   .mn__img-big {
     height: 55%;
     width: 85%;
+    margin: 10px;
   }
 
   .footer {
@@ -165,7 +169,7 @@
 
 @media (max-width: 1270px) and (min-width: 600px) {
   .container {
-    font-size: x-small;
+    font-size: small;
     text-align: center;
     display: grid;
     margin: 0 auto;
@@ -188,7 +192,7 @@
 
   .side {
     margin-top: 1rem;
-    font-size: smaller;
+    font-size: small;
     align-items: center;
   }
 

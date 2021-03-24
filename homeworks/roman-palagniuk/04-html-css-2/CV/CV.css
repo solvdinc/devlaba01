@@ -61,14 +61,14 @@
 .header__title {
   font-size: 3rem;
   display: flex;
-  padding: 0.5rem 0.5rem 0.5rem 4rem;
+  padding: 10px 10px 10px 30px;
   color: rgb(7, 58, 26);
   text-align: center;
 }
 
 .header__subtitle {
-  margin-left: 4rem;
-  padding: 1rem 0;
+  margin-left: 50px;
+  padding: 10px 0;
   color: rgb(119, 224, 243);
   background-color: rgb(7, 58, 26);
   text-align: center;
@@ -164,19 +164,20 @@
     top: 0px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 3;
-    height: 200px;
+    height: 230px;
   }
 
   .top {
     text-decoration: none;
     display: block;
     position: fixed;
-    right: 18%;
+    right: 8%;
     bottom: 10%;
     font-weight: 600;
     color: rgb(119, 224, 243);
     background-color: rgb(7, 58, 26);
-    border-radius: 0.5rem;
+    padding: 5px;
+    border-radius: 5px;
     z-index: 5;
   }
 
@@ -202,8 +203,8 @@
   }
 
   .burger {
-    margin: 1.2rem;
-    display: block;
+    margin: 35px;
+    display: flex;
     flex-direction: column;
     justify-items: center;
     justify-content: center;
@@ -246,7 +247,7 @@
     top: 0px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 3;
-    height: 300px;
+    height: 230px;
   }
 
   .top {
@@ -268,8 +269,8 @@
   }
 
   .burger {
-    margin: 1.2rem;
-    display: block;
+    margin: 25px;
+    display: flex;
     flex-direction: column;
     justify-items: center;
     justify-content: center;
@@ -283,7 +284,7 @@
   .burger_line {
     display: inline-block;
     height: 8px;
-    width: 40px;
+    width: 60px;
     margin: 2px auto;
     background-color: rgb(255, 255, 255);
   }
