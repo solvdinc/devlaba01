@@ -53,11 +53,7 @@ body {
 .wrapper section:nth-of-type(2) table th, .wrapper section:nth-of-type(2) table td {
   padding: 10px;
 }
-.wrapper section:nth-of-type(2) .interests {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+
 .wrapper section:nth-of-type(2) .interests span {
   width: 30%;
   padding: 5px;
