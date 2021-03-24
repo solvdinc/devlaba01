@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 800px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+header span {
+  font-size: 24px;
+}
+header a {
+  float: right;
+  padding: 5px;
+}
+header h1 {
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+aside {
+  float: left;
+  height: 100%;
+  width: 25%;
+  padding-left: 5px;
+  padding-right: 10px;
+  margin-right: 0;
+}
+aside a {
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-right: 0;
+}
+
+main {
+  overflow: auto;
+}
+main section article {
+  float: left;
+  width: 190px;
+  margin-right: 10px;
+}
+
+footer {
+  text-align: center;
+  width: 90%;
+  padding: 10px;
+  border-top: 2px solid #f1f1f1;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
