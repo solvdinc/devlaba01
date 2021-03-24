@@ -1,5 +1,5 @@
 .container {
-  font-size: xx-small;
+  font-size: small;
   text-align: center;
   display: grid;
   margin: 0 auto;
@@ -15,7 +15,7 @@
   top: 0px;
   background-color: rgba(255, 255, 255, 1);
   z-index: 3;
-  height: 10rem;
+  height: 230px;
   width: 100%;
 }
 
@@ -23,24 +23,25 @@
   text-decoration: none;
   display: block;
   position: fixed;
-  right: 18%;
+  right: 8%;
   bottom: 10%;
   font-weight: 600;
   color: rgb(119, 224, 243);
   background-color: rgb(7, 58, 26);
-  border-radius: 0.5rem;
+  border-radius: 5px;
+  padding: 5px;
   z-index: 5;
 }
 
 .side {
-  margin: 1rem auto;
-  font-size: smaller;
+  margin: 15px auto;
+  font-size: small;
 }
 
 .mn {
   width: 95%;
-  padding: 0.3rem;
-  margin: 1rem auto;
+  padding: 5px;
+  margin: 15px auto;
 }
 
 .header__nav {
@@ -120,6 +121,17 @@ input {
   display: none;
 }
 
+.side__section {
+  margin-top: 10px;
+}
+
+.mn__section,
+.mn__article,
+.mn__section__text,
+.mn__section__subheader {
+  margin-top: 10px;
+}
+
 .footer {
   width: 100%;
   display: flex;
@@ -128,5 +140,5 @@ input {
   background-color: rgb(7, 58, 26);
   color: rgb(119, 224, 243);
   grid-area: footer;
-  padding: 2rem;
+  padding: 10px;
 }
