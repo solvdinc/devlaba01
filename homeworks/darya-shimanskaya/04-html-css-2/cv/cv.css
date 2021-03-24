@@ -13,9 +13,9 @@ html, body {
     height: 100%;
     display: grid;
     grid-template:
-    "header header" 160px
-    "block-left block-right" auto
-    /400px;
+        "header header" 160px
+        "block-left block-right" auto
+        /310px;
 }
 
 .header {
@@ -84,13 +84,12 @@ html, body {
     }
 
     .header__menu {
-        margin: 30px 0 auto 10px;
         width: 25px;
     }
 
     .header__menu:after,
     .header__menu:before,
-    .header__menu .header__menu-content {
+    .header__menu-content {
         background-color: #fff;
         content: "";
         display: block;
@@ -126,10 +125,10 @@ html, body {
         height: 100%;
         display: grid;
         grid-template:
-    "header" 110px
-    "block-left" 1fr
-    "block-right" 1fr
-    /auto;
+            "header" 110px
+            "block-left" 1fr
+            "block-right" 1fr
+            /auto;
     }
 
     .block-left {

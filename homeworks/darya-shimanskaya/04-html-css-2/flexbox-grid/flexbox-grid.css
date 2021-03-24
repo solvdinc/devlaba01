@@ -16,10 +16,10 @@ html, body {
     display: grid;
     gap: 20px;
     grid-template:
-    "header header" 70px
-    "content about" auto
-    "footer footer" 30px
-    / 1030px;
+        "header header" 70px
+        "content about" auto
+        "footer footer" 30px
+        / auto;
 }
 
 .header {
@@ -55,21 +55,21 @@ html, body {
     height: 100%;
     grid-area: content;
     display: grid;
-    grid-template-columns: repeat(3, 330px);
-    grid-template-rows: repeat(4, 280px);
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(4, 270px);
     grid-gap: 15px;
     margin-left: 10px;
 }
 
 .image._big{
-    grid-column: auto/ span 2;
-    grid-row: auto/ span 2;
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
 }
 
 .about {
     grid-area: about;
     float: right;
-    width: auto;
+    min-width: 300px;
     font-size: 1.8rem;
     line-height: 30px;
 }
@@ -99,11 +99,11 @@ html, body {
         display: grid;
         gap: unset;
         grid-template:
-        "header " 70px
-        "content" 1fr
-        "about" auto
-        "footer " 30px
-        / auto;
+            "header " 70px
+            "content" 1fr
+            "about" auto
+            "footer " 30px
+            / auto;
     }
 
     .header__menu {
