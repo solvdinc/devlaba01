@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
   height: 100%;
   font-family: Courier New;
-  cursor: default;
 }
 
 a {
@@ -27,13 +27,9 @@ a {
   box-shadow: 0 0 10px rgba(133, 133, 133, 0.5);
 }
 
-.header {
-  grid-area: header;
-  display: flex;
-  background-color: rgb(248, 248, 248);
-}
-
 .header__wrapper {
+  grid-area: header;
+  background-color: rgb(248, 248, 248);
   display: grid;
   width: 100%;
   grid-template-areas: "image info";
@@ -83,8 +79,6 @@ a {
 .main {
   grid-area: main;
   margin: 30px;
-  border-bottom: 1px solid rgb(202 199 212);
-  width: calc(100%-300px);
 }
 
 .main__info {
@@ -136,6 +130,7 @@ a {
   white-space: nowrap;
   overflow: hidden;
 }
+
 .main__head:after {
   content: "";
   width: 100%;
@@ -238,10 +233,12 @@ a {
     grid-template-areas:
       "image image"
       "info info";
+    grid-template-rows: 1fr;
   }
 
   .header__info {
     padding: 20px;
+    margin: 0;
   }
 
   .header__img {
@@ -265,12 +262,13 @@ a {
     white-space: nowrap;
     overflow: hidden;
   }
-  .aside__title::after {
+
+  .aside__title:after {
     content: "";
     width: 100%;
     display: block;
     position: absolute;
-    background-color: rgb(248 248 248);
+    background-color: rgb(202 199 212);
     height: 8px;
     top: 8px;
     z-index: -1;

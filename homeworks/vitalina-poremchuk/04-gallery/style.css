@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  cursor: default;
 }
 
 a {
@@ -12,14 +15,14 @@ li {
   list-style-type: none;
 }
 
-.container {
+.header {
   width: 1000px;
   margin: 0 auto;
   display: flex;
 }
 
 .header__title {
-  line-height: 20px;
+  line-height: 1.1em;
   font-weight: 300;
   font-size: 28px;
 }
@@ -30,10 +33,6 @@ li {
 
 .nav__list {
   display: flex;
-}
-
-.nav__item {
-  width: 100px;
 }
 
 .nav__link {
@@ -114,20 +113,13 @@ img {
     margin-left: 20px;
   }
 
-  .content {
-    flex-direction: column;
-  }
-
-  .aside {
-    order: -1;
-  }
-
   .main {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    /* gap: 10px; */
+    grid-template-columns: 400px;
+    align-self: center;
   }
+
   .main__img-right {
     grid-column: span 1;
     grid-row: span 1;
