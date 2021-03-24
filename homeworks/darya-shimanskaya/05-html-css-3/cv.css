@@ -15,7 +15,17 @@ html, body {
     grid-template:
     "header header" 160px
     "block-left block-right" auto
+    "footer footer" 30px
     /400px;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 1.8rem;
+    padding: 20px;
 }
 
 .header {
@@ -78,9 +88,68 @@ html, body {
 
 @keyframes update-border-color {
     50% {
-        border-color: #579280;
+        border-color: #66725c;
     }
     100% {
         border-color: #c9e4dc;
     }
+}
+
+.portfolio__content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item__image {
+    object-fit: cover;
+    width: 400px;
+    height: 320px;
+}
+
+.portfolio__item {
+    position: relative;
+    box-sizing: border-box;
+    margin: auto;
+    font-size: 2rem;
+    color: white;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.item__content-text {
+    position: absolute;
+    transform: translateX(100%);
+    padding: 10px;
+    top: 35%;
+    transition: transform .3s;
+}
+
+.portfolio__item:hover .item__content-text {
+    transform: translateX(0);
+}
+
+.item__content-title {
+    position: absolute;
+    padding-left: 25%;
+    transform: translateX(-100%);
+    top: 15%;
+    transition: transform .3s;
+}
+
+.portfolio__item:hover .item__content-title {
+    transform: translateX(0);
+}
+
+.portfolio__item-mask  {
+    position: absolute;
+    top: 0;
+    width: 500px;
+    height: 500px;
+    transition: transform .3s;
+    background-color: rgba(60,83,79,0.8);
+    transform: translate(100%, 50%);
+}
+
+.portfolio__item:hover .portfolio__item-mask  {
+    transform: translateY(0) rotate(45deg);
 }

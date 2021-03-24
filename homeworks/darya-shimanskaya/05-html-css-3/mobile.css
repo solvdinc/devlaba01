@@ -71,6 +71,7 @@
         "header" 110px
         "block-left" 1fr
         "block-right" 1fr
+        "footer" 30px
         /auto;
     }
 
@@ -82,5 +83,17 @@
 
     .block-right {
         font-size: 1.8rem;
+    }
+
+    .portfolio__item {
+        margin-bottom: 20px;
+    }
+
+    .item__image {
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 1.4rem;
     }
 }
