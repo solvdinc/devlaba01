@@ -96,4 +96,8 @@
     .footer {
         font-size: 1.4rem;
     }
+
+    .portfolio__content {
+        justify-content: center;
+    }
 }
