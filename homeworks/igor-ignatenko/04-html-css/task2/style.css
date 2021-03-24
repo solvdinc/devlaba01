@@ -25,7 +25,6 @@ h1  {
     background: whitesmoke;
     display:flex;
     justify-content: space-between;
-    flex-direction: row;
     align-items: center;
 }
 /*NAVIGATION*/
@@ -64,7 +63,6 @@ h1  {
 /*MAIN*/
 .main {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     padding-top: 10px;
 }
@@ -129,8 +127,11 @@ h1  {
         flex-direction: column;
     }
     .navigation__checkbox {
+        display: block;
+        margin:0px;
         width: 100%;
         left: 35%;
+        height: 100%;
         opacity: 0;
       }
     .navigation__link {
