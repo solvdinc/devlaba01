@@ -168,7 +168,7 @@
     z-index: 3;
     height: 250px;
     background-color: rgb(155, 145, 145);
-    border: 30px solid rgb(8, 8, 8);
+    border: 30px solid rgb(155, 145, 145);
   }
 
   .header__logo {

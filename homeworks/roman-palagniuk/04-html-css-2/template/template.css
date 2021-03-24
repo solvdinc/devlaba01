@@ -142,13 +142,14 @@
   .mn__img__wrapper {
     margin-top: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
   }
 
   .mn__img-small {
-    height: 30%;
-    width: 40%;
+    height: 100%;
+    width: 100%;
+    margin: 10px;
   }
 
   .mn__img-big {
