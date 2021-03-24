@@ -7,7 +7,7 @@
 .container {
   font-family: Helvetica, Arial, sans-serif;
   display: grid;
-  gap: 3rem;
+  gap: 0;
   grid-template-areas:
     "header header"
     "side mn"
@@ -16,11 +16,12 @@
 
 .header {
   width: 100%;
-  height: 10rem;
-  margin-bottom: 2rem;
+  height: 250px;
+  background-color: rgb(155, 145, 145);
   grid-area: header;
   display: flex;
   justify-content: space-around;
+  border: 30px solid rgb(8, 8, 8);
 }
 
 .mn {
@@ -30,6 +31,7 @@
 
 .side {
   grid-area: side;
+  background-color: rgb(155, 145, 145);
 }
 
 .footer {
@@ -37,24 +39,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(7, 58, 26);
-  color: rgb(119, 224, 243);
+  background-color: rgb(155, 145, 145);
+  color: rgb(255, 255, 255);
   grid-area: footer;
   padding: 2rem;
 }
 
 .header__logo {
-  margin: 3rem 3rem;
+  margin: 30px 30px;
+  border: 10px solid rgb(255, 255, 255);
 }
 
 .header__icon {
   font-size: 50px;
-  margin-left: -8%;
-  margin-top: -4%;
+  margin-left: 10px;
+  margin-top: 5px;
   float: left;
   width: 10%;
-  background-color: rgb(7, 58, 26);
-  color: rgb(119, 224, 243);
+  background-color: rgb(9, 10, 9);
+  color: rgb(255, 255, 255);
   border-radius: 0.5rem;
 }
 
@@ -62,17 +65,15 @@
   font-size: 3rem;
   display: flex;
   padding: 10px 10px 10px 30px;
-  color: rgb(7, 58, 26);
+  color: rgb(9, 10, 9);
   text-align: center;
 }
 
 .header__subtitle {
   margin-left: 50px;
   padding: 10px 0;
-  color: rgb(119, 224, 243);
-  background-color: rgb(7, 58, 26);
+  color: rgb(255, 255, 255);
   text-align: center;
-  border-radius: 0.5rem;
 }
 
 .header__nav {
@@ -80,13 +81,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgb(7, 58, 26);
+  color: rgb(9, 10, 9);
+  margin: 0 auto;
 }
 
 .header__link {
   text-decoration: none;
   padding: 1rem;
-  color: rgb(7, 58, 26);
+  color: rgb(9, 10, 9);
   font-weight: 600;
   font-size: 1.1rem;
   border-radius: 0.5rem;
@@ -102,8 +104,8 @@
 
 .mn__section {
   padding: 40px;
-  color: rgb(7, 58, 26);
-  background-color: rgba(119, 224, 243, 0.2);
+  color: rgb(9, 10, 9);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
 }
 
@@ -114,21 +116,21 @@
 .side__section {
   margin-top: 200px;
   margin-left: 30px;
-  padding: 30px 0;
+  padding: 30px 20px;
   font-size: 1.3rem;
 }
 
 .side__section__title {
-  padding: 20px 0;
-  color: rgb(119, 224, 243);
-  background-color: rgb(7, 58, 26);
+  padding: 10px 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(9, 10, 9);
   text-align: center;
   border-radius: 0.5rem;
 }
 
 .side__section__list-item {
   margin-top: 1rem;
-  color: rgb(7, 58, 26);
+  color: rgb(9, 10, 9);
   font-weight: bolder;
 }
 
@@ -143,12 +145,12 @@
 
 .side__section__link {
   text-decoration: none;
-  color: rgb(7, 58, 26);
+  color: rgb(9, 10, 9);
 }
 
 @media (max-width: 600px) {
   .container {
-    font-size: xx-small;
+    font-size: small;
     text-align: center;
     display: grid;
     margin: 0 auto;
@@ -164,7 +166,15 @@
     top: 0px;
     background-color: rgba(255, 255, 255, 1);
     z-index: 3;
-    height: 230px;
+    height: 250px;
+    background-color: rgb(155, 145, 145);
+    border: 30px solid rgb(8, 8, 8);
+  }
+
+  .header__logo {
+    height: 180px;
+    margin: auto auto;
+    border: none;
   }
 
   .top {
@@ -174,16 +184,18 @@
     right: 8%;
     bottom: 10%;
     font-weight: 600;
-    color: rgb(119, 224, 243);
-    background-color: rgb(7, 58, 26);
+    color: rgb(255, 255, 255);
+    background-color: rgb(9, 10, 9);
     padding: 5px;
     border-radius: 5px;
     z-index: 5;
   }
 
   .side {
-    margin: 1rem auto;
-    font-size: smaller;
+    margin: -80px auto;
+    font-size: small;
+    background-color: rgb(155, 145, 145);
+    width: 100%;
   }
 
   .side__section {
@@ -204,21 +216,20 @@
 
   .burger {
     margin: 35px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-items: center;
     justify-content: center;
-    height: 50px;
-    width: 50px;
-    background-color: rgb(7, 58, 26);
-    border-radius: 0.5rem;
+    height: 35px;
+    width: 45px;
     cursor: pointer;
   }
 
   .burger_line {
     display: inline-block;
     height: 8px;
-    width: 40px;
+    width: 100%;
     margin: 2px auto;
     background-color: rgb(255, 255, 255);
   }
@@ -228,8 +239,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(7, 58, 26);
-    color: rgb(119, 224, 243);
+    background-color: rgb(155, 145, 145);
+    color: rgb(255, 255, 255);
     grid-area: footer;
     padding: 20px;
   }
@@ -237,9 +248,9 @@
 
 @media (max-width: 1024px) and (min-width: 600px) {
   .container {
-    font-size: x-small;
+    font-size: small;
     text-align: center;
-    gap: 1rem;
+    gap: 0;
   }
 
   .header {
@@ -248,6 +259,14 @@
     background-color: rgba(255, 255, 255, 1);
     z-index: 3;
     height: 230px;
+    background-color: rgb(155, 145, 145);
+    border: 30px solid rgb(8, 8, 8);
+  }
+
+  .header__logo {
+    height: 150px;
+    margin: auto auto;
+    border: none;
   }
 
   .top {
@@ -255,8 +274,8 @@
   }
 
   .side {
-    margin-top: 15px;
-    font-size: smaller;
+    font-size: small;
+    background-color: rgb(155, 145, 145);
   }
 
   .mn {
@@ -276,15 +295,13 @@
     justify-content: center;
     height: 50px;
     width: 50px;
-    background-color: rgb(7, 58, 26);
-    border-radius: 0.5rem;
     cursor: pointer;
   }
 
   .burger_line {
     display: inline-block;
     height: 8px;
-    width: 60px;
+    width: 100%;
     margin: 2px auto;
     background-color: rgb(255, 255, 255);
   }
@@ -294,8 +311,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(7, 58, 26);
-    color: rgb(119, 224, 243);
+    background-color: rgb(155, 145, 145);
+    color: rgb(255, 255, 255);
     grid-area: footer;
     padding: 20px;
   }
