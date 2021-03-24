@@ -10,7 +10,7 @@
   gap: 0;
   grid-template-areas:
     "header header"
-    "side mn"
+    "side main"
     "footer footer";
 }
 
@@ -24,9 +24,9 @@
   border: 30px solid rgb(8, 8, 8);
 }
 
-.mn {
+.main {
   padding: 3rem;
-  grid-area: mn;
+  grid-area: main;
 }
 
 .side {
@@ -144,6 +144,7 @@
 
 .side__section__list-item {
   margin-top: 1rem;
+  padding: 5px;
   color: rgb(9, 10, 9);
   font-weight: bolder;
   transition: all 0.3s ease;
@@ -179,7 +180,7 @@ input {
   display: none;
 }
 
-.card_wrap {
+.card__wrap {
   height: 60%;
   width: 100%;
   display: flex;
@@ -188,7 +189,7 @@ input {
   margin: 20px 10px;
 }
 
-.border {
+.card__border {
   height: 95%;
   width: 95%;
   background: transparent;
@@ -198,7 +199,7 @@ input {
   margin: 20px 10px;
 }
 
-.border:hover {
+.card__border:hover {
   border: 5px solid rgb(107, 122, 113);
 }
 
@@ -226,10 +227,10 @@ input {
   background-size: 600px;
 }
 
-.card0:hover .card_title {
+.card0:hover .card__title {
   opacity: 1;
 }
-.card0:hover .card_text {
+.card0:hover .card__text {
   opacity: 1;
 }
 
@@ -243,10 +244,10 @@ input {
   background-size: 600px;
 }
 
-.card1:hover .card_title {
+.card1:hover .card__title {
   opacity: 1;
 }
-.card1:hover .card_text {
+.card1:hover .card__text {
   opacity: 1;
 }
 
@@ -260,14 +261,14 @@ input {
   background-size: 600px;
 }
 
-.card2:hover .card_title {
+.card2:hover .card__title {
   opacity: 1;
 }
-.card2:hover .card_text {
+.card2:hover .card__text {
   opacity: 1;
 }
 
-.card_title {
+.card__title {
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 10px;
@@ -277,7 +278,7 @@ input {
   transition: opacity 1s;
 }
 
-.card_text {
+.card__text {
   margin: 15px auto;
   padding: 15px;
   border-radius: 10px;

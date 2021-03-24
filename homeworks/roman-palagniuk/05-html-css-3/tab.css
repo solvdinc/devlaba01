@@ -49,7 +49,7 @@
   content: "";
   background-color: rgb(255, 255, 255);
   transform: rotateZ(60deg);
-  width: 60px;
+  width: 63px;
   left: 10%;
 }
 
@@ -57,7 +57,7 @@
   content: "";
   background-color: rgb(255, 255, 255);
   transform: rotateZ(-60deg);
-  width: 60px;
+  width: 63px;
   left: 10%;
 }
 
@@ -116,7 +116,7 @@ input {
   margin-top: 15px;
 }
 
-.card_wrap {
+.card__wrap {
   display: flex;
   flex-direction: column;
   width: 100%;
