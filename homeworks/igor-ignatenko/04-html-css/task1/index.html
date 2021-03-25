@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,26 @@
     <title>My CV</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id='top' class="wrapper">
-        <header  class='header'>
+        <header class='header'>
             <div class='header__avatar-box'>
-                <img class='header__image' src="./avatar.jpg" alt="avatar">
+                <div class="avatar-box__container">
+                    <img class='header__image' src="./images/avatar.jpg" alt="avatar">
+                </div>
             </div>
             <div class="header__title">
                 <h1 class="title__name">Ihor Ihnatenko</h1>
                 <hr style='width: 200px; border: 1px solid black;'>
                 <p class='title__role'>Front-end Developer</p>
             </div>
-
             <div class="navigation">
                 <div class="navigation__box">
-                    <input id='checkbox' type='checkbox' class="navigation__checkbox">
-                    <label class='navigation__btn' for="checkbox">
-                        <span></span>
-                    </label>
+                        <input id='checkbox' type='checkbox' class="navigation__checkbox">
+                        <label class='navigation__btn' for="checkbox">
+                            <span></span>
+                        </label>
                     <nav class='navigation__list'>
                         <a class='navigation__item' href="#">Home</a>
                         <a class='navigation__item' href="#">Contacts</a>
@@ -80,23 +83,28 @@
                 <h2 class='sidebar__title'>Contacts :</h2>
                 <div class="sidebar__contacts-list">
                     <div class='sidebar__contact'>
-                        <img class='sidebar__imgage'
-                            src='https://www.ixbt.com/img/n1/news/2019/1/4/Create-Gmail-Account_large.png' alt="email">
-                        <article class='sidebar__link'><a
-                                href='mailto:ignatenko.igor.ol@gmail.com'>ignatenko.igor.ol@gmail.com</a></article>
-                    </div>
-                    <div class='sidebar__contact'>
-                        <img class='sidebar__imgage'
-                            src='https://p7.hiclipart.com/preview/982/427/634/telephone-call-computer-icons-iphone-symbol-telefono-thumbnail.jpg'
-                            alt="tel">
-                        <article class='sidebar__link'><a href='tel:ignatenko.igor.ol@gmail.com'>+38(095)-943-44-82</a>
+                        <div class="contact__image-box">
+                            <img class='sidebar__image' src='./images/gmail-icon.png' alt="email">
+                        </div>
+                        <article class='sidebar__link'>
+                            <a href='mailto:ignatenko.igor.ol@gmail.com'>ignatenko.igor.ol@gmail.com</a>
                         </article>
                     </div>
                     <div class='sidebar__contact'>
-                        <img class='sidebar__imgage' src='https://avatars.githubusercontent.com/u/9919?s=200&v=4'
-                            alt="github">
+                        <div class="contact__image-box">
+                            <img class='sidebar__image' src='./images/tel-icon.png' alt="tel">
+                        </div>
+                        <article class='sidebar__link'>
+                            <a href='tel:ignatenko.igor.ol@gmail.com'>+38(095)-943-44-82</a>
+                        </article>
+                    </div>
+                    <div class='sidebar__contact'>
+                        <div class="contact__image-box">
+                            <img class='sidebar__image' src='./images/github-icon.png' alt="github">
+                        </div>
                         <article class='sidebar__link'><a
-                                href='https://github.com/Memoriarty1'>https://github.com/Memoriarty1</a></article>
+                            href='https://github.com/Memoriarty1'>https://github.com/Memoriarty1</a>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -116,8 +124,7 @@
             </section>
             <section class="content-info">
                 <h2 class='content__title'>Education:</h2>
-                <p class='content__text'><strong>Kyiv national university of construction and
-                        architecture</strong> </p>
+                <p class='content__text'><strong>Kyiv national university of construction and architecture</strong> </p>
                 <p class='content__text'>Master of Engineer Systems | 2019 - 2020 </p>
                 <p><strong>Hillel IT School </strong> </p>
                 <p class='content__text'>Front-end Pro | October 2020 - December 2020) </p>
@@ -125,8 +132,7 @@
             <section class="content-info">
                 <h2 class='content__title'>Experiance:</h2>
                 <p><strong>Project Engineer - "Profinstall" | 2019 - 2020</strong></p>
-                <p class='content__text'>I was designing air-conditioning and ventilation systems for public and
-                    industrial buildings.</p>
+                <p class='content__text'>I was designing air-conditioning and ventilation systems for public and industrial buildings.</p>
             </section>
         </main>
         <footer class='footer'>
@@ -134,10 +140,7 @@
         </footer>
     </div>
     <div class='button-up'>
-        <a style=' text-decoration: none; 
-        text-align: center; background-color: black; color: white; height: 60px; width: 60px;
-        display: flex; justify-content: center; align-items: center;
-        ' href="#top"> UP </a>
+        <a href="#top"> UP </a>
     </div>
 </body>
 

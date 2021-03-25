@@ -1,6 +1,7 @@
-* {
+*, *:after, *:before {
     box-sizing: border-box;
 }
+
 body, html {
     margin: 0;
     padding: 0;
@@ -16,10 +17,11 @@ h1  {
 .wrapper {
     max-width: 1250px;
     width: 100%;
-    margin: 0 auto;
     padding: 0 10px;
 }
+
 /*HEADER*/
+
 .header {
     box-shadow: 0 0 10px 10px rgba( 100, 100, 100, 0.2);
     background: whitesmoke;
@@ -27,15 +29,17 @@ h1  {
     justify-content: space-between;
     align-items: center;
 }
+
 /*NAVIGATION*/
+
 .navigation__checkbox {
     display: none;
 }
+
 .navigation__list {
     margin:0;
     padding: 0;
     display: flex;
-    text-decoration: none;
     list-style-type: none;
 }
 
@@ -50,6 +54,7 @@ h1  {
     padding-bottom: 5px;
     color: darkorchid;
 }
+
 .navigation__link._active::after {
     content: '';
     position: absolute;
@@ -60,20 +65,26 @@ h1  {
     height: 1px;
     background: blueviolet;
 }
+
 /*MAIN*/
+
 .main {
     display: flex;
     flex-wrap: wrap;
     padding-top: 10px;
 }
+
 .main__left-part {
     width:65%;
     padding-right: 10px;
 }
+
 .main__right-part {
     width: 30%;
 }
+
 /*GALLERY*/
+
 .gallery {
     display: grid;
     grid-template-rows: 1fr;
@@ -81,29 +92,35 @@ h1  {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
+
 .gallery img {
     max-width: 100%;
     width: 100%;
     height: 100%;
 }
+
 .gallery__item._big-yoda-left {
     grid-column: span 2;
     grid-row: span 2;
 }
+
 .gallery__item._big-yoda-right {
     grid-column: span 2;
     grid-row: span 2;
 }
 
 /*MEDIA*/
+
 @media (max-width: 800px) {
     .main__left-part, .main__right-part {
         width: 100%;
     }
+
     .header {
         position: sticky;
         top:0;
     }
+
     .main__left-part {
         order: 1;
         padding: 10px 0;
@@ -114,11 +131,12 @@ h1  {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
     }
+
     .main__left-part {
         padding: 10px 0
     }
+
     .navigation__box {
         position: relative;
         width: 75px;
@@ -126,6 +144,7 @@ h1  {
         display: flex;
         flex-direction: column;
     }
+
     .navigation__checkbox {
         display: block;
         margin:0px;
@@ -133,12 +152,14 @@ h1  {
         left: 35%;
         height: 100%;
         opacity: 0;
-      }
+    }
+
     .navigation__link {
         padding: 2px;
     }
+
     .navigation__list {
-        background-color:rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.3);
         visibility: hidden;
         display: flex;
         flex-direction: column;
@@ -148,62 +169,69 @@ h1  {
         right: 0;
         width: 75px;
     }
+
     .navigation__item {
         margin-top: 10px;
         background: whitesmoke;
         border-radius: 5px;
     }
+
     .navigation__item:last-child {
         margin-bottom: 10px;
     }
+
     .navigation__btn {
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        position:absolute;
-        flex-direction: column;
-        widows: 75px;
-        height: 25px;
+        justify-content: center;
+        position: absolute;
+        width: inherit;
+        height: inherit;
         cursor: pointer;
-        left: 50%;
       }
+    
       .navigation__checkbox:checked ~ .navigation__btn > span {
-        transform: rotate(45deg);
+        transform: translate(0, 0)  rotate(45deg);
       }
+    
       .navigation__checkbox:checked ~ .navigation__btn > span::before {
         top:0;
-        transform: rotate(0);
+        transform: translate(0, 0)  rotate(0);
       }
+    
       .navigation__checkbox:checked ~ .navigation__btn > span::after {
         top:0;
-        transform: rotate(90deg);
+        transform: translate(0, 0)  rotate(90deg);
       }
       
       .navigation__btn > span,
       .navigation__btn > span::after,
       .navigation__btn > span::before {
-        display: block;
         position: absolute;
         margin-bottom: 3px;
         width: 20px;
         height: 1px;
-        background-color: GREY;
-        transition-duration: .25s;
+        background-color: black;
+        transition:  transform  .40s ease
       }
+    
       .navigation__btn > span::after {
         content: '';
-        top:-8px
+        top: -8px
       }
+    
       .navigation__btn > span::before {
         content: '';
-        top:8px
+        top: 8px
       }
+    
       .navigation__checkbox:checked ~ .navigation__list {
         visibility: visible;
       }
 }
 
 /*FOOTER*/
+
 footer {
     text-align: center;
 }
