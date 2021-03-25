@@ -149,10 +149,7 @@ a {
   border-top: 50px solid rgb(202 199 212);
   border-left: 50px solid rgb(202 199 212);
   border-bottom: 50px solid rgb(202 199 212);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
   background-color: rgb(235, 228, 228);
   transform: rotate(-45deg);
 }
@@ -164,10 +161,7 @@ a {
   border-top: 50px solid rgb(202 199 212);
   border-left: 50px solid rgb(202 199 212);
   border-bottom: 50px solid rgb(202 199 212);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
   background-color: rgb(235, 228, 228);
   transform: rotate(-45deg);
 }
@@ -178,10 +172,7 @@ a {
   border-top: 50px solid rgb(202 199 212);
   border-left: 50px solid rgb(202 199 212);
   border-bottom: 50px solid transparent;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
   background-color: rgb(235, 228, 228);
   transform: rotate(-45deg);
 }
@@ -193,10 +184,7 @@ a {
   border-top: 50px solid rgb(202 199 212);
   border-left: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
   background-color: rgb(235, 228, 228);
   transform: rotate(-45deg);
 }
