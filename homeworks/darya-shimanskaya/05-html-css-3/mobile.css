@@ -83,10 +83,15 @@
 
     .block-right {
         font-size: 1.8rem;
+        padding: 10px;
     }
 
     .portfolio__item {
-        margin-bottom: 20px;
+        margin: 10px 0;
+    }
+
+    .item__content-title {
+        font-size: 2.4rem;
     }
 
     .item__image {

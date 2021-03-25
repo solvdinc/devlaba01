@@ -103,7 +103,7 @@ html, body {
 }
 
 .item__image {
-    object-fit: cover;
+    object-fit: none;
     width: 100%;
     height: 100%;
 }
@@ -116,13 +116,13 @@ html, body {
     font-size: 2rem;
     color: white;
     overflow: hidden;
-    text-align: justify;
+    text-align: center;
 }
 
 .item__content-text {
     position: absolute;
     transform: translateX(100%);
-    padding: 10px;
+    padding: 5px;
     top: 35%;
     transition: transform .3s;
 }
@@ -135,11 +135,13 @@ html, body {
     position: absolute;
     transform: translateX(-100%);
     top: 15%;
+    width: 100%;
     transition: transform .3s;
 }
 
 .portfolio__item:hover .item__content-title {
-    transform: translateX(65%);
+    transform: translateX(0);
+
 }
 
 .portfolio__item-mask {
