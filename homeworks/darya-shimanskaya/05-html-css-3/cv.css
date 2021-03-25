@@ -16,7 +16,7 @@ html, body {
         "header header" 160px
         "block-left block-right" auto
         "footer footer" 30px
-        /310px;
+        / 310px;
 }
 
 .footer {
@@ -110,9 +110,8 @@ html, body {
 
 .portfolio__item {
     position: relative;
-    box-sizing: border-box;
-    margin: 10px auto;
-    width: 400px;
+    margin: 10px;
+    flex-basis: 400px;
     height: 320px;
     font-size: 2rem;
     color: white;
@@ -134,17 +133,16 @@ html, body {
 
 .item__content-title {
     position: absolute;
-    padding-left: 25%;
     transform: translateX(-100%);
     top: 15%;
     transition: transform .3s;
 }
 
 .portfolio__item:hover .item__content-title {
-    transform: translateX(0);
+    transform: translateX(65%);
 }
 
-.portfolio__item-mask  {
+.portfolio__item-mask {
     position: absolute;
     top: 0;
     width: 500px;
@@ -154,6 +152,6 @@ html, body {
     transform: translateY(100%);
 }
 
-.portfolio__item:hover .portfolio__item-mask  {
+.portfolio__item:hover .portfolio__item-mask {
     transform: translateY(0) rotate(45deg);
 }
