@@ -8,9 +8,8 @@
 
 .modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  top: 0;
+  left: 0;
   background-color: rgba(204, 204, 204, 0.397);
   overflow-y: auto;
   width: 100%;
@@ -23,9 +22,11 @@
 .modal__container {
   background: #fff;
   border-radius: 20px;
-  max-width: 80%;
-  max-height: 80%;
+  width: 80%;
+  max-width: 700px;
+  max-height: 90%;
   overflow-y: auto;
+  margin: auto;
   padding: 10px;
 }
 
@@ -40,4 +41,14 @@
   border-radius: 5px;
   border: none;
   margin-right: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .modal__title {
+    font-size: 1.4rem;
+  }
+
+  .modal__text > p:not(:first-of-type) {
+    display: none;
+  }
 }
