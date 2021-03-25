@@ -15,7 +15,7 @@ html, body {
     grid-template:
         "header header" 160px
         "block-left block-right" auto
-        /310px;
+        / 310px;
 }
 
 .header {
@@ -128,7 +128,7 @@ html, body {
             "header" 110px
             "block-left" 1fr
             "block-right" 1fr
-            /auto;
+            / auto;
     }
 
     .block-left {

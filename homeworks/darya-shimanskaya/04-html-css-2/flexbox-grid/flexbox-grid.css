@@ -11,7 +11,7 @@ html, body {
     box-sizing: inherit;
 }
 
-.wrapper  {
+.wrapper {
     height: 100%;
     display: grid;
     gap: 20px;
@@ -61,7 +61,7 @@ html, body {
     margin-left: 10px;
 }
 
-.image._big{
+.image._big {
     grid-column: auto / span 2;
     grid-row: auto / span 2;
 }
@@ -118,7 +118,7 @@ html, body {
         margin-bottom: 0;
     }
 
-    .image._big{
+    .image._big {
         grid-column: auto;
         grid-row: auto;
     }
