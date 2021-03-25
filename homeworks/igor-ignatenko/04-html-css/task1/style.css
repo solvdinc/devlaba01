@@ -178,7 +178,7 @@ ul {
     grid-template-rows: 220px 1fr 1fr 30px;
     grid-template-areas:
     'header'
-    'sidebar'
+    'aside'
     'content'
     'footer';
   }
