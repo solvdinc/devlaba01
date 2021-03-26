@@ -50,23 +50,6 @@
   font-size: 1.3rem;
 }
 
-.sidebar__contact-link {
-  font-size: 0.9rem;
-}
-
-.sidebar__common-list-item {
-  font-size: 0.9rem;
-}
-
-.sidebar__contact-icon {
-  width: 23.55px;
-  height: 20px;
-}
-
-.items-pl {
-  padding-left: 32px;
-}
-
 .main {
   padding: 10px 10px 10px 30px;
 }

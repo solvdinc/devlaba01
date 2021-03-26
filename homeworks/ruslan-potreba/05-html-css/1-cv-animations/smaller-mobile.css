@@ -1,9 +1,9 @@
 .header__title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .header__sub-title {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .sidebar {
@@ -12,10 +12,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.sidebar__title {
-  text-align: center;
 }
 
 .sidebar__custom-list-item {
@@ -38,8 +34,4 @@
 
 .footer__copyright {
   font-size: 0.6rem;
-}
-
-.items-pl {
-  padding-left: 0;
 }

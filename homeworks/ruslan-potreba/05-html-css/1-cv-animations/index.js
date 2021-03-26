@@ -1,17 +1,23 @@
-scrollButton = document.querySelector('.scroll-to-top')
+window.addEventListener('load', () => {
+  scrollButton = document.querySelector('.scroll-to-top')
 
-window.onscroll = function () {
-  scrollFunction()
-}
+  window.addEventListener('scroll', () => {
+    scrollFunction()
+  })
 
-function scrollFunction() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    scrollButton.style.visibility = 'visible'
-  } else {
-    scrollButton.style.visibility = 'hidden'
+  scrollButton.addEventListener('click', () => {
+    scrollToTop()
+  })
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollButton.classList.add('_visible')
+    } else {
+      scrollButton.classList.remove('_visible')
+    }
   }
-}
 
-function scrollToTop() {
-  document.documentElement.scrollTop = 0
-}
+  function scrollToTop() {
+    document.documentElement.scrollTop = 0
+  }
+})
