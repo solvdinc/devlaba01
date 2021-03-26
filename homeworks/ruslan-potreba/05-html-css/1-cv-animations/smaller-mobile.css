@@ -1,0 +1,45 @@
+.header__title {
+  font-size: 1.4rem;
+}
+
+.header__sub-title {
+  font-size: 0.9rem;
+}
+
+.sidebar {
+  padding: 14px 4px 14px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sidebar__title {
+  text-align: center;
+}
+
+.sidebar__custom-list-item {
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'icon icon-text';
+}
+
+.sidebar__section:nth-of-type(n + 2) {
+  margin-top: 16px;
+}
+
+.main {
+  padding: 10px 10px 10px 15px;
+}
+
+.main__section-title {
+  font-size: 1.4rem;
+}
+
+.footer__copyright {
+  font-size: 0.6rem;
+}
+
+.items-pl {
+  padding-left: 0;
+}
