@@ -21,7 +21,7 @@ p {
     padding: 10px;
 }
 
-.modalWindow {
+.modal {
     position: fixed; 
     width: 50%;
     max-height: 80%;
@@ -34,18 +34,18 @@ p {
     padding: 20px;
 }
 
-.modalWindow__title {
+.modal__title {
     font-size: 2rem;
     padding-bottom: 5%; 
     margin: 0;
 }
 
-.modalWindow__text{
+.modal__text {
     padding: 0;
     padding-bottom: 10px;
 }
 
-.modalWindow__btn{
+.modal__btn {
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
@@ -63,14 +63,14 @@ p {
     float: right;
 }
 
-.modalWindow__btn:hover {
+.modal__btn:hover {
     border: none;
     cursor: pointer;
     background-color: #4c83f0;
 }
 
 @media (max-width: 901px) {
-    .modalWindow {
+    .modal {
         width: 80%;
     }
 }
