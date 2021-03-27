@@ -86,7 +86,7 @@ a {
 }
 
 .block {
-  background: white;
+  background: #fff;
   padding: 20px;
   color: #595f5f;
   box-shadow: 0 2px 7px 0 #747a7a;
@@ -199,13 +199,13 @@ a {
 }
 
 .portfolio__view .portfolio__photo {
-  transition: all 0.4s ease-in-out 0.5s;
+  transition: background-position 0.4s ease-in-out 0.5s;
 }
 
 .portfolio__view .portfolio__mask {
   background-color: rgba(146, 96, 91, 0.5);
   opacity: 0;
-  transition: all 0.3s ease-in 0.4s;
+  transition: opacity 0.3s ease-in 0.4s, background-color 0.3s ease-in 0.4s;
 }
 
 .portfolio__view .portfolio__title {
@@ -214,13 +214,13 @@ a {
   background: transparent;
   margin: 20px 40px 0px 40px;
   transform: scale(10);
-  transition: all 0.3s ease-in-out 0.1s;
+  transition: opacity 0.3s ease-in-out 0.1s, background-color 0.3s ease-in-out 0.1s, transform 0.3s ease-in-out 0.1s, border-bottom 0.3s ease-in-out 0.1s;
 }
 
 .portfolio__view .portfolio__text {
   opacity: 0;
   transform: scale(10);
-  transition: all 0.3s ease-in-out 0.2s;
+  transition: opacity 0.3s ease-in-out 0.2s, transform 0.3s ease-in-out 0.2s;
 }
 
 .portfolio__view:hover .portfolio__mask {
@@ -262,12 +262,12 @@ a {
   opacity: 1;
 }
 
-.section__content {
+.block__content {
   padding: 20px 0;
   font-size: 20px;
 }
 
-.section__list {
+.block__list {
   margin-left: 20px;
   list-style: square;
   display: grid;
@@ -391,7 +391,15 @@ footer {
     font-size: 18px;
   }
 
-  .section__content {
+  .block__content {
     font-size: 14px;
+  }
+
+  #btn-top {
+    display: block;
+  }
+
+  .show {
+    display: block;
   }
 }
