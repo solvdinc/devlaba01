@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color:inherit
+}
+
+body {
+    background-color: rgb(172, 190, 122);
+    color:white;
+    font-size: 20px;
+    font-family: 'Recursive', sans-serif;
+}
+ul > li {
+    margin-left: 20px;
+}
+/*header*/
+header {
+    background-color: darkslategrey;
+}
+.heading {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid red;
+}
+.line {
+    width: 35%;
+}
+.container {
+    max-width: 1600px;
+    margin: auto;
+}
+.heading-name {
+    background-color: darkcyan;
+    color: white;
+    max-width: 45%;
+    width: 100%;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contact {
+    display: flex;
+    align-items: center;
+    
+}
+.contact-text {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px
+}
+.contact-image {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+/*main*/
+.about {
+    margin-left: 375px;
+}
+.about li {
+    list-style-type: none;
+}
+.name-university {
+    font-size: 1.2rem;
+}
+.name-degree  {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.info {
+    display: flex;
+    justify-content: center;
+}
+
+.info-cards {
+    margin: auto;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-card {
+    width: 45%;
+    margin: 15px 0;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5)
+}
+
+
+.info-card > h1 {
+    margin-bottom: 15px
+}
+/*footer*/
+footer .container {
+    margin-top: 40px;
+    text-align: center;
+}
+@media (max-width: 850px) {
+    .info-card {
+        width: 100%;
+    }
+    .heading-name__title {
+        font-size: 5.5vw;
+    }
+    .heading-name__role {
+        font-size: 3.5vw;
+    }
+    .footer-text {
+        font-size: 2.4vw;
+    }
+    .info-cards-title {
+        font-size: 3.4vw;
+    }
+    .info-card > p, .info-card > ul, .contact-text {
+        font-size: 2.9vw;
+    }
+}

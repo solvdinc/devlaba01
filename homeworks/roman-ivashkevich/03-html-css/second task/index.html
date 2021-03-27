@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=1.0" />
+  <title>Cv task</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body
+  style="font-family: 'EB Garamond', serif; font-size: 2rem; max-width: 1920px; width: 100%; margin: 0 auto; overflow-x: hidden;">
+  <style>
+    .title {
+      color: goldenrod;
+      margin-right: 10px;
+      flex: 1;
+    }
+
+    .section {
+      position: relative;
+      display: flex;
+      padding: 20px;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      border-top: 1px solid #f1f1f1;
+    }
+  </style>
+  <!-- Header -->
+  <header class="header">
+    <div class="personal-container">
+      <img src="./assets/img/me.jpg" alt="personal-img" class="personal-img">
+      <div class="personal-content">
+        <div class="fullname">Roman Ivashkevich</div>
+        <div class="position">Solvd devlab student</div>
+      </div>
+    </div>
+    <nav class="contact_info-container">
+      <a href="mailto:roman.ivashkevich963@gmail.com" class="info-item email">
+        <i class="material-icons">email</i>
+        roman.ivashkevich963@gmail.com
+      </a>
+      <a href="tel:+375336100626" class="info-item mobile">
+        <i class="material-icons">phone</i>
+        +375336100626
+      </a>
+      <a href="javascript:void" class="info-item telegram">
+        <i class="material-icons">connect_without_contact</i>
+        @emarf
+      </a>
+      <a href="https://www.google.com/maps/@53.9510705,27.6884397,17.75z" target="_blank" class="info-item location">
+        <i class="material-icons">location_on</i>
+        Minsk, Belarus
+      </a>
+    </nav>
+  </header>
+  <!-- /Header -->
+
+  <!-- Main -->
+  <main class="main">
+    <!-- Personal info -->
+    <section class="personal_profile-section">
+      <h1 class="title">Personal info</h1>
+      <div class="profile-content">I’m going to start working as a Front-End Developer in IT company. My main goal is to
+        become a highly qualified full-stack developer. I also want to improve my soft skills to work in a team and in
+        the future become a lead developer, teach and improve my knowledge constantly.
+        About my personal skills: Creative spirit, reliable and professional, organized, time management, team player,
+        fast learner, motivated, goal-oriented, friendly.</div>
+    </section>
+    <!-- /Personal info -->
+    <!-- Skills -->
+    <section class="skills-section section">
+      <h2 class="title">Skills</h2>
+      <div class="skills">
+        <div class="left">
+          <ul>
+            <li class="skill">JavaScript</li>
+            <li class="skill">CSS3</li>
+            <li class="skill">HTML5</li>
+            <li class="skill">Gulp</li>
+          </ul>
+        </div>
+        <div class="center">
+          <ul>
+            <li class="skill">Webpack</li>
+            <li class="skill">SASS</li>
+            <li class="skill">LESS</li>
+            <li class="skill">GIT</li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul>
+            <li class="skill">Material UI</li>
+            <li class="skill">Bootstrap4</li>
+            <li class="skill">NodeJS(elementary)</li>
+            <li class="skill">React/Redux(elementary)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Skills -->
+    <!-- Work experience -->
+    <section class="work_experience-section section">
+      <h2 class="title">Work Experience</h2>
+      <div class="jobs-container">
+        <div class="job">
+          <div class="job-name">Dominos Delivery</div>
+          <div class="job-period">Sep 2019 - present</div>
+          <div class="job-description">Experience working in a team and stressful situations. Personal responsibility.
+          </div>
+        </div>
+        <div class="job">
+          <div class="job-name">Geodesy - Military photogrammetrist</div>
+          <div class="job-period">Aug 2019 - Apr 2020</div>
+          <div class="job-description">Used terrain images to digitize the electronic map. Learning foreign and
+            national landscapes.
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Work experience  -->
+    <!-- Education -->
+    <section class="education-section section">
+      <h2 class="title">Education</h2>
+      <div class="education">
+        <div class="education-item">
+          <div class="institution-name">Rolling Scopes School - JS/FE 2020(JavaScript/Front End)</div>
+          <div class="credential">
+            <a href="https://drive.google.com/file/d/1RYwG4o2kOoQM0dkm1m3x85nSstHelYw9/view" target="_blank"
+              class="credential__item">RS School credential</a>
+          </div>
+          <div class="education-period">Sep 2020 - Feb 2021</div>
+        </div>
+        <div class="education-item">
+          <div class="institution-name">Polotsk State University - Faculty of information Technologies(Geodesy)</div>
+          <div class="education-period">Aug 2014 - Jun 2019</div>
+        </div>
+      </div>
+    </section>
+    <!-- /Education -->
+    <!-- Languages -->
+    <section class="languages-section section">
+      <h2 class="title">Languages</h2>
+      <div class="languages-container">
+        <ul>
+          <li class="language">Russian</li>
+          <li class="language">English</li>
+        </ul>
+      </div>
+    </section>
+    <!-- /Languages -->
+  </main>
+  <!-- /Main -->
+  <footer class="footer" style="width: 90%; margin: 0 auto; text-align: center; padding: 10px;">
+    <p>Created by Roman Ivashkevich (c)2021</p>
+  </footer>
+</body>
+
+</html>

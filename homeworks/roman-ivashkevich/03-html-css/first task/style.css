@@ -1,0 +1,76 @@
+/* Common */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 10px;
+}
+
+/* /Common */
+
+/* Aside */
+.aside {
+  font-size: 1.8rem;
+  width: 25%;
+  float: left;
+  padding: 0 10px;
+}
+
+.aside .aside-item {
+  padding: 7px;
+  background: #f1f1f1;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.aside-item:hover {
+  background: #e2e2e2;
+}
+/* /Aside */
+
+/* Main */
+.main {
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+.title {
+  margin: 10px 0;
+}
+
+/* About us */
+.about-us .about-us-item {
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+/* /About us */
+
+/* Portfolio */
+.portfolio {
+  margin-bottom: 20px;
+}
+
+.project {
+  display: inline-block;
+  width: 190px;
+}
+
+.project .project-name {
+  font-weight: bold;
+}
+
+.project:nth-child(1n + 5) {
+  margin-top: 20px;
+}
+
+.project .project-description {
+  font-size: 1.6rem;
+}
+/* /Portfolio */
+
+/* /Main */

@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Common */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 10px;
+}
+/* /Common */
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 3px solid rgb(236, 179, 34);
+}
+
+.header .personal-container {
+  display: flex;
+}
+
+.personal-container .personal-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 7px 15px 16px 8px;
+}
+
+.personal-container .personal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.personal-content .fullname {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.personal-content .position {
+  font-size: 3rem;
+}
+
+.header .contact_info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_info-container .info-item {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  margin-top: 7px;
+}
+
+.info-item:hover {
+  color: crimson;
+  animation: shake 1.5s;
+}
+
+.material-icons {
+  margin-right: 10px;
+}
+
+/* Header */
+
+/* Main */
+.main {
+  margin: 10px;
+}
+
+/* Personal info */
+.personal_profile-section {
+  display: flex;
+  padding: 20px;
+}
+
+.personal_profile-section .profile-content {
+  flex: 2;
+}
+/* /Personal info */
+
+/* Skills */
+.skills-section .skills {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2;
+}
+
+.skills .skill {
+  font-weight: bold;
+  list-style-type: none;
+}
+.center {
+  margin: 0 20px;
+}
+/* /Skills */
+
+/*  Work experience  */
+.work_experience-section .jobs-container {
+  flex: 2;
+}
+
+.job:last-child {
+  margin-top: 20px;
+}
+
+.job .job-name {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.job .job-period {
+  font-style: italic;
+  margin: 7px 0;
+}
+/*  /Work experience  */
+
+/* Education */
+.education-section .education {
+  flex: 2;
+}
+
+.education-item:last-child {
+  margin-top: 20px;
+}
+
+.education-item .institution-name {
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.education-item .credential {
+  margin: 10px 0;
+}
+
+.credential .credential__item {
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.2s ease-in-out;
+}
+
+.credential:hover {
+  animation: shake 1.5s;
+}
+
+.credential__item:hover {
+  color: crimson;
+}
+
+.education-item .education-period {
+  font-style: italic;
+  margin: 7px 0;
+}
+/* /Education */
+
+/* Languages */
+
+.languages-section .languages-container {
+  flex: 2;
+}
+
+.language {
+  font-weight: bold;
+  list-style-type: none;
+}
+/* /Languages */
+/* /Main */
+
+/* Animation */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+}
+
+/* /Animation */

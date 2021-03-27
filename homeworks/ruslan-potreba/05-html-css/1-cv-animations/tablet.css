@@ -1,0 +1,48 @@
+.grid-container {
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 170px 1fr 1fr 50px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.header__title {
+  font-size: 2.1rem;
+}
+
+.header__sub-title {
+  font-size: 1.4rem;
+}
+
+.photo__img {
+  width: 150px;
+}
+
+._main-container {
+  width: 100%;
+}
+
+._text-container {
+  width: 80%;
+}
+
+.sidebar__section {
+  padding-left: 10px;
+}
+
+.sidebar__title {
+  font-size: 1.6rem;
+}
+
+.main {
+  padding: 0 0 0 30px;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+}

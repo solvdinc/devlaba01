@@ -1,0 +1,7 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--main-bg-color), var(--main-bg-color-alt));
+  min-height: 50px;
+}

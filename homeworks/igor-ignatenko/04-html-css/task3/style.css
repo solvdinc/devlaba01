@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    background-color: grey;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.wrapper__text:first-child{
+    margin-top: 0;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: flex-start;
+    /* если взять центр то если высота модального 
+    окна будет больше родителя то он будет вылезить сверху, 
+    так что юзать flex-start + on child margin:auto */
+    /* justify-content: center; */
+    align-items: center;
+    padding: 24px;
+}
+
+.modal-box {
+    border-radius: 5px;
+    max-width: 720px;
+    margin: auto;
+    overflow-y: auto;
+    background-color: honeydew;
+    padding: 15px;
+}
+
+.box__button {
+    text-align: right;
+}
+
+.button {
+    border-radius: 5px;
+}
+
+@media (max-width: 400px) {
+    .modal-box__text:not(:first-of-type) {
+        display: none;
+    }
+}

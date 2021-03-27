@@ -1,0 +1,41 @@
+@media (max-width: 850px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "img1 img2"
+      "img3 img4"
+      "img5 img6";
+  }
+}
+
+@media (max-width: 768px) {
+  .header__title {
+    display: none;
+  }
+
+  .header {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .main {
+    padding: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "img1 img1"
+      "img2 img2"
+      "img3 img3"
+      "img4 img4"
+      "img5 img5"
+      "img6 img6";
+  }
+}
