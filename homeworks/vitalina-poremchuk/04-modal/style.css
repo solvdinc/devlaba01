@@ -15,18 +15,27 @@
   background-color: rgba(204, 204, 204, 0.397);
   overflow-y: auto;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.modal::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .modal__container {
+  display: inline-block;
+  vertical-align: middle;
   background: #fff;
   border-radius: 20px;
   width: 80%;
   max-width: 700px;
   overflow-y: auto;
-  margin: 24px;
+  margin: auto;
   padding: 10px;
 }
 
