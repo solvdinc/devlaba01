@@ -1,0 +1,47 @@
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    .header {
+        position: sticky;
+        top: 0;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: "header" "left" "right" "footer"
+    }
+    .header__name,
+    .header__title {
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+    .avatar_round {
+        width: 80%;
+        align-self: center;
+        margin-left: 10%;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .first-block {
+        display: flex;
+        align-items: flex-start;
+    }
+    .second-block {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .skills,
+    .hobbies {
+        margin-left: 20%;
+    }
+    .footer {
+        height: 100px;
+        align-items: flex-end;
+        margin-bottom: 10%;
+    }
+    .up-btn {
+        display: initial;
+    }
+}
