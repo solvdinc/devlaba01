@@ -135,9 +135,7 @@ a {
   grid-template-columns: 1fr;
   grid-row-gap: 10px;
 }
-.inna {
-  display: block;
-}
+
 footer {
   padding: 20px 0;
   text-align: center;
@@ -230,6 +228,7 @@ footer {
   .show {
     display: block;
   }
+
   .contacts__list {
     padding: 10px 0;
   }
@@ -249,6 +248,7 @@ footer {
   .block__content {
     font-size: 14px;
   }
+
   #btn-top {
     display: block;
   }
