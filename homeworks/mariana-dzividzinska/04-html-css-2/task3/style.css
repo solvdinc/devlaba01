@@ -1,18 +1,22 @@
-html, body {
+html,
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
     box-sizing: inherit;
 }
 
 .wrapper {
     background: #c1c1c1;
+    min-height: 100vh;
 }
 
-.content {
+.content-section {
     margin: 0;
     padding: 10px;
 }
@@ -26,6 +30,11 @@ html, body {
     max-height: 90%;
     overflow-y: auto;
     border-radius: 10px;
+    width: 60%;
+}
+
+.modal-header__name {
+    margin: 0;
 }
 
 .modal::-webkit-scrollbar {
@@ -33,18 +42,34 @@ html, body {
 }
 
 .modal__wrapper {
-    padding: 10px;
+    padding: 10px 20px;
+}
+
+.modal__description {
+    padding-right: 50px;
 }
 
 .modal__btn {
     text-align: right;
 }
 
-.btn__ok {
+.modal-btn__ok {
     border-radius: 3px;
     border: none;
     background: #0b5ed7;
     color: #fff;
     width: 75px;
     height: 30px;
+}
+
+@media(max-width: 1024px) {
+    .modal {
+        width: 90%;
+    }
+    .modal__wrapper {
+        padding: 10px;
+    }
+    .modal__description {
+        padding-right: 0;
+    }
 }

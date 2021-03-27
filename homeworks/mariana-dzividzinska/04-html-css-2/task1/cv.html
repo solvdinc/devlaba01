@@ -9,99 +9,121 @@
     </head>
     <body id="body">
         <div class="wrapper">
-            <header class="header">
-                <div class="hamburger-menu">
-                    <input id="menu__toggle" type="checkbox"/>
-                    <label class="menu__btn" for="menu__toggle">
-                        <span class="menu__line"></span>
-                        <span class="menu__line"></span>
-                        <span class="menu__line"></span>
+            <header class="main-header">
+                <div class="main-header__hamburger-menu">
+                    <input class="hamburger-menu__toggle" id="menu__toggle" type="checkbox" name="menu__toggle"/>
+                    <label class="hamburger-menu__btn" for="menu__toggle">
+                        <span class="hamburger-menu__line"></span>
+                        <span class="hamburger-menu__line"></span>
+                        <span class="hamburger-menu__line"></span>
                     </label>
-                    <nav class="header__navigation">
-                        <ul class="navigation__list">
-                            <li class="navigation__item"><a href="#education">Education</a></li>
-                            <li class="navigation__item"><a href="#skills">Skills</a></li>
-                            <li class="navigation__item"><a href="#experience">Experience</a></li>
-                            <li class="navigation__item"><a href="#hobby">Hobby</a></li>
-                            <li class="navigation__item"><a href="#contacts">Contacts</a></li>
+                    <nav class="main-header__main-navigation">
+                        <ul class="main-navigation__list">
+                            <li class="main-navigation-list__item">
+                                <a href="#education" class="main-navigation-list__item-link">Education</a>
+                            </li>
+                            <li class="main-navigation-list__item">
+                                <a href="#skills" class="main-navigation-list__item-link">Skills</a>
+                            </li>
+                            <li class="main-navigation-list__item">
+                                <a href="#experience" class="main-navigation-list__item-link">Experience</a>
+                            </li>
+                            <li class="main-navigation-list__item">
+                                <a href="#hobby" class="main-navigation-list__item-link">Hobby</a>
+                            </li>
+                            <li class="main-navigation-list__item">
+                                <a href="#contacts" class="main-navigation-list__item-link">Contacts</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
-                <div class="intro">
-                    <img src="./assets/cv-photo.jpg" class="intro__photo" alt="cv photo">
-                    <h1 class="intro__name">Mariana Dzividzinska</h1>
+                <div class="main-header__intro">
+                    <img src="./assets/cv-photo.jpg" class="main-header-intro__photo" alt="cv photo">
+                    <h1 class="main-header-intro__name">Mariana Dzividzinska</h1>
                 </div>
             </header>
-            <aside class="sidebar">
-                <article class="contacts" id="contacts">
-                    <div class="title">
-                        <h2 class="title__name contacts__title">Get in touch</h2>
-                        <div class="title__line"></div>
-                    </div>
-                    <ul class="contacts__list">
-                        <li class="contact__item">
-                            Email: mdzividzinska@ukr.net
-                        </li>
-                        <li class="contact__item">
-                            <a href="https://github.com/DzividzinskaM" class="link">GitHub</a>
-                        </li>
-                        <li class="contact__item">
-                            <a href="https://www.linkedin.com/in/mariana-dzividzinska-3a2b4b1a3/" class="link">LinkedIn</a>
-                        </li>
-                    </ul>
-                </article>
+            <aside class="sidebar-contacts" id="contacts">
+                <div class="section-title">
+                    <h2 class="section-title__name">Get in touch</h2>
+                    <div class="section-title__line"></div>
+                </div>
+                <ul class="sidebar-contacts__list">
+                    <li class="sidebar-contacts-list__item">
+                        Email: mdzividzinska@ukr.net
+                    </li>
+                    <li class="sidebar-contacts-list__item">
+                        <a href="https://github.com/DzividzinskaM" class="sidebar-contacts-list__item-link link">GitHub</a>
+                    </li>
+                    <li class="sidebar-contacts-list__item">
+                        <a href="https://www.linkedin.com/in/mariana-dzividzinska-3a2b4b1a3/" 
+                            class="sidebar-contacts-list__item-link link">
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
             </aside>
-            <main class="main">
-                <section class="education" id="education">
-                    <div class="title">
-                        <h2 class="title__name contacts__title">Education</h2>
-                        <div class="title__line"></div>
+            <main class="main-content">
+                <section class="education-section" id="education">
+                    <div class="section-title">
+                        <h2 class="section-title__name">Education</h2>
+                        <div class="section-title__line"></div>
                     </div>
-                    <div class="education__period">2018-2022</div>
-                    <div class="education__university-name">National Technical University of Ukraine “Igor Sikorsky Kyiv Polytechnic Institute”</div>
-                    <div class="education__faculty-name">Faculty of Informatics and Computer Science</div>
-                    <div class="education__speciality">Specialty: Software engineering</div>
+                    <div class="education-section__period">2018-2022</div>
+                    <div class="education-section__university-name">National Technical University of Ukraine “Igor Sikorsky Kyiv 
+                        Polytechnic Institute”</div>
+                    <div class="education-section__faculty-name">Faculty of Informatics and Computer Science</div>
+                    <div class="education-section__speciality">Specialty: Software engineering</div>
                 </section>
-                <article class="skills" id="skills">
-                    <div class="title">
-                        <h2 class="title__name contacts__title">Skills</h2>
-                        <div class="title__line"></div>
+                <article class="skills-section" id="skills">
+                    <div class="section-title">
+                        <h2 class="section-title__name">Skills</h2>
+                        <div class="section-title__line"></div>
                     </div>
-                    <ul class="skills__list">
-                        <li class="skills__item">HTML/CSS/JS</li>
-                        <li class="skills__item">Basic knowledge of React and Redux</li>
-                        <li class="skills__item">Basic knowledge of OOP</li>
-                        <li class="skills__item">C#, C++ programming languages</li>
-                        <li class="skills__item">Relational database management system - SQL Server</li>
-                        <li class="skills__item">GCP</li>
+                    <ul class="skills-section__list">
+                        <li class="skills-section-list__item">HTML/CSS/JS</li>
+                        <li class="skills-section-list__item">Basic knowledge of React and Redux</li>
+                        <li class="skills-section-list__item">Basic knowledge of OOP</li>
+                        <li class="skills-section-list__item">C#, C++ programming languages</li>
+                        <li class="skills-section-list__item">Relational database management system - SQL Server</li>
+                        <li class="skills-section-list__item">GCP</li>
                     </ul>
                 </article>
-                <article class="experience" id="experience">
-                    <div class="title">
-                        <h2 class="title__name contacts__title">Experience</h2>
-                        <div class="title__line"></div>
+                <article class="experience-section" id="experience">
+                    <div class="section-title">
+                        <h2 class="section-title__name">Experience</h2>
+                        <div class="section-title__line"></div>
                     </div>
-                    <div class="project">
-                        <h2 class="project__name">Social network</h2>
-                        <div class="project__description">Social network for developers</div>
-                        <div class="project__technologies">Technologies: React, Redux, Axios</div>
-                        <div class="project__source-code"><a href="https://github.com/DzividzinskaM/social-network" class="link">Source code</a></div>
+                    <div class="experience-section-projects__list">
+                        <div class="experience-projects__item">
+                            <h3 class="experience-project-item__name">Social network</h3>
+                            <div class="experience-project-item__description">Social network for developers</div>
+                            <div class="experience-project-item__technologies">Technologies: React, Redux, Axios</div>
+                            <div class="experience-project-item__source-code">
+                                <a href="https://github.com/DzividzinskaM/social-network" 
+                                    class="experience-project-item__source-code-link link">
+                                    Source code
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </article>
-                <article class="hobby" id="hobby">
-                    <div class="title">
-                        <h2 class="title__name contacts__title">Hobby</h2>
-                        <div class="title__line"></div>
+                <article class="hobby-section" id="hobby">
+                    <div class="section-title">
+                        <h2 class="section-title__name">Hobby</h2>
+                        <div class="section-title__line"></div>
                     </div>
-                    <ul class="hobby__list">
-                        <li class="hobby__item">Travelling</li>
-                        <li class="hobby__item">Cooking</li>
+                    <ul class="hobby-section__list">
+                        <li class="hobby-section-list__item">Travelling</li>
+                        <li class="hobby-section-list__item">Cooking</li>
                     </ul>
                 </article>
             </main>
-            <div class="to-top"><a href="#body">
-                <img class="to-top__img" src="https://ps.w.org/wpfront-scroll-top/assets/icon-256x256.png?rev=1534312" alt="to top button">
-            </a></div>
+            <div class="to-top-btn">
+                <a href="#body" class="to-top-btn__link">
+                    <img class="to-top-btn__img" src="https://ps.w.org/wpfront-scroll-top/assets/icon-256x256.png?rev=1534312" 
+                        alt="to top button">
+                </a>
+            </div>
         </div>
     </body>
 </html>
