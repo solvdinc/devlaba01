@@ -19,11 +19,11 @@ body {
 .container {
     display: grid;
     grid-template: 
-    "header header" 20rem
-    "main main" 80rem;
+        "header header" 20rem
+        "main main" 80rem;
 }
 
-.scrollButton {
+.scroll-button {
     display: none;
 }
 
@@ -81,7 +81,6 @@ body {
     display: flex;
 }
 
-
 .left-side {
     width: 30%;
     background-color: #2d2d2d;
@@ -113,41 +112,41 @@ body {
     font-style: italic;
 }
 
-._about-desc {
+.about__desc {
     margin-left: 100px;
     margin-right: 10px;
 }
 
-.fact {
+.facts__item {
     list-style-type: none;
     margin-left: 100px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
 
-.fact:before {
+.facts__item:before {
     content: "⚝ ";
     padding-right: 5px;
 }
 
-.social-item {
+.contacts__item {
     margin-left: 100px;
     display: flex;
     margin-bottom: 20px;
 }
 
-.contact-title {
+.contacts__title {
     margin-left: 0;
     margin-bottom: 5px;
 }
 
-.social-img-link {
+.contacts__img {
     width: 35px;
     height: 35px;
     margin-right: 20px;
 }
 
-.social-link {
+.contacts__link {
     text-decoration: none;
     color: rgb(247, 243, 233);
     font-size: 1rem;
@@ -155,7 +154,7 @@ body {
     font-style: italic;
 }
 
-.social-link:hover {
+.contacts__link:hover {
     color: rgb(250, 236, 201);
 }
 
@@ -176,52 +175,44 @@ body {
     margin-left: 50px;
 }
   
-.first-skills {
+.skill-lists__list {
     width: 45%;
     display: inline-block;
+    margin-right: 30px;
 }
 
-.list-type-skill {
+.skill-lists__item {
     list-style-type: none;
-}
-  
-.second-skills {
-    width: 45%;
-    display: inline-block;
-    margin-left: 72px;
-}
-  
-.list-margin {
     margin-bottom: 10px;
     font-size: 1.2em;
 }
   
-.skill-name {
+.skill-lists__name {
     opacity: 0.7;
 }
   
-.align-right {
+.skill-lists__mark {
     float: right;
     color: #301a33;
 }
   
-.grey {
+.skill-lists_color_grey {
     color: #8c8c8c;
 }
 
-.project {
+.item {
     list-style-type: none;
     margin-left: 50px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
 
-.project:before {
+.item:before {
     content: "⚝ ";
     padding-right: 5px;
 }
 
-.project-link {
+.item__link {
     text-decoration: none;
     color: #000;
     font-size: 1rem;
@@ -229,7 +220,7 @@ body {
     font-style: normal;
 }
 
-.project-link:hover {
+.item__link:hover {
     text-decoration: underline;
 }
 
@@ -252,19 +243,19 @@ body {
         margin-left: 50px;
     }
 
-    ._about-desc {
+    .about__desc {
         margin-left: 50px;
     }
 
-    .fact {
+    .facts__item {
         margin-left: 50px;
     }
 
-    .social-item {
+    .contacts__item {
         margin-left: 50px;
     }
 
-    .contact-title {
+    .contacts__title {
         margin-left: 0;
     }
 }
@@ -319,13 +310,13 @@ body {
         border-bottom: 2px solid rgb(247, 243, 233);
     }
 
-    .skill-name {
+    .skill-lists__name {
         opacity: 1;
         word-wrap: break-word;
         
     }
 
-    .list-margin {
+    .skill-lists__item {
         font-size: 0.9rem;
     }
 
@@ -333,11 +324,11 @@ body {
         margin-right: 50px;
     }
 
-    .align-right {
+    .skill-lists__mark {
         color: rgb(247, 243, 233);
     }
       
-    .project-link {
+    .item__link {
         color: rgb(247, 243, 233);
     }
 
@@ -395,19 +386,19 @@ body {
         margin-left: 20px;
     }
 
-    ._about-desc {
+    .about__desc {
         margin-left: 20px;
     }
 
-    .fact {
+    .facts__item {
         margin-left: 20px;
     }
 
-    .social-item {
+    .contacts__item {
         margin-left: 20px;
     }
 
-    .contact-title {
+    .contacts__title {
         margin-left: 0;
     }
 
@@ -420,15 +411,15 @@ body {
         margin-left: 20px;
     }
 
-    .skill-name {
+    .skill-lists__name {
         word-wrap: break-word;
     }
 
-    .list-margin {
+    .skill-lists__item {
         font-size: 0.8rem;
     }
 
-    .scrollButton {
+    .scroll-button {
         display: block;
         position: fixed;
         bottom: 20px;
@@ -437,12 +428,12 @@ body {
         outline: none;
     }
 
-    .scrollButton__img {
+    .scroll-button__img {
         width: 70px;
         height: 70px;
     }
 
-    .scrollButton:hover {
+    .scroll-button:hover {
         cursor: pointer;
     }
 }
