@@ -158,7 +158,6 @@ a {
     transition:250ms;
 }
 
-
 .main-navigation-list__item-link:not(:hover) {
     background: #fff;
     color: #000;
