@@ -1,5 +1,4 @@
-
-*, *:before, *:after {
+* {
     box-sizing: border-box;
 }
 
@@ -9,11 +8,11 @@ body {
 
 .wrapper {
     background-color: grey;
-    padding: 10px 10px;
+    padding: 10px;
     font-size: 1.5rem;
 }
 
-.wrapper > p:first-child{
+.wrapper__text:first-child{
     margin-top: 0;
 }
 
@@ -37,22 +36,19 @@ h1{
     так что юзать flex-start + on child margin:auto */
     /* justify-content: center; */
     align-items: center;
-    padding: 10px;
+    padding: 24px;
 }
 
 .modal-box {
     border-radius: 5px;
-    max-width: 100%;
-    width: 100%;
+    max-width: 720px;
     margin: auto;
-    height: 80%;
     overflow-y: auto;
     background-color: honeydew;
-    padding: 10px;
+    padding: 15px;
 }
 
 .box__button {
-    width: 100%;
     text-align: right;
 }
 
@@ -60,9 +56,8 @@ h1{
     border-radius: 5px;
 }
 
-@media (max-width: 500px) {
-    .modal-box {
-        height: 100%;
-        width: 100%;
+@media (max-width: 400px) {
+    .modal-box__text:not(:first-of-type) {
+        display: none;
     }
 }
