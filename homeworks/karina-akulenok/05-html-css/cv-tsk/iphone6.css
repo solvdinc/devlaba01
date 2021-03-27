@@ -1,0 +1,26 @@
+@import "mobile.css";
+@import "tablet.css";
+@import "smallScreen.css";
+
+@media (max-width: 460px) {
+    .header__title {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-left: 20px;
+    }
+
+    .header__avatar-container {
+        width: 100px;
+        height: 100px;
+        background: url(./img/avatar.jpg) no-repeat -51px -51px;
+        background-size: auto 250px;
+    }
+
+    .skill-lists__item {
+        flex-direction: column;
+    }
+
+    .skill-lists__item {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,99 @@
+@import "tablet.css";
+@import "smallScreen.css";
+
+@media (max-width: 600px) {
+    .header__title {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        margin-left: 20px;
+    }
+    
+    .header__sub-title {
+        margin-left: 20px;
+        font-size: 1rem;
+    }
+
+    .header__avatar-container {
+        width: 120px;
+        height: 120px;
+        background: url(./img/avatar.jpg) no-repeat -51px -51px;
+        background-size: auto 270px;
+    }
+
+    .header__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        background-color: #2d2d2d;
+    }
+
+    .header__burger-menu {
+        width: 40px;
+        height: 40px;
+        background: url(./img/icons/menu.png) no-repeat;
+        background-size: 35px 23px;
+        transition: background 0.5s ease-in-out;
+    }
+
+    .header__burger-menu:hover {
+        background: url(./img/icons/Close.png) no-repeat;
+        background-size: 23px 23px;
+        cursor: pointer;
+    }
+
+    .title {
+        margin-left: 20px;
+    }
+    
+    .sub-title {
+        margin-left: 20px;
+    }
+
+    .about__desc {
+        margin-left: 20px;
+    }
+
+    .facts__item {
+        margin-left: 20px;
+    }
+
+    .contacts__item {
+        margin-left: 20px;
+    }
+
+    .contacts__title {
+        margin-left: 0;
+    }
+
+    .skill-lists {
+        margin-left: 50px;
+        margin-right: 20px;
+    }
+
+    .description {
+        margin-left: 50px;
+    }
+
+    .skill-lists__item {
+        font-size: 0.8rem;
+    }
+
+    .scroll-button {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: none;
+        outline: none;
+    }
+
+    .scroll-button__img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .scroll-button:hover {
+        cursor: pointer;
+    }
+}

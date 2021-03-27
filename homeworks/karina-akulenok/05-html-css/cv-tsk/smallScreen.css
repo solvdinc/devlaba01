@@ -1,0 +1,39 @@
+@media (max-width: 1200px) {
+    .title {
+        margin-left: 50px;
+    }
+    
+    .sub-title {
+        margin-left: 50px;
+    }
+
+    .about__desc {
+        margin-left: 50px;
+    }
+
+    .facts__item {
+        margin-left: 50px;
+    }
+
+    .contacts__item {
+        margin-left: 50px;
+    }
+
+    .contacts__title {
+        margin-left: 0;
+    }
+
+    .portfolio {
+        margin-left: 50px;
+    }
+
+    .portfolio__img {
+        width: 270px;
+        height: 180px;
+    }
+
+    .portfolio__mask {
+        width: 270px;
+        height: 180px;
+    }
+}
