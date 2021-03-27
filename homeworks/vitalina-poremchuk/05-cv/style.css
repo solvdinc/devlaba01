@@ -14,7 +14,6 @@ a {
 
 .header {
   min-height: 700px;
-  display: flex;
   position: relative;
 }
 
@@ -59,13 +58,10 @@ a {
 }
 
 .main {
-  min-height: 500px;
   margin: 40px;
 }
 
 .main__mask {
-  min-width: 300px;
-  max-width: 100%;
   min-height: 200px;
   margin: 10px;
   position: relative;
@@ -73,11 +69,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.main__head {
-  display: block;
-  position: relative;
 }
 
 .main__text {
@@ -95,7 +86,7 @@ a {
 }
 
 .mask1 .main__head {
-  transition: all 0.2s linear;
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .mask1 .main__content {
@@ -103,27 +94,30 @@ a {
   width: 100%;
   height: 100%;
   background-color: #cac2b8cc;
-  transition: all 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .mask1 .main__title {
   transform: translateY(-30px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
   padding: 5px 10px;
   background: #4c5837;
+  color: #1c1b1a;
 }
 
 .mask1 .main__text {
   transform: translateY(30px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
+  color: #1c1b1a;
 }
 
 .mask1 .main__paragraph {
   transform: translateY(30px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
+  color: #1c1b1a;
 }
 
 .mask1:hover .main__head {
@@ -138,7 +132,6 @@ a {
 .mask1:hover .main__title,
 .mask1:hover .main__text,
 .mask1:hover .main__paragraph {
-  color: #1c1b1a;
   opacity: 1;
   transform: translateY(0px);
 }
@@ -152,7 +145,7 @@ a {
 }
 
 .mask2 .main__head {
-  transition: all 0.2s linear;
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .mask2 .main__content {
@@ -160,27 +153,30 @@ a {
   width: 100%;
   height: 100%;
   background-color: #cac2b8cc;
-  transition: all 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .mask2 .main__title {
   transform: translate(-30px, -30px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
   padding: 5px 10px;
   background: #4c5837;
+  color: #1c1b1a;
 }
 
 .mask2 .main__text {
+  color: #1c1b1a;
   transform: translate(-30px, -30px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
 }
 
 .mask2 .main__paragraph {
+  color: #1c1b1a;
   transform: translate(-30px, -30px);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
 }
 
 .mask2:hover .main__head {
@@ -195,13 +191,15 @@ a {
 .mask2:hover .main__title,
 .mask2:hover .main__text,
 .mask2:hover .main__paragraph {
-  color: #1c1b1a;
   opacity: 1;
   transform: translate(0px);
 }
+.mask2:hover .main__title {
+  transition-delay: 0.3s;
+}
 
 .mask2:hover .main__text {
-  transition-delay: 0.3s;
+  transition-delay: 0.4s;
 }
 
 .mask2:hover .main__paragraph {
@@ -209,7 +207,7 @@ a {
 }
 
 .mask3 .main__head {
-  transition: all 0.2s linear;
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .mask3 .main__content {
@@ -219,24 +217,27 @@ a {
   background-color: #cac2b8cc;
   transform: translateX(-50px);
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.4s ease-in-out;
 }
 
 .mask3 .main__title {
+  color: #1c1b1a;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
   padding: 5px 10px;
   background: #4c5837;
 }
 
 .mask3 .main__text {
+  color: #1c1b1a;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
 }
 
 .mask3 .main__paragraph {
+  color: #1c1b1a;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.2s ease-in-out;
 }
 
 .mask3:hover .main__head {
@@ -252,9 +253,12 @@ a {
 .mask3:hover .main__title,
 .mask3:hover .main__text,
 .mask3:hover .main__paragraph {
-  color: #1c1b1a;
   opacity: 1;
   transform: translateX(0);
+}
+
+.mask3:hover .main__title {
+  transition-delay: 0.3s;
 }
 
 .mask3:hover .main__text {
@@ -266,7 +270,7 @@ a {
 }
 
 .mask4 .main__head {
-  transition: all 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
 .mask4 .main__content {
@@ -275,24 +279,28 @@ a {
   height: 100%;
   background-color: #cac2b8cc;
   transform: scale(0) rotate(-180deg);
-  transition: all 0.4s ease-in-out;
+  transition: opacity 0.2s linear, transform 0.4s ease-in-out;
+  pointer-events: none;
 }
 
 .mask4 .main__title {
+  color: #1c1b1a;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear;
   padding: 5px 10px;
   background: #4c5837;
 }
 
 .mask4 .main__text {
+  color: #1c1b1a;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear;
 }
 
 .mask4 .main__paragraph {
+  color: #1c1b1a;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s linear;
 }
 
 .mask4:hover .main__head {
@@ -302,18 +310,18 @@ a {
 .mask4:hover .main__content {
   transform: scale(1) rotate(0deg);
   opacity: 1;
+  pointer-events: all;
 }
 
 .mask4:hover .main__title,
 .mask4:hover .main__text,
 .mask4:hover .main__paragraph {
-  color: #1c1b1a;
   opacity: 1;
-  transition-delay: 0s;
+  transition-delay: 0.4s;
 }
 
 .mask4:hover .main__text {
-  transition-delay: 0.3s;
+  transition-delay: 0.4s;
 }
 
 .mask4:hover .main__paragraph {
