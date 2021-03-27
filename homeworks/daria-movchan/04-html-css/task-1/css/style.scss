@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "side main";
+  height: 100%;
+
+
+  .side {
+    background-color: #36496d;
+    color: white;
+    padding: 10px;
+    height: 100%;
+
+    &__photo {
+      width: 100%;
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: solid 2px white;
+        width: 200px;
+      }
+    }
+
+    &__contact {
+
+    }
+
+    &__skills {
+      display: flex;
+      flex-direction: column;
+
+      progress {
+        width: 100%;
+      }
+    }
+  }
+
+  .main {
+    padding: 10px;
+
+    h3:nth-of-type(2), h3:nth-of-type(3) {
+      width: fit-content;
+      border-bottom: 2px solid #868686;
+    }
+
+    .education__table {
+      th, td {
+        padding: 10px;
+      }
+    }
+
+    &__interests {
+      div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      span {
+        width: 30%;
+        padding: 5px;
+      }
+    }
+  }
+}
