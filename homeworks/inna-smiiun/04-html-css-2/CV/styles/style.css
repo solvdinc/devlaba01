@@ -82,7 +82,7 @@ a {
 }
 
 .block {
-  background: white;
+  background: #ffffff;
   padding: 20px;
   color: #595f5f;
   box-shadow: 0 2px 7px 0 #747a7a;
@@ -124,18 +124,20 @@ a {
   grid-row-gap: 20px;
 }
 
-.section__content {
+.block__content {
   padding: 20px 0;
   font-size: 20px;
 }
 
-.section__list {
+.block__list {
   margin-left: 20px;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 10px;
 }
-
+.inna {
+  display: block;
+}
 footer {
   padding: 20px 0;
   text-align: center;
@@ -225,6 +227,9 @@ footer {
     background: #d2b2b2;
   }
 
+  .show {
+    display: block;
+  }
   .contacts__list {
     padding: 10px 0;
   }
@@ -241,7 +246,10 @@ footer {
     font-size: 18px;
   }
 
-  .section__content {
+  .block__content {
     font-size: 14px;
+  }
+  #btn-top {
+    display: block;
   }
 }
