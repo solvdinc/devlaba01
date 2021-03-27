@@ -1,0 +1,185 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: white;
+    color: #3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-areas: "header header" "left right" "footer footer"
+}
+
+.header {
+    text-align: center;
+    background-color: white;
+    grid-area: header;
+}
+
+a {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+a:visited {
+    color: darkgrey;
+}
+
+a:hover {
+    color: dimgrey;
+}
+
+.header__name {
+    font-size: 2rem;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+ul {
+    padding-left: 0%;
+}
+
+.first-block {
+    grid-area: left;
+    background-color: #1b2d45;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.avatar_round {
+    margin-top: 50px;
+    border-radius: 50%;
+    border: 1px;
+}
+
+.avatar {
+    align-self: center;
+}
+
+.skills,
+.hobbies {
+    margin-left: 30%;
+}
+
+.second-block {
+    grid-area: right;
+    margin-left: 50px;
+}
+
+li {
+    list-style-type: none;
+    line-height: 160%;
+    margin-left: 0;
+}
+
+.skills__list_square li,
+.hobbies__list_square li {
+    list-style-type: square;
+    margin-left: 0;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.footer a {
+    margin-right: 20px;
+}
+
+.up-btn {
+    width: 40px;
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    opacity: 30%;
+    display: none;
+}
+
+.up-btn:active {
+    opacity: 50%;
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+    .avatar_round {
+        width: 70%;
+        margin-left: 15%;
+    }
+    .up-btn {
+        display: initial;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    .header {
+        position: sticky;
+        top: 0;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: "header" "left" "right" "footer"
+    }
+    .header__name,
+    .header__title {
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+    .avatar_round {
+        width: 80%;
+        align-self: center;
+        margin-left: 10%;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .first-block {
+        display: flex;
+        align-items: flex-start;
+    }
+    .second-block {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    .skills,
+    .hobbies {
+        margin-left: 20%;
+    }
+    .footer {
+        height: 100px;
+        align-items: flex-end;
+        margin-bottom: 10%;
+    }
+    .up-btn {
+        display: initial;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    .avatar_round {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+@media (min-width: 1020px) and (orientation: portrait) {
+    html {
+        font-size: 24px;
+    }
+}
