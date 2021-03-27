@@ -269,7 +269,7 @@ body {
     }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
     .main {
         flex-direction: column;
     }
@@ -347,7 +347,7 @@ body {
     }
 }
 
-@media (max-width: 601px) {
+@media (max-width: 600px) {
 
     .header__title {
         font-size: 2.5rem;
