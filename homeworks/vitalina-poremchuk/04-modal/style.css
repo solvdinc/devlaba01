@@ -10,10 +10,11 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(204, 204, 204, 0.397);
   overflow-y: auto;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,9 +25,8 @@
   border-radius: 20px;
   width: 80%;
   max-width: 700px;
-  max-height: 90%;
   overflow-y: auto;
-  margin: auto;
+  margin: 24px;
   padding: 10px;
 }
 
@@ -43,7 +43,7 @@
   margin-right: 20px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .modal__title {
     font-size: 1.4rem;
   }
