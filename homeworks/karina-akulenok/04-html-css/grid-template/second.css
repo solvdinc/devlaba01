@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -9,17 +13,17 @@ html, body {
     line-height: 1.1rem;
     font-weight: 400;
     background: #FFF;
-    box-sizing: border-box;
     margin: 0
 }
 
 .container {
     display: grid;
-    row-gap: 10px;
+    gap: 1.8rem;
     grid-template: 
-    "header header" 60px
-    "section sidebar" 1fr
-    "footer footer" 50px;
+        "header header" 60px
+        "section sidebar" 90%
+        "footer footer" 50px 
+        / 70%;
 }
 
 .header {
@@ -54,39 +58,31 @@ html, body {
     border-bottom: 1px solid #6996f0;
 }
 
-.main {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
 .portfolio {
+    height: 100%;
     grid-area: section;
     display: grid;
-    grid-template: repeat(4, 320px) / repeat(3, 320px);
+    grid-template: repeat(4, auto) / repeat(3,  1fr);
     row-gap: 10px;
     column-gap: 10px;
-    margin-right: 1.8rem;
+    margin-left: 1.8rem;
 }
 
 .portfolio__item {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-._1 {
-    grid-column: 1 / 2 span;
-    grid-row: 1 / 2 span;
-}
-
-._6 {
-    grid-column: 4 / 2;
-    grid-row: 5 / 3;
+._big {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .about {
     grid-area: sidebar;
+    margin-right: 1.8rem;
 }
 
 .about__title {
@@ -112,107 +108,69 @@ html, body {
     background: linear-gradient(to bottom, #fff, rgba(0,0,0,0.3));
 }
 
-@media (max-width: 1295px) {
-    .portfolio {
-        grid-template: repeat(4, 290px) / repeat(3, 290px);
+@media (max-width: 750px) {
+    .container {
+        display: grid;
+        gap: 1.8rem;
+        grid-template: 
+            "header" 60px
+            "section" 90%
+            "sidebar" 20%
+            "footer" 50px ;
     }
-}
 
-@media (max-width: 1201px) {
-    .portfolio {
-        grid-template: repeat(4, 250px) / repeat(3, 250px);
-    }
-}
-
-@media (max-width: 1091px) {
-    .portfolio {
-        grid-template: repeat(4, 220px) / repeat(3, 220px);
-    }
-}
-
-@media (max-width: 1001px) {
-    .portfolio {
-        grid-template: repeat(4, 200px) / repeat(3, 200px);
-    }
-}
-
-@media (max-width: 941px) {
-    .portfolio {
-        grid-template: repeat(4, 180px) / repeat(3, 180px);
-    }
-}
-
-@media (max-width: 861px) {
-    .portfolio {
-        grid-template: repeat(4, 150px) / repeat(3, 150px);
-    }
-}
-
-@media (max-width: 761px) {
-    .portfolio {
-        grid-template: repeat(4, 130px) / repeat(3, 130px);
+    .header {
+        justify-content: center;
     }
 
     .navigation {
         display: none;
     }
 
-    .container {
-        display: grid;
-        row-gap: 10px;
-        grid-template: 
-        "header header" 75px
-        "section sidebar" 1fr
-        "footer footer" 75px;
-    }
-
-}
-
-@media (max-width: 651px) {
     .portfolio {
-        grid-template: repeat(4, 150px) / repeat(3, 150px);
+        grid-template: repeat(3, auto) / repeat(2,  1fr);
+        row-gap: 5px;
+        column-gap: 5px;
     }
 
-    .navigation {
-        display: none;
+    .portfolio__item {
+        display: block;
+        width: 90%;
+        height: 90%;
     }
 
-    .container {
-        display: grid;
-        row-gap: 10px;
-        grid-template: 
-        "header header" 75px
-        "section sidebar" 1fr
-        "footer footer" 75px;
+    ._big{
+        grid-column: auto;
+        grid-row: auto;
     }
 
     .about {
-        display: none;
+        margin: 10px 1.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
+    .about__title {
+        display: flex;
+        justify-content: center;
+    }
 }
 
-@media (max-width: 546px) {
-    .portfolio {
-        grid-template: repeat(4, 130px) / repeat(3, 130px);
-        margin-left: 5px;
-    }
-
-    .navigation {
-        display: none;
-    }
-
+@media (max-width: 600px) {
     .container {
         display: grid;
-        row-gap: 10px;
+        gap: 1.8rem;
         grid-template: 
-        "header header" 75px
-        "section sidebar" 1fr
-        "footer footer" 75px;
+            "header" 60px
+            "section" 90%
+            "sidebar" 10%
+            "footer" 50px ;
     }
 
-    .about {
-        display: none;
+    .portfolio {
+        grid-template: repeat(6, auto) / 1fr;
+        row-gap: 5px;
+        column-gap: 5px;
     }
-
 }
