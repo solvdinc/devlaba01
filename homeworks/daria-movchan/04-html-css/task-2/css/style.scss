@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, serif;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h2 {
+    position: relative;
+    left: 10px;
+  }
+
+  .links {
+    position: relative;
+    right: 10px;
+    display: flex;
+    align-items: center;
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      position: relative;
+
+      &:hover {
+        color: cornflowerblue;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 60%;
+          margin-left: 6%;
+          border-bottom: cornflowerblue 1px solid;
+          padding-top: 5px;
+
+          @media screen and (max-width: 580px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .photos {
+    width: 70%;
+
+    @media screen and (max-width: 580px) {
+      padding-right: 10px;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+
+      @media screen and (max-width: 580px) {
+        flex-direction: column;
+      }
+
+      &_big {
+        width: 63%;
+
+        @media screen and (max-width: 580px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      &_small {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10px;
+        width: 33%;
+
+        @media screen and (max-width: 580px) {
+          width: 100%;
+          margin-left: 0;
+        }
+
+        img {
+          width: 100%;
+          &:nth-of-type(2) {
+            margin-top: 10px;
+            @media screen and (max-width: 580px) {
+              margin-top: 0;
+            }
+          }
+
+          @media screen and (max-width: 580px) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      &._2 {
+        margin-top: 10px;
+        @media screen and (max-width: 580px) {
+          margin-top: 0;
+        }
+
+        & .photos__item {
+          &_small {
+            margin-right: 10px;
+            margin-left: 0;
+
+            @media screen and (max-width: 580px) {
+              margin-right: 0;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section:nth-of-type(2) {
+    width: 30%;
+    display: block;
+  }
+}
