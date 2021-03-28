@@ -1,0 +1,138 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    font-size: 10px;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    height: 100%;
+    display: grid;
+    grid-template:
+        "header header" 160px
+        "block-left block-right" auto
+        / 310px;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 8px;
+    background: #000;
+    color: #cccccc;
+    letter-spacing: 5px;
+    font-size: 2rem;
+}
+
+.block-right {
+    grid-area: block-right;
+    display: flex;
+    padding: 20px 25px 0 30px;
+    flex-direction: column;
+    font-size: 2.4rem;
+}
+
+.block-left {
+    grid-area: block-left;
+    display: flex;
+    background-color: #c9e4dc;
+    flex-direction: column;
+    padding: 20px 30px 0 25px;
+    text-align: right;
+    font-size: 2.2rem;
+    color: #38485C;
+}
+
+.header__item-1 {
+    border: 2px solid whitesmoke;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.skills, .contacts, .languages, .courses {
+    margin-bottom: 20px;
+}
+
+.contacts__item {
+    color: #2C3A4B;
+    text-decoration: none;
+}
+
+.contacts__item:hover {
+    text-decoration-line: underline;
+}
+
+.scroll-to-top__link {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        font-size: 1rem;
+        flex-direction: row;
+    }
+
+    .header__menu {
+        width: 25px;
+    }
+
+    .header__menu:after,
+    .header__menu:before,
+    .header__menu-content {
+        background-color: #fff;
+        content: "";
+        display: block;
+        height: 2px;
+        margin: 7px 0;
+    }
+
+    .scroll-to-top__link {
+        text-decoration: none;
+        color: white;
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        background-color: black;
+        padding: 20px;
+        border-radius: 4px;
+    }
+
+    .scroll-to-top__link:hover {
+        background: gray;
+    }
+
+    .wrapper {
+        height: 100%;
+        display: grid;
+        grid-template:
+            "header" 110px
+            "block-left" 1fr
+            "block-right" 1fr
+            / auto;
+    }
+
+    .block-left {
+        text-align: center;
+        font-size: 1.8rem;
+        border-bottom: 1px solid #38485C;
+    }
+
+    .block-right {
+        font-size: 1.8rem;
+    }
+}
