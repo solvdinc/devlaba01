@@ -14,6 +14,11 @@ html {
     opacity: 0.2;
 }
 
+.modal-window_container {
+    height: 99%;
+    width: 99%;
+}
+
 .modal-window {
     border-radius: 15px;
     position: fixed;
@@ -22,8 +27,12 @@ html {
     max-height: 70%;
     max-width: 70%;
     transform: translate(-50%, -50%);
-    overflow-y: auto;
     background-color: white;
+    overflow-y: scroll;
+}
+
+.modal-window::-webkit-scrollbar {
+    opacity: 0;
 }
 
 .content {
@@ -44,19 +53,18 @@ html {
 }
 
 .modal-window__button:hover {
-    background-color: blue;    
+    background-color: blue;
 }
 
 @media (max-width:600px) {
-    .modal-window{
-        max-height: 90%;
+    .modal-window {
+        margin-top: 5%;
+        max-height: 100%;
         width: 90%;
     }
-
     .modal-window__button {
         margin-left: 80%;
     }
-
     .background {
         height: 4000px;
     }
