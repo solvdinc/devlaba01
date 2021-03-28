@@ -1,0 +1,200 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: white;
+    color: #3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-areas: "header header"
+                         "left right" 
+                         "footer footer"
+}
+
+.header {
+    text-align: center;
+    background-color: white;
+    grid-area: header;
+}
+
+.contacts_list__link {
+    color: #3c3c3c;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.contacts_list__link:visited {
+    color: darkgrey;
+}
+
+.contacts_list__link:hover {
+    color: cadetblue;
+}
+
+.header__name {
+    font-size: 2rem;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+ul {
+    padding-left: 0%;
+}
+
+.first-block {
+    grid-area: left;
+    background-color: #1b2d45;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.avatar_round {
+    margin-top: 50px;
+    border-radius: 50%;
+    border: 1px;
+}
+
+.avatar {
+    align-self: center;
+}
+
+.skills,
+.hobbies {
+    margin-left: 30%;
+}
+
+.second-block {
+    grid-area: right;
+    margin-left: 50px;
+}
+
+li {
+    list-style-type: none;
+    line-height: 160%;
+    margin-left: 0;
+}
+
+.skills__list_square li,
+.hobbies__list_square li {
+    list-style-type: square;
+    margin-left: 0;
+}
+
+.portfolio-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.portfolio_card {
+    position: relative;
+    overflow: hidden;
+    max-width: 310px;
+    margin: 0%;
+}
+
+.mask_deer {
+    width: 320px;
+    height: 600px;
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: darkgrey;
+    display: flex;
+    transform: translate(50px, 50px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s opacity ease-in-out, 1s transform ease-in-out;
+}
+
+.mask_deer:hover {   
+    transform: translate(0);
+    opacity: 0.8;
+}
+
+.mask_forest {
+    width: 320px;
+    height: 600px;
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: darkgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    transition: 1s opacity ease-in-out, 1s transform ease-in-out;
+}
+
+.mask_forest:hover {    
+    transform: rotate(0);
+    opacity: 0.8;
+}
+
+.mask_waterfall {
+    width: 320px;
+    height: 600px;
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: darkgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(3);
+    transition: 1s opacity ease-in, 1s transform ease-in;
+}
+
+.mask_waterfall:hover {   
+    transform: scale(1);
+    opacity: 0.8;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.footer__link {
+    margin-right: 20px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in;
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.up-btn {
+    width: 40px;
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    opacity: 30%;
+    display: none;
+}
+
+.up-btn:active {
+    opacity: 50%;
+}
