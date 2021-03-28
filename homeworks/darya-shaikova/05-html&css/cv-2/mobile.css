@@ -4,7 +4,7 @@
     }
     .header {
         position: sticky;
-        top: 0;
+        top: 0;        
     }
     .wrapper {
         display: grid;
@@ -44,4 +44,32 @@
     .up-btn {
         display: initial;
     }
+    .hamburger_menu {        
+        width: 30px; 
+        margin-left: 10px;           
+    }
+    
+    .hamburger_menu:after,
+    .hamburger_menu:before,
+    .hamburger_menu__line {
+        background-color: #1b2d45;        
+        content: "";
+        display: block;
+        height: 3px;
+        margin: 6px 0;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hamburger_menu:hover  .hamburger_menu__line {
+        transform: scale(0);
+    }
+
+    .hamburger_menu:hover:before {
+        transform: translateY(6px) rotate(-45deg);
+    }
+
+    .hamburger_menu:hover:after {
+        transform: translateY(-12px) rotate(45deg);
+    }
+
 }
