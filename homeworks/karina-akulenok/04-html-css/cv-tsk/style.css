@@ -21,7 +21,7 @@ body {
     grid-template: 
         "avatar header" 20rem
         "aside main" 80rem;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 30% 70%;
 }
 
 .scroll-button {
@@ -32,19 +32,19 @@ body {
 
 .header {
     display: flex;
-    grid-column: span 2;
-}
+    grid-area: header;
+    
+} 
 
-.header__avatar {
+.avatar {
     grid-area: avatar;
-    width: 30%;
     background-color: #2d2d2d;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header__avatar-container {
+.avatar-container {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -54,9 +54,8 @@ body {
 }
 
 .header__logo {
-    grid-area: header;
-    width: 70%;
     background-color: rgb(247, 243, 233);
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -79,16 +78,14 @@ body {
 
 /* main */
 
-.main {
-    display: flex;
-    grid-column: span 2;
-}
-
 .left-side {
-    width: 30%;
     grid-area: aside;
     background-color: #2d2d2d;
     color: rgb(247, 243, 233);
+}
+
+.left-side__container {
+    margin-left: 100px;
 }
 
 .title {
@@ -98,13 +95,11 @@ body {
     margin-top: 50px;
     border-bottom: 2px solid rgb(247, 243, 233);
     padding-bottom: 20px;
-    margin-left: 100px;
     margin-bottom: 30px;
     line-height: 2rem;
 }
 
 .sub-title {
-    margin-left: 100px;
     font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 10px;
@@ -117,13 +112,11 @@ body {
 }
 
 .about__desc {
-    margin-left: 100px;
     margin-right: 10px;
 }
 
 .facts__item {
     list-style-type: none;
-    margin-left: 100px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
@@ -134,7 +127,6 @@ body {
 }
 
 .contacts__item {
-    margin-left: 100px;
     display: flex;
     margin-bottom: 20px;
 }
@@ -164,7 +156,6 @@ body {
 
 .right-side {
     grid-area: main;
-    width: 70%;
     background-color: rgb(247, 243, 233);
     padding-right: 100px;
     color: #000;
@@ -240,23 +231,7 @@ body {
 }
 
 @media (max-width: 1200px) {
-    .title {
-        margin-left: 50px;
-    }
-    
-    .sub-title {
-        margin-left: 50px;
-    }
-
-    .about__desc {
-        margin-left: 50px;
-    }
-
-    .facts__item {
-        margin-left: 50px;
-    }
-
-    .contacts__item {
+    .left-side__container {
         margin-left: 50px;
     }
 
@@ -266,13 +241,13 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .main {
-        flex-direction: column;
-    }
-
     .container {
         display: grid;
-        grid-template-rows: 12rem 80rem;
+        grid-template: 
+        "avatar header" 12rem
+        "aside aside" 60rem
+        "main main" 80rem;
+        grid-template-columns: 30% 70%;
     }
 
     .header {
@@ -281,8 +256,14 @@ body {
         width: 100%;
     }
 
+    .avatar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+
     .header__logo {
-        width: 70%;
+        width: 100%;
         background-color: #2d2d2d;
         color: rgb(247, 243, 233);
     }
@@ -291,15 +272,11 @@ body {
         line-height: 3rem;
     }
 
-    .header__avatar-container {
+    .avatar-container {
         width: 150px;
         height: 150px;
         background: url(./img/avatar.jpg) no-repeat -65px -72px;
         background-size: auto 350px;
-    }
-
-    .left-side {
-        width: 100%;
     }
 
     .right-side {
@@ -353,7 +330,7 @@ body {
         font-size: 1rem;
     }
 
-    .header__avatar-container {
+    .avatar-container {
         width: 120px;
         height: 120px;
         background: url(./img/avatar.jpg) no-repeat -51px -51px;
@@ -379,28 +356,12 @@ body {
         cursor: pointer;
     }
 
-    .title {
-        margin-left: 20px;
-    }
-    
-    .sub-title {
+    .left-side__container {
         margin-left: 20px;
     }
 
-    .about__desc {
+    .title-right {
         margin-left: 20px;
-    }
-
-    .facts__item {
-        margin-left: 20px;
-    }
-
-    .contacts__item {
-        margin-left: 20px;
-    }
-
-    .contacts__title {
-        margin-left: 0;
     }
 
     .skill-lists {
@@ -436,13 +397,17 @@ body {
 }
 
 @media (max-width: 460px) {
+    .container {
+        grid-template-rows: 12rem 70rem 90rem;
+    }
+
     .header__title {
         font-size: 2rem;
         line-height: 2rem;
         margin-left: 20px;
     }
 
-    .header__avatar-container {
+    .avatar-container {
         width: 100px;
         height: 100px;
         background: url(./img/avatar.jpg) no-repeat -51px -51px;
@@ -465,7 +430,7 @@ body {
         margin-left: 20px;
     }
 
-    .header__avatar-container {
+    .avatar-container {
         width: 80px;
         height: 80px;
         background: url(./img/avatar.jpg) no-repeat -51px -51px;

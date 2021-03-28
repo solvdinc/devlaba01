@@ -62,7 +62,8 @@ html, body {
     height: 100%;
     grid-area: section;
     display: grid;
-    grid-template: repeat(4, auto) / repeat(3,  1fr);
+    grid-template-columns: repeat(3,  1fr);
+    grid-auto-rows: auto;
     row-gap: 10px;
     column-gap: 10px;
     margin-left: 1.8rem;
@@ -75,7 +76,7 @@ html, body {
     display: block;
 }
 
-._big {
+.portfolio__item._big {
     grid-column: span 2;
     grid-row: span 2;
 }
