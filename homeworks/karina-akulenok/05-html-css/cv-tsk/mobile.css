@@ -82,6 +82,7 @@
         right: 20px;
         border: none;
         outline: none;
+        animation: up 2s infinite;
     }
 
     .scroll-button__img {
@@ -90,7 +91,6 @@
     }
 
     .scroll-button:hover {
-        animation: up 2s infinite;
         cursor: pointer;
     }
 
