@@ -13,7 +13,9 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 30% auto;
-    grid-template-areas: "header header" "left right" "footer footer"
+    grid-template-areas: "header header"
+                         "left right" 
+                         "footer footer"
 }
 
 .header {
