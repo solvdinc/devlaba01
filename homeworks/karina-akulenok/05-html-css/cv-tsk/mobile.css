@@ -1,5 +1,5 @@
 @import "tablet.css";
-@import "smallScreen.css";
+@import "laptop.css";
 
 @media (max-width: 600px) {
     .header__title {
@@ -13,7 +13,7 @@
         font-size: 1rem;
     }
 
-    .header__avatar-container {
+    .avatar-container {
         width: 120px;
         height: 120px;
         background: url(./img/avatar.jpg) no-repeat -51px -51px;
@@ -29,50 +29,44 @@
     }
 
     .header__burger-menu {
-        width: 40px;
-        height: 40px;
-        background: url(./img/icons/menu.png) no-repeat;
-        background-size: 35px 23px;
-        transition: background 0.5s ease-in-out;
+        display: inline-block;
     }
 
-    .header__burger-menu:hover {
-        background: url(./img/icons/Close.png) no-repeat;
-        background-size: 23px 23px;
-        cursor: pointer;
+    .header__menu-line1.header__menu-line1, .header__menu-line2, .header__menu-line3 {
+        width: 35px;
+        height: 3px;
+        background-color: rgb(247, 243, 233);
+        margin: 6px 0;
+        transition: 0.4s;
     }
 
-    .title {
-        margin-left: 20px;
-    }
-    
-    .sub-title {
-        margin-left: 20px;
+    .header__burger-menu:hover .header__menu-line1 {
+        transform: rotate(45deg) translateY(12px);
     }
 
-    .about__desc {
-        margin-left: 20px;
+    .header__burger-menu:hover .header__menu-line2 {
+        opacity: 0;
     }
 
-    .facts__item {
-        margin-left: 20px;
+    .header__burger-menu:hover .header__menu-line3 {
+        transform: rotate(-45deg) translateY(-13px);
     }
 
-    .contacts__item {
+    .left-side__container {
         margin-left: 20px;
     }
 
-    .contacts__title {
-        margin-left: 0;
+    .title-right {
+        margin-left: 20px;
     }
 
     .skill-lists {
-        margin-left: 50px;
+        margin-left: 20px;
         margin-right: 20px;
     }
 
     .description {
-        margin-left: 50px;
+        margin-left: 20px;
     }
 
     .skill-lists__item {
@@ -80,6 +74,8 @@
     }
 
     .scroll-button {
+        width: 70px;
+        height: 70px;
         display: block;
         position: fixed;
         bottom: 20px;
@@ -89,11 +85,22 @@
     }
 
     .scroll-button__img {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     .scroll-button:hover {
+        animation: up 2s infinite;
         cursor: pointer;
+    }
+
+    @keyframes up {
+        0%,  
+        100% {
+           transform: translateY(0);
+        } 
+        50% {
+            transform: translateY(10px);
+        }
     }
 }

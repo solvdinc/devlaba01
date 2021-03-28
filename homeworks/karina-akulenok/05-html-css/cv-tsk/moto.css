@@ -1,7 +1,7 @@
-@import "iphone6.css";
+@import "iPhone.css";
 @import "mobile.css";
 @import "tablet.css";
-@import "smallScreen.css";
+@import "laptop.css";
 
 @media (max-width: 370px) {
     .header__title {
@@ -10,7 +10,7 @@
         margin-left: 20px;
     }
 
-    .header__avatar-container {
+    .avatar-container {
         width: 80px;
         height: 80px;
         background: url(./img/avatar.jpg) no-repeat -51px -51px;

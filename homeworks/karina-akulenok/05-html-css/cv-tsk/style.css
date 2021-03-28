@@ -21,7 +21,7 @@ body {
     grid-template: 
         "avatar header" 20rem
         "aside main" 100rem;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 30% 70%;
 }
 
 .scroll-button {
@@ -32,19 +32,19 @@ body {
 
 .header {
     display: flex;
-    grid-column: span 2;
-}
+    grid-area: header;
+    
+} 
 
-.header__avatar {
+.avatar {
     grid-area: avatar;
-    width: 30%;
     background-color: #2d2d2d;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header__avatar-container {
+.avatar-container {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -54,9 +54,8 @@ body {
 }
 
 .header__logo {
-    grid-area: header;
-    width: 70%;
     background-color: rgb(247, 243, 233);
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -79,16 +78,14 @@ body {
 
 /* main */
 
-.main {
-    display: flex;
-    grid-column: span 2;
-}
-
 .left-side {
-    width: 30%;
     grid-area: aside;
     background-color: #2d2d2d;
     color: rgb(247, 243, 233);
+}
+
+.left-side__container {
+    margin-left: 100px;
 }
 
 .title {
@@ -98,13 +95,11 @@ body {
     margin-top: 50px;
     border-bottom: 2px solid rgb(247, 243, 233);
     padding-bottom: 20px;
-    margin-left: 100px;
     margin-bottom: 30px;
     line-height: 2rem;
 }
 
 .sub-title {
-    margin-left: 100px;
     font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 10px;
@@ -117,13 +112,11 @@ body {
 }
 
 .about__desc {
-    margin-left: 100px;
     margin-right: 10px;
 }
 
 .facts__item {
     list-style-type: none;
-    margin-left: 100px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
@@ -134,7 +127,6 @@ body {
 }
 
 .contacts__item {
-    margin-left: 100px;
     display: flex;
     margin-bottom: 20px;
 }
@@ -156,15 +148,26 @@ body {
     font-size: 1rem;
     font-weight: 300;
     font-style: italic;
+    display: inline-block;
 }
 
 .contacts__link:hover {
+    animation: bounce 2.5s infinite;
     color: rgb(250, 236, 201);
+}
+
+@keyframes bounce {
+    0%,  
+    100% {
+       transform: translateX(0);
+    } 
+    50% {
+        transform: translateX(10px);
+    }
 }
 
 .right-side {
     grid-area: main;
-    width: 70%;
     background-color: rgb(247, 243, 233);
     padding-right: 100px;
     color: #000;
@@ -241,20 +244,25 @@ body {
 
 .portfolio__mask:hover {
     cursor: pointer;
-    animation: 2s infinite alternate show;
+    animation: 5s show;
 }
 
 @keyframes show {
-    from {
+    0% {
         opacity: 0;
         transform: rotate(0);
     }
-  
-    to {
+
+    50% {
         transform: rotate(360deg);
         opacity: 0.9;
     }
-  }
+
+    100% {
+        transform: rotate(0);
+        opacity: 0.9;
+    }
+}
 
 .item {
     list-style-type: none;
@@ -274,10 +282,12 @@ body {
     font-size: 1rem;
     font-weight: 400;
     font-style: normal;
+    display: inline-block;
 }
 
 .item__link:hover {
     text-decoration: underline;
+    animation: bounce 2.5s infinite;
 }
 
 .description {
