@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    color: #000000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.1rem;
+    font-weight: 400;
+    background: #FFF;
+}
+
+.container {
+    display: grid;
+    grid-template: 
+        "avatar header" 20rem
+        "aside main" 80rem;
+    grid-template-columns: 35% 65%;
+}
+
+.scroll-button {
+    display: none;
+}
+
+/* header */
+
+.header {
+    display: flex;
+    grid-column: span 2;
+}
+
+.header__avatar {
+    grid-area: avatar;
+    width: 30%;
+    background-color: #2d2d2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__avatar-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: url(./img/avatar.jpg) no-repeat -56px -72px;
+    border: 1px solid rgb(247, 243, 233);
+    background-size: auto 450px;
+}
+
+.header__logo {
+    grid-area: header;
+    width: 70%;
+    background-color: rgb(247, 243, 233);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header__title {
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 600;
+}
+
+.header__sub-title {
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* main */
+
+.main {
+    display: flex;
+    grid-column: span 2;
+}
+
+.left-side {
+    width: 30%;
+    grid-area: aside;
+    background-color: #2d2d2d;
+    color: rgb(247, 243, 233);
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 50px;
+    border-bottom: 2px solid rgb(247, 243, 233);
+    padding-bottom: 20px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    line-height: 2rem;
+}
+
+.sub-title {
+    margin-left: 100px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.about__desc {
+    margin-left: 100px;
+    margin-right: 10px;
+}
+
+.facts__item {
+    list-style-type: none;
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.facts__item:before {
+    content: "⚝ ";
+    padding-right: 5px;
+}
+
+.contacts__item {
+    margin-left: 100px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.contacts__title {
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+.contacts__img {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.contacts__link {
+    text-decoration: none;
+    color: rgb(247, 243, 233);
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.contacts__link:hover {
+    color: rgb(250, 236, 201);
+}
+
+.right-side {
+    grid-area: main;
+    width: 70%;
+    background-color: rgb(247, 243, 233);
+    padding-right: 100px;
+    color: #000;
+}
+
+.title-right {
+    border-bottom: 2px solid #2d2d2d;
+    margin-left: 50px;
+}
+
+.skill-lists {
+    display: flex;
+    margin-left: 50px;
+}
+  
+.skill-lists__list {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.skill-lists__item {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+  
+.skill-lists__name {
+    opacity: 0.7;
+}
+  
+.skill-lists__mark {
+    color: #301a33;
+}
+  
+.skill-lists_color_grey {
+    color: #8c8c8c;
+}
+
+.item {
+    list-style-type: none;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.item:before {
+    content: "⚝ ";
+    padding-right: 5px;
+}
+
+.item__link {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.item__link:hover {
+    text-decoration: underline;
+}
+
+.description {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    opacity: 0.7;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .title {
+        margin-left: 50px;
+    }
+    
+    .sub-title {
+        margin-left: 50px;
+    }
+
+    .about__desc {
+        margin-left: 50px;
+    }
+
+    .facts__item {
+        margin-left: 50px;
+    }
+
+    .contacts__item {
+        margin-left: 50px;
+    }
+
+    .contacts__title {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: 12rem 80rem;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+
+    .header__logo {
+        width: 70%;
+        background-color: #2d2d2d;
+        color: rgb(247, 243, 233);
+    }
+
+    .header__title {
+        line-height: 3rem;
+    }
+
+    .header__avatar-container {
+        width: 150px;
+        height: 150px;
+        background: url(./img/avatar.jpg) no-repeat -65px -72px;
+        background-size: auto 350px;
+    }
+
+    .left-side {
+        width: 100%;
+    }
+
+    .right-side {
+        width: 100%;
+        background-color: #2d2d2d;
+        color: rgb(247, 243, 233);
+        padding-right: 0;
+    }
+
+    .title-right {
+        border-bottom: 2px solid rgb(247, 243, 233);
+    }
+
+    .skill-lists__name {
+        opacity: 1;
+        word-wrap: break-word;
+        
+    }
+
+    .skill-lists__item {
+        font-size: 1rem;
+    }
+
+    .skill-lists {
+        margin-right: 50px;
+    }
+
+    .skill-lists__mark {
+        color: rgb(247, 243, 233);
+    }
+      
+    .item__link {
+        color: rgb(247, 243, 233);
+    }
+
+    .description {
+        color: rgb(247, 243, 233);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__title {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        margin-left: 20px;
+    }
+    
+    .header__sub-title {
+        margin-left: 20px;
+        font-size: 1rem;
+    }
+
+    .header__avatar-container {
+        width: 120px;
+        height: 120px;
+        background: url(./img/avatar.jpg) no-repeat -51px -51px;
+        background-size: auto 270px;
+    }
+
+    .header__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        background-color: #2d2d2d;
+    }
+
+    .header__burger-menu {
+        width: 40px;
+        height: 40px;
+        background: url(./img/icons/menu.png) no-repeat;
+        background-size: 35px 23px;
+    }
+
+    .header__burger-menu:hover {
+        cursor: pointer;
+    }
+
+    .title {
+        margin-left: 20px;
+    }
+    
+    .sub-title {
+        margin-left: 20px;
+    }
+
+    .about__desc {
+        margin-left: 20px;
+    }
+
+    .facts__item {
+        margin-left: 20px;
+    }
+
+    .contacts__item {
+        margin-left: 20px;
+    }
+
+    .contacts__title {
+        margin-left: 0;
+    }
+
+    .skill-lists {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .description {
+        margin-left: 20px;
+    }
+
+    .skill-lists__item {
+        font-size: 0.8rem;
+    }
+
+    .scroll-button {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: none;
+        outline: none;
+    }
+
+    .scroll-button__img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .scroll-button:hover {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 460px) {
+    .header__title {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-left: 20px;
+    }
+
+    .header__avatar-container {
+        width: 100px;
+        height: 100px;
+        background: url(./img/avatar.jpg) no-repeat -51px -51px;
+        background-size: auto 250px;
+    }
+
+    .skill-lists__item {
+        flex-direction: column;
+    }
+
+    .skill-lists__item {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .header__title {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin-left: 20px;
+    }
+
+    .header__avatar-container {
+        width: 80px;
+        height: 80px;
+        background: url(./img/avatar.jpg) no-repeat -51px -51px;
+        background-size: auto 220px;
+    }
+}
