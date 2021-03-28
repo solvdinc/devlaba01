@@ -1,9 +1,9 @@
-html{
+html {
     font-size: 14px;
     color: black;
 }
 
-.background{
+.background {
     position: absolute;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ html{
     opacity: 0.2;
 }
 
-.modal-window{
+.modal-window {
     border-radius: 15px;
     position: fixed;
     top: 50%;
@@ -26,15 +26,15 @@ html{
     background-color: white;
 }
 
-.content{
+.content {
     margin: 5%;
 }
 
-.modal-window__title{
+.modal-window__title {
     margin-left: 5%;
 }
 
-.modal-window__button{
+.modal-window__button {
     margin-left: 90%;
     background-color: cornflowerblue;
     color: white;
@@ -43,21 +43,21 @@ html{
     border: none;
 }
 
-.modal-window__button:hover{
+.modal-window__button:hover {
     background-color: blue;    
 }
 
-@media (max-width:600px){
+@media (max-width:600px) {
     .modal-window{
         max-height: 90%;
         width: 90%;
     }
 
-    .modal-window__button{
+    .modal-window__button {
         margin-left: 80%;
     }
 
-    .background{
+    .background {
         height: 4000px;
     }
 }
