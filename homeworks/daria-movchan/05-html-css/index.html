@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tablet-style.css" media="">
+</head>
+<body>
+<div class="wrapper">
+  <section class="side">
+    <div class="side__photo">
+      <img alt="photo" src="photo.jpg">
+    </div>
+    <h1 class="side__name-hidden">DARIA MOVCHAN</h1>
+    <h3 class="side__position-hidden">front-end developer</h3>
+    <div class="side__contact">
+      <h3>CONTACT</h3>
+      <ul class="contact__list">
+        <li class="contact__item">📍 Kyiv</li>
+        <li class="contact__item">☎️ 380661497429</li>
+        <li class="contact__item">✉️ dasabot@outlook.com</li>
+        <li class="contact__item">👾 github.com/dasabot</li>
+      </ul>
+    </div>
+    <div>
+      <h3>SKILLS</h3>
+      <div class="side__skills">
+        <label for="html-css"><a href="https://ru.wikipedia.org/wiki/HTML">HTML/CSS</a></label>
+        <progress id="html-css" max="100" value="60"> 60%</progress>
+        <label for="sass"><a href="https://ru.wikipedia.org/wiki/Sass">Sass</a></label>
+        <progress id="sass" max="100" value="60"> 60%</progress>
+        <label for="pug"><a href="https://pugjs.org/api/getting-started.html">Pug</a></label>
+        <progress id="pug" max="100" value="50"> 50%</progress>
+        <label for="gulp"><a href="https://gulpjs.com/">Gulp</a></label>
+        <progress id="gulp" max="100" value="35"> 35%</progress>
+        <label for="js"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">JavaScript</a></label>
+        <progress id="js" max="100" value="10"> 10%</progress>
+        <label for="react"><a href="https://ru.reactjs.org/">React.js</a></label>
+        <progress id="react" max="100" value="5"> 5%</progress>
+        <label for="english">English</label>
+        <progress id="english" max="100" value="60"> 60%</progress>
+      </div>
+    </div>
+  </section>
+  <main class="main">
+    <h1 class="main__name-hidden">DARIA MOVCHAN</h1>
+    <h3 class="main__position-hidden">front-end developer</h3>
+    <div class="main__education">
+      <h3>EDUCATION</h3>
+      <table class="education__table">
+        <tr>
+          <td><i>2020-2022</i></td>
+          <td><b>Master's degree</b> in Cybersecurity Taras Shevchenko National University of Kyiv</td>
+        </tr>
+        <tr>
+          <td><i>2016-2020</i></td>
+          <td><b>Bachelor's degree</b> in Cybersecurity Dnipro University of Technology</td>
+        </tr>
+      </table>
+    </div>
+    <div class="main__interests">
+      <h3>INTERESTS</h3>
+      <div>
+        <span class="interests__item">Photography</span>
+        <span class="interests__item">Tea</span>
+        <span class="interests__item">Cycling</span>
+        <span class="interests__item">Online gaming</span>
+        <span class="interests__item">Reading</span>
+        <span class="interests__item">Art</span>
+      </div>
+    </div>
+    <div class="main__experience">
+      <h3>EXPERIENCE</h3>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+    </div>
+  </main>
+</div>
+<button id="top-btn" onclick="toTop()">Up!</button>
+</body>
+<script>
+    const topButton = document.getElementById("top-btn");
+
+    window.onscroll = function () {
+        handleTopButton();
+    };
+
+    function handleTopButton() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topButton.style.display = "block";
+        } else {
+            topButton.style.display = "none";
+        }
+    }
+
+    function toTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</html>
