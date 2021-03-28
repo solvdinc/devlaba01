@@ -13,7 +13,9 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 30% auto;
-    grid-template-areas: "header header" "left right" "footer footer"
+    grid-template-areas: "header header" 
+                         "left right" 
+                         "footer footer"
 }
 
 .header {
@@ -83,8 +85,8 @@ li {
     margin-left: 0;
 }
 
-.skills__list_square li,
-.hobbies__list_square li {
+.skills_list__item,
+.hobbies_list__item {
     list-style-type: square;
     margin-left: 0;
 }
@@ -96,12 +98,11 @@ li {
     justify-content: flex-end;
 }
 
-.footer a {
+.footer__link {
     margin-right: 20px;
 }
 
-.up-btn {
-    width: 40px;
+.up-link {
     position: fixed;
     bottom: 15%;
     right: 5%;
@@ -109,7 +110,11 @@ li {
     display: none;
 }
 
-.up-btn:active {
+.up-btn {
+    width: 40px;
+}
+
+.up-link:active {
     opacity: 50%;
 }
 
@@ -134,7 +139,10 @@ li {
     .wrapper {
         display: grid;
         grid-template-columns: auto;
-        grid-template-areas: "header" "left" "right" "footer"
+        grid-template-areas: "header" 
+                             "left" 
+                             "right" 
+                             "footer"
     }
     .header__name,
     .header__title {
@@ -166,7 +174,7 @@ li {
         align-items: flex-end;
         margin-bottom: 10%;
     }
-    .up-btn {
+    .up-link {
         display: initial;
     }
 }
