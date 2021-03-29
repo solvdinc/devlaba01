@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=1.0" />
+  <title>Update CV</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="hidden-title">My CV</h1>
+  <div class="wrapper">
+    <!-- Header -->
+    <header class="cv-header">
+      <div class="cv-header__info">
+        <div class="cv-header__img-wrapper">
+          <img src="./assets/img/me.jpg" alt="profile_img" class="cv-header__img">
+        </div>
+        <div class="cv-header__info-content">
+          <div class="cv-header__info-fullname">Roman Ivashkevich</div>
+          <div class="cv-header__info-position">Solvd devlab student</div>
+        </div>
+      </div>
+      <div class="cv-header__burger">
+        <div class="cv-header__burger-inner"></div>
+      </div>
+      <nav class="cv-header__navbar">
+        <a href="#" class="cv-navbar__item _active">Home</a>
+        <a href="#" class="cv-navbar__item">Contacts</a>
+        <a href="#" class="cv-navbar__item">About</a>
+      </nav>
+    </header>
+    <!-- /Header -->
+    <!-- Contacts -->
+    <aside class="contacts">
+      <h2 class="contacts__title ">Contacts</h2>
+      <div class="contacts__items">
+        <div class="contacts__content">
+          <a href="mailto:roman.ivashkevich963@gmail.com" class="contacts__item email">
+            <i class="material-icons">email</i>
+            roman.ivashkevich963@gmail.com
+          </a>
+        </div>
+        <div class="contacts__content">
+          <a href="tel:+375336100626" class="contacts__item phone">
+            <i class="material-icons">phone</i>
+            +375336100626
+          </a>
+        </div>
+        <div class="contacts__content">
+          <a href="javascript:void(0)" class="contacts__item telegram">
+            <i class="material-icons">connect_without_contact</i>
+            @emarf
+          </a>
+        </div>
+        <div class="contacts__content">
+          <a href="https://www.google.com/maps/@53.9510705,27.6884397,17.75z" target="_blank"
+            class="contacts__item email">
+            <i class="material-icons">email</i>
+            Minsk, Belarus
+          </a>
+        </div>
+      </div>
+    </aside>
+    <!-- /Contacts -->
+    <main class="cv-main">
+      <!-- Profile info -->
+      <section class="profile-info container">
+        <h2 class="profile-info__title title">Profile info</h2>
+        <div class="profile-info__content">
+          I’m going to start working as a Front-End Developer in IT company. My main
+          goal is to become a highly qualified full-stack developer. I also want to improve my soft skills to work in a
+          team and in the future become a lead developer, teach and improve my knowledge constantly.<br>
+          About my personal skills: Creative spirit, reliable and professional, organized, time management, team player,
+          fast learner, motivated, goal-oriented, friendly.
+        </div>
+      </section>
+      <!-- /Profile info -->
+      <!-- Skills -->
+      <section class="skills container">
+        <h2 class="skills__title title">Skills</h2>
+        <div class="skills__wrapper">
+          <div class="skills__content">
+            <div class="skill">JavaScript</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">HTML5</div>
+            <div class="skill">Gulp</div>
+          </div>
+          <div class="skills__content">
+            <div class="skill">Webpack</div>
+            <div class="skill">SASS</div>
+            <div class="skill">LESS</div>
+            <div class="skill">GIT</div>
+          </div>
+          <div class="skills__content">
+            <div class="skill">Material UI</div>
+            <div class="skill">Bootstrap4</div>
+            <div class="skill">NodeJS(elementary)</div>
+            <div class="skill">React/Redux(elementary)</div>
+          </div>
+        </div>
+      </section>
+      <!-- /Skills -->
+      <!-- Work experience -->
+      <section class="work-experience container">
+        <h2 class="work-experience__title title">Work experience</h2>
+        <div class="work-experience__items">
+          <div class="work-experience__item">
+            <div class="work-experience__item-name">Dominos Delivery</div>
+            <div class="work-experience__item-period">Sep 2019 - present</div>
+            <div class="work-experience__item-description">Experience working in a team and stressful situations.
+              Personal
+              responsibility.</div>
+          </div>
+          <div class="work-experience__item">
+            <div class="work-experience__item-name">Geodesy - Military photogrammetrist</div>
+            <div class="work-experience__item-period">Aug 2019 - Apr 2020</div>
+            <div class="work-experience__item-description">Used terrain images to digitize the electronic map. Learning
+              foreign and
+              national landscapes.</div>
+          </div>
+        </div>
+      </section>
+      <!-- /Work experience -->
+      <!-- Education -->
+      <section class="education container">
+        <h2 class="education__title title">Education</h2>
+        <div class="education__items">
+          <div class="education__item">
+            <div class="education__item-name">Rolling Scopes School - JS/FE 2020/2021(JavaScript/Front-End)</div>
+            <div class="education__item-credential">
+              <a href="https://drive.google.com/file/d/1RYwG4o2kOoQM0dkm1m3x85nSstHelYw9/view" target="_blank"
+                class="credential">Rolling Scopes credential</a>
+            </div>
+            <div class="education__item-period">Sep 2019 - present</div>
+          </div>
+          <div class="education__items">
+            <div class="education__item">
+              <div class="education__item-name">Polotsk State University - Faculty of information technologies(Geodesy)
+              </div>
+              <div class="education__item-period">Aug 2014 - Jun 2019</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Education -->
+    </main>
+    <!-- Footer -->
+    <footer class="cv-footer">
+      <div class="cv-footer__content">Create by <strong>Roman Ivashkevich</strong> 2021</div>
+    </footer>
+    <!-- Footer -->
+  </div>
+  <button class="cv-btn-top">Top!</button>
+</body>
+
+</html>
