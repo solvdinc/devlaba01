@@ -1,0 +1,65 @@
+@media(min-width: 600px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 5px;
+        display: grid;
+        grid-template-areas: "header header"
+                            "sidebar content";
+        grid-template-columns: 30% 70%;
+        margin: 0 auto;
+    }
+    .main-header {
+        grid-area: header;
+        position: static;
+        height: 170px;
+    }
+    .main-header__main-navigation {
+        top: 170px;
+    }
+    .main-header__intro {
+        align-items: start;
+        justify-content: flex-start;
+    }
+    .main-header-intro__photo {
+        margin-top: 10px;
+        width: 150px;
+        height: 150px;
+        padding: 3px;
+    }
+    .main-header-intro__name {
+        padding-top: 40px;
+        padding-left: 100px;
+        font-size: 3.2rem;
+    }
+    .sidebar-contacts {
+        grid-area: sidebar;
+        padding: 0;
+    }
+    .sidebar-contacts__list {
+        margin-left: 10px;
+    }
+    .sidebar-contacts-list__item {
+        font-size: inherit;
+        font-size: 1.6rem;
+    }
+    .main-content {
+        grid-area: content;
+        margin-left: 20px;
+    }
+    .skills-section__list {
+        padding-left: 15px;
+    }
+    .education-section,
+    .experience-section {
+        font-size: 1.6rem;
+    }
+    .to-top-btn {
+        visibility: hidden;
+    }
+    .hobby-section__list {
+        padding-left: 15px;
+    }
+    .hobby-section-list__item {
+        font-size: 1.6rem;
+    }
+}

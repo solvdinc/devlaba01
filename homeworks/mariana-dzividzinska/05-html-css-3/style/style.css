@@ -1,0 +1,346 @@
+html,
+body {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+ul {
+    margin-top: 0;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-title {
+    padding-bottom: 10px;
+}
+
+.section-title__name {
+    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 10px;
+    margin-bottom: 0;
+    font-weight: 900;
+    color: #206617;
+}
+
+.section-title__line {
+    margin-top: 5px;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, #206617, #3ecc6d);
+}
+
+.link {
+    text-decoration: underline;
+    color: #247c24;
+}
+
+.link:hover {
+    font-size: 1.8rem;
+    transition: font-size 1s;
+}
+
+.link:not(:hover) {
+    font-size: 1.4rem;
+    transition: font-size 1s;
+}
+
+.wrapper {
+    padding: 0 5px;
+}
+
+.hamburger-menu__toggle {
+    opacity: 0;
+}
+
+.hamburger-menu__btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+.hamburger-menu__toggle:checked ~ .main-header__main-navigation {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.hamburger-menu__toggle:checked ~ .hamburger-menu__btn > .hamburger-menu__line:nth-child(1) {
+    transform-origin: center;
+    transform: translateY(9px) rotate(45deg);
+    transition: transform 1s 500ms;
+}
+
+.hamburger-menu__toggle:checked ~ .hamburger-menu__btn > .hamburger-menu__line:nth-child(2) {
+    transform-origin: center;
+    transform:  rotate(-45deg);
+    transition: transform 1s 500ms;
+}
+
+.hamburger-menu__toggle:checked ~ .hamburger-menu__btn > .hamburger-menu__line:nth-child(3) {
+    transform: translateY(-9px);
+    opacity: 0;
+    transition: transform 500ms, opacity 10ms 500ms;
+}
+
+.hamburger-menu__toggle:not(:checked) ~ .hamburger-menu__btn > .hamburger-menu__line:nth-child(1) {
+    transform-origin: center;
+    transform: translateY(0px) rotate(0);
+    transition: transform 500ms;
+}
+
+.hamburger-menu__toggle:not(:checked) ~ .hamburger-menu__btn > .hamburger-menu__line:nth-child(2) {
+    transform-origin: center;
+    transform:  rotate(0);
+    transition: transform 500ms;
+}
+
+.hamburger-menu__toggle:not(:checked) ~ .hamburger-menu__btn > .hamburger-menu__line:nth-child(3) {
+    transform: translateY(0);
+    transition: transform 500ms 500ms;
+}
+
+.hamburger-menu__line {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: #fff;
+}
+
+.main-header__main-navigation {
+    visibility: hidden;
+    opacity: 0;
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    border-left: 2px solid green;
+}
+
+.main-navigation__list {
+    width: 50vw;
+    height: 100vh;
+    font-size: 1.2rem;
+    padding-left: 5px;
+}
+
+.main-navigation-list__item {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.main-navigation-list__item-link {
+    font-size: 1.6rem;
+    color: #000;
+    text-decoration: none;
+    display: block;
+}
+
+.main-navigation-list__item-link:hover {
+    background:#206617; 
+    color: #fff;
+    font-size: 1.8rem;
+    padding: 5px;
+    transition:250ms;
+}
+
+.main-navigation-list__item-link:not(:hover) {
+    background: #fff;
+    color: #000;
+    font-size: 1.6rem;
+    padding: 0;
+    transition: 250ms;
+}
+
+.main-header {
+    background: linear-gradient(90deg, #206617, #3ecc6d);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.main-header__intro {
+    padding-left: 10px;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header-intro__photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 1px;
+    border: 2px solid #fff;
+}
+
+.main-header-intro__name {
+    padding-left: 10px;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.sidebar-contacts__list {
+    padding-left: 15px;
+}
+
+.sidebar-contacts {
+    padding-left: 10px;
+    padding-top: 70px;
+}
+
+.sidebar-contacts-list__item {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 10px 10px;
+}
+
+.main-content {
+    margin-left: 7px;
+}
+
+.education-section {
+    font-size: 1.4rem;
+}
+
+.education-section__period {
+    font-style: italic;
+}
+
+.education-section__university-name {
+    font-weight: 700;
+    width: 80%;
+}
+
+.education-section__faculty-name,
+.education-section__speciality {
+    font-style: italic;
+}
+
+.skills-section__list {
+    padding-left: 15px;
+}
+
+.skills-section-list__item {
+    font-size: 1.4rem;
+}
+
+.experience-section {
+    font-size: 1.4rem;
+}
+
+.experience-projects__item {
+    width: 80%;
+    height: 200px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.experience-project-item__img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.experience-project-item__img {
+    width: 100%;
+    height: 100%;
+}
+
+.experience-project-item__content-wrapper {
+    transform: scale(0);
+}
+
+.experience-projects__item:hover > .experience-project-item__img-wrapper {
+    transform: scale(0);
+    opacity: 0.3;
+    transition: transform 1s;
+}
+
+.experience-projects__item:hover {
+    background: #bffad2;
+    transition: 3s;
+}
+
+.experience-projects__item:hover .experience-project-item__content-wrapper {
+    transform: scale(1);
+    transition: 1.5s cubic-bezier(.32,1.52,.52,1.38);
+}
+
+.experience-projects__item:not(:hover) > .experience-project-item__img-wrapper {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 1s 500ms, opacity 3s;
+}
+
+.experience-projects__item:not(:hover) {
+    background: #fff;
+    transition: 5s;
+}
+
+.experience-projects__item:not(:hover) .experience-project-item__content-wrapper {
+    transform: scale(0);
+    opacity: 0.3;
+    transition: 1.5s;
+}
+
+.experience-project-item__name {
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+.experience-project-item__description,
+.experience-project-item__source-code {
+    font-style: italic;
+}
+
+.experience-project-item__technologies {
+    font-weight: 600;
+}
+
+.hobby-section__list {
+    padding-left: 15px;
+}
+
+.hobby-section-list__item {
+    font-size: 1.4rem;
+}
+
+.to-top-btn {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+.to-top-btn__img {
+    background: #3ecc6d;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
