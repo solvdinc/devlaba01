@@ -2,7 +2,7 @@
 
 Your task is to complete all of codewars katas.
 
-## Deadline 05.08.2021 (08 april 2021)
+## Deadline 05.08.2021 (08 april 2021) 23:59 (GMT+3)
 
 ### Definition of done
 
