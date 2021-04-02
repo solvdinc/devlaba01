@@ -34,3 +34,18 @@ const printArray = function (array) {
   return array.join(',');
 };
 console.log(printArray(['h', 'o', 'l', 'a']));
+
+// Transportation on vacation - 4
+const rentalCarCost = function (d) {
+  let discount = 0;
+  const rentalCost = 40;
+
+  if (d >= 7) {
+    discount = 50;
+  } else if (d >= 3) {
+    discount = 20;
+  }
+
+  return d * rentalCost - discount;
+};
+console.log(rentalCarCost(10));
