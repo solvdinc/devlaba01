@@ -104,3 +104,17 @@ const dividedBy = function (n1) {
 };
 
 console.log(five(plus(six())));
+
+// Get the Middle Character - 6
+const getMiddle = function (s) {
+  const even = (num) => !(num % 2);
+  const middle = Math.round(s.length / 2);
+
+  if (even(s.length)) {
+    return s.slice(middle - 1, middle + 1);
+  }
+
+  return s.slice(middle - 1, middle);
+};
+
+console.log(getMiddle('testing'));
