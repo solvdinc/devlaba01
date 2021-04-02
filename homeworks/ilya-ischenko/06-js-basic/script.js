@@ -25,3 +25,9 @@ const basicOp1 = function (operation, value1, value2) {
   };
 };
 console.log(basicOp1('+', 2, 5));
+
+// Printing Array elements with Comma delimiters - 3
+const printArray = function (array) {
+    return array.join(',');
+};
+console.log(printArray(["h","o","l","a"]));
