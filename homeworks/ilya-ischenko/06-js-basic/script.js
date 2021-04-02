@@ -102,7 +102,6 @@ const dividedBy = function (n1) {
     return Math.floor(n2 / n1);
   };
 };
-
 console.log(five(plus(six())));
 
 // Get the Middle Character - 6
@@ -116,5 +115,11 @@ const getMiddle = function (s) {
 
   return s.slice(middle - 1, middle);
 };
-
 console.log(getMiddle('testing'));
+
+// Word Count - 8
+const countWords = function (str) {
+  const letterStr = str.match(/[^\s]+/g) || [];
+  return letterStr.length;
+};
+console.log(countWords('I am string'));
