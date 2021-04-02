@@ -49,3 +49,58 @@ const rentalCarCost = function (d) {
   return d * rentalCost - discount;
 };
 console.log(rentalCarCost(10));
+
+// Calculating with Functions - 5
+const zero = function (f) {
+  return f ? f(0) : 0;
+};
+const one = function (f) {
+  return f ? f(1) : 1;
+};
+const two = function (f) {
+  return f ? f(2) : 2;
+};
+const three = function (f) {
+  return f ? f(3) : 3;
+};
+const four = function (f) {
+  return f ? f(4) : 4;
+};
+const five = function (f) {
+  return f ? f(5) : 5;
+};
+const six = function (f) {
+  return f ? f(6) : 6;
+};
+const seven = function (f) {
+  return f ? f(7) : 7;
+};
+const eight = function (f) {
+  return f ? f(8) : 8;
+};
+const nine = function (f) {
+  return f ? f(9) : 9;
+};
+
+const plus = function (n1) {
+  return function (n2) {
+    return n2 + n1;
+  };
+};
+const minus = function (n1) {
+  return function (n2) {
+    return n2 - n1;
+  };
+};
+const times = function (n1) {
+  return function (n2) {
+    return n2 * n1;
+  };
+};
+const dividedBy = function (n1) {
+  return function (n2) {
+    return Math.floor(n2 / n1);
+  };
+};
+
+console.log(five(plus(six())));
