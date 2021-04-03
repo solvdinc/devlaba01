@@ -163,3 +163,9 @@ const zipWith = function (fn, a0, a1) {
 
   return minArr.map((item, index) => fn(a0[index], a1[index]));
 };
+
+// Filter the number - 12
+const FilterString = function (value) {
+  return +value.match(/\d/g).join('');
+};
+console.log(FilterString('12fd'));
