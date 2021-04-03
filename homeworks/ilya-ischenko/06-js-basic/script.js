@@ -156,3 +156,10 @@ const findOutlier = function (integers) {
   return evenArr[0];
 };
 console.log(findOutlier([70348169, -21048669, -37158567, -72614069, -15491459, 160941471, 8]));
+
+// zipWith - 11
+const zipWith = function (fn, a0, a1) {
+  let minArr = a0.length < a1.length ? a0 : a1;
+
+  return minArr.map((item, index) => fn(a0[index], a1[index]));
+};
