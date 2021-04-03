@@ -139,3 +139,20 @@ const findOdd = function (A) {
   return [];
 };
 console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+
+// Find The Parity Outlier - 10
+const findOutlier = function (integers) {
+  const oddArr = [];
+  const evenArr = [];
+
+  integers.forEach((integer) => {
+    integer % 2 !== 0 ? oddArr.push(integer) : evenArr.push(integer);
+  });
+
+  if (oddArr.length === 1) {
+    return oddArr[0];
+  }
+
+  return evenArr[0];
+};
+console.log(findOutlier([70348169, -21048669, -37158567, -72614069, -15491459, 160941471, 8]));
