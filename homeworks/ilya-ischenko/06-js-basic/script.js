@@ -123,3 +123,19 @@ const countWords = function (str) {
   return letterStr.length;
 };
 console.log(countWords('I am string'));
+
+// Find the odd int - 9
+const findOdd = function (A) {
+  let tempArr = [];
+
+  for (let i = 0; i < A.length; i++) {
+    tempArr = A.filter((value) => value === A[i]);
+
+    if (tempArr.length % 2 === 1) {
+      return tempArr[0];
+    }
+  }
+
+  return [];
+};
+console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
