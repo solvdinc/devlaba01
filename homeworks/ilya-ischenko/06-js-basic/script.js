@@ -218,3 +218,21 @@ const catMouse = function (map, moves) {
   return 'Escaped!';
 };
 console.log(catMouse('..C...... ......... ........m', 5));
+
+// Duplicate Encoder - 15
+const duplicateEncode = function (word) {
+  const wordArr = word.toLowerCase().split('');
+  const result = [];
+
+  for (let i = 0; i < wordArr.length; i++) {
+    if (wordArr.indexOf(wordArr[i]) === wordArr.lastIndexOf(wordArr[i])) {
+      result.push('(');
+    } else {
+      result.push(')');
+    }
+  }
+
+  return result.join('');
+};
+
+console.log(duplicateEncode('Success'));
