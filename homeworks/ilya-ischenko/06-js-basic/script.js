@@ -169,3 +169,15 @@ const FilterString = function (value) {
   return +value.match(/\d/g).join('');
 };
 console.log(FilterString('12fd'));
+
+// N-th Fibonacci - 13
+const nthFibo = function (n) {
+  const fibArr = [0, 1];
+
+  for (let i = 0; i < n; i++) {
+    fibArr.push(fibArr[i] + fibArr[i + 1]);
+  }
+
+  return fibArr[n - 1];
+};
+console.log(nthFibo(4));
