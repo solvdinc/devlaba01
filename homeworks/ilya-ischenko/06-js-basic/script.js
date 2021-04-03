@@ -181,3 +181,40 @@ const nthFibo = function (n) {
   return fibArr[n - 1];
 };
 console.log(nthFibo(4));
+
+// Cat and Mouse - 2D Version - 14
+const catMouse = function (map, moves) {
+  const field = [];
+  const maxMoves = moves;
+  let gameMap = map;
+  let catCoords = null;
+  let mouseCoords = null;
+
+  gameMap = map.split('\n');
+
+  gameMap.forEach((line, index) => {
+    if (line.includes('C')) {
+      catCoords = { x: line.indexOf('C'), y: index };
+    }
+
+    if (line.includes('m')) {
+      mouseCoords = { x: line.indexOf('m'), y: index };
+    }
+
+    field.push([line]);
+  });
+
+  if (!catCoords || !mouseCoords) {
+    return 'boring without two animals';
+  }
+
+  const xMove = Math.abs(catCoords.x - mouseCoords.x);
+  const yMove = Math.abs(catCoords.y - mouseCoords.y);
+
+  if (xMove + yMove <= maxMoves) {
+    return 'Caught!';
+  }
+
+  return 'Escaped!';
+};
+console.log(catMouse('..C...... ......... ........m', 5));
