@@ -234,5 +234,49 @@ const duplicateEncode = function (word) {
 
   return result.join('');
 };
-
 console.log(duplicateEncode('Success'));
+
+// Additive Numbers - 16
+const findAdditiveNumbers = function (num) {
+  const numArr = num.split('');
+  let firstNum = numArr[0];
+  let secondNum = numArr[1];
+  let nextNum;
+  let testResult;
+  let result = [];
+  let biggestRes = [];
+
+  for (let i = 0; i < numArr.length; i++) {
+    for (let b = i + 2; b < numArr.length; b++) {
+      if (secondNum.startsWith('0') && secondNum.length > 1) {
+        secondNum = secondNum.replace(/0/g, '');
+      }
+      if (firstNum.startsWith('0') && secondNum.length > 1) {
+        firstNum = firstNum.replace(/0/g, '');
+      }
+
+      nextNum = String(+firstNum + +secondNum);
+      testResult = numArr.slice(firstNum.length + secondNum.length, firstNum.length + secondNum.length + nextNum.length).join('');
+
+      if (nextNum === testResult) {
+        biggestRes = [firstNum, secondNum, nextNum];
+      }
+
+      secondNum += numArr[b];
+    }
+
+    firstNum += numArr[i + 1];
+    secondNum = numArr[i + 2];
+  }
+
+  result = result.concat(biggestRes);
+
+  if (result.length) {
+    while (result.join('').length < num.length) {
+      result.push(String(+result[result.length - 1] + +result[result.length - 2]));
+    }
+  }
+
+  return result.join('') === num ? result : [];
+};
+console.log(findAdditiveNumbers('101'));
