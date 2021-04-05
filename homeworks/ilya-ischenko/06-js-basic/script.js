@@ -1,12 +1,12 @@
 /* eslint-disable func-names */
 /* eslint-disable no-console */
-// Opposite number - 1
+// 1 - http://www.codewars.com/kata/opposite-number
 const oppositeNumber = function (number) {
   return -number;
 };
 console.log(oppositeNumber(1));
 
-// Basic Mathematical Operations - 2
+// 2 - http://www.codewars.com/kata/basic-mathematical-operations
 const basicOp = function (operation, value1, value2) {
   // eslint-disable-next-line no-eval
   return eval(`${value1} ${operation} ${value2}`);
@@ -29,13 +29,13 @@ const basicOp1 = function (operation, value1, value2) {
 };
 console.log(basicOp1('+', 2, 5));
 
-// Printing Array elements with Comma delimiters - 3
+// 3 - http://www.codewars.com/kata/printing-array-elements-with-comma-delimiters
 const printArray = function (array) {
   return array.join(',');
 };
 console.log(printArray(['h', 'o', 'l', 'a']));
 
-// Transportation on vacation - 4
+// 4 -http://www.codewars.com/kata/transportation-on-vacation
 const rentalCarCost = function (d) {
   let discount = 0;
   const rentalCost = 40;
@@ -50,7 +50,7 @@ const rentalCarCost = function (d) {
 };
 console.log(rentalCarCost(10));
 
-// Calculating with Functions - 5
+// 5 - http://www.codewars.com/kata/calculating-with-functions
 const zero = function (f) {
   return f ? f(0) : 0;
 };
@@ -104,7 +104,7 @@ const dividedBy = function (n1) {
 };
 console.log(five(plus(six())));
 
-// Get the Middle Character - 6
+// 6 - http://www.codewars.com/kata/get-the-middle-character
 const getMiddle = function (s) {
   const even = (num) => !(num % 2);
   const middle = Math.round(s.length / 2);
@@ -117,7 +117,7 @@ const getMiddle = function (s) {
 };
 console.log(getMiddle('testing'));
 
-// Partition On - 7
+// 7 - http://www.codewars.com/kata/partition-on
 function partitionOn (pred, items) {
   let trueArr = [];
   let falseArr = [];
@@ -139,14 +139,14 @@ function partitionOn (pred, items) {
   return falseArr.length;
 }
 
-// Word Count - 8
+// 8 - http://www.codewars.com/kata/word-count
 const countWords = function (str) {
   const letterStr = str.match(/[^\s]+/g) || [];
   return letterStr.length;
 };
 console.log(countWords('I am string'));
 
-// Find the odd int - 9
+// 9 - https://www.codewars.com/kata/find-the-odd-int/
 const findOdd = function (A) {
   let tempArr = [];
 
@@ -162,7 +162,7 @@ const findOdd = function (A) {
 };
 console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
 
-// Find The Parity Outlier - 10
+// 10 - https://www.codewars.com/kata/find-the-parity-outlier
 const findOutlier = function (integers) {
   const oddArr = [];
   const evenArr = [];
@@ -179,20 +179,20 @@ const findOutlier = function (integers) {
 };
 console.log(findOutlier([70348169, -21048669, -37158567, -72614069, -15491459, 160941471, 8]));
 
-// zipWith - 11
+// 11 - https://www.codewars.com/kata/zipwith
 const zipWith = function (fn, a0, a1) {
   let minArr = a0.length < a1.length ? a0 : a1;
 
   return minArr.map((item, index) => fn(a0[index], a1[index]));
 };
 
-// Filter the number - 12
+// 12 - https://www.codewars.com/kata/filter-the-number
 const FilterString = function (value) {
   return +value.match(/\d/g).join('');
 };
 console.log(FilterString('12fd'));
 
-// N-th Fibonacci - 13
+// 13 https://www.codewars.com/kata/n-th-fibonacci
 const nthFibo = function (n) {
   const fibArr = [0, 1];
 
@@ -204,7 +204,7 @@ const nthFibo = function (n) {
 };
 console.log(nthFibo(4));
 
-// Cat and Mouse - 2D Version - 14
+// 14 - https://www.codewars.com/kata/cat-and-mouse-2d-version/
 const catMouse = function (map, moves) {
   const field = [];
   const maxMoves = moves;
@@ -241,7 +241,7 @@ const catMouse = function (map, moves) {
 };
 console.log(catMouse('..C...... ......... ........m', 5));
 
-// Duplicate Encoder - 15
+// 15 - https://www.codewars.com/kata/duplicate-encoder
 const duplicateEncode = function (word) {
   const wordArr = word.toLowerCase().split('');
   const result = [];
@@ -258,7 +258,7 @@ const duplicateEncode = function (word) {
 };
 console.log(duplicateEncode('Success'));
 
-// Additive Numbers - 16
+// 16 - https://www.codewars.com/kata/5693239fb761dc8670000001
 const findAdditiveNumbers = function (num) {
   const numArr = num.split('');
   let firstNum = numArr[0];
@@ -303,7 +303,7 @@ const findAdditiveNumbers = function (num) {
 };
 console.log(findAdditiveNumbers('101'));
 
-// Build Tower - 17
+// 17 - https://www.codewars.com/kata/576757b1df89ecf5bd00073b
 const towerBuilder = function (nFloors) {
   const arr = [];
   const floorLength = nFloors * 2 - 1;
@@ -331,7 +331,7 @@ const towerBuilder = function (nFloors) {
 };
 console.log(towerBuilder(2));
 
-// Mexican Wave - 18
+// 18 - https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
 const wave = function (str) {
   const resultArr = [];
   let cloneStr;
@@ -347,7 +347,7 @@ const wave = function (str) {
 };
 console.log(wave('two words'));
 
-// String Breakers - 19
+// 19 - https://www.codewars.com/kata/59d398bb86a6fdf100000031
 const stringBreakers = function (n, string) {
   const str = string.replace(/\s/g, '');
   const result = [];
@@ -363,7 +363,7 @@ const stringBreakers = function (n, string) {
 };
 console.log(stringBreakers(5, 'This is an example string'));
 
-// Extract the domain name from a URL - 20
+// 20 - https://www.codewars.com/kata/514a024011ea4fb54200004b
 const domainName = function (url) {
   let copyUrl = url;
 
