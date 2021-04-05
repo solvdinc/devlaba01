@@ -117,6 +117,28 @@ const getMiddle = function (s) {
 };
 console.log(getMiddle('testing'));
 
+// Partition On - 7
+function partitionOn (pred, items) {
+  let trueArr = [];
+  let falseArr = [];
+  let resultArr = [];
+
+  for (let i = 0; i < items.length; i++) {
+    if (pred(items[i])) {
+      trueArr.push(items[i]);
+    } else {
+      falseArr.push(items[i]);
+    }
+  }
+
+  resultArr = [...falseArr, ...trueArr];
+  resultArr.forEach((item, index) => {
+    items[index] = item 
+  });
+
+  return falseArr.length;
+}
+
 // Word Count - 8
 const countWords = function (str) {
   const letterStr = str.match(/[^\s]+/g) || [];
