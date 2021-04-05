@@ -340,3 +340,15 @@ const stringBreakers = function (n, string) {
   return result.join('');
 };
 console.log(stringBreakers(5, 'This is an example string'));
+
+// Extract the domain name from a URL - 20
+const domainName = function (url) {
+  let copyUrl = url;
+
+  copyUrl = copyUrl.replace('http://', '');
+  copyUrl = copyUrl.replace('https://', '');
+  copyUrl = copyUrl.replace('www.', '');
+
+  return copyUrl.split('.')[0];
+};
+console.log(domainName('http://google.com'));
