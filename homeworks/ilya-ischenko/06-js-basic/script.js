@@ -280,3 +280,47 @@ const findAdditiveNumbers = function (num) {
   return result.join('') === num ? result : [];
 };
 console.log(findAdditiveNumbers('101'));
+
+// Build Tower - 17
+const towerBuilder = function (nFloors) {
+  const arr = [];
+  const floorLength = nFloors * 2 - 1;
+  let floor = [];
+
+  for (let i = 0; i < nFloors; i++) {
+    floor = [];
+    floor.length = floorLength;
+
+    for (let b = 0; b < floor.length; b++) {
+      floor[b] = '*';
+
+      if (i) {
+        for (let k = 0; k < i; k++) {
+          floor[k] = ' ';
+          floor[floorLength - 1 - k] = ' ';
+        }
+      }
+    }
+
+    arr.push(floor.join(''));
+  }
+
+  return arr.reverse();
+};
+console.log(towerBuilder(2));
+
+// Mexican Wave - 18
+const wave = function (str) {
+  const resultArr = [];
+  let cloneStr;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].trim()) {
+      cloneStr = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+      resultArr.push(cloneStr);
+    }
+  }
+
+  return resultArr;
+};
+console.log(wave('two words'));
