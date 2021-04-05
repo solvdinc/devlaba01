@@ -324,3 +324,19 @@ const wave = function (str) {
   return resultArr;
 };
 console.log(wave('two words'));
+
+// String Breakers - 19
+const stringBreakers = function (n, string) {
+  const str = string.replace(/\s/g, '');
+  const result = [];
+
+  for (let i = 1; i < str.length + 1; i++) {
+    result.push(str[i - 1]);
+    if (i % n === 0 && i > 0 && i !== str.length) {
+      result.push('\n');
+    }
+  };
+
+  return result.join('');
+};
+console.log(stringBreakers(5, 'This is an example string'));
