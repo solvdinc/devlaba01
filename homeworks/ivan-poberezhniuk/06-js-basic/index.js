@@ -289,17 +289,14 @@ const towerBuilder = (nFloor) => {
     let lineToPrint = "";
 
     for (let j = nFloor - i; j > 0; j -= 1) {
-      // prepare spaces
-      lineToPrint += " ";
+=      lineToPrint += " ";
     }
 
     for (let j = i * 2 - 1; j > 0; j -= 1) {
-      // prepare triangle symbols
       lineToPrint += "*";
     }
 
     for (let j = nFloor - i; j > 0; j -= 1) {
-      // prepare spaces
       lineToPrint += " ";
     }
 
