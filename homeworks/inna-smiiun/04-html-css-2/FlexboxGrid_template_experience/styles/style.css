@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1360px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header__logo {
+  font-size: 36px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.header__menu {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 40px;
+}
+
+.header__link {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 1px solid transparent;
+  font-size: 18px;
+}
+
+.header__link:hover,
+.header__link:visited {
+  color: #7ea4f2;
+  border-bottom: 1px solid #7ea4f2;
+}
+
+.menu[type="checkbox"] {
+  display: none;
+}
+
+.menu {
+  display: none;
+  grid-gap: 6px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__button {
+  width: 30px;
+  height: 4px;
+  background: black;
+}
+
+input.menu:checked ~ .header__menu {
+  display: grid;
+  grid-auto-flow: row;
+  position: absolute;
+  background: #f9f4f4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 80px 20px 20px;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 24px;
+  justify-content: space-between;
+  padding: 20px 20px 40px 20px;
+}
+
+.aside__title {
+  margin-bottom: 10px;
+}
+
+.aside__text {
+  text-align: justify;
+}
+
+.main {
+  display: grid;
+  grid-row-gap: 10px;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+}
+
+.block__small {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.block__image {
+  width: 100%;
+  height: auto;
+}
+
+.__big {
+  height: 100%;
+}
+
+.block__reverse {
+  grid-template-columns: 1fr 2fr;
+}
+
+.footer {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    grid-gap: 16px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas: "aside" "main";
+  }
+
+  .aside {
+    grid-area: aside;
+  }
+
+  .aside__title {
+    text-align: center;
+  }
+
+  .main {
+    grid-area: main;
+  }
+}
+
+@media (max-width: 567px) {
+  .header__menu {
+    display: none;
+  }
+
+  .header__link {
+    border-bottom: 1px solid black;
+  }
+
+  .menu {
+    display: grid;
+  }
+
+  .block {
+    grid-template-columns: 1fr;
+  }
+}

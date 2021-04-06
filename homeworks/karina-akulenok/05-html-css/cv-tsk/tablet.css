@@ -1,0 +1,95 @@
+@import "laptop.css";
+
+@media (max-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template: 
+        "avatar header" 12rem
+        "aside aside" 60rem
+        "main main" 130rem;
+        grid-template-columns: 30% 70%;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+    }
+
+    .avatar {
+        z-index: 99;
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
+
+    .header__logo {
+        width: 100%;
+        background-color: #2d2d2d;
+        color: rgb(247, 243, 233);
+    }
+
+    .header__title {
+        line-height: 3rem;
+    }
+
+    .avatar-container {
+        width: 150px;
+        height: 150px;
+        background: url(./img/avatar.jpg) no-repeat -65px -72px;
+        background-size: auto 350px;
+    }
+
+    .right-side {
+        width: 100%;
+        background-color: #2d2d2d;
+        color: rgb(247, 243, 233);
+        padding-right: 0;
+    }
+
+    .title-right {
+        border-bottom: 2px solid rgb(247, 243, 233);
+    }
+
+    .skill-lists__name {
+        opacity: 1;
+        word-wrap: break-word;
+        
+    }
+
+    .skill-lists__item {
+        font-size: 1rem;
+    }
+
+    .skill-lists {
+        margin-right: 50px;
+    }
+
+    .skill-lists__mark {
+        color: rgb(247, 243, 233);
+    }
+
+    .portfolio {
+        margin: 0 50px;
+    }
+
+    .portfolio__img {
+        width: 320px;
+        height: 200px;
+    }
+
+    .portfolio__mask {
+        width: 320px;
+        height: 200px;
+    }
+      
+    .item__link {
+        color: rgb(247, 243, 233);
+    }
+
+    .description {
+        color: rgb(247, 243, 233);
+        opacity: 1;
+    }
+}

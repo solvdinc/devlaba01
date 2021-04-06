@@ -1,0 +1,19 @@
+@import "iPhone.css";
+@import "mobile.css";
+@import "tablet.css";
+@import "laptop.css";
+
+@media (max-width: 370px) {
+    .header__title {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin-left: 20px;
+    }
+
+    .avatar-container {
+        width: 80px;
+        height: 80px;
+        background: url(./img/avatar.jpg) no-repeat -51px -51px;
+        background-size: auto 220px;
+    }
+}

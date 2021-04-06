@@ -1,0 +1,74 @@
+@media(min-width: 1024px) {
+    .wrapper {
+        width: 960px;
+    }
+    .section-title {
+        padding-bottom: 20px;
+    }
+    .section-title__name {
+        font-size: 1.8rem;
+    }
+    .section-title__line {
+        margin-top: 10px;
+        height: 4px;
+    }
+    .main-header {
+        height: 250px;
+    }
+    .main-header__hamburger-menu {
+        visibility: hidden;
+    }
+    .main-header__main-navigation {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        height: 40px;
+        width: 100%;
+        border: none;
+    }
+    .main-navigation__list {
+        margin-top: -25px;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    .main-header__intro {
+        position: inherit;
+    }
+    .main-header-intro__photo {
+        margin-top: 5px;
+        width: 200px;
+        height: 200px;
+    }
+    .main-header-intro__name {
+        font-size: 4.8rem;
+    }
+    .sidebar-contacts-list__item {
+        font-size: 1.4rem;
+    }
+    .skills-section__list {
+        padding-left: 17px;
+    }
+    .skills-section-list__item {
+        font-size: 1.6rem;
+    }
+    .experience-section-projects__list {
+        padding-right: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+    .experience-projects__item {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+    .experience-project-item__name {
+        font-size: 1.6rem;
+    }
+    .hobby-section__list {
+        padding-left: 17px;
+    }
+}
