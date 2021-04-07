@@ -278,9 +278,33 @@ const duplicateEncode = (word) => {
 };
 
 // Task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
-//
-//
-//
+const findAdditiveNumbers = (num) => {
+  const verify = (i, j, num) => {
+    let numArr = [+num.slice(0, i), +num.slice(i, j)];
+    i = 0;
+    num = num.slice(j);
+`   `
+    while (num) {
+      let next = numArr[i] + numArr[i + 1] + "";
+      let nextLength = next.length;
+      if (num.slice(0, nextLength) != next) return false;
+      numArr.push(+next), (i += 1), (num = num.slice(nextLength));
+    }
+
+    return numArr.map((x) => "" + x);
+  };
+
+  let numLength = num.length;
+
+  for (let i = 1; i <= numLength / 2; i += 1) {
+    for (let j = i + 1; j <= (numLength * 2) / 3; j += 1) {
+      const result = verify(i, j, num);
+      if (result) return result;
+    }
+  }
+
+  return [];
+};
 
 // Task 17 https://www.codewars.com/kata/576757b1df89ecf5bd00073b
 const towerBuilder = (nFloor) => {
