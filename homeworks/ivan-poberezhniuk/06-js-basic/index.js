@@ -283,7 +283,7 @@ const findAdditiveNumbers = (num) => {
     let numArr = [+num.slice(0, i), +num.slice(i, j)];
     i = 0;
     num = num.slice(j);
-`   `
+
     while (num) {
       let next = numArr[i] + numArr[i + 1] + "";
       let nextLength = next.length;
@@ -291,7 +291,7 @@ const findAdditiveNumbers = (num) => {
       numArr.push(+next), (i += 1), (num = num.slice(nextLength));
     }
 
-    return numArr.map((x) => "" + x);
+    return numArr.map((num) => "" + num);
   };
 
   let numLength = num.length;
