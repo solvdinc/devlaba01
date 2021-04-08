@@ -81,3 +81,9 @@ function gimme(inputArray) {
   return inputArray.indexOf(numbers[1]);
 };
 console.log(gimme([2, 3, 1]));
+
+// task 8 https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/javascript
+function binaryArrayToNumber(arr) {
+  return parseInt(Number(arr.join('')), 2);
+};
+console.log(binaryArrayToNumber([0, 0, 0, 1]));
