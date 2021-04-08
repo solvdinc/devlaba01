@@ -51,15 +51,30 @@ const evenChars = (string) => {
   let stringLength = string.length;
 
   if (stringLength < 2 || stringLength > 100) {
-    return "invalid string";
+    return 'invalid string';
   }
 
   return [...string].filter((char, index) => index % 2 !== 0);
 };
 // Task 7 https://www.codewars.com/kata/545a4c5a61aa4c6916000755
+
+let gimme = (inputArr) => {
+  const sortedArr = [...inputArr].sort((a, b) => a - b);
+  const midNum = sortedArr[Math.floor(sortedArr.length / 2)];
+  const index = inputArr.indexOf(midNum);
+
+  return index;
+};
+
 // Task 8 https://www.codewars.com/kata/578553c3a1b8d5c40300037c
+const binaryArrayToNumber = (arr) => parseInt(arr.join(''), 2);
+
 // Task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235
+const findUniq = (arr) =>
+  arr.find((item, index, arr) => arr.indexOf(item) === arr.lastIndexOf(item));
+
 // Task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
+
 // Task 11 https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
 
 // Optional (advanced)
