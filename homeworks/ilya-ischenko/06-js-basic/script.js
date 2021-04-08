@@ -123,7 +123,7 @@ function partitionOn (pred, items) {
   let falseArr = [];
   let resultArr = [];
 
-  for (let i = 0; i < items.length; i++) {
+  for (let i = 0; i < items.length; i += 1) {
     if (pred(items[i])) {
       trueArr.push(items[i]);
     } else {
@@ -150,7 +150,7 @@ console.log(countWords('I am string'));
 const findOdd = function(A) {
   let tempArr = [];
 
-  for (let i = 0; i < A.length; i++) {
+  for (let i = 0; i < A.length; i += 1) {
     tempArr = A.filter((value) => value === A[i]);
 
     if (tempArr.length % 2 === 1) {
@@ -196,7 +196,7 @@ console.log(FilterString('12fd'));
 const nthFibo = function(n) {
   const fibArr = [0, 1];
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n; i += 1) {
     fibArr.push(fibArr[i] + fibArr[i + 1]);
   }
 
@@ -246,7 +246,7 @@ const duplicateEncode = function(word) {
   const wordArr = word.toLowerCase().split('');
   const result = [];
 
-  for (let i = 0; i < wordArr.length; i++) {
+  for (let i = 0; i < wordArr.length; i += 1) {
     if (wordArr.indexOf(wordArr[i]) === wordArr.lastIndexOf(wordArr[i])) {
       result.push('(');
     } else {
@@ -268,8 +268,8 @@ const findAdditiveNumbers = function(num) {
   let result = [];
   let biggestRes = [];
 
-  for (let i = 0; i < numArr.length; i++) {
-    for (let b = i + 2; b < numArr.length; b++) {
+  for (let i = 0; i < numArr.length; i += 1) {
+    for (let b = i + 2; b < numArr.length; b += 1) {
       if (secondNum.startsWith('0') && secondNum.length > 1) {
         secondNum = secondNum.replace(/0/g, '');
       }
@@ -309,15 +309,15 @@ const towerBuilder = function(nFloors) {
   const floorLength = nFloors * 2 - 1;
   let floor = [];
 
-  for (let i = 0; i < nFloors; i++) {
+  for (let i = 0; i < nFloors; i += 1) {
     floor = [];
     floor.length = floorLength;
 
-    for (let b = 0; b < floor.length; b++) {
+    for (let b = 0; b < floor.length; b += 1) {
       floor[b] = '*';
 
       if (i) {
-        for (let k = 0; k < i; k++) {
+        for (let k = 0; k < i; k += 1) {
           floor[k] = ' ';
           floor[floorLength - 1 - k] = ' ';
         }
@@ -336,7 +336,7 @@ const wave = function(str) {
   const resultArr = [];
   let cloneStr;
 
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i += 1) {
     if (str[i].trim()) {
       cloneStr = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
       resultArr.push(cloneStr);
@@ -352,7 +352,7 @@ const stringBreakers = function(n, string) {
   const str = string.replace(/\s/g, '');
   const result = [];
 
-  for (let i = 1; i < str.length + 1; i++) {
+  for (let i = 1; i < str.length + 1; i += 1) {
     result.push(str[i - 1]);
     if (i % n === 0 && i > 0 && i !== str.length) {
       result.push('\n');
