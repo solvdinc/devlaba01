@@ -87,3 +87,14 @@ function binaryArrayToNumber(arr) {
   return parseInt(Number(arr.join('')), 2);
 };
 console.log(binaryArrayToNumber([0, 0, 0, 1]));
+
+// task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/javascript
+function findUniq(arr) {
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+      return arr[i];
+    }
+  }
+  return 0;
+};
+console.log(findUniq([0, 1, 0]));
