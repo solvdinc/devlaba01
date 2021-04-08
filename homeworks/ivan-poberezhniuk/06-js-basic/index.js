@@ -176,6 +176,7 @@ const findOutlier = (integers) => {
   }
   return result;
 };
+
 // Task 11 https://www.codewars.com/kata/zipwith
 const zipWith = (fn, a0, a1) => {
   const zipped = [];
@@ -281,7 +282,7 @@ const duplicateEncode = (word) => {
 };
 
 // Task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
-const findAdditiveNumbers = (num) => {
+const findAdditiveNumbers = (number) => {
   const verify = (i, j, num) => {
     let numArr = [+num.slice(0, i), +num.slice(i, j)];
     i = 0;
@@ -297,11 +298,11 @@ const findAdditiveNumbers = (num) => {
     return numArr.map((num) => '' + num);
   };
 
-  let numLength = num.length;
+  let numLength = number.length;
 
   for (let i = 1; i <= numLength / 2; i += 1) {
     for (let j = i + 1; j <= (numLength * 2) / 3; j += 1) {
-      const result = verify(i, j, num);
+      const result = verify(i, j, number);
       if (result) return result;
     }
   }
