@@ -31,3 +31,9 @@ function maxMultiple(divisor, bound) {
   return Math.floor(bound / divisor) * divisor;
 };
 console.log(maxMultiple(2, 7));
+
+// task 4 https://www.codewars.com/kata/514a6336889283a3d2000001
+function getEvenNumbers(numbersArray) {
+  return numbersArray.filter((num) => num % 2 === 0);
+};
+console.log(getEvenNumbers([1, 2, 3, 4, 5]));
