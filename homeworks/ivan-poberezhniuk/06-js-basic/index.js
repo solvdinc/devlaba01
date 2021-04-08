@@ -289,16 +289,16 @@ const findAdditiveNumbers = (number) => {
     num = num.slice(j);
 
     while (num) {
-      let next = numArr[i] + numArr[i + 1] + '';
-      let nextLength = next.length;
+      const next = numArr[i] + numArr[i + 1] + '';
+      const nextLength = next.length;
       if (num.slice(0, nextLength) != next) return false;
       numArr.push(+next), (i += 1), (num = num.slice(nextLength));
     }
 
-    return numArr.map((num) => '' + num);
+    return numArr.map((item) => '' + item);
   };
 
-  let numLength = number.length;
+  const numLength = number.length;
 
   for (let i = 1; i <= numLength / 2; i += 1) {
     for (let j = i + 1; j <= (numLength * 2) / 3; j += 1) {
