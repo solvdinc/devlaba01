@@ -1,23 +1,22 @@
 // task 1 http://www.codewars.com/kata/opposite-number
 function opposite(number) {
-  const oppositeNum = -number;
-  return oppositeNum;
+  return -number;
 }
 console.log(opposite());
 
 // task 2 http://www.codewars.com/kata/basic-mathematical-operations
 function basicOp(operation, value1, value2) {
   if (operation === '+') {
-    return (value1 + value2);
+    return value1 + value2;
   }
   if (operation === '-') {
-    return (value1 - value2);
+    return value1 - value2;
   }
   if (operation === '*') {
-    return (value1 * value2);
+    return value1 * value2;
   }
   if (operation === '/') {
-    return (value1 / value2);
+    return value1 / value2;
   }
 }
 console.log(basicOp());
@@ -30,17 +29,14 @@ console.log(printArray());
 
 // task 4 http://www.codewars.com/kata/transportation-on-vacation
 function rentalCarCost(days) {
-  const coast = 40 * days;
-  let newCoast;
+  const cost = 40 * days;
   if (days >= 7) {
-    newCoast = coast - 50;
-    return newCoast;
+    return cost - 50;
   }
   if (days >= 3) {
-    newCoast = coast - 20;
-    return newCoast;
+    return cost - 20;
   }
-  return coast;
+  return cost;
 }
 console.log(rentalCarCost());
 
@@ -57,10 +53,10 @@ function seven(operation) { return value(7, operation); }
 function eight(operation) { return value(8, operation); }
 function nine(operation) { return value(9, operation); }
 
-function plus(a) { return function(b) { return (b + a); }; }
-function minus(a) { return function(b) { return (b - a); }; }
-function times(a) { return function(b) { return (b * a); }; }
-function dividedBy(a) { return function(b) { return Math.floor(b / a); }; }
+function plus(a) { return (b) => b + a; }
+function minus(a) { return (b) => b - a; }
+function times(a) { return (b) => b * a; }
+function dividedBy(a) { return (b) => Math.floor(b / a); }
 console.log(zero());
 console.log(one());
 console.log(two());
@@ -94,7 +90,7 @@ console.log(getMiddle());
 function partitionOn(pred, items) {
   const pTrue = [];
   const pFalse = [];
-  items.forEach(function(value) {
+  items.forEach((value) => {
     (pred(value)) ? pTrue.push(value) : pFalse.push(value)
   });
   items.length = 0;
@@ -150,8 +146,7 @@ console.log(zipWith());
 
 // task 12 https://www.codewars.com/kata/filter-the-number
 const FilterString = function(value) {
-  const nValue = value.split('').filter((el) => Number.isNaN(el) === false).join('');
-  const result = +nValue;
+  const result = parseInt(value.split('').filter((el) => Number.isNaN(el) === false).join(''), 10);
   return result;
 };
 console.log(FilterString());
@@ -173,13 +168,13 @@ console.log(nthFibo());
 // task 14 https://www.codewars.com/kata/cat-and-mouse-2d-version/
 function catMouse(map, moves) {
   const newMap = map.split('\n');
-  const locationC = newMap.map((s) => s.indexOf('C'));
-  const locationM = newMap.map((s) => s.indexOf('m'));
+  const locationCat = newMap.map((s) => s.indexOf('C'));
+  const locationMouse = newMap.map((s) => s.indexOf('m'));
   const cat = newMap.indexOf(newMap.filter((s) => s.includes('C'))[0]);
   const mouse = newMap.indexOf(newMap.filter((s) => s.includes('m'))[0]);
-  const indexC = locationC[cat];
-  const indexM = locationM[mouse];
-  const CatMoves = Math.abs(indexM - indexC) + Math.abs(cat - mouse);
+  const indexCat = locationCat[cat];
+  const indexMouse = locationMouse[mouse];
+  const CatMoves = Math.abs(indexMouse - indexCat) + Math.abs(cat - mouse);
   if (mouse === -1 || cat === -1) {
     return 'boring without two animals';
   }
