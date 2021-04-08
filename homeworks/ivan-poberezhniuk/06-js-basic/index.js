@@ -337,11 +337,11 @@ const towerBuilder = (nFloor) => {
 
 // Task 18 https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
 const wave = (str) => {
-  let result = [];
-  let strArr = str.split('');
+  const result = [];
+  const strArr = str.split('');
 
   for (let i = 0; i < strArr.length; i += 1) {
-    let word = [...strArr];
+    const word = [...strArr];
 
     if (strArr[i] !== ' ') {
       word[i] = word[i].toUpperCase();
