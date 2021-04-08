@@ -284,7 +284,7 @@ const duplicateEncode = (word) => {
 // Task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
 const findAdditiveNumbers = (number) => {
   const verify = (i, j, num) => {
-    let numArr = [+num.slice(0, i), +num.slice(i, j)];
+    const numArr = [+num.slice(0, i), +num.slice(i, j)];
     i = 0;
     num = num.slice(j);
 
