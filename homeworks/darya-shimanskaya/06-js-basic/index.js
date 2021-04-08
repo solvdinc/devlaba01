@@ -19,21 +19,17 @@ function basicOp(operation, value1, value2) {
 
 // task 3 link http://www.codewars.com/kata/printing-array-elements-with-comma-delimiters
 function printArray(array) {
-  const result = array.join();
-  return result;
+  return array.join();
 }
 
 // task 4 link http://www.codewars.com/kata/transportation-on-vacation
 function rentalCarCost(days) {
-  let total = 40 * days;
+  const total = 40 * days;
   if (days < 3) {
     return total;
   } if (days >= 7) {
-    total -= 50;
-  } else if (days >= 3 < 7) {
-    total -= 20;
-  }
-  return total;
+    return total - 50;
+  } return total - 20;
 }
 
 // task 5 link http://www.codewars.com/kata/calculating-with-functions
@@ -48,15 +44,15 @@ function seven(func) { return func ? func(7) : 7; }
 function eight(func) { return func ? func(8) : 8; }
 function nine(func) { return func ? func(9) : 9; }
 
-function plus(b) { return function (a) { return a + b; }; }
-function minus(b) { return function (a) { return a - b; }; }
-function times(b) { return function (a) { return a * b; }; }
-function dividedBy(b) { return function (a) { return a / b; }; }
+function plus(b) { return (a) => a + b; }
+function minus(b) { return (a) => a - b; }
+function times(b) { return (a) => a * b; }
+function dividedBy(b) { return (a) => a / b; }
 
 // task 6 link http://www.codewars.com/kata/get-the-middle-character
 function getMiddle(string) {
   const stringLength = string.length;
-  return string.slice((stringLength - 1) / 2, stringLength / 2 + 1);
+  return string.slice(Math.floor((stringLength - 1) / 2), Math.floor(stringLength / 2 + 1));
 }
 
 // task 7 link http://www.codewars.com/kata/partition-on
@@ -64,7 +60,7 @@ function partitionOn(pred, items) {
   const itemsTrue = [];
   const itemsFalse = [];
 
-  items.map((item, index) => ((pred(item)) ? itemsTrue.push(item) : itemsFalse.push(item)));
+  items.forEach((item) => ((pred(item)) ? itemsTrue.push(item) : itemsFalse.push(item)));
   items.length = 0;
   items.push(...itemsFalse, ...itemsTrue);
   return itemsFalse.length;
@@ -116,37 +112,37 @@ function zipWith(fn, a0, a1) {
 
 // task 12 https://www.codewars.com/kata/filter-the-number
 const FilterString = function FilterString(value) {
-  const num = parseInt(value.split(/\D/g).join(''), 10);
-  return num;
+  return parseInt(value.split(/\D/g).join(''), 10);
 };
 
 // task 13 https://www.codewars.com/kata/n-th-fibonacci
 function nthFibo(n) {
-  const result = (n <= 2) ? n - 1 : nthFibo(n - 1) + nthFibo(n - 2);
-  return result;
+  return (n <= 2) ? n - 1 : nthFibo(n - 1) + nthFibo(n - 2);
 }
 
 // task 14 link https://www.codewars.com/kata/cat-and-mouse-2d-version/
 function catMouse(map, moves) {
-  const oneLevelMap = map.split('\n');
-  const cat = oneLevelMap.find((findC) => findC.includes('C'));
-  const mouse = oneLevelMap.find((findM) => findM.includes('m'));
+  const newMap = map.split('\n');
+  const cat = newMap.find((findC) => findC.includes('C'));
+  const mouse = newMap.find((findM) => findM.includes('m'));
 
   if (!cat || !mouse) { return 'boring without two animals'; }
 
-  const catX = oneLevelMap.map((cX) => cX.indexOf('C')).filter((cX) => cX > -1);
-  const catY = oneLevelMap.map((cY) => cY.includes('C')).indexOf(true);
-  const mouseX = oneLevelMap.map((mX) => mX.indexOf('m')).filter((mX) => mX > -1);
-  const mouseY = oneLevelMap.map((mY) => mY.includes('m')).indexOf(true);
+  const catX = newMap.map((cX) => cX.indexOf('C')).filter((cX) => cX > -1);
+  const catY = newMap.map((cY) => cY.includes('C')).indexOf(true);
+  const mouseX = newMap.map((mX) => mX.indexOf('m')).filter((mX) => mX > -1);
+  const mouseY = newMap.map((mY) => mY.includes('m')).indexOf(true);
 
   return Math.abs(catX - mouseX) + Math.abs(catY - mouseY) <= moves ? 'Caught!' : 'Escaped!';
 }
 
 // task 15 link https://www.codewars.com/kata/duplicate-encoder
 function duplicateEncode(word) {
-  const wordArray = word.toLowerCase().split('')
-    .map((item) => (word.indexOf(item) !== word.lastIndexOf(item) ? ')' : '('));
-  return wordArray.join('');
+  return word
+    .toLowerCase()
+    .split('')
+    .map((item) => (word.indexOf(item) !== word.lastIndexOf(item) ? ')' : '('))
+    .join('');
 }
 
 // task 17 link https://www.codewars.com/kata/576757b1df89ecf5bd00073b
