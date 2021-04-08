@@ -16,7 +16,7 @@ console.log(positiveSum([1, -2, 3, 4, 5]));
 function pairs(ar) {
   let numPairs = 0;
 
-  for (let i = 0; i < ar.length - 1; i += 2) {
+  for (let i = 0; i < ar.length; i += 2) {
     if (ar[i] + 1 === ar[i + 1] || ar[i] - 1 === ar[i + 1]) {
       numPairs += 1;
     }
@@ -25,3 +25,9 @@ function pairs(ar) {
   return numPairs;
 };
 console.log(pairs([1, 2, 5, 8, -4, -3, 7, 6, 5]));
+
+// task 3 https://www.codewars.com/kata/5aba780a6a176b029800041c
+function maxMultiple(divisor, bound) {
+  return Math.floor(bound / divisor) * divisor;
+};
+console.log(maxMultiple(2, 7));
