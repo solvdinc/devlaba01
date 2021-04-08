@@ -138,8 +138,8 @@ const countWords = (str) => {
 };
 
 // Task 9 https://www.codewars.com/kata/find-the-odd-int/
-const findOdd = (arr) =>
-  arr.find((searchNumber) => {
+const findOdd = (arr) => {
+  const oddNumber = arr.find((searchNumber) => {
     const filteredNumbers = arr.filter(
       (currentNumber) => searchNumber === currentNumber
     );
@@ -147,7 +147,11 @@ const findOdd = (arr) =>
     if (filteredNumbers.length % 2 > 0) {
       return searchNumber;
     }
+    return false;
   });
+
+  return oddNumber;
+};
 
 // Task 10 https://www.codewars.com/kata/find-the-parity-outlier
 const findOutlier = (integers) => {
