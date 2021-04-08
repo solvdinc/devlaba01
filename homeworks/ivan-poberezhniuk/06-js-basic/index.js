@@ -29,9 +29,8 @@ const rentalCarCost = (days) => {
     return total - 50;
   } else if (days >= 3) {
     return total - 20;
-  } else {
-    return total;
   }
+  return total;
 };
 
 // Task 5 http://www.codewars.com/kata/calculating-with-functions
