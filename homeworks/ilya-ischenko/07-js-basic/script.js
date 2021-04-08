@@ -62,3 +62,15 @@ function solve(arr) {
   return resultArr;
 };
 console.log(solve([15, 11, 10, 7, 12]));
+
+// task 6 https://www.codewars.com/kata/566044325f8fddc1c000002c/train/javascript
+function evenChars(string) {
+  if (string.length > 100 || string.length < 2) {
+    return 'invalid string';
+  }
+
+  const str = string.split('');
+
+  return str.filter((item, index) => index % 2 === 1);
+}
+console.log(evenChars('abcdefghijklm'));
