@@ -74,3 +74,10 @@ function evenChars(string) {
   return str.filter((item, index) => index % 2 === 1);
 }
 console.log(evenChars('abcdefghijklm'));
+
+// task 7 https://www.codewars.com/kata/545a4c5a61aa4c6916000755/train/javascript
+function gimme(inputArray) {
+  const numbers = [...inputArray].sort((a, b) => a - b);
+  return inputArray.indexOf(numbers[1]);
+};
+console.log(gimme([2, 3, 1]));
