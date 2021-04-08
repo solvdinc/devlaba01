@@ -1,7 +1,7 @@
 // Task 1 http://www.codewars.com/kata/opposite-number
 const opposite = (number) => number * -1;
 
-//Task 2 http://www.codewars.com/kata/basic-mathematical-operations
+// Task 2 http://www.codewars.com/kata/basic-mathematical-operations
 const basicOp = (operation, value1, value2) => {
   switch (operation) {
     case '+':
@@ -23,7 +23,7 @@ const printArray = (array) => array.toString();
 // Task 4 http://www.codewars.com/kata/transportation-on-vacation
 const rentalCarCost = (days) => {
   const dayRentCost = 40;
-  let total = days * dayRentCost;
+  const total = days * dayRentCost;
 
   if (days >= 7) {
     return total - 50;
