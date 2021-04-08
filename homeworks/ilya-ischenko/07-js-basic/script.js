@@ -124,3 +124,25 @@ function decipherThis(str) {
   return arr.join(' ');
 }; 
 console.log(decipherThis('72olle 103doo 100ya'));
+
+// 11 https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
+function sortArray(array) {
+  const nums = [...array];
+  let min;
+  let temp;
+
+  for (let i = 0; i < nums.length - 1; i += 1) {
+    if (Math.abs(nums[i]) % 2 === 1) {
+      min = i;
+      for (let j = i + 1; j < nums.length; j += 1) {
+        if (nums[j] < nums[i] && Math.abs(nums[j]) % 2 === 1) {
+          temp = nums[min];
+          nums[min] = nums[j];
+          nums[j] = temp;
+        }
+      }
+    }
+  }
+  return nums;
+};
+console.log(sortArray([5, 3, 2, 8, 1, 4]));
