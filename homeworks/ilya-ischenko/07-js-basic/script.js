@@ -98,3 +98,29 @@ function findUniq(arr) {
   return 0;
 };
 console.log(findUniq([0, 1, 0]));
+
+// task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
+function decipherThis(str) {
+  const arr = str.split(' ');
+  let word;
+  let charCode;
+  let letter;
+  let temp;
+
+  for (let i = 0; i < arr.length; i += 1) {
+    word = arr[i];
+    charCode = Number(word.match(/\d/g).join(''));
+    word = word.replace(/\d/g, '').split('');
+    letter = String.fromCharCode(charCode);
+
+    temp = word[word.length - 1];
+    word[word.length - 1] = word[0];
+    word[0] = temp;
+    word.unshift(letter);
+
+    arr[i] = word.join('');
+  };
+
+  return arr.join(' ');
+}; 
+console.log(decipherThis('72olle 103doo 100ya'));
