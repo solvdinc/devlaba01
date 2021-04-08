@@ -37,3 +37,28 @@ function getEvenNumbers(numbersArray) {
   return numbersArray.filter((num) => num % 2 === 0);
 };
 console.log(getEvenNumbers([1, 2, 3, 4, 5]));
+
+// task 5 https://www.codewars.com/kata/5a090c4e697598d0b9000004/train/javascript
+function solve(arr) {
+  const numArr = [...arr];
+  const resultArr = [];
+  let max;
+  let min;
+
+  while (numArr.length) {
+    max = Math.max.apply(null, numArr);
+    min = Math.min.apply(null, numArr);
+
+    if (numArr.length) {
+      resultArr.push(max);
+      numArr.splice(numArr.indexOf(max), 1);
+    }
+
+    if (numArr.length) {
+      resultArr.push(min);
+      numArr.splice(numArr.indexOf(min), 1);
+    }
+  }
+  return resultArr;
+};
+console.log(solve([15, 11, 10, 7, 12]));
