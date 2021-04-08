@@ -4,13 +4,13 @@ const opposite = (number) => number * -1;
 //Task 2 http://www.codewars.com/kata/basic-mathematical-operations
 const basicOp = (operation, value1, value2) => {
   switch (operation) {
-    case "+":
+    case '+':
       return value1 + value2;
-    case "-":
+    case '-':
       return value1 - value2;
-    case "*":
+    case '*':
       return value1 * value2;
-    case "/":
+    case '/':
       return value1 / value2;
     default:
       return null;
@@ -193,7 +193,7 @@ const zipWith = (fn, a0, a1) => {
 
 // Task 12 https://www.codewars.com/kata/filter-the-number
 const FilterString = (value) => {
-  const chars = value.split("");
+  const chars = value.split('');
   const numbers = [];
 
   for (let i = 0; i < chars.length; i += 1) {
@@ -202,7 +202,7 @@ const FilterString = (value) => {
     }
   }
 
-  return parseInt(numbers.join(""), 10);
+  return parseInt(numbers.join(''), 10);
 };
 
 // Task 13 https://www.codewars.com/kata/n-th-fibonacci
@@ -224,13 +224,13 @@ const nthFibo = (n) => {
 
 // Task 14 https://www.codewars.com/kata/cat-and-mouse-2d-version/
 const catMouse = (map, moves) => {
-  const mapArr = map.split("\n");
+  const mapArr = map.split('\n');
   let catPos = null;
   let mousePos = null;
 
   for (let i = 0; i < mapArr.length; i += 1) {
     for (let k = 0; k < mapArr[i].length; k += 1) {
-      if (mapArr[i][k] === "C") {
+      if (mapArr[i][k] === 'C') {
         catPos = [i + 1, k + 1];
         break;
       }
@@ -239,7 +239,7 @@ const catMouse = (map, moves) => {
 
   for (let i = 0; i < mapArr.length; i += 1) {
     for (let k = 0; k < mapArr[i].length; k += 1) {
-      if (mapArr[i][k] === "m") {
+      if (mapArr[i][k] === 'm') {
         mousePos = [i + 1, k + 1];
         break;
       }
@@ -247,18 +247,18 @@ const catMouse = (map, moves) => {
   }
 
   if (!catPos || !mousePos) {
-    return "boring without two animals";
+    return 'boring without two animals';
   }
 
   const areEnoughtSteps = (aPos, bPos) =>
     Math.abs(aPos[0] - bPos[0]) + Math.abs(aPos[1] - bPos[1]);
 
-  return areEnoughtSteps(catPos, mousePos) > moves ? "Escaped!" : "Caught!";
+  return areEnoughtSteps(catPos, mousePos) > moves ? 'Escaped!' : 'Caught!';
 };
 
 // Task 15 https://www.codewars.com/kata/duplicate-encoder
 const duplicateEncode = (word) => {
-  const splittedWord = word.split("");
+  const splittedWord = word.split('');
 
   return splittedWord
     .map((a) => {
@@ -270,11 +270,11 @@ const duplicateEncode = (word) => {
       });
 
       if (count >= 2) {
-        return ")";
+        return ')';
       }
-      return "(";
+      return '(';
     })
-    .join("");
+    .join('');
 };
 
 // Task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
@@ -285,13 +285,13 @@ const findAdditiveNumbers = (num) => {
     num = num.slice(j);
 
     while (num) {
-      let next = numArr[i] + numArr[i + 1] + "";
+      let next = numArr[i] + numArr[i + 1] + '';
       let nextLength = next.length;
       if (num.slice(0, nextLength) != next) return false;
       numArr.push(+next), (i += 1), (num = num.slice(nextLength));
     }
 
-    return numArr.map((num) => "" + num);
+    return numArr.map((num) => '' + num);
   };
 
   let numLength = num.length;
@@ -310,18 +310,18 @@ const findAdditiveNumbers = (num) => {
 const towerBuilder = (nFloor) => {
   let floors = [];
   for (let i = 1; i <= nFloor; i += 1) {
-    let lineToPrint = "";
+    let lineToPrint = '';
 
     for (let j = nFloor - i; j > 0; j -= 1) {
-=      lineToPrint += " ";
+      lineToPrint += ' ';
     }
 
     for (let j = i * 2 - 1; j > 0; j -= 1) {
-      lineToPrint += "*";
+      lineToPrint += '*';
     }
 
     for (let j = nFloor - i; j > 0; j -= 1) {
-      lineToPrint += " ";
+      lineToPrint += ' ';
     }
 
     floors.push(lineToPrint);
@@ -333,14 +333,14 @@ const towerBuilder = (nFloor) => {
 // Task 18 https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
 const wave = (str) => {
   let result = [];
-  let strArr = str.split("");
+  let strArr = str.split('');
 
   for (let i = 0; i < strArr.length; i += 1) {
     let word = [...strArr];
 
-    if (strArr[i] !== " ") {
+    if (strArr[i] !== ' ') {
       word[i] = word[i].toUpperCase();
-      result.push(word.join(""));
+      result.push(word.join(''));
     }
   }
   return result;
@@ -348,16 +348,16 @@ const wave = (str) => {
 
 // Task 19 https://www.codewars.com/kata/59d398bb86a6fdf100000031
 const stringBreakers = (n, string) => {
-  let splittedString = string.split(" ");
-  const stringwithoutSpaces = splittedString.join("");
-  splittedString = stringwithoutSpaces.split("");
+  let splittedString = string.split(' ');
+  const stringwithoutSpaces = splittedString.join('');
+  splittedString = stringwithoutSpaces.split('');
   const result = [];
 
   for (let i = 0; i < splittedString.length; i += n) {
-    result.push(splittedString.slice(i, i + n).join(""));
+    result.push(splittedString.slice(i, i + n).join(''));
   }
-  return result.join("\n");
+  return result.join('\n');
 };
 
 // Task 20  https://www.codewars.com/kata/514a024011ea4fb54200004b
-const domainName = (url) => url.replace(/.+\/\/|www.|\..+/g, "");
+const domainName = (url) => url.replace(/.+\/\/|www.|\..+/g, '');
