@@ -312,7 +312,8 @@ const findAdditiveNumbers = (number) => {
 
 // Task 17 https://www.codewars.com/kata/576757b1df89ecf5bd00073b
 const towerBuilder = (nFloor) => {
-  let floors = [];
+  const floors = [];
+
   for (let i = 1; i <= nFloor; i += 1) {
     let lineToPrint = '';
 
