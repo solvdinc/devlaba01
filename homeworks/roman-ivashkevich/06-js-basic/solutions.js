@@ -10,14 +10,18 @@ function solution1() {
 function solution2() {
   function basicOp(operation, value1, value2) {
     switch (operation) {
-      case '+':
+      case '+': {
         return value1 + value2;
-      case '-':
+      }
+      case '-': {
         return value1 - value2;
-      case '*':
+      }
+      case '*': {
         return value1 * value2;
-      default:
+      }
+      default: {
         return value1 / value2;
+      }
     }
   }
 
@@ -35,17 +39,18 @@ function solution3() {
 
 // task 4 link http://www.codewars.com/kata/transportation-on-vacation
 function solution4() {
-  function rentalCarCost(d) {
-    const CAR_RENT = 40;
+  function rentalCarCost(days) {
+    const carCost = 40;
+    let result;
 
-    switch (true) {
-      case d >= 7:
-        return CAR_RENT * d - 50;
-      case d >= 3:
-        return CAR_RENT * d - 20;
-      default:
-        return CAR_RENT * d;
+    if (days < 3) {
+      result = carCost * days;
+    } else if (days < 7) {
+      result = carCost * days - 20;
+    } else {
+      result = carCost * days - 50;
     }
+    return result;
   }
 
   rentalCarCost(12);
@@ -53,7 +58,8 @@ function solution4() {
 
 // task 5 link http://www.codewars.com/kata/calculating-with-functions
 function solution5() {
-  const operation = (digit) => (operand) => (typeof operand === 'function' ? operand(digit) : digit);
+  const operation = (digit) => (operand) =>
+    typeof operand === 'function' ? operand(digit) : digit;
 
   const zero = operation(0);
   const one = operation(1);
@@ -89,7 +95,9 @@ function solution7() {
 
     const arr = [...falseArr, ...trueArr];
 
-    arr.map((el, i) => (items[i] = el));
+    arr.map((el, i) => {
+      items[i] = el;
+    });
 
     return falseArr.length;
   }
@@ -99,9 +107,7 @@ function solution7() {
 // task 8 link http://www.codewars.com/kata/word-count
 function solution8() {
   function countWords(str) {
-    return str === ''
-      ? 0
-      : str.split(/\s+/).filter((el) => el.match(/[A-Za-z0-9]/)).length;
+    return str === '' ? 0 : str.split(/\s+/).filter((el) => el.match(/[A-Za-z0-9]/)).length;
   }
   countWords('Hello, World!');
 }
@@ -129,9 +135,10 @@ function solution9() {
 // task 10 link https://www.codewars.com/kata/find-the-parity-outlier
 function solution10() {
   function findOutlier(integers) {
-    const arr1 = integers.filter((el) => +el % 2 === 0);
-    const arr2 = integers.filter((el) => +el & 1);
-    return arr1.length > arr2.length ? arr2[0] : arr1[0];
+    const evenArr = integers.filter((el) => Number(el) % 2 === 0);
+    const oddArr = integers.filter((el) => Math.abs(Number(el)) % 2 === 1);
+
+    return evenArr.length > oddArr.length ? oddArr[0] : evenArr[0];
   }
   findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]);
 }
@@ -151,11 +158,15 @@ function solution11() {
 
 // task 12 link https://www.codewars.com/kata/filter-the-number
 function solution12() {
-  const FilterString = (value) => +value
-    .split('')
-  // eslint-disable-next-line no-restricted-globals
-    .filter((el) => !isNaN(el))
-    .join('');
+  const FilterString = (value) =>
+    parseInt(
+      value
+        .split('')
+        // eslint-disable-next-line no-restricted-globals
+        .filter((el) => !isNaN(Number(el)))
+        .join(''),
+      10,
+    );
 
   FilterString('a1b2c3');
 }
@@ -178,18 +189,18 @@ function solution14() {
   function catMouse(map, moves) {
     const arrMap = map.split('\n');
 
-    const catLocation = arrMap.map((el) => el.indexOf('C'));
-    const mouseLocation = arrMap.map((el) => el.indexOf('m'));
+    const catLocationOnMap = arrMap.map((el) => el.indexOf('C'));
+    const mouseLocationOnMap = arrMap.map((el) => el.indexOf('m'));
 
-    const catIndex = catLocation.findIndex((el) => el >= 0);
-    const mouseIndex = mouseLocation.findIndex((el) => el >= 0);
+    const catLevel = catLocationOnMap.findIndex((el) => el >= 0);
+    const mouseLevel = mouseLocationOnMap.findIndex((el) => el >= 0);
 
-    const catValue = catLocation[catIndex];
-    const mouseValue = mouseLocation[mouseIndex];
+    const catPos = catLocationOnMap[catLevel];
+    const mousePos = mouseLocationOnMap[mouseLevel];
 
-    const stepsForMouse = Math.abs(mouseValue - catValue) + Math.abs(catIndex - mouseIndex);
+    const stepsForMouse = Math.abs(mousePos - catPos) + Math.abs(catLevel - mouseLevel);
 
-    if (catIndex === -1 || mouseIndex === -1) {
+    if (catLevel === -1 || mouseLevel === -1) {
       return 'boring without two animals';
     }
 
@@ -211,7 +222,8 @@ function solution15() {
     return charArr
       .map((el, index, arr) =>
         //  check if there are more el under a different index
-        (arr.indexOf(el) === arr.lastIndexOf(el) ? '(' : ')'))
+        arr.indexOf(el) === arr.lastIndexOf(el) ? '(' : ')',
+      )
       .join('');
   }
   duplicateEncode('recede');
@@ -251,14 +263,14 @@ function solution18() {
     }
     return arr;
   }
-  wave('Hello', 'hEllo', 'heLlo', 'helLo', 'hellO');
+  wave('Hello');
 }
 
 // task 19 link https://www.codewars.com/kata/59d398bb86a6fdf100000031
 function solution19() {
   function stringBreakers(n, string) {
     let str = string;
-    let arr = [];
+    const arr = [];
 
     // remove all spaces
     str = str.replace(/\s+/g, '');
@@ -269,19 +281,9 @@ function solution19() {
       str = str.slice(n);
     }
 
-    // add \n and create string
-    arr = arr
-      .map((el, index) => {
-        if (index !== arr.length - 1) {
-          return `${el}\n`;
-        }
-        return el;
-      })
-      .join('');
-
-    return arr;
+    return arr.join('\n');
   }
-  stringBreakers('This is an example string');
+  stringBreakers(5, 'This is an example string');
 }
 
 // task 20 link https://www.codewars.com/kata/514a024011ea4fb54200004b
