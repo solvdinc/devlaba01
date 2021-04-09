@@ -82,7 +82,7 @@ const binaryArrayToNumber = arr => {
 };
 
 // task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235
-
+//first solution
 // function findUniq(arr) {
 //     let setArr = [...new Set(arr)]
 //     console.log(setArr)
@@ -92,11 +92,22 @@ const binaryArrayToNumber = arr => {
 //         }
 //     }
 // }
-
+//second solution
 function findUniq(arr) {
     return arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el))
 }
-
+//third solution
+function findUniq(arr) {
+    for (let i = 0; i < arr.length; i += 1) {
+        if(arr[i] != arr[i+1] && arr[i + 1] === arr[i + 2]) {
+            return arr[i]
+        } else if (arr[i] != arr[i+1] && arr[i] === arr[i + 2]) {
+            return arr[i + 1]
+        } else if (arr[i] === arr[i + 1] && arr[i + 1] != arr[i + 2]) {
+            return arr[i + 2]
+        }
+    }
+}
 // task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
 
 function decipherThis(str) {
