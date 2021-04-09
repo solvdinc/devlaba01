@@ -16,7 +16,7 @@ function basicOp(operation, value1, value2) {
       case '/':
          return value1 / value2;
       default:
-         return 0;
+         return null;
    }
 }
 // task 3 https://www.codewars.com/kata/printing-array-elements-with-comma-delimiters
@@ -28,14 +28,13 @@ function printArray(array) {
 // task 4 https://www.codewars.com/kata/transportation-on-vacation
 
 function rentalCarCost(d) {
-   let sum = 40 * d;
+   const sum = 40 * d;
    if (d >= 7) {
       return sum - 50
    } else if (d >= 3) {
       return sum - 20
-   } else {
-      return sum
    }
+   return sum
 }
 
 // task 5 https://www.codewars.com/kata/calculating-with-functions
@@ -60,14 +59,7 @@ function dividedBy(b) { return a => Math.floor(a / b) }
 // task 6 https://www.codewars.com/kata/calculating-with-functions
 
 function getMiddle(text) {
-   let arr = [];
-   if (text.length % 2 === 0) {
-      arr.push(text[text.length / 2 - 1]);
-      arr.push(text[text.length / 2]);
-      return arr.join('')
-   }
-   arr.push(text[Math.floor(text.length / 2)]);
-   return arr.join('')
+   return text.length % 2 === 0 ? text.substr(text.length / 2 - 1, 2) : text.substr(text.length / 2, 1)
 }
 
 // task 7 http://www.codewars.com/kata/partition-on
@@ -83,7 +75,6 @@ function partitionOn(pred, items) {
    });
    return even.length;
 }
-
 
 // task 8 https://www.codewars.com/kata/word-count
 
@@ -138,12 +129,9 @@ var FilterString = function (value) {
 // task 13 https://www.codewars.com/kata/n-th-fibonacci
 
 function nthFibo(n) {
-   let a = 1;
+   let a = 0;
    let b = 1;
-   if (n === 1) {
-      return 0
-   }
-   for (let i = 3; i <= n; i++) {
+   for (let i = 2; i <= n; i++) {
       let c = a + b;
       a = b;
       b = c;
@@ -154,7 +142,7 @@ function nthFibo(n) {
 // task 14 https://www.codewars.com/kata/cat-and-mouse-2d-version/
 
 function catMouse(map, moves) {
-   if (!map.includes('C')||!map.includes('m')) return 'boring without two animals'
+   if (!map.includes('C') || !map.includes('m')) return 'boring without two animals'
    let mapSplited = map.split('\n');
    let catX = mapSplited.map(el => el.indexOf('C')).filter(el => el > - 1)[0];
    let catY = mapSplited.map(el => el.includes('C')).indexOf(true);
@@ -175,7 +163,7 @@ function duplicateEncode(word) {
       ).join('')
 }
 
-// task 16https://www.codewars.com/kata/5693239fb761dc8670000001
+// task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
 
 
 // task 17 https://www.codewars.com/kata/576757b1df89ecf5bd00073b
@@ -194,7 +182,7 @@ function wave(str) {
    let arr = [];
    for (let i = 0; i < str.length; i++) {
       let arrStr = str.split('');
-      if (arrStr[i] !== (" ")) {
+      if (arrStr[i] !== ' ') {
          arrStr[i] = arrStr[i].toUpperCase();
          arr.push(arrStr.join(''));
       }
@@ -216,7 +204,7 @@ function stringBreakers(n, string) {
 
 // test 20 https://www.codewars.com/kata/514a024011ea4fb54200004b
 
-function domainName(url){
+function domainName(url) {
    const domain = url.replace('http://', '').replace('https://', '').replace('www.', '').split('.')[0];
    return domain
 }
