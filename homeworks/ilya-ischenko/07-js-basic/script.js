@@ -192,3 +192,14 @@ console.log(helper.pageCount());
 console.log(helper.itemCount());
 console.log(helper.pageItemCount(1));
 console.log(helper.pageIndex(7));
+
+// optional 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
+function moveZeros(arr) {
+  const nums = [...arr];
+
+  const nonZeroArr = nums.filter((item) => item !== 0);
+  const zerosArr = nums.filter((item) => item === 0);
+
+  return [...nonZeroArr, ...zerosArr];
+};
+console.log(moveZeros([9, 0, 9, 1, 2, 1, 1, 3, 1, 9, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0]));
