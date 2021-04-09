@@ -8,12 +8,6 @@ console.log(oppositeNumber(1));
 
 // 2 - http://www.codewars.com/kata/basic-mathematical-operations
 const basicOp = function(operation, value1, value2) {
-  // eslint-disable-next-line no-eval
-  return eval(`${value1} ${operation} ${value2}`);
-};
-console.log(basicOp('+', 2, 2));
-// DUE TO RULE 6.4 Airbnb I SUGGEST ANOTHER SOLUTION
-const basicOp1 = function(operation, value1, value2) {
   switch (operation) {
     case '+':
       return value1 + value2;
@@ -24,10 +18,10 @@ const basicOp1 = function(operation, value1, value2) {
     case '/':
       return value1 / value2;
     default:
-      return 0;
+      return null;
   }
 };
-console.log(basicOp1('+', 2, 5));
+console.log(basicOp('+', 2, 5));
 
 // 3 - http://www.codewars.com/kata/printing-array-elements-with-comma-delimiters
 const printArray = function(array) {
