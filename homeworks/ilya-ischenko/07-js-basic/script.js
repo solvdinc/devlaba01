@@ -203,3 +203,27 @@ function moveZeros(arr) {
   return [...nonZeroArr, ...zerosArr];
 };
 console.log(moveZeros([9, 0, 9, 1, 2, 1, 1, 3, 1, 9, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0]));
+
+// optional 3 https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3/train/javascript
+function findUniq1(arr) {
+  const words = arr.join(',').toLowerCase().split(',');
+  const lettersArr = words.join('').toLowerCase().split('');
+  const uniqLetters = new Set(lettersArr);
+  let uniqLetter;
+
+  for (let letter of uniqLetters) {
+    let filterLetters = lettersArr.filter(item => item.trim() === letter);
+    uniqLetter = filterLetters;
+  }
+
+  if (!uniqLetter.length) {
+    return '   ';
+  }
+
+  for (let i = 0; i < arr.length; i += 1) {
+    if (words[i].includes(uniqLetter[0])) {
+      return arr[i];
+    }
+  }
+}
+console.log(findUniq1(['Tom Marvolo Riddle', 'I am Lord Voldemort', 'Harry Potter']));
