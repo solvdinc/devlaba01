@@ -130,7 +130,7 @@ function partitionOn (pred, items) {
     items[index] = item 
   });
 
-  return falseArr.length;
+  return resultArr.indexOf(trueArr[0]);
 }
 
 // 8 - http://www.codewars.com/kata/word-count
