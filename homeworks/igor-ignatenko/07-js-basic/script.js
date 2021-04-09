@@ -2,7 +2,7 @@
 
 function positiveSum(arr) {
     const sum = 0;
-    
+
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > 0) {
             sum += arr[i]
@@ -94,7 +94,7 @@ const binaryArrayToNumber = arr => {
 // }
 
 function findUniq(arr) {
-    return arr.find((el, index) => arr[index] === arr[index + 1])
+    return arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el))
 }
 
 // task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
