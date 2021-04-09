@@ -146,3 +146,49 @@ function sortArray(array) {
   return nums;
 };
 console.log(sortArray([5, 3, 2, 8, 1, 4]));
+
+// optional 1 https://www.codewars.com/kata/515bb423de843ea99400000a
+function PaginationHelper(collection, itemsPerPage) {
+  this.collection = collection;
+  this.itemsPerPage = itemsPerPage;
+};
+
+PaginationHelper.prototype.pageCount = function() {
+  return Math.ceil(this.collection.length / this.itemsPerPage);
+};
+
+PaginationHelper.prototype.itemCount = function() {
+  return this.collection.length;
+};
+
+PaginationHelper.prototype.pageItemCount = function(pageIndex) {
+  if (pageIndex >= this.pageCount()) {
+    return -1;
+  }
+
+  let page = (pageIndex + 1) * this.itemsPerPage;
+  if (page > this.itemCount()) {
+    return Math.abs(page - this.itemCount() - this.itemsPerPage);
+  }
+
+  return this.itemsPerPage;
+};
+
+PaginationHelper.prototype.pageIndex = function(itemIndex) {
+  if (itemIndex < 0 || !this.itemCount()) {
+    return -1;
+  }
+
+  let page = Math.floor(itemIndex / this.itemsPerPage); 
+  if (page >= this.pageCount()) {
+    return -1;
+  }
+
+  return page;
+};
+
+let helper = new PaginationHelper(['a', 'b', 'c', 'd', 'e', 'f', 'f'], 4);
+console.log(helper.pageCount());
+console.log(helper.itemCount());
+console.log(helper.pageItemCount(1));
+console.log(helper.pageIndex(7));
