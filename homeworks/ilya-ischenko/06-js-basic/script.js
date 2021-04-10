@@ -361,9 +361,7 @@ console.log(stringBreakers(5, 'This is an example string'));
 const domainName = function(url) {
   let copyUrl = url;
 
-  copyUrl = copyUrl.replace('http://', '');
-  copyUrl = copyUrl.replace('https://', '');
-  copyUrl = copyUrl.replace('www.', '');
+  copyUrl = copyUrl.replace('http://', '').replace('https://', '').replace('www.', '');
 
   return copyUrl.split('.')[0];
 };
