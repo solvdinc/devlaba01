@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 // Codewars tasks
 // Task 1 https://www.codewars.com/kata/5a3e1319b6486ac96f000049
-const positiveSum = (arr) =>
-  arr.reduce((acc, item) => (item > 0 ? acc + item : acc), 0);
+const positiveSum = (arr) => arr.reduce((acc, item) => (item > 0 ? acc + item : acc), 0);
 
 // Task 2 https://www.codewars.com/kata/5715eaedb436cf5606000381
 const pairs = (arr) => {
   let count = 0;
+
   for (let i = 0; i < arr.length; i += 2) {
     if (Math.abs(arr[i] - arr[i + 1]) === 1) {
       count += 1;
@@ -22,20 +23,20 @@ const maxMultiple = (divisor, bound) => {
   while (N <= bound) {
     N += divisor;
   }
+
   return N - divisor;
 };
 
 // Task 4 https://www.codewars.com/kata/514a6336889283a3d2000001
-const getEvenNumbers = (numbersArray) =>
-  numbersArray.filter((num) => num % 2 === 0);
+const getEvenNumbers = (numbersArray) => numbersArray.filter((num) => num % 2 === 0);
 
 // Task 5 https://www.codewars.com/kata/5a090c4e697598d0b9000004
 const solve = (arr) => {
-  let sortedArr = arr.sort((a, b) => a - b);
-  let minValues = sortedArr.slice(0, sortedArr.length / 2);
-  let maxValues = sortedArr.slice(sortedArr.length / 2).reverse();
-  let result = [];
-  console.log(minValues, maxValues);
+  const sortedArr = arr.sort((a, b) => a - b);
+  const minValues = sortedArr.slice(0, sortedArr.length / 2);
+  const maxValues = sortedArr.slice(sortedArr.length / 2).reverse();
+  const result = [];
+
   for (let i = 0; i < maxValues.length; i += 1) {
     if (minValues[i]) {
       result.push(maxValues[i], minValues[i]);
@@ -43,12 +44,13 @@ const solve = (arr) => {
       result.push(maxValues[i]);
     }
   }
+
   return result;
 };
 
 // Task 6 https://www.codewars.com/kata/566044325f8fddc1c000002c
 const evenChars = (string) => {
-  let stringLength = string.length;
+  const stringLength = string.length;
 
   if (stringLength < 2 || stringLength > 100) {
     return 'invalid string';
@@ -58,7 +60,7 @@ const evenChars = (string) => {
 };
 // Task 7 https://www.codewars.com/kata/545a4c5a61aa4c6916000755
 
-let gimme = (inputArr) => {
+const gimme = (inputArr) => {
   const sortedArr = [...inputArr].sort((a, b) => a - b);
   const midNum = sortedArr[Math.floor(sortedArr.length / 2)];
   const index = inputArr.indexOf(midNum);
@@ -71,7 +73,7 @@ const binaryArrayToNumber = (arr) => parseInt(arr.join(''), 2);
 
 // Task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235
 const findUniq = (arr) =>
-  arr.find((item, index, arr) => arr.indexOf(item) === arr.lastIndexOf(item));
+  arr.find((item, currentArr) => currentArr.indexOf(item) === currentArr.lastIndexOf(item));
 
 // Task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
 
