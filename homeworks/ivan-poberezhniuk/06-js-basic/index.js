@@ -95,15 +95,15 @@ const times = (a) => (b) => Math.floor(b * a);
 const dividedBy = (a) => (b) => Math.floor(b / a);
 
 // Task 6 http://www.codewars.com/kata/get-the-middle-character
-const getMiddle = (s) => {
-  const lettersCount = s.length;
+const getMiddle = (string) => {
+  const lettersCount = string.length;
   const isOdd = lettersCount % 2;
   const halfOfLetters = Math.ceil(lettersCount / 2);
 
   if (isOdd) {
     return s[halfOfLetters - 1];
   }
-  const double = s[halfOfLetters - 1] + s[halfOfLetters];
+  const double = string[halfOfLetters - 1] + string[halfOfLetters];
   return double;
 };
 
