@@ -91,7 +91,7 @@ function findOutlier(integers) {
 //alternative solution(better performance) 
 
 function findOutlier(integers) {
-   for (let i = 0; i < integers.length; i++) {
+   for (let i = 0; i < integers.length; i += 2) {
       if (even(integers[i]) !== even(integers[i + 1]) && even(integers[i + 1]) === even(integers[i + 2])) {
          return integers[i]
       } else if (even(integers[i]) === even(integers[i + 2]) && even(integers[i + 1]) !== even(integers[i + 2])) {
