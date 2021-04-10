@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 // Task 1 http://www.codewars.com/kata/opposite-number
 const opposite = (number) => number * -1;
 
-//Task 2 http://www.codewars.com/kata/basic-mathematical-operations
+// Task 2 http://www.codewars.com/kata/basic-mathematical-operations
 const basicOp = (operation, value1, value2) => {
   switch (operation) {
     case '+':
@@ -23,15 +24,15 @@ const printArray = (array) => array.toString();
 // Task 4 http://www.codewars.com/kata/transportation-on-vacation
 const rentalCarCost = (days) => {
   const dayRentCost = 40;
-  let total = days * dayRentCost;
+  const total = days * dayRentCost;
 
   if (days >= 7) {
     return total - 50;
-  } else if (days >= 3) {
-    return total - 20;
-  } else {
-    return total;
   }
+  if (days >= 3) {
+    return total - 20;
+  }
+  return total;
 };
 
 // Task 5 http://www.codewars.com/kata/calculating-with-functions
@@ -94,15 +95,15 @@ const times = (a) => (b) => Math.floor(b * a);
 const dividedBy = (a) => (b) => Math.floor(b / a);
 
 // Task 6 http://www.codewars.com/kata/get-the-middle-character
-const getMiddle = (s) => {
-  const lettersCount = s.length;
+const getMiddle = (string) => {
+  const lettersCount = string.length;
   const isOdd = lettersCount % 2;
   const halfOfLetters = Math.ceil(lettersCount / 2);
 
   if (isOdd) {
-    return s[halfOfLetters - 1];
+    return string[halfOfLetters - 1];
   }
-  const double = s[halfOfLetters - 1] + s[halfOfLetters];
+  const double = string[halfOfLetters - 1] + string[halfOfLetters];
   return double;
 };
 
@@ -121,7 +122,8 @@ const partitionOn = (pred, arr) => {
       result.push(arr[i]);
     }
   }
-
+  // Вынужденая мера, подругому кату не решить из-за имутабельного массива на входе
+  // eslint-disable-next-line no-param-reassign
   arr.length = 0;
   arr.push(...result);
 
@@ -139,16 +141,18 @@ const countWords = (str) => {
 };
 
 // Task 9 https://www.codewars.com/kata/find-the-odd-int/
-const findOdd = (arr) =>
-  arr.find((searchNumber) => {
-    const filteredNumbers = arr.filter(
-      (currentNumber) => searchNumber === currentNumber
-    );
+const findOdd = (arr) => {
+  const oddNumber = arr.find((searchNumber) => {
+    const filteredNumbers = arr.filter((currentNumber) => searchNumber === currentNumber);
 
     if (filteredNumbers.length % 2 > 0) {
       return searchNumber;
     }
+    return false;
   });
+
+  return oddNumber;
+};
 
 // Task 10 https://www.codewars.com/kata/find-the-parity-outlier
 const findOutlier = (integers) => {
@@ -173,6 +177,7 @@ const findOutlier = (integers) => {
   }
   return result;
 };
+
 // Task 11 https://www.codewars.com/kata/zipwith
 const zipWith = (fn, a0, a1) => {
   const zipped = [];
@@ -250,8 +255,7 @@ const catMouse = (map, moves) => {
     return 'boring without two animals';
   }
 
-  const areEnoughtSteps = (aPos, bPos) =>
-    Math.abs(aPos[0] - bPos[0]) + Math.abs(aPos[1] - bPos[1]);
+  const areEnoughtSteps = (aPos, bPos) => Math.abs(aPos[0] - bPos[0]) + Math.abs(aPos[1] - bPos[1]);
 
   return areEnoughtSteps(catPos, mousePos) > moves ? 'Escaped!' : 'Caught!';
 };
@@ -278,28 +282,38 @@ const duplicateEncode = (word) => {
 };
 
 // Task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
-const findAdditiveNumbers = (num) => {
-  const verify = (i, j, num) => {
-    let numArr = [+num.slice(0, i), +num.slice(i, j)];
-    i = 0;
-    num = num.slice(j);
 
-    while (num) {
-      let next = numArr[i] + numArr[i + 1] + '';
-      let nextLength = next.length;
-      if (num.slice(0, nextLength) != next) return false;
-      numArr.push(+next), (i += 1), (num = num.slice(nextLength));
+const findAdditiveNumbers = (number) => {
+  const verify = (i, j, num) => {
+    let index = i;
+    const numArr = [+num.slice(0, index), +num.slice(index, j)];
+    let slicedNumber = num.slice(j);
+    index = 0;
+
+    while (slicedNumber) {
+      const next = `${numArr[index] + numArr[index + 1]}`;
+      const nextLength = next.length;
+
+      if (slicedNumber.slice(0, nextLength) !== next) {
+        return false;
+      }
+      numArr.push(+next);
+      index += 1;
+      slicedNumber = slicedNumber.slice(nextLength);
     }
 
-    return numArr.map((num) => '' + num);
+    return numArr.map((item) => `${item}`);
   };
 
-  let numLength = num.length;
+  const numLength = number.length;
 
   for (let i = 1; i <= numLength / 2; i += 1) {
     for (let j = i + 1; j <= (numLength * 2) / 3; j += 1) {
-      const result = verify(i, j, num);
-      if (result) return result;
+      const result = verify(i, j, number);
+
+      if (result) {
+        return result;
+      }
     }
   }
 
@@ -308,7 +322,8 @@ const findAdditiveNumbers = (num) => {
 
 // Task 17 https://www.codewars.com/kata/576757b1df89ecf5bd00073b
 const towerBuilder = (nFloor) => {
-  let floors = [];
+  const floors = [];
+
   for (let i = 1; i <= nFloor; i += 1) {
     let lineToPrint = '';
 
@@ -332,11 +347,11 @@ const towerBuilder = (nFloor) => {
 
 // Task 18 https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
 const wave = (str) => {
-  let result = [];
-  let strArr = str.split('');
+  const result = [];
+  const strArr = str.split('');
 
   for (let i = 0; i < strArr.length; i += 1) {
-    let word = [...strArr];
+    const word = [...strArr];
 
     if (strArr[i] !== ' ') {
       word[i] = word[i].toUpperCase();
