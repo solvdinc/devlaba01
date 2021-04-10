@@ -83,18 +83,27 @@ function countWords(words) {
 
 // task 9 https://www.codewars.com/kata/find-the-odd-int/
 
-function findOdd(a) {
-   for (i = 0; i < a.length; i++) {
-      const temp = 0;
-      for (j = 0; j < a.length; j++) {
-         if (a[i] === a[j]) {
-            temp++;
-         }
-      }
-      if (temp % 2 != 0) {
-         return a[i];
+function findOutlier(integers) {
+   return integers.slice(0, 3).filter(el => el % 2 === 0).length >= 2
+      ? integers.find(el => el % 2 !== 0)
+      : integers.find(el => el % 2 === 0);
+}
+//alternative solution(better performance) 
+
+function findOutlier(integers) {
+   for (let i = 0; i < integers.length; i++) {
+      if (even(integers[i]) !== even(integers[i + 1]) && even(integers[i + 1]) === even(integers[i + 2])) {
+         return integers[i]
+      } else if (even(integers[i]) === even(integers[i + 2]) && even(integers[i + 1]) !== even(integers[i + 2])) {
+         return integers[i + 1]
+      } else if (even(integers[i]) === even(integers[i + 1]) && even(integers[i + 1]) !== even(integers[i + 2])) {
+         return integers[i + 2]
       }
    }
+}
+
+function even(num) {
+   return num % 2 === 0
 }
 
 // task 10 https://www.codewars.com/kata/find-the-parity-outlier
@@ -112,7 +121,7 @@ function findOutlier(integers) {
 
 function zipWith(fn, a0, a1) {
    const leng = Math.min(a0.length, a1.length);
-   const result = [];
+   let result = [];
    for (let i = 0; i < leng; i += 1) {
       result.push(fn(a0[i], a1[i]));
    }
@@ -128,8 +137,8 @@ var FilterString = function (value) {
 // task 13 https://www.codewars.com/kata/n-th-fibonacci
 
 function nthFibo(n) {
-   const a = 0;
-   const b = 1;
+   let a = 0;
+   let b = 1;
    for (let i = 2; i <= n; i++) {
       let c = a + b;
       a = b;
