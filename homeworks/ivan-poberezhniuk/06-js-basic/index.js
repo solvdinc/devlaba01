@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Task 1 http://www.codewars.com/kata/opposite-number
 const opposite = (number) => number * -1;
 
@@ -27,7 +28,8 @@ const rentalCarCost = (days) => {
 
   if (days >= 7) {
     return total - 50;
-  } else if (days >= 3) {
+  }
+  if (days >= 3) {
     return total - 20;
   }
   return total;
@@ -120,7 +122,8 @@ const partitionOn = (pred, arr) => {
       result.push(arr[i]);
     }
   }
-
+  // Вынужденая мера, подругому кату не решить из-за имутабельного массива на входе
+  // eslint-disable-next-line no-param-reassign
   arr.length = 0;
   arr.push(...result);
 
@@ -140,9 +143,7 @@ const countWords = (str) => {
 // Task 9 https://www.codewars.com/kata/find-the-odd-int/
 const findOdd = (arr) => {
   const oddNumber = arr.find((searchNumber) => {
-    const filteredNumbers = arr.filter(
-      (currentNumber) => searchNumber === currentNumber
-    );
+    const filteredNumbers = arr.filter((currentNumber) => searchNumber === currentNumber);
 
     if (filteredNumbers.length % 2 > 0) {
       return searchNumber;
@@ -254,8 +255,7 @@ const catMouse = (map, moves) => {
     return 'boring without two animals';
   }
 
-  const areEnoughtSteps = (aPos, bPos) =>
-    Math.abs(aPos[0] - bPos[0]) + Math.abs(aPos[1] - bPos[1]);
+  const areEnoughtSteps = (aPos, bPos) => Math.abs(aPos[0] - bPos[0]) + Math.abs(aPos[1] - bPos[1]);
 
   return areEnoughtSteps(catPos, mousePos) > moves ? 'Escaped!' : 'Caught!';
 };
@@ -282,20 +282,27 @@ const duplicateEncode = (word) => {
 };
 
 // Task 16 https://www.codewars.com/kata/5693239fb761dc8670000001
+
 const findAdditiveNumbers = (number) => {
   const verify = (i, j, num) => {
-    const numArr = [+num.slice(0, i), +num.slice(i, j)];
-    i = 0;
-    num = num.slice(j);
+    let index = i;
+    const numArr = [+num.slice(0, index), +num.slice(index, j)];
+    let slicedNumber = num.slice(j);
+    index = 0;
 
-    while (num) {
-      const next = numArr[i] + numArr[i + 1] + '';
+    while (slicedNumber) {
+      const next = `${numArr[index] + numArr[index + 1]}`;
       const nextLength = next.length;
-      if (num.slice(0, nextLength) != next) return false;
-      numArr.push(+next), (i += 1), (num = num.slice(nextLength));
+
+      if (slicedNumber.slice(0, nextLength) !== next) {
+        return false;
+      }
+      numArr.push(+next);
+      index += 1;
+      slicedNumber = slicedNumber.slice(nextLength);
     }
 
-    return numArr.map((item) => '' + item);
+    return numArr.map((item) => `${item}`);
   };
 
   const numLength = number.length;
@@ -303,7 +310,10 @@ const findAdditiveNumbers = (number) => {
   for (let i = 1; i <= numLength / 2; i += 1) {
     for (let j = i + 1; j <= (numLength * 2) / 3; j += 1) {
       const result = verify(i, j, number);
-      if (result) return result;
+
+      if (result) {
+        return result;
+      }
     }
   }
 

@@ -1,0 +1,22 @@
+{
+  "name": "ivan-poberezhniuk",
+  "version": "1.0.0",
+  "description": "- 01-basics - 02-git - 03-html-css-1 [FLoat-inline](http://03-html-css-float-inline.surge.sh), [CV](http://03-html-css-cv.surge.sh) - 04-html-css-2 [CV](http://04-html-css-2-cv.surge.sh), [Flexbox-Grid](http://04-html-css-2-flexbox-grid.surge.sh), [Modal](http://04-html-css-2-modal.surge.sh) - 05-html-css-3 [CV](http://05-html-css-3.surge.sh/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^2.2.1"
+  }
+}
