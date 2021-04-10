@@ -76,7 +76,27 @@ const findUniq = (arr) =>
   arr.find((item, currentArr) => currentArr.indexOf(item) === currentArr.lastIndexOf(item));
 
 // Task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
+const decipherThis = (str) => {
+  const splittedStr = str.split(' ');
+  const descriptedString = splittedStr.map((word) => {
+    const char = String.fromCharCode(parseInt(word, 10));
+    const regex = /^[0-9]{2,}/g;
+    let secondChar = null;
+    let lastChar = null;
+    let result = '';
 
+    result = word.replace(regex, char);
+    result = [...result];
+    secondChar = result.slice(1, 2).join();
+    lastChar = result.slice(-1).join();
+    result[1] = lastChar;
+    result[result.length - 1] = secondChar;
+
+    return result.join('');
+  });
+
+  return descriptedString.join(' ');
+};
 // Task 11 https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
 
 // Optional (advanced)
