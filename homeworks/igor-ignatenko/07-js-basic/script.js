@@ -99,9 +99,9 @@ function findUniq(arr) {
 //third solution
 function findUniq(arr) {
     for (let i = 0; i < arr.length; i += 1) {
-        if(arr[i] != arr[i+1] && arr[i + 1] === arr[i + 2]) {
+        if (arr[i] != arr[i + 1] && arr[i + 1] === arr[i + 2]) {
             return arr[i]
-        } else if (arr[i] != arr[i+1] && arr[i] === arr[i + 2]) {
+        } else if (arr[i] != arr[i + 1] && arr[i] === arr[i + 2]) {
             return arr[i + 1]
         } else if (arr[i] === arr[i + 1] && arr[i + 1] != arr[i + 2]) {
             return arr[i + 2]
@@ -156,6 +156,8 @@ function cipherThis(text) {
 }
 
 //   console.log(cipherThis("hello world at fish how"));
+
+
 //  task 11 https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
 function sortArray(array) {
     const odd = array.filter(el => el % 2 !== 0).sort((a, b) => a - b);
@@ -164,3 +166,58 @@ function sortArray(array) {
 }
 
 // console.log(sortArray([5, 3, 2, 8, 1, 4]))
+
+// optional 1 https://www.codewars.com/kata/515bb423de843ea99400000a
+// TODO: complete this object/class
+
+// The constructor takes in an array of items and a integer indicating how many
+// items fit within a single page
+function PaginationHelper(collection, itemsPerPage) {
+    this.collection = collection;
+    this.itemsPerPage = itemsPerPage;
+}
+
+// returns the number of items within the entire collection
+PaginationHelper.prototype.itemCount = function () {
+    return this.collection.length
+}
+
+// returns the number of pages
+PaginationHelper.prototype.pageCount = function () {
+    return Math.ceil(this.collection.length / this.itemsPerPage);
+}
+
+// returns the number of items on the current page. page_index is zero based.
+// this method should return -1 for pageIndex values that are out of range
+PaginationHelper.prototype.pageItemCount = function (pageIndex) {
+    if (pageIndex < 0 || pageIndex >= this.pageCount()) {
+        return -1;
+    } else if (pageIndex !== this.pageCount() - 1) {
+        return this.itemsPerPage;
+    }
+
+    return this.collection.length % this.itemsPerPage;
+}
+
+// determines what page an item is on. Zero based indexes
+// this method should return -1 for itemIndex values that are out of range
+PaginationHelper.prototype.pageIndex = function (itemIndex) {
+    if (itemIndex < 0 || itemIndex >= this.collection.length) {
+        return -1;
+    }
+
+    return Math.floor(itemIndex / this.itemsPerPage);
+}
+
+let helper = new PaginationHelper(['a', 'b', 'c', 'd', 'e', 'f', 'f'], 4);
+
+// optional 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
+
+var moveZeros = function (arr) {
+    let arrayZero = [];
+    let arrayNumbers = [];
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] === 0 ? arrayZero.push(arr[i]) : arrayNumbers.push(arr[i])
+    }
+    return arrayNumbers.concat(arrayZero)
+}
