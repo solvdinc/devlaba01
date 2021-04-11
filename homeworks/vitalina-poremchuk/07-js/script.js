@@ -150,3 +150,71 @@ function solution_task11(arr) {
   return arr.map((num) => (num % 2 ? oddNum.shift() : num));
 }
 solution_task11([5, 8, 6, 3, 4]);
+
+//Optional 1 https://www.codewars.com/kata/515bb423de843ea99400000a
+class PaginationHelper {
+  constructor(collection, itemsPerPage) {
+    this.collection = collection;
+    this.itemsPerPage = itemsPerPage;
+  }
+  itemCount() {
+    return this.collection.length;
+  }
+  pageCount() {
+    return Math.ceil(this.collection.length / this.itemsPerPage);
+  }
+  pageItemCount(pageIndex) {
+    if (pageIndex < 0 || pageIndex >= this.pageCount()) {
+      return -1;
+    } else if (pageIndex !== this.pageCount() - 1) {
+      return this.itemsPerPage;
+    }
+  }
+  pageIndex(itemIndex) {
+    if (itemIndex > this.itemCount() - 1 || itemIndex < 0) {
+      return -1;
+    }
+
+    return Math.ceil((itemIndex + 1) / this.itemsPerPage) - 1;
+  }
+}
+
+const helper = new PaginationHelper(["a", "b", "c", "d", "e", "f"], 4);
+
+helper.pageCount();
+helper.itemCount();
+helper.pageItemCount(0);
+helper.pageItemCount(1);
+helper.pageItemCount(2);
+helper.pageIndex(3);
+helper.pageIndex(2);
+helper.pageIndex(20);
+helper.pageIndex(-10);
+
+//Optional 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
+function solution_optional2(arr) {
+  let zeroArr = [];
+  let numArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      zeroArr.push(arr[i]);
+    } else {
+      numArr.push(arr[i]);
+    }
+  }
+  let result = zeroArr.concat(numArr);
+  return result;
+}
+solution_optional2([false, 1, 0, 1, 2, 0, 1, 3, "a"]);
+
+//Optional 3 https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
+function solution_optional3(arr) {
+  let newArr = arr.map((str) => {
+    return [...new Set(str.toLowerCase())].sort().join("");
+  });
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i]))
+      return arr[i];
+  }
+}
+solution_optional3(["Aa", "aaa", "aaaaa", "BbBb", "Aaaa", "AaAaAa", "a"]);
