@@ -161,15 +161,15 @@ const findOutlier = function(integers) {
   const oddArr = [];
   const evenArr = [];
 
-  integers.forEach((integer) => {
-    integer % 2 !== 0 ? oddArr.push(integer) : evenArr.push(integer);
-  });
-
-  if (oddArr.length === 1) {
-    return oddArr[0];
+  for(let i = 0; i < 3; i += 1) {
+    integers[i] % 2 !== 0 ? oddArr.push(integers[i]) : evenArr.push(integers[i]);
   }
 
-  return evenArr[0];
+  if (oddArr.length > evenArr.length) {
+    return integers.find(item => item % 2 === 0);
+  }
+
+  return integers.find(item => item % 2 !== 0);
 };
 console.log(findOutlier([70348169, -21048669, -37158567, -72614069, -15491459, 160941471, 8]));
 
