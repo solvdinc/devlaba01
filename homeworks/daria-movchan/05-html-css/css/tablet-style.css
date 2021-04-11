@@ -1,0 +1,21 @@
+@media screen and (max-width: 599px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: "side" "main";
+    }
+
+    .side__photo img {
+        border-radius: 50%;
+        width: 150px;
+    }
+
+    .side__name-hidden,
+    .side__position-hidden {
+        display: block;
+    }
+
+    .main__name-hidden,
+    .main__position-hidden {
+        display: none;
+    }
+}

@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
   <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tablet-style.css" media="">
 </head>
 <body>
 <div class="wrapper">
@@ -26,17 +26,17 @@
     <div>
       <h3>SKILLS</h3>
       <div class="side__skills">
-        <label for="html-css">HTML/CSS</label>
+        <label for="html-css"><a href="https://ru.wikipedia.org/wiki/HTML">HTML/CSS</a></label>
         <progress id="html-css" max="100" value="60"> 60%</progress>
-        <label for="sass">Sass</label>
+        <label for="sass"><a href="https://ru.wikipedia.org/wiki/Sass">Sass</a></label>
         <progress id="sass" max="100" value="60"> 60%</progress>
-        <label for="pug">Pug</label>
+        <label for="pug"><a href="https://pugjs.org/api/getting-started.html">Pug</a></label>
         <progress id="pug" max="100" value="50"> 50%</progress>
-        <label for="gulp">Gulp</label>
+        <label for="gulp"><a href="https://gulpjs.com/">Gulp</a></label>
         <progress id="gulp" max="100" value="35"> 35%</progress>
-        <label for="js">JavaScript</label>
+        <label for="js"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">JavaScript</a></label>
         <progress id="js" max="100" value="10"> 10%</progress>
-        <label for="react">React</label>
+        <label for="react"><a href="https://ru.reactjs.org/">React.js</a></label>
         <progress id="react" max="100" value="5"> 5%</progress>
         <label for="english">English</label>
         <progress id="english" max="100" value="60"> 60%</progress>
@@ -70,11 +70,33 @@
         <span class="interests__item">Art</span>
       </div>
     </div>
+    <div class="main__experience">
+      <h3>EXPERIENCE</h3>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+      <div class="experience__img">
+        <img class="img-def" alt="cat" src="cat.jpg">
+        <img class="img-hov" alt="cat" src="cat-2.jpg">
+      </div>
+    </div>
   </main>
 </div>
 <button id="top-btn" onclick="toTop()">Up!</button>
 </body>
-
 <script>
     const topButton = document.getElementById("top-btn");
 
