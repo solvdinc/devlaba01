@@ -88,7 +88,7 @@ function decipherThis(str) {
   const newStr = str.replace(/\d+/g, ((firstLetter) => String.fromCharCode(firstLetter)))
     .split(' ');
   if (newStr.length >= 2) {
-    return newStr.slice(-1) + newStr.slice(1, -1) + newStr.slice(0, 1)
+    return newStr.slice(-1) + newStr.slice(1, -1) + newStr.slice(0, 1);
   }
   return newStr.join(' ');
 }
