@@ -1,14 +1,6 @@
 // task 1 https://www.codewars.com/kata/5715eaedb436cf5606000381
 function positiveSum(arr) {
-  let sumArr = arr.filter((num) => num > 0);
-
-  if (!sumArr.length) {
-    return 0;
-  }
-
-  sumArr = sumArr.reduce((prev, next) => prev + next);
-
-  return sumArr;
+  return arr.reduce((prev, next) => prev + (next > 0 ? next : 0), 0);
 };
 console.log(positiveSum([1, -2, 3, 4, 5]));
 
@@ -90,12 +82,22 @@ console.log(binaryArrayToNumber([0, 0, 0, 1]));
 
 // task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/javascript
 function findUniq(arr) {
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
-      return arr[i];
+  let firstNums = [arr[0]];
+  let secondNums = [];
+
+  for (let i = 1; i < 3; i += 1) {
+    if (firstNums.includes(arr[i])) {
+      firstNums.push(arr[i]);
+    } else {
+      secondNums.push(arr[i]);
     }
   }
-  return 0;
+
+  if (firstNums.length > 1) {
+    return arr.find(num => num !== firstNums[0]);
+  }
+
+  return arr.find(num => num !== secondNums[0]);
 };
 console.log(findUniq([0, 1, 0]));
 
