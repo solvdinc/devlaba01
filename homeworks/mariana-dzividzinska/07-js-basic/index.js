@@ -65,8 +65,8 @@ let gimme = function (inputArray) {
 const binaryArrayToNumber = arr => {
     return arr.reverse().reduce((acc, value, index) => {
         return value ? acc + Math.pow(2, index) : acc;
-    }, 0)
-};
+    }, 0);
+}
 
 //task 9 link https://www.codewars.com/kata/585d7d5adb20cf33cb000235
 function findUniq(arr) {
