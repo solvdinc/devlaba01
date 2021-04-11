@@ -1,7 +1,7 @@
 // task 1 https://www.codewars.com/kata/5715eaedb436cf5606000381
 
 function positiveSum(arr) {
-    const sum = 0;
+    let sum = 0;
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > 0) {
@@ -82,32 +82,10 @@ const binaryArrayToNumber = arr => {
 };
 
 // task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235
-//first solution
-// function findUniq(arr) {
-//     let setArr = [...new Set(arr)]
-//     console.log(setArr)
-//     for(let i = 0; i < setArr.length; i++) {
-//         if (arr.indexOf(setArr[i]) === arr.lastIndexOf(setArr[i])) {
-//             return setArr[i]
-//         }
-//     }
-// }
-//second solution
 function findUniq(arr) {
-    return arr.find(el => arr.indexOf(el) === arr.lastIndexOf(el))
+    return arr.slice(0, 3).filter(el => el === arr[0]).length > 1 ? arr.find(el => el !== arr[0]) : arr[0];
 }
-//third solution
-function findUniq(arr) {
-    for (let i = 0; i < arr.length; i += 1) {
-        if (arr[i] != arr[i + 1] && arr[i + 1] === arr[i + 2]) {
-            return arr[i]
-        } else if (arr[i] != arr[i + 1] && arr[i] === arr[i + 2]) {
-            return arr[i + 1]
-        } else if (arr[i] === arr[i + 1] && arr[i + 1] != arr[i + 2]) {
-            return arr[i + 2]
-        }
-    }
-}
+console.log(findUniq([1, 2, 1, 1, 1, 1]))
 // task 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
 
 function decipherThis(str) {
