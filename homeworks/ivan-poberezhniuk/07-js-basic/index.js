@@ -58,8 +58,8 @@ const evenChars = (string) => {
 
   return [...string].filter((char, index) => index % 2 !== 0);
 };
-// Task 7 https://www.codewars.com/kata/545a4c5a61aa4c6916000755
 
+// Task 7 https://www.codewars.com/kata/545a4c5a61aa4c6916000755
 const gimme = (inputArr) => {
   const sortedArr = [...inputArr].sort((a, b) => a - b);
   const midNum = sortedArr[Math.floor(sortedArr.length / 2)];
@@ -97,6 +97,7 @@ const decipherThis = (str) => {
 
   return descriptedString.join(' ');
 };
+
 // Task 11 https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
 const sortArray = (array) => {
   const odd = array.filter((num) => num % 2).sort((a, b) => b - a);
@@ -113,6 +114,7 @@ const sortArray = (array) => {
 
   return result;
 };
+
 // Optional (advanced)
 // Task 1 https://www.codewars.com/kata/515bb423de843ea99400000a
 // Task 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
