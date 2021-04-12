@@ -16,7 +16,7 @@ function pairs(ar) {
   for (let i = 0; i < ar.length; i += 1) {
     const elem = ar[i];
     if (i % 2 === 0) {
-      if (ar[i + 1] - elem === 1 || elem - ar[i + 1] === 1) {
+      if (Math.abs(elem - ar[i + 1]) === 1) {
         counter += 1;
       }
     }
@@ -36,15 +36,14 @@ console.log(maxMultiple());
 
 // task 4 https://www.codewars.com/kata/514a6336889283a3d2000001
 function getEvenNumbers(numbersArray) {
-  const result = numbersArray.filter((item) => item % 2 === 0);
-  return result;
+  return numbersArray.filter((item) => item % 2 === 0);
 }
 console.log(getEvenNumbers());
 
 // task 5 https://www.codewars.com/kata/5a090c4e697598d0b9000004
 function solve(arr) {
-  arr.sort((a, b) => b - a);
   const copyArr = arr.slice();
+  arr.sort((a, b) => b - a);
   const newArr = [];
   for (let i = 0; i <= copyArr.length; i += 1) {
     newArr.push(arr.shift());
@@ -56,16 +55,10 @@ console.log(solve());
 
 // task 6 https://www.codewars.com/kata/566044325f8fddc1c000002c
 function evenChars(string) {
-  const arr = [];
   if ((string.length < 2) || (string.length > 100)) {
     return 'invalid string';
   }
-  for (let i = 0; i <= string.length; i += 1) {
-    if (i % 2 !== 0) {
-      arr.push(string[i]);
-    }
-  }
-  return arr.filter((v) => v !== undefined);
+  return [...string].filter((value, item) => (item % 2 !== 0 ? value : null));
 }
 console.log(evenChars());
 
@@ -79,7 +72,7 @@ console.log(binaryArrayToNumber());
 
 // task 9 https://www.codewars.com/kata/585d7d5adb20cf33cb000235
 function findUniq(arr) {
-  return parseFloat(arr.find((value) => arr.indexOf(value) === arr.lastIndexOf(value)));
+  return arr.find((value) => arr.indexOf(value) === arr.lastIndexOf(value));
 }
 console.log(findUniq());
 
@@ -100,11 +93,3 @@ function sortArray(array) {
   return array.map((num) => ((num % 2 !== 0) ? sortedOdd.shift() : num));
 }
 console.log(sortArray());
-
-// task 1 https://www.codewars.com/kata/515bb423de843ea99400000a
-
-// task 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
-
-// task 3 https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
-
-// task 4 https://www.codewars.com/kata/5296bc77afba8baa690002d7
