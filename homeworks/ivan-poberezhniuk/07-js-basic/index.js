@@ -116,7 +116,47 @@ const sortArray = (array) => {
 };
 
 // Optional (advanced)
+
 // Task 1 https://www.codewars.com/kata/515bb423de843ea99400000a
+// TODO: complete this object/class
+
+// The constructor takes in an array of items and a integer indicating how many
+// items fit within a single page
+function PaginationHelper(collection, itemsPerPage) {
+  this.collection = collection;
+  this.itemsPerPage = itemsPerPage;
+  this.pages = Math.ceil(this.collection.length / this.itemsPerPage);
+}
+
+// returns the number of items within the entire collection
+PaginationHelper.prototype.itemCount = function () {
+  return this.collection.length;
+};
+
+// returns the number of pages
+PaginationHelper.prototype.pageCount = function () {
+  return this.pages;
+};
+
+// returns the number of items on the current page. page_index is zero based.
+// this method should return -1 for pageIndex values that are out of range
+PaginationHelper.prototype.pageItemCount = function (pageIndex) {
+  if (pageIndex > this.pages - 1 || pageIndex < 0) return -1;
+  if (pageIndex === 0) return this.collection.slice(0, this.itemsPerPage);
+  const from = this.itemsPerPage * pageIndex;
+  const to = this.itemsPerPage * (pageIndex + 1);
+
+  return this.collection.slice(from, to).length;
+};
+
+// determines what page an item is on. Zero based indexes
+// this method should return -1 for itemIndex values that are out of range
+PaginationHelper.prototype.pageIndex = function (itemIndex) {
+  if (itemIndex > this.collection.length - 1 || itemIndex < 0) return -1;
+  if (itemIndex < this.itemsPerPage) return 0;
+
+  return Math.ceil(this.collection.length / itemIndex);
+};
 // Task 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
 // Task 3 https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
 // Task 4 https://www.codewars.com/kata/5296bc77afba8baa690002d7
