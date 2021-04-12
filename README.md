@@ -38,5 +38,5 @@ Once PR is created you have to do the following things:
 | Apr 22nd | Data structures & algorithms |
 | Apr 26th | Environment, Part 1 |
 | Apr 29th | Environment, Part 2 |
-| May 3rd | Patterns & principles, Part 1 |
-| May 6th | Patterns & principles, Part 2 |
+| May 6th | Patterns & principles, Part1 |
+| May 13th | Patterns & principles, Part 2 |
