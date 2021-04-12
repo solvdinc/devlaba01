@@ -10,18 +10,15 @@ function pairs(ar) {
   const result = [];
   for (let i = 0; i < ar.length; i += 2) {
     if (ar[i] + 1 === ar[i + 1] || ar[i] === ar[i + 1] + 1) result.push([ar[i], ar[i + 1]]);
-  } return result.length;
+  }
+  return result.length;
 }
 
 pairs();
 
 // task 3 link https://www.codewars.com/kata/5aba780a6a176b029800041c
 function maxMultiple(divisor, bound) {
-  let N = 0;
-  for (let i = 0; i <= bound; i += 1) {
-    if (i % divisor === 0 && i > N) N = i;
-  }
-  return N;
+  return bound - (bound % divisor);
 }
 
 maxMultiple();
@@ -44,7 +41,7 @@ solve();
 // task 6 link https://www.codewars.com/kata/566044325f8fddc1c000002c
 function evenChars(string) {
   if (string.length >= 100 || string.length <= 1) return 'invalid string';
-  return string.split('').map((item, index) => (index % 2 !== 0 ? item : '')).filter((item) => item !== '');
+  return string.split('').filter((item, index) => index % 2 !== 0);
 }
 
 evenChars();
