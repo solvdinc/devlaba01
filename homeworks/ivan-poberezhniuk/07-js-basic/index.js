@@ -98,7 +98,21 @@ const decipherThis = (str) => {
   return descriptedString.join(' ');
 };
 // Task 11 https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
+const sortArray = (array) => {
+  const odd = array.filter((num) => num % 2).sort((a, b) => b - a);
+  let result = array.map((num) => (num % 2 ? null : num));
 
+  result = result.map((num) => {
+    if (num === null) {
+      const oddNum = odd[odd.length - 1];
+      odd.pop();
+      return oddNum;
+    }
+    return num;
+  });
+
+  return result;
+};
 // Optional (advanced)
 // Task 1 https://www.codewars.com/kata/515bb423de843ea99400000a
 // Task 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
