@@ -199,3 +199,20 @@ var moveZeros = function (arr) {
     }
     return arrayNumbers.concat(arrayZero)
 }
+// optional 3  https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
+
+function findUniq(arr) {
+    const setedArr = arr.map(el => standardize(el));
+    const partOfArr = setedArr.slice(0, 3)
+    const filteredPart = partOfArr.filter(el => el === partOfArr[0])
+
+    if (filteredPart.length > 1) {
+        return arr[setedArr.indexOf(setedArr.find(el => el != filteredPart[0]))]
+    } else {
+        return arr[0]
+    }
+}
+
+function standardize(el) {
+    return [...new Set(el.toLowerCase().split('').sort((a, b) => a > b))].join('')
+}
