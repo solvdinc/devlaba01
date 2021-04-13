@@ -13,3 +13,6 @@ Useful links
 
 * [Class-based programming](https://en.wikipedia.org/wiki/Class-based_programming)
 * [Prototype-based programming](https://en.wikipedia.org/wiki/Prototype-based_programming)
+* [JSDoc cheatsheet](https://devhints.io/jsdoc)
+* [draw.io](draw.io)
+* [Cookie overview](https://javascript.info/cookie)
