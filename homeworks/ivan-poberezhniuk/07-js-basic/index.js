@@ -157,6 +157,33 @@ PaginationHelper.prototype.pageIndex = function (itemIndex) {
 
   return Math.ceil(this.collection.length / itemIndex);
 };
+
 // Task 2 https://www.codewars.com/kata/52597aa56021e91c93000cb0
+const moveZeros = (arr) => {
+  const result = arr.filter((num) => num !== 0);
+  const amountOfZeroes = arr.length - result.length;
+
+  for (let i = 0; i < amountOfZeroes; i += 1) {
+    result.push(0);
+  }
+  return result;
+};
+
 // Task 3 https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
+const findUniq = (arr) => {
+  const result = arr
+    .map((str) => str.toLowerCase().split('').sort().join('').replace(/^\s+/, '*'))
+    .sort();
+  for (let i = 0; i < result.length; i += 1) {
+    for (let k = 0; k < result.length; k += 1) {
+      if (result[k].includes(result[i])) {
+        continue;
+      }
+      return arr.find(
+        (str) => str.toLowerCase().split('').sort().join('').replace(/^\s+/, '*') === result[k]
+      );
+    }
+  }
+};
+
 // Task 4 https://www.codewars.com/kata/5296bc77afba8baa690002d7
