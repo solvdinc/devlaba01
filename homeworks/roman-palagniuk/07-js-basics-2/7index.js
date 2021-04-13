@@ -35,7 +35,7 @@ function getEvenNumbers(numbersArray) {
 
 // 5 https://www.codewars.com/kata/5a090c4e697598d0b9000004
 function solve(arr) {
-  const res = [];
+  let res = [];
   arr.sort((a, b) => a - b);
 
   while (arr.length > 0) {
@@ -47,12 +47,12 @@ function solve(arr) {
 
 // 6 https://www.codewars.com/kata/566044325f8fddc1c000002c
 function evenChars(string) {
-  const res = [];
+  let res = [];
   if (string.length < 2 || string.length > 100) {
     return 'invalid string';
   }
-  string.split('').forEach((el, i) => {
-    if ((i + 1) % 2 === 0) {
+  string.split('').forEach((el, index) => {
+    if ((index + 1) % 2 === 0) {
       res.push(el);
     }
   });
@@ -76,7 +76,7 @@ function findUniq(arr) {
 // 10 https://www.codewars.com/kata/581e014b55f2c52bb00000f8
 function decipherThis(str) {
   return str
-    .replace(/(\d)+/gi, (i) => String.fromCharCode(i))
+    .replace(/(\d)+/gi, (index) => String.fromCharCode(index))
     .replace(/\b(\w)(\w)(\w*)(\w)\b/gi, '$1$4$3$2');
 }
 
@@ -96,7 +96,7 @@ const moveZeros = (arr) => [
 // 3 https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
 // find unique
 function Uniq(arr) {
-  const newArr = arr.map((a) => [...new Set(a.toLowerCase())].sort().join(''));
+  const newArr = arr.map((el) => [...new Set(el.toLowerCase())].sort().join(''));
   for (let i = 0; i < newArr.length; i += 1) {
     if (newArr.indexOf(newArr[i]) === newArr.lastIndexOf(newArr[i])) {
       return arr[i];
