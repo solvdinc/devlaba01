@@ -1,4 +1,29 @@
 /* eslint-disable no-unused-vars */
+// 1 Create a function to access the properties of an object.
+const user = {
+  username: 'testuser1',
+  preferences: {
+    sound: {
+      maxValue: 50,
+      value: 30,
+    },
+  },
+};
+const randomValue = Math.random();
+const nullValue = null;
+
+const pluck = (nestedObj, str) => {
+  const pathArr = str.split('.');
+  return pathArr.reduce(
+    (obj, key) => (obj && obj[key] !== 'undefined' ? obj[key] : null),
+    nestedObj
+  );
+};
+
+console.log(pluck(user, 'preferences.sound.value')); // 30
+console.log(pluck(user, 'unknown.key')); // null
+console.log(pluck(randomValue, 'unknown.key')); // null
+console.log(pluck(nullValue, 'unknown.key')); // null
 
 // 2. Deep Clone
 // Create custom deep clone function.
