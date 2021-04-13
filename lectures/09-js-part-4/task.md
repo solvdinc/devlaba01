@@ -94,4 +94,4 @@ console.log((new Post()).wakeFrom(serialized));
 
 ## An extra task
 
-Add a UML Diagram of all the thing you have created (png file id ok)
+Add a UML Diagram of all the things you have created (png file is ok)
