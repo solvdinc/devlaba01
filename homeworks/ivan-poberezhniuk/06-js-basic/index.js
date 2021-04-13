@@ -101,7 +101,7 @@ const getMiddle = (string) => {
   const halfOfLetters = Math.ceil(lettersCount / 2);
 
   if (isOdd) {
-    return s[halfOfLetters - 1];
+    return string[halfOfLetters - 1];
   }
   const double = string[halfOfLetters - 1] + string[halfOfLetters];
   return double;
