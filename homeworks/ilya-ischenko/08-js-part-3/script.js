@@ -139,3 +139,18 @@ person.fullName = 'Giovanni Fabbri';
 console.log(person.fullName);
 console.log(person.lastName);
 console.log(person2.fullName);
+
+// OPTIONAL (7) https://www.codewars.com/kata/54834b3559e638b39d0009a2/train/javascript
+function OnceNamedOne(first, last) {
+  return Object.freeze({
+    firstName: first,
+    lastName: last,
+
+    get fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+  });
+};
+const person3 = new OnceNamedOne('Ilya', 'Ischenko');
+console.log(person3.lastName = 'i');
+console.log(person3.fullName);
