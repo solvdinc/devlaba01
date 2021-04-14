@@ -28,7 +28,7 @@ function pluck(obj, prop) {
   }
 
   return obj[key];
-};
+}
 console.log(pluck(user, 'preferences.sound.value'));
 console.log(pluck(user, 'unknown.key'));
 console.log(pluck(randomValue, 'unknown.key'));
@@ -36,10 +36,10 @@ console.log(pluck(nullValue, 'unknown.key'));
 
 // task 2
 function clone(obj) {
-  let cloneObj = {};
+  const cloneObj = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  for (let [key, value] of Object.entries(obj)) {
+  for (const [key, value] of Object.entries(obj)) {
     if (value instanceof Object && value !== null) {
       cloneObj[key] = clone(obj[key]);
     } else {
@@ -48,7 +48,7 @@ function clone(obj) {
   }
 
   return cloneObj;
-};
+}
 const clonedUser = clone(user);
 clonedUser.preferences.sound.maxValue = 70;
 console.log(
@@ -58,8 +58,8 @@ console.log(
 // task 3
 function dateOffset(date) {
   let result = '';
-  let secondDate = Date.parse(new Date());
-  let firstDate = date.split(',').map(n => +n.trim());
+  const secondDate = Date.parse(new Date());
+  let firstDate = date.split(',').map((n) => +n.trim());
   firstDate = Date.parse(new Date(...firstDate));
 
   let diff = (secondDate - firstDate) / 1000;
@@ -69,15 +69,15 @@ function dateOffset(date) {
     const d = Math.floor(diff / 86400);
     diff -= d * 86400;
 
-    result += d > 1 ? d + ' days ' : d + ' day ';
+    result += d > 1 ? `${d} days ` : `${d} day `;
   }
 
   // HOURS
   if (diff >= 3600) {
     const h = Math.floor(diff / 3600);
-    diff -= h * 3600; 
+    diff -= h * 3600;
 
-    result += h > 1 ? h + ' hours ' : h + ' hour ';
+    result += h > 1 ? `${h} hours ` : `${h} hour `;
   }
 
   // MINUTES
@@ -85,30 +85,44 @@ function dateOffset(date) {
     const m = Math.floor(diff / 60);
     diff -= m;
 
-    result += m > 1 ? m + ' minutes ' : m + ' minute ';
+    result += m > 1 ? `${m} minutes ` : `${m} minute `;
   }
 
-  return result += 'ago';
-};
+  return `${result} ago`;
+}
 console.log(dateOffset('2021, 03, 5, 20, 32'));
 
 // TASK 4
 function randomDate(firstDate, secondDate) {
-  let date1 = firstDate.split(',').map(n => +n.trim());
+  let date1 = firstDate.split(',').map((n) => +n.trim());
   date1 = Date.parse(new Date(firstDate));
-  let date2 = firstDate.split(',').map(n => +n.trim());
+  let date2 = firstDate.split(',').map((n) => +n.trim());
   date2 = Date.parse(new Date(secondDate));
 
   const resultDate = Math.trunc((date2 - date1) * Math.random() + date1);
   return new Date(resultDate);
-};
+}
 console.log(randomDate('2021, 03, 5', '2021, 03, 20'));
 
 // TASK 5 https://www.codewars.com/kata/merged-objects
-let a = {'1':'1', '2':'2', '3':'3'};
-let b = {'3':'4', '5':'6', '6':'7', '7':'8'};
-let c = {'5':'9', '8':'9', '6':'12', '23':'35'};
-let o = [a, b, c];
+const a = { 
+  '1':'1',
+  '2':'2',
+  '3':'3',
+};
+const b = {
+  '3':'4',
+  '5':'6',
+  '6':'7',
+  '7':'8',
+};
+const c = { 
+  '5':'9',
+  '8':'9',
+  '6' : '12',
+  '23':'35',
+};
+const o = [a, b, c];
 const objConcat = (objects) => Object.assign({}, ...objects);
 console.log(objConcat(o));
 
@@ -130,7 +144,7 @@ function NamedOne(first, last) {
       }
     },
   };
-};
+}
 const person = new NamedOne('Ilya', 'Ischenko');
 const person2 = new NamedOne('Ilya', 'Ischenko');
 person.firstName = 'Dima';
@@ -150,16 +164,16 @@ function OnceNamedOne(first, last) {
       return `${this.firstName} ${this.lastName}`;
     },
   });
-};
+}
 const person3 = new OnceNamedOne('Ilya', 'Ischenko');
 console.log(person3.lastName = 'i');
 console.log(person3.fullName);
 
 // OPTIONAL (8) https://www.codewars.com/kata/5e602796017122002e5bc2ed/train/javascript
-function partialKeys(obj) { 
+function partialKeys(obj) {
   const object = new Proxy(obj, {
     get(target, prop) {
-      let results = [];
+      const results = [];
 
       Object.keys(target).forEach((key) => {
         if (key.startsWith(prop)) {
@@ -176,7 +190,7 @@ function partialKeys(obj) {
     },
   });
   return object;
-};
+}
 const checkObj = partialKeys({
   aaa: 1,
   abc: 2,
@@ -210,5 +224,5 @@ function humanReadable(seconds) {
   sec = sec > 9 ? sec : `0${sec}`;
 
   return `${h}:${m}:${sec}`;
-};
-console.log(humanReadable(5));
+}
+console.log(humanReadable(12345));
