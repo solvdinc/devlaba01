@@ -149,3 +149,40 @@ class NamedOne {
     this.lastName = lastName;
   }
 }
+
+// Task 7 https://www.codewars.com/kata/54834b3559e638b39d0009a2
+function OnceNamedOne(first, last) {
+  // -- SHOULD be changed --
+  this.firstName = first;
+  this.lastName = last;
+  this.fullName = `${this.firstName} + ' ' + ${this.lastName}`;
+
+  Object.freeze(this);
+}
+
+// Task 8 https://www.codewars.com/kata/partial-keys
+
+// Ефыл 9 https://www.codewars.com/kata/human-readable-time
+const humanReadable = (time) => {
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
+  let humanized = '';
+
+  seconds = (time % 60) / 1;
+  minutes = Math.floor((time % 3600) / 60);
+  hours = Math.floor(time / 3600);
+
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  humanized = `${hours}:${minutes}:${seconds}`;
+  return humanized;
+};
