@@ -154,3 +154,34 @@ function OnceNamedOne(first, last) {
 const person3 = new OnceNamedOne('Ilya', 'Ischenko');
 console.log(person3.lastName = 'i');
 console.log(person3.fullName);
+
+// OPTIONAL (8) https://www.codewars.com/kata/5e602796017122002e5bc2ed/train/javascript
+function partialKeys(obj) { 
+  const object = new Proxy(obj, {
+    get(target, prop) {
+      let results = [];
+
+      Object.keys(target).forEach((key) => {
+        if (key.startsWith(prop)) {
+          results.push(key);
+        }
+      });
+
+      if (results.length) {
+        results.sort();
+        return target[results[0]];
+      }
+
+      return undefined;
+    },
+  });
+  return object;
+};
+const checkObj = partialKeys({
+  aaa: 1,
+  abc: 2,
+  dfg: 3,
+  def: 4,
+  dfgh: 5,
+});
+console.log(checkObj.d);
