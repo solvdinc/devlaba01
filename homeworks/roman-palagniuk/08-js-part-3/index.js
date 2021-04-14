@@ -45,6 +45,17 @@ console.log(
   user2.preferences.sound.maxValue === clonedUser.preferences.sound.maxValue
 ); // false
 
+// 3 "A long time ago"
+// Create a function that returns how long ago a certain day was.
+function offset(dateProvided) {
+  const date = moment(dateProvided);
+  return date.fromNow();
+}
+
+console.log(offset(moment('23/02/2021 13:30:00', 'DD/MM/YYYY hh:mm:ss')));
+console.log(offset(moment('12/04/2021 14:00:00', 'DD/MM/YYYY hh:mm:ss')));
+console.log(offset(moment('23/02/2020 10:00:00', 'DD/MM/YYYY hh:mm:ss')));
+
 // 4 Random dates
 // Create a function that generate a random date between two dates
 const date1 = moment('23/01/2021', 'DD/MM/YYYY');
