@@ -45,6 +45,21 @@ console.log(
   user2.preferences.sound.maxValue === clonedUser.preferences.sound.maxValue
 ); // false
 
+// 4 Random dates
+// Create a function that generate a random date between two dates
+const date1 = moment('23/01/2021', 'DD/MM/YYYY');
+const date2 = moment('23/02/2021', 'DD/MM/YYYY');
+
+function randomDate(SomeDate1, SomeDate2) {
+  const D1 = moment(SomeDate1);
+  const D2 = moment(SomeDate2);
+  const random = moment(D1 + Math.random() * (D2 - D1));
+  return moment(random);
+}
+
+console.log(randomDate(date1, date2).format('DD/MM/YY'));
+// 20/02/2021
+
 // 5 https://www.codewars.com/kata/merged-objects
 function objConcat(arr) {
   const result = {};
