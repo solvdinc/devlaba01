@@ -111,3 +111,31 @@ let c = {'5':'9', '8':'9', '6':'12', '23':'35'};
 let o = [a, b, c];
 const objConcat = (objects) => Object.assign({}, ...objects);
 console.log(objConcat(o));
+
+// TASK 6 https://www.codewars.com/kata/547f1a8d4a437abdf800055c/train/javascript
+function NamedOne(first, last) {
+  return {
+    firstName: first,
+    lastName: last,
+
+    get fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+
+    set fullName(value) {
+      const nameArr = value.split(' ');
+
+      if (nameArr.length === 2) {
+        [this.firstName, this.lastName] = nameArr;
+      }
+    },
+  };
+};
+const person = new NamedOne('Ilya', 'Ischenko');
+const person2 = new NamedOne('Ilya', 'Ischenko');
+person.firstName = 'Dima';
+console.log(person.fullName);
+person.fullName = 'Giovanni Fabbri';
+console.log(person.fullName);
+console.log(person.lastName);
+console.log(person2.fullName);
