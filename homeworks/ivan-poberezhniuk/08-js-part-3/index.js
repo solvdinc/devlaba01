@@ -162,7 +162,7 @@ function OnceNamedOne(first, last) {
 
 // Task 8 https://www.codewars.com/kata/partial-keys
 
-// Ефыл 9 https://www.codewars.com/kata/human-readable-time
+// Task 9 https://www.codewars.com/kata/human-readable-time
 const humanReadable = (time) => {
   let seconds = 0;
   let minutes = 0;
