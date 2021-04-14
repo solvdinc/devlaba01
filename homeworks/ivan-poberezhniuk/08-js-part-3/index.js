@@ -53,8 +53,8 @@ const clone2 = (obj) => {
   if (typeof obj !== 'object' || obj === null) {
     return obj;
   }
-  const copy = {};
 
+  const copy = {};
   const objKeys = Object.keys(obj);
 
   objKeys.forEach((key) => {
