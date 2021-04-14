@@ -185,3 +185,30 @@ const checkObj = partialKeys({
   dfgh: 5,
 });
 console.log(checkObj.d);
+
+// OPTIONAL (9) https://www.codewars.com/kata/52685f7382004e774f0001f7/train/javascript
+function humanReadable(seconds) {
+  let sec = +seconds;
+  let h = 0;
+  let m = 0;
+
+  // HOURS
+  if (sec >= 3600) {
+    h = Math.floor(sec / 3600);
+    sec -= h * 3600;
+  }
+  h = h > 9 ? h : `0${h}`;
+
+  // MINUTES
+  if (sec >= 60) {
+    m = Math.floor(sec / 60);
+    sec -= m * 60;
+  }
+  m = m > 9 ? m : `0${m}`;
+
+  // SECONDS
+  sec = sec > 9 ? sec : `0${sec}`;
+
+  return `${h}:${m}:${sec}`;
+};
+console.log(humanReadable(5));
