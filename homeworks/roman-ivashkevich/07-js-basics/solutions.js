@@ -216,7 +216,6 @@ function solution12() {
 function solution13() {
   const moveZeros = (arr) => {
     const digitArr = arr.filter((el) => el !== 0);
-
     const zeroArr = arr.filter((el) => el === 0);
 
     return digitArr.concat(zeroArr);
