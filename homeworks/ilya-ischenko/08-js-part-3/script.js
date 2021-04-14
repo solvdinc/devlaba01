@@ -91,3 +91,15 @@ function dateOffset(date) {
   return result += 'ago';
 };
 console.log(dateOffset('2021, 03, 5, 20, 32'));
+
+// TASK 4
+function randomDate(firstDate, secondDate) {
+  let date1 = firstDate.split(',').map(n => +n.trim());
+  date1 = Date.parse(new Date(firstDate));
+  let date2 = firstDate.split(',').map(n => +n.trim());
+  date2 = Date.parse(new Date(secondDate));
+
+  const resultDate = Math.trunc((date2 - date1) * Math.random() + date1);
+  return new Date(resultDate);
+};
+console.log(randomDate('2021, 03, 5', '2021, 03, 20'));
