@@ -175,6 +175,7 @@ const interceptor = {
 
 const partialKeys = (target) => {
   const proxy = new Proxy(target, interceptor);
+  s;
 
   return proxy;
 };
