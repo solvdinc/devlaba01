@@ -161,6 +161,25 @@ function OnceNamedOne(first, last) {
 }
 
 // Task 8 https://www.codewars.com/kata/partial-keys
+const interceptor = {
+  get: (target, name) => {
+    const keys = Object.keys(target)
+      .filter((key) => key.startsWith(name))
+      .sort();
+
+    if (keys.length > 0) {
+      return target[keys[0]];
+    }
+
+    return undefined;
+  },
+};
+
+const partialKeys = (target) => {
+  const proxy = new Proxy(target, interceptor);
+
+  return proxy;
+};
 
 // Task 9 https://www.codewars.com/kata/human-readable-time
 const humanReadable = (time) => {
