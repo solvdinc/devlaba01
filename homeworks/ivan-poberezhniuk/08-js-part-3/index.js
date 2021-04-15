@@ -153,7 +153,7 @@ function OnceNamedOne(first, last) {
   // -- SHOULD be changed --
   this.firstName = first;
   this.lastName = last;
-  this.fullName = `${this.firstName} + ' ' + ${this.lastName}`;
+  this.fullName = `${this.firstName} ${this.lastName}`;
 
   Object.freeze(this);
 }
@@ -175,7 +175,6 @@ const interceptor = {
 
 const partialKeys = (target) => {
   const proxy = new Proxy(target, interceptor);
-  s;
 
   return proxy;
 };
@@ -185,9 +184,8 @@ const humanReadable = (time) => {
   let seconds = 0;
   let minutes = 0;
   let hours = 0;
-  let humanized = '';
 
-  seconds = (time % 60) / 1;
+  seconds = time % 60;
   minutes = Math.floor((time % 3600) / 60);
   hours = Math.floor(time / 3600);
 
@@ -201,6 +199,5 @@ const humanReadable = (time) => {
     hours = `0${hours}`;
   }
 
-  humanized = `${hours}:${minutes}:${seconds}`;
-  return humanized;
+  return `${hours}:${minutes}:${seconds}`;
 };
