@@ -12,7 +12,9 @@ You can find the following topics here:
 
 [Materials](https://docs.google.com/document/d/1lfvfDH6mBobvU6_S1hP7dthDQEyzdiFP5FpNbCHZvt8/edit?usp=sharing)
 
-[Video]()
+[Presentation](https://docs.google.com/presentation/d/18vDPm1gZFW6c68YeR9SvDIQytn-_r87KjnRpt9OEP3Q/edit?usp=sharing)
+
+[Video](https://solvd.zoom.us/rec/share/6SYNvwMEa0U0NMA-qRkFXkH3F9I7EcCT-3BB9IIiEY8Z0_jKQn8cPjvNKe7q2Ws.LLxruxmf0QycMrI1?startTime=1618477394000)
 
 Useful links
 
