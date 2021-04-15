@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import moment from 'moment';
 
 // Task 1 https://github.com/qaprosoft/devlaba01/blob/master/lectures/08-js-part-3/task.md#1-pluck
@@ -111,12 +112,9 @@ console.log(offset(moment('23/02/2020 10:00:00', 'DD/MM/YYYY hh:mm:ss')));
 const date1 = moment('23/01/2021', 'DD/MM/YYYY');
 const date2 = moment('23/02/2021', 'DD/MM/YYYY');
 
-const randomDate = (from, to) => {
-  return moment(from + Math.random() * (to - from));
-};
+const randomDate = (from, to) => moment(from + Math.random() * (to - from));
 
 console.log(randomDate(date1, date2).format('DD/MM/YY'));
-
 // 20/02/2021
 
 // Task 5 https://www.codewars.com/kata/merged-objects
