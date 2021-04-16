@@ -4,19 +4,38 @@ class Serializable {
     let obj = {
       className: `${this.constructor.name}`,
     };
-
     obj = { ...obj, ...this };
+    const json = JSON.stringify(obj, (key, value) => {
+      const objValue = value;
+      if (value === undefined || typeof value === 'symbol') {
+        throw new Error('Unexpected value');
+      }
 
-    return JSON.stringify(obj);
+      if (value !== objValue) {
+        return '0/0';
+      }
+
+      if (value === Infinity) {
+        return '1/0';
+      }
+
+      if (value === -Infinity) {
+        return '-1/0';
+      }
+
+      return value;
+    });
+
+    return json;
   }
 
   wakeFrom(serialized) {
+    console.log(this.constructor.name);
     try {
       const parsedObj = JSON.parse(serialized);
-      const resultObj = Object.fromEntries(
+      const resObj = Object.fromEntries(
         Object.entries(parsedObj).map(([key, value]) => {
           let objValue = value;
-
           if (key === 'className') {
             if (value !== this.constructor.name) {
               throw new Error(
@@ -25,18 +44,28 @@ class Serializable {
             }
           }
 
+          if (objValue === '0/0') {
+            objValue = 0 / 0;
+          }
+
+          if (objValue === '1/0') {
+            objValue = 1 / 0;
+          }
+
+          if (objValue === '-1/0') {
+            objValue = -1 / 0;
+          }
+
           const reISO = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*))(?:Z|(\+|-)([\d|:]*))?$/;
           const temp = reISO.exec(value);
-
           if (temp) {
             objValue = new Date(temp[0]);
           }
-
           return [key, objValue];
         }),
       );
 
-      return new this.constructor(resultObj);
+      return new this.constructor(resObj);
     } catch (err) {
       console.log(err);
     }
@@ -87,10 +116,10 @@ class Post extends Serializable {
   }
 }
 
-console.log(new Post().wakeFrom(serialized)); // Error: Impossible to wake up from this value of serialized. Class name does not match.
+// console.log(new Post().wakeFrom(serialized)); // Error: Impossible to wake up from this value of serialized. Class name does not match.
 
 // for check
-// const test = new Post({
+// let test = new Post({
 //   content: 'test',
 //   date: new Date(),
 //   author: 'Roman Ivashkevich',
@@ -98,5 +127,26 @@ console.log(new Post().wakeFrom(serialized)); // Error: Impossible to wake up fr
 
 // serialized = test.serialize(); // className Post
 // test = null;
-// const resurrectedTest = new Post().wakeFrom(serialized);
-// console.log(resurrectedTolik instanceof UserDTO); // true
+// let resurrectedTest = new Post().wakeFrom(serialized);
+// console.log(resurrectedTest instanceof Post); // true
+
+class Test extends Serializable {
+  constructor({ content, date, author } = {}) {
+    super();
+
+    this.content = content;
+    this.date = date;
+    this.author = author;
+  }
+}
+
+let test = new Test({
+  content: Infinity,
+  date: NaN,
+  author: -Infinity,
+});
+
+serialized = test.serialize();
+test = null;
+const resurrectedTest = new Test().wakeFrom(serialized);
+console.log(resurrectedTest instanceof Test);
