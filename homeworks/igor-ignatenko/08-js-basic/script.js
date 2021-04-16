@@ -179,7 +179,29 @@ function solution6() {
     NamedOne();
 }
 
+//task 7 https://www.codewars.com/kata/54834b3559e638b39d0009a2
+function solution7() {
+    function OnceNamedOne(first, last) {
+        return Object.freeze({
+            firstName: first,
+            lastName: last,
+            get fullName() {
+                return `${first} ${last}`
+            }
+        })
+    }
+}
 
+//task 9 https://www.codewars.com/kata/human-readable-time
+function solution9() {
+    function humanReadable(seconds) {
+        return `${check(Math.floor(seconds / (60 * 60)))}:${check(Math.floor((seconds / 60) % 60))}:${check(seconds % 60)}`
+        
+    }
+    function check(num) {
+        return num > 10 ? num : "0" + num;
+    };
+}
 
 
 
@@ -234,92 +256,3 @@ function solution6() {
 
 
 
-// // const newArr = arr.forEach(el => [...new Set(el.toLowerCase())].sort().join(''));
-// // const checkArr = newArr.slice(0, 3).filter(el => el === newArr[0]).length > 1 ? arr[newArr.find(el => el !== newArr[0])] : arr[0]
-// // function findUniq(arr) {
-// //     const newArr = arr.map(el => [...new Set(el.toLowerCase())].sort().join(''));
-// //     const checkArr = newArr.slice(0, 3).filter(el => el === newArr[0]);
-
-// //     if (checkArr.length > 1) {
-// //         return arr[newArr.indexOf(newArr.find(el => el !== newArr[0]))];
-// //     } else {
-// //         return newArr[0];
-// //     }
-// // }
-
-// // console.log(findUniq(['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a']))
-// // console.log(findUniq(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']))
-// //  return arr.slice(0, 3).filter(el => el === arr[0]).length > 1 ? arr.find(el => el !== arr[0]) : arr[0]
-
-// // function findUniq(arr) {
-// //     const newArr = arr.map(el => [...new Set(el.toLowerCase())].sort().join(''));
-// //     const checkArr = newArr.slice(0, 3).filter(el => el === newArr[0]);
-
-// //     if (checkArr.length > 1) {
-// //         return arr[newArr.indexOf(newArr.find(el => el !== newArr[0]))];
-// //     } else {
-// //         return newArr[0];
-// //     }
-// // }
-
-// // console.log(findUniq(['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a']))
-
-// // function findUniq(arr) {
-// //     const sample = arr.slice(0, 3).map(el => standardize(el));
-// //     const checkArr = sample.filter(el => el === sample[0])
-// //     console.log(sample)
-// //     console.log(checkArr)
-// //     if (checkArr.length > 1 ) {
-
-// //     }
-
-// //     // const sSize = new Set(sample).size
-// //     // console.log(sSize)
-// //     // for (var j of arr.slice(2, arr.length)) {
-// //     //     const check = standardize(j)
-
-// //     //     if (sSize == 2 && sample.includes(check)) {
-// //     //         return sample.filter(e => standardize(e) != check)[0]
-// //     //     }
-// //     //     if (!sample.includes(check)) {
-// //     //         return j
-// //     //     }
-// //     // }
-// // }
-
-// // function standardize(s) {
-// //     return [...new Set(s.toLowerCase().split('').sort((a, b) => a > b))].join('')
-// // }
-// // console.log(findUniq(['Aa', 'BbBb', 'aaaaa', 'aaaaa', 'Aaaa', 'AaAaAa', 'a']))
-// // console.log(findUniq(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']))
-
-// // function findUniq(arr) {
-// //     const setedArr = arr.map(el => standardize(el));
-// //     const partOfArr = setedArr.slice(0, 3)
-// //     const filteredPart = partOfArr.filter(el => el === partOfArr[0])
-
-// //     if (filteredPart.length > 1) {
-// //         return arr[setedArr.indexOf(setedArr.find(el => el != filteredPart[0]))]
-// //     } else {
-// //         return arr[0]
-// //     }
-// // }
-
-// // function standardize(el) {
-// //     return [...new Set(el.toLowerCase().split('').sort((a, b) => a > b))].join('')
-// // }
-
-// function findUniq(arr) {
-//     const repeateble = arr.slice(0, 3).map(el => {
-//         return el.toLowerCase().replace(/\s/g, '').split('').sort();
-//     }).sort()[1];
-
-//     for (let i = 0; i < arr.length; i++) {
-//         let str = arr[i].toLowerCase().replace(/\s/g, '');
-//         if ((!repeateble.length && str.length) || (repeateble.length && !str.length)) return arr[i];
-//         for (let j = 0; j < str.length; j++) {
-//             if (repeateble.indexOf(str[j]) === -1) return arr[i];
-//         }
-//     }
-// }
-// console.log(findUniq(['Tom Marvolo Riddle', 'I am Lord Voldemort', 'Harry Potter']))
