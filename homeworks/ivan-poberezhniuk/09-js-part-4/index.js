@@ -1,36 +1,56 @@
-/**
- * REMOVEME To mock the class you to provide us with
- * @typedef {{
- *   serialize(): string,
- *   wakeFrom(serialized: string): Serializable
- * }} Serializable
- */
+/* eslint-disable max-classes-per-file */
+const KEY = {
+  DATE: '$date$_',
+};
+
+const replacer = (key, value) => {
+  const isDate = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)/.exec(
+    value
+  );
+
+  if (isDate) return KEY.DATE + value;
+
+  return value;
+};
+
+const reviver = (key, value) => {
+  if (typeof value === 'string') {
+    if (value.startsWith(KEY.DATE)) return new Date(value.slice(KEY.DATE.length));
+  }
+
+  return value;
+};
+
 class Serializable {
   serialize() {
-    return JSON.stringify(this);
+    return JSON.stringify([this, this.constructor.name], replacer);
   }
 
   wakeFrom(str) {
-    console.log(str);
-    return JSON.parse(str);
+    const [object, constructorName] = JSON.parse(str, reviver);
+    const OriginalClass = eval(constructorName);
+
+    if (this.constructor.name !== constructorName) {
+      console.error('Serialized class name does not match');
+    }
+
+    return new OriginalClass(object);
   }
 }
 
 class UserDTO extends Serializable {
-  constructor({ firstName, lastName, phone, birth }) {
+  constructor(user) {
+    const { firstName, lastName, phone, birth } = { ...user };
     super();
 
-    console.log(this);
     this.firstName = firstName;
     this.lastName = lastName;
-    this.phone = NaN;
+    this.phone = phone;
     this.birth = birth;
   }
 
   printInfo() {
-    console.log(
-      `${this.firstName[0]}. ${this.lastName} - ${this.phone}, ${this.birth.toISOString()}`
-    );
+    return `${this.firstName[0]}. ${this.lastName} - ${this.phone}, ${this.birth.toISOString()}`;
   }
 }
 
@@ -41,18 +61,18 @@ let tolik = new UserDTO({
   birth: new Date('1999-01-02'),
 });
 
-tolik.printInfo(); //A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
+tolik.printInfo(); // A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
 
 const serialized = tolik.serialize();
 tolik = null;
 
 const resurrectedTolik = new UserDTO().wakeFrom(serialized);
-
-console.log(resurrectedTolik instanceof UserDTO); // true
-console.log(resurrectedTolik.printInfo()); // A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
+console.log('resurrectedTolik instanceof UserDTO: ', resurrectedTolik instanceof UserDTO); // true
+console.log('resurrectedTolik info: ', resurrectedTolik.printInfo()); // A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
 
 class Post extends Serializable {
-  constructor({ content, date, author }) {
+  constructor(post) {
+    const { content, date, author } = { ...post };
     super();
 
     this.content = content;
@@ -61,5 +81,31 @@ class Post extends Serializable {
   }
 }
 
-console.log(new Post().wakeFrom(serialized));
+console.log('Post: ', new Post().wakeFrom(serialized));
 // throw an error because the srialized line does contain data for User class
+
+class Types extends Serializable {
+  constructor() {
+    super();
+    this.NotANumber = NaN;
+    this.infinity = Infinity;
+    this.null = null;
+    this.Array = [1, 2, 3, 4, 5];
+  }
+
+  printTypes() {
+    return `My types: ${this.NotANumber}, ${this.infinity}, ${this.Array}!`;
+  }
+}
+
+let myTypes = new Types();
+
+const serializedTypes = myTypes.serialize();
+myTypes = null;
+console.log('serializedTypes ', serializedTypes);
+const resurrectedTypes = new Types().wakeFrom(serializedTypes);
+console.log('resurrectedTypes ', resurrectedTypes);
+
+console.log('resurrectedTypes instanceof UserDTO: ', resurrectedTypes instanceof Types); // true
+console.log('resurrectedTypes info: ', resurrectedTypes.printTypes());
+// My types: NaN, Infinity, 1,2,3,4,5!
