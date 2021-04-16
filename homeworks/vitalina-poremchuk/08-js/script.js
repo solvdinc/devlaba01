@@ -126,3 +126,60 @@ function solution5() {
   // { '1': '1','2': '2','3': '4','5': '9','6': '12','7': '8','8': '9','23':'35' }
 }
 solution5();
+
+//task 6 https://www.codewars.com/kata/547f1a8d4a437abdf800055c
+function solution6() {
+  const namedOne = {
+    firstName: "Naomi",
+    lastName: "Wang",
+
+    get fullName() {
+      return this.firstName + " " + this.lastName;
+    },
+    set fullName(value) {
+      [this.firstName, this.lastName] = value.split(" ");
+    },
+  };
+  namedOne.fullName;
+  namedOne.lastName;
+  namedOne.firstName = "John";
+  namedOne.lastName = "Doe";
+  namedOne.fullName;
+  namedOne.fullName = "Bill Smith";
+}
+solution6();
+
+//task 7 https://www.codewars.com/kata/54834b3559e638b39d0009a2/discuss/javascript
+function solution7() {
+  function OnceNamedOne(first, last) {
+    return Object.freeze({
+      firstName: first,
+      lastName: last,
+
+      get fullName() {
+        return this.firstName + " " + this.lastName;
+      },
+    });
+  }
+
+  const user = new OnceNamedOne("John", "Doe");
+  user.fullName;
+  user.fullName, "John Doe", "Wrong full name";
+  user.fullName;
+}
+solution7();
+
+//task 9 https://www.codewars.com/kata/52685f7382004e774f0001f7/train/javascript
+function solution9(seconds) {
+  const result = function (x) {
+    return x < 10 ? "0" + x : x;
+  };
+  return (
+    result(parseInt(seconds / (60 * 60))) +
+    ":" +
+    result(parseInt((seconds / 60) % 60)) +
+    ":" +
+    result(seconds % 60)
+  );
+}
+solution9(60);
