@@ -3,6 +3,7 @@ const user = {
   preferences: {
     sound: {
       maxValue: 50,
+      marks: [1, 2],
       value: 30,
     },
   },
@@ -16,7 +17,7 @@ function pluck(obj, prop) {
     return null;
   }
 
-  const propArr = [...prop.split('.')];
+  const propArr = prop.split('.');
   const key = propArr[0];
   propArr.shift();
 
@@ -40,8 +41,10 @@ function clone(obj) {
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(obj)) {
-    if (value instanceof Object && value !== null) {
+    if (value.constructor.name === 'Object' && value !== null) {
       cloneObj[key] = clone(obj[key]);
+    } else if (value.constructor.name === 'Array') {
+      cloneObj[key] = [...value];
     } else {
       cloneObj[key] = value;
     }
@@ -50,6 +53,7 @@ function clone(obj) {
   return cloneObj;
 }
 const clonedUser = clone(user);
+console.log(clonedUser);
 clonedUser.preferences.sound.maxValue = 70;
 console.log(
   user.preferences.sound.maxValue === clonedUser.preferences.sound.maxValue,
@@ -94,15 +98,13 @@ console.log(dateOffset('2021, 03, 5, 20, 32'));
 
 // TASK 4
 function randomDate(firstDate, secondDate) {
-  let date1 = firstDate.split(',').map((n) => +n.trim());
-  date1 = Date.parse(new Date(firstDate));
-  let date2 = firstDate.split(',').map((n) => +n.trim());
-  date2 = Date.parse(new Date(secondDate));
+  const date1 = +firstDate;
+  const date2 = +secondDate;
 
   const resultDate = Math.trunc((date2 - date1) * Math.random() + date1);
   return new Date(resultDate);
 }
-console.log(randomDate('2021, 03, 5', '2021, 03, 20'));
+console.log(randomDate(new Date(2021, 3, 5), new Date(2021, 3, 20)));
 
 // TASK 5 https://www.codewars.com/kata/merged-objects
 const a = { 
