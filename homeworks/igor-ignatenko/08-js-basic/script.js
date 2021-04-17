@@ -54,12 +54,13 @@ function solution2() {
 
         keyArr.forEach(el => {
             //         also we can use if({}.constructor.name) 
-            if (Object.prototype.toString.call(obj[el]) === '[object Object]') {
+            if (Object.prototype.toString.call(obj[el]) === '[object Object]' ) {
                 clonedObj[el] = clone(obj[el]);
+            } else if (Object.prototype.toString.call(obj[el]) === '[object Array]') {
+                clonedObj[el] = [...obj[el]];
             } else {
-                clonedObj[el] = obj[el]
+                clonedObj[el] = obj[el];
             }
-
         })
         return clonedObj
     }
@@ -73,25 +74,25 @@ function solution3() {
 
     function offset(date) {
         const currentDate = moment();
-        const newDate = moment(date);
-        // return newDate.fromNow()/or you can use this
-        const years = currentDate.diff(newDate, 'year');
-        newDate.add(years, 'years');
 
-        const months = currentDate.diff(newDate, 'months');
-        newDate.add(months, 'months');
+        // return date.fromNow()/or you can use this
+        const years = currentDate.diff(date, 'year');
+        date.add(years, 'years');
 
-        const days = currentDate.diff(newDate, 'days');
-        newDate.add(days, 'days');
+        const months = currentDate.diff(date, 'months');
+        date.add(months, 'months');
 
-        const hours = currentDate.diff(newDate, 'hours');
-        newDate.add(hours, 'hours');
+        const days = currentDate.diff(date, 'days');
+        date.add(days, 'days');
 
-        const minutes = currentDate.diff(newDate, 'minutes');
-        newDate.add(minutes, 'minutes');
+        const hours = currentDate.diff(date, 'hours');
+        date.add(hours, 'hours');
 
-        const seconds = currentDate.diff(newDate, 'seconds');
-        newDate.add(seconds, 'seconds');
+        const minutes = currentDate.diff(date, 'minutes');
+        date.add(minutes, 'minutes');
+
+        const seconds = currentDate.diff(date, 'seconds');
+        date.add(seconds, 'seconds');
 
         const result = [];
 
@@ -105,7 +106,7 @@ function solution3() {
             result.push(days + ` day${days > 1 ? 's ' : ""}`);
         }
         if (hours > 0) {
-            result.push(hours + ` hour${hours > 1 ? 's ' : ""} `);
+            result.push(hours + ` hour${hours > 1 ? 's ' : ""}`);
         }
         if (minutes > 0) {
             result.push(minutes + ` minute${minutes > 1 ? 's ' : ""}`);
@@ -114,12 +115,15 @@ function solution3() {
             result.push(seconds + ` second${seconds > 1 ? 's ' : ""}`);
         }
 
+        result.push('ago')
         return result.join('');
 
     }
 
     console.log(offset(moment('14/04/2021 14:15:00', 'DD/MM/YYYY hh:mm:ss')))
 }
+
+
 // task 4
 
 function solution4() {
@@ -128,9 +132,7 @@ function solution4() {
     const date2 = moment('23/02/1200', 'DD/MM/YYYY');
 
     function randomDate(date1, date2) {
-        const firstDate = moment(date1);
-        const secondDate = moment(date2);
-        return moment(firstDate + Math.random() * (secondDate - firstDate));
+        return moment(date1 + Math.random() * (date2 - date1));
     }
 
     console.log(randomDate(date1, date2).format('DD/MM/YY'));
