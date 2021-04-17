@@ -26,3 +26,34 @@ function solution1() {
 }
 
 solution1();
+
+// task 2 https://www.codewars.com/kata/5a353a478f27f244a1000076
+function solution2() {
+  async function sayJoke(apiUrl, jokeId) {
+    const response = await fetch(apiUrl);
+    const objOfJokes = await response.json();
+
+    if (!objOfJokes.jokes) {
+      throw new Error(`No jokes at url: ${apiUrl}`);
+    }
+
+    const resObj = objOfJokes.jokes.find((el) => el.id === jokeId);
+
+    if (!resObj) {
+      throw new Error(`No jokes found id: ${jokeId}`);
+    }
+
+    return {
+      saySetup() {
+        return resObj.setup;
+      },
+      sayPunchLine() {
+        return resObj.punchLine;
+      },
+    };
+  }
+
+  sayJoke('http://great.jokes/christmas', 101);
+}
+
+solution2();
