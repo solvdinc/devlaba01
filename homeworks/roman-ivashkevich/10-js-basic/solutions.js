@@ -57,3 +57,43 @@ function solution2() {
 }
 
 solution2();
+
+// timer
+// setTimeout
+const timer = (endTimer) => {
+  let time = 0;
+  const go = () => {
+    if (time < endTimer) {
+      setTimeout(go, 1000);
+    }
+
+    if (time === endTimer) {
+      console.clear();
+      return;
+    }
+
+    time += 1;
+    console.log(`Elapsed time: ${time} sec`);
+  };
+
+  setTimeout(go, 1000);
+};
+
+timer(5);
+
+// setInterval
+// const timer = (endTimer) => {
+//   let time = 0;
+//   const go = () => {
+//     if (time === endTimer) {
+//       console.clear();
+//       clearInterval(timerId);
+//       return;
+//     }
+//     time += 1;
+//     console.log(`Elapsed time: ${time} sec`);
+//   };
+//   let timerId = setInterval(go, 1000);
+// };
+
+// timer(5);
