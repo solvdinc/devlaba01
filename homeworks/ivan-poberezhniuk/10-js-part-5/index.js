@@ -9,3 +9,36 @@ const validateMessage = (msg) => {
 
   return true;
 };
+
+// Task 2
+const sayJoke = async (apiUrl, jokeId) => {
+  const mixins = {
+    saySetup() {
+      return this.setup;
+    },
+    sayPunchLine() {
+      return this.punchLine;
+    },
+  };
+
+  const response = await fetch(apiUrl).then((res) => res.json());
+  if (!response.jokes) throw new Error(`No jokes at url: ${apiUrl}`);
+
+  const searchedJoke = response.jokes.filter((joke) => joke.id === jokeId)[0];
+  if (!searchedJoke) throw new Error(`No jokes found id: ${jokeId}`);
+
+  return { ...mixins, ...searchedJoke };
+};
+
+// Task 3 setTimeout/setInterval
+let sec = 0;
+
+const timer = setInterval(() => {
+  sec += 1;
+  if (sec >= 5) {
+    clearInterval(timer);
+  }
+  console.log(`Elapsed time: ${sec} sec`);
+}, 1000);
+
+// Task 5 Fetch API/XMLHttpRequest
