@@ -54,7 +54,7 @@ function solution2() {
 
         keyArr.forEach(el => {
             //         also we can use if({}.constructor.name) 
-            if (Object.prototype.toString.call(obj[el]) === '[object Object]' ) {
+            if (Object.prototype.toString.call(obj[el]) === '[object Object]') {
                 clonedObj[el] = clone(obj[el]);
             } else if (Object.prototype.toString.call(obj[el]) === '[object Array]') {
                 clonedObj[el] = [...obj[el]];
@@ -97,22 +97,22 @@ function solution3() {
         const result = [];
 
         if (years > 0) {
-            result.push(years + ` year${years > 1 ? 's ' : ""}`);
+            result.push(years + ` year${years > 1 ? 's ' : ''}`);
         }
         if (months > 0) {
-            result.push(months + ` month${months > 1 ? 's ' : ""}`);
+            result.push(months + ` month${months > 1 ? 's ' : ''}`);
         }
         if (days > 0) {
-            result.push(days + ` day${days > 1 ? 's ' : ""}`);
+            result.push(days + ` day${days > 1 ? 's ' : ''}`);
         }
         if (hours > 0) {
-            result.push(hours + ` hour${hours > 1 ? 's ' : ""}`);
+            result.push(hours + ` hour${hours > 1 ? 's ' : ''}`);
         }
         if (minutes > 0) {
-            result.push(minutes + ` minute${minutes > 1 ? 's ' : ""}`);
+            result.push(minutes + ` minute${minutes > 1 ? 's ' : ''}`);
         }
         if (seconds > 0) {
-            result.push(seconds + ` second${seconds > 1 ? 's ' : ""}`);
+            result.push(seconds + ` second${seconds > 1 ? 's ' : ''}`);
         }
 
         result.push('ago')
@@ -198,7 +198,7 @@ function solution7() {
 function solution9() {
     function humanReadable(seconds) {
         return `${check(Math.floor(seconds / (60 * 60)))}:${check(Math.floor((seconds / 60) % 60))}:${check(seconds % 60)}`
-        
+
     }
     function check(num) {
         return num > 10 ? num : "0" + num;
