@@ -1,6 +1,6 @@
 // task 1 https://www.codewars.com/kata/55e7650c8d894146be000095
 function solution1() {
-  function validateMessage(massage) {
+  const validateMessage = (massage) => {
     if (massage === null) {
       throw ReferenceError('Message is null!');
     }
@@ -20,7 +20,7 @@ function solution1() {
     }
 
     return true;
-  }
+  };
 
   validateMessage('<input>');
 }
@@ -29,7 +29,7 @@ solution1();
 
 // task 2 https://www.codewars.com/kata/5a353a478f27f244a1000076
 function solution2() {
-  async function sayJoke(apiUrl, jokeId) {
+  const sayJoke = async (apiUrl, jokeId) => {
     const response = await fetch(apiUrl);
     const objOfJokes = await response.json();
 
@@ -51,7 +51,7 @@ function solution2() {
         return resObj.punchLine;
       },
     };
-  }
+  };
 
   sayJoke('http://great.jokes/christmas', 101);
 }
@@ -97,3 +97,16 @@ timer(5);
 // };
 
 // timer(5);
+
+// task 6
+function solution6() {
+  const digitOrNot = (string) => {
+    if (/^\d/.test(string)) {
+      return true;
+    }
+    return false;
+  };
+
+  digitOrNot('123str');
+}
+solution6();
