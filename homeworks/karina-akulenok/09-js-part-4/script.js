@@ -17,9 +17,6 @@ class Serializable {
         if (value[el] === undefined) {
           throw new Error('This object can\'t be serialized');
         }
-        // if (value[el] instanceof Date) {
-        //   value[el] = value[el].getTime();
-        // }
         if (value[el] === Infinity) {
           value[el] = 'Infinity';
         }
@@ -41,7 +38,7 @@ class Serializable {
       if (value === 'Infinity') return Infinity;
       if (value === '-Infinity') return -Infinity;
       if (value === 'null') return null;
-      if (isDate) { value = new Date(isDate[0]); }
+      if (isDate) { return new Date(isDate[0]); }
       return value;
     });
     if (this.constructor.name !== parsedObj.className) {
