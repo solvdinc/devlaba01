@@ -2,8 +2,9 @@ class Serializable {
     serialize() {
         const availableTypes = ["string", "object", "number", "undefined"];
         const serializableObj = JSON.stringify(this, function (key, value) {
-            if (availableTypes.indexOf(typeof value) === -1)
+            if (availableTypes.indexOf(typeof value) === -1) {
                 throw `Program doesn't work with ${typeof value}`;
+            }
             if (value === Infinity) return "Infinity";
             if (value === -Infinity) return "-Infinity";
             if (isNaN(value) && (typeof value) === "number") return "NaN";
@@ -17,8 +18,9 @@ class Serializable {
     wakeFrom(string) {
         const expectedKeys = Object.keys(this);
         Object.keys(JSON.parse(string)).forEach(key => {
-            if (expectedKeys.indexOf(key) === -1)
+            if (expectedKeys.indexOf(key) === -1) {
                 throw `Can not find property ${key}`;
+            }
         })
 
         const origin = JSON.parse(string, function (key, value) {
