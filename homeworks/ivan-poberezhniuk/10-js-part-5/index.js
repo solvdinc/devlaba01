@@ -10,7 +10,7 @@ const validateMessage = (msg) => {
   return true;
 };
 
-// Task 2
+// Task 2 https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#3-settimeoutsetinterval
 const sayJoke = async (apiUrl, jokeId) => {
   const mixins = {
     saySetup() {
@@ -31,6 +31,7 @@ const sayJoke = async (apiUrl, jokeId) => {
 };
 
 // Task 3 setTimeout/setInterval
+// https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#3-settimeoutsetinterval
 let sec = 0;
 
 const timer = setInterval(() => {
@@ -40,3 +41,15 @@ const timer = setInterval(() => {
   }
   console.log(`Elapsed time: ${sec} sec`);
 }, 1000);
+
+// Task 6 Digit or not
+// https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#6-digit-or-not
+const DigitOrNot = (str) => !!str.match(/^\d+/);
+
+console.log('Digit. Should be true:', DigitOrNot('2021')); // true
+console.log('Word. Should be false:', DigitOrNot('solvd')); // false
+console.log('Combined, starts with \\d. Should be true:', DigitOrNot('2021solvd')); // true
+console.log('Combined, starts with \\w. Should be false:', DigitOrNot('solvd2021')); // false
+
+// Task 7 Check if this entry is a phone number, e.g. set the format of your country:
+// https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#7-optional-advanced
