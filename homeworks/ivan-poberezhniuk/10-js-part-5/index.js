@@ -55,8 +55,7 @@ console.log('Combined, starts with \\w. Should be false:', DigitOrNot('solvd2021
 // https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#7-optional-advanced
 
 const checkPhoneNUmber = (phoneNumber) => {
-  const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
-
+  const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/g;
   return phoneNumber.match(regex);
 };
 
