@@ -16,9 +16,8 @@ function solution1() {
     if (typeof obj !== "object" || obj === null) {
       return null;
     } else {
-      let values = value.split(".");
+      const values = value.split(".");
       for (let i in values) {
-        values.hasOwnProperty(i);
         obj = obj[values[i]];
         if (!obj) {
           return null;
@@ -62,30 +61,31 @@ solution2();
 function solution3() {
   const { moment } = window;
 
-  function offset(endData) {
-    moment.updateLocale("en", {
-      relativeTime: {
-        future: "in %s",
-        past: "%s ago",
-        s: "a few seconds",
-        ss: "%d seconds",
-        m: "a minute",
-        mm: "%d minutes",
-        h: "1 hour",
-        hh: "%d hours",
-        d: "1 day",
-        dd: "%d days",
-        w: "a week",
-        ww: "%d weeks",
-        M: "a month",
-        MM: "%d months",
-        y: "366 days",
-        yy: "years",
-      },
-    });
+  function offset(endTime) {
+    const startTime = moment("23.02.2021 14:00:00", "DD/MM/YYYY hh:mm:ss");
+    const diffTime = moment(startTime).diff(endTime);
 
-    const startDate = moment("23.02.2021 14:00:00", "DD/MM/YYYY hh:mm:ss");
-    return (duration = endData.from(startDate));
+    const duration = moment.duration(diffTime);
+    const years = duration.years(),
+      days = duration.days(),
+      months = duration.months(),
+      hours = duration.hours(),
+      minutes = duration.minutes();
+
+    let result = "";
+    if (years > 0) {
+      result += years > 1 ? years + " years " : years + " year ";
+    }
+    if (days > 0) {
+      result += days > 1 ? days + " days " : days + " day ";
+    }
+    if (hours > 0) {
+      result += hours > 1 ? hours + " hours " : hours + " hour ";
+    }
+    if (minutes > 0) {
+      result += minutes > 1 ? minutes + " minutes " : minutes + " minute ";
+    }
+    return (result += "ago");
   }
 
   console.log(offset(moment("23/02/2021 13:30:00", "DD/MM/YYYY hh:mm:ss")));
@@ -97,19 +97,16 @@ function solution3() {
   console.log(offset(moment("22/02/2021 14:00:00", "DD/MM/YYYY hh:mm:ss")));
   // 1 day ago
   console.log(offset(moment("23/02/2020 10:00:00", "DD/MM/YYYY hh:mm:ss")));
-  // 366 days ago
 }
 solution3();
 
 //task 4 Random dates
-function solution4() {
-  const date1 = new Date(2021, 1, 23);
-  const date2 = new Date(2021, 2, 23);
+function solution4(date1, date2) {
   return new Date(
     date1.getTime() + Math.random() * (date2.getTime() - date1.getTime())
   );
 }
-solution4();
+solution4(new Date(2021, 1, 23), new Date(2021, 2, 23));
 
 //task 5 https://www.codewars.com/kata/merged-objects
 function solution5() {
@@ -137,7 +134,12 @@ function solution6() {
       return this.firstName + " " + this.lastName;
     },
     set fullName(value) {
-      [this.firstName, this.lastName] = value.split(" ");
+      const fullNameArr = value.split(" ");
+      const [firstName, lastName] = fullNameArr;
+      if (lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
     },
   };
   namedOne.fullName;
