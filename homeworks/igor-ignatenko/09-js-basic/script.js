@@ -12,8 +12,8 @@ class Serializable {
         let obj = {
             className: `${this.constructor.name}`
         }
-        console.log(obj)
         obj = { ...obj, ...this };
+
         try {
             const serialized = JSON.stringify(obj, (key, value) => {
                 Object.keys(value).forEach(el => {
@@ -33,7 +33,7 @@ class Serializable {
                 });
                 return value;
             });
-            console.log(serialized)
+
             return serialized
         } catch (error) {
             throw new Error('Not valid object for JSON-serializing')
@@ -46,20 +46,22 @@ class Serializable {
         const [className, ...copyserializedKey] = serializedKey;
 
         if (JSON.parse(serialized).className === this.constructor.name) {
-            for (let i = 0; i < copyserializedKey.length; i++) {
-                if (copyserializedKey[i] === thisKeys[i]) {
+            if (copyserializedKey.join('') === thisKeys.join('')) {
+                for (let i = 0; i < copyserializedKey.length; i++) {
                     if (JSON.parse(serialized)[copyserializedKey[i]] === 'Infinity'
                         || JSON.parse(serialized)[copyserializedKey[i]] === '-Infinity'
                         || JSON.parse(serialized)[copyserializedKey[i]] === 'NaN') {
                         copyOfThis[copyserializedKey[i]] = +JSON.parse(serialized)[copyserializedKey[i]];
+                    } else if (JSON.parse(serialized)[copyserializedKey[i]] === 'null') {
+                        copyOfThis[copyserializedKey[i]] = null
                     } else if (copyserializedKey[i] === 'birth') {
                         copyOfThis[copyserializedKey[i]] = new Date(JSON.parse(serialized)[copyserializedKey[i]]);
                     } else {
                         copyOfThis[copyserializedKey[i]] = JSON.parse(serialized)[copyserializedKey[i]];
                     }
-                } else {
-                    throw new Error('Dif keys of object');
                 }
+            } else {
+                throw new Error('Dif keys of object');
             }
         } else {
             throw new Error('Wrong class');
@@ -122,7 +124,7 @@ class Types extends Serializable {
     }
 
     printInfo() {
-        console.log(`${typeof this.firstName}, ${this.lastName}, ${this.phone}, ${this.birth}`);
+        console.log(`${this.firstName}, ${this.lastName}, ${this.phone}, ${this.birth}`);
     }
 }
 
@@ -130,7 +132,7 @@ let test = new Types({
     firstName: Infinity,
     lastName: -Infinity,
     phone: NaN,
-    birth: new Date('1999-01-02'),
+    birth: null,
 });
 
 test.printInfo()
