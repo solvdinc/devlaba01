@@ -4,60 +4,55 @@ class Serializable {
     let obj = {
       className: `${this.constructor.name}`,
     };
-    obj = { ...obj, ...this };
-    const json = JSON.stringify(obj, (key, value) => {
-      const objValue = value;
-      if (value === undefined || typeof value === 'symbol') {
-        throw new Error('Unexpected value');
-      }
 
-      if (value !== objValue) {
-        return '0/0';
-      }
+    const improvedObject = Object.fromEntries(
+      Object.entries(this).map(([key, keyValue]) => {
+        let objValue = keyValue;
 
-      if (value === Infinity) {
-        return '1/0';
-      }
+        if (objValue === undefined || typeof objValue === 'symbol') {
+          throw new Error('Unexpected value');
+        }
 
-      if (value === -Infinity) {
-        return '-1/0';
-      }
+        if (typeof objValue === 'number') {
+          objValue = {
+            type: 'number',
+            value: `${objValue}`,
+          };
+        } else if (typeof objValue === 'string') {
+          objValue = {
+            type: 'string',
+            value: `${objValue}`,
+          };
+        }
+        return [key, objValue];
+      }),
+    );
 
-      return value;
-    });
+    obj = { ...obj, ...improvedObject };
 
-    return json;
+    return JSON.stringify(obj);
   }
 
   wakeFrom(serialized) {
-    console.log(this.constructor.name);
     try {
       const parsedObj = JSON.parse(serialized);
       const resObj = Object.fromEntries(
         Object.entries(parsedObj).map(([key, value]) => {
           let objValue = value;
-          if (key === 'className') {
-            if (value !== this.constructor.name) {
-              throw new Error(
-                'Impossible to wake up from this value of serialized. Class name does not match',
-              );
-            }
+          if (key === 'className' && value !== this.constructor.name) {
+            throw new Error(
+              'Impossible to wake up from this value of serialized. Class name does not match',
+            );
           }
 
-          if (objValue === '0/0') {
-            objValue = 0 / 0;
-          }
-
-          if (objValue === '1/0') {
-            objValue = 1 / 0;
-          }
-
-          if (objValue === '-1/0') {
-            objValue = -1 / 0;
+          if (objValue.type === 'number') {
+            objValue = Number(objValue.value);
+          } else if (objValue.type === 'string') {
+            objValue = objValue.value;
           }
 
           const reISO = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*))(?:Z|(\+|-)([\d|:]*))?$/;
-          const temp = reISO.exec(value);
+          const temp = reISO.exec(objValue);
           if (temp) {
             objValue = new Date(temp[0]);
           }
@@ -116,7 +111,7 @@ class Post extends Serializable {
   }
 }
 
-// console.log(new Post().wakeFrom(serialized)); // Error: Impossible to wake up from this value of serialized. Class name does not match.
+console.log(new Post().wakeFrom(serialized));
 
 // for check
 // let test = new Post({
@@ -130,23 +125,23 @@ class Post extends Serializable {
 // let resurrectedTest = new Post().wakeFrom(serialized);
 // console.log(resurrectedTest instanceof Post); // true
 
-class Test extends Serializable {
-  constructor({ content, date, author } = {}) {
-    super();
+// class Test extends Serializable {
+//   constructor({ content, date, author } = {}) {
+//     super();
 
-    this.content = content;
-    this.date = date;
-    this.author = author;
-  }
-}
+//     this.content = content;
+//     this.date = date;
+//     this.author = author;
+//   }
+// }
 
-let test = new Test({
-  content: Infinity,
-  date: NaN,
-  author: -Infinity,
-});
+// let test = new Test({
+//   content: Infinity,
+//   date: NaN,
+//   author: -Infinity,
+// });
 
-serialized = test.serialize();
-test = null;
-const resurrectedTest = new Test().wakeFrom(serialized);
-console.log(resurrectedTest instanceof Test);
+// serialized = test.serialize();
+// test = null;
+// const resurrectedTest = new Test().wakeFrom(serialized);
+// console.log(resurrectedTest instanceof Test);
