@@ -53,3 +53,15 @@ console.log('Combined, starts with \\w. Should be false:', DigitOrNot('solvd2021
 
 // Task 7 Check if this entry is a phone number, e.g. set the format of your country:
 // https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#7-optional-advanced
+
+const checkPhoneNUmber = (phoneNumber) => {
+  const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+
+  return phoneNumber.match(regex);
+};
+
+console.log(checkPhoneNUmber('+380 2222222222'));
+console.log(checkPhoneNUmber('+380 222aas   ;;sldp2222asd222'));
+console.log(checkPhoneNUmber('1123+380 2222askdmas 222222'));
+console.log(checkPhoneNUmber('as++++23da3+s+375 xx-xxx-xx-xx'));
+console.log(checkPhoneNUmber('+38(099)-75-39-91'));
