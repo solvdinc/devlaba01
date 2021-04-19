@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  background-color: beige;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 1rem;
+}

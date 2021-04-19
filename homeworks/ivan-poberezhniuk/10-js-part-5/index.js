@@ -40,5 +40,3 @@ const timer = setInterval(() => {
   }
   console.log(`Elapsed time: ${sec} sec`);
 }, 1000);
-
-// Task 5 Fetch API/XMLHttpRequest
