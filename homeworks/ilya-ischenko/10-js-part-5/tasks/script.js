@@ -49,3 +49,14 @@ async function sayJoke(apiUrl, jokeId) {
     },
   };
 };
+
+// TASK 6 Digit or not
+function digitCheck(str) {
+  if (str[0].match(/\d/)) {
+    return true;
+  }
+
+  return false;
+}
+console.log(digitCheck('1fsdfsdf'));
+console.log(digitCheck('fs1dfsdf'));
