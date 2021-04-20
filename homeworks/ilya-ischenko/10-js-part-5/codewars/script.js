@@ -17,7 +17,7 @@ function validateMessage(msg) {
     не знаю почему, но проверки типа:
     msg.match(/<\w+>/),
     msg.match(/<\w+>/) || msg.match(/<\s0*>/) -
-    не срабатывают
+    не срабатывают в тестах
   */
   if (msg.match(/<\D+>/)) {
     return false;
@@ -26,3 +26,26 @@ function validateMessage(msg) {
   return true;
 }
 console.log(validateMessage('How are ya doing? < > Good!'));
+
+// TASK 2 https://www.codewars.com/kata/5a353a478f27f244a1000076
+async function sayJoke(apiUrl, jokeId) {
+  const data = await fetch(apiUrl).then((res) => res.json());
+  if (!data.jokes) {
+    throw new Error(`No jokes at url: ${apiUrl}`);
+  }
+
+  const jokeItem = data.jokes.find((joke) => joke.id === jokeId);
+  if (!jokeItem) {
+    throw new Error(`No jokes found id: ${jokeId}`);
+  }
+
+  return {
+    saySetup() {
+      return jokeItem.setup;
+    },
+
+    sayPunchLine() {
+      return jokeItem.punchLine;
+    },
+  };
+};
