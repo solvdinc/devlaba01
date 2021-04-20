@@ -110,3 +110,23 @@ function solution6() {
   digitOrNot('123str');
 }
 solution6();
+
+// task 7
+function solution7() {
+  const whoseNumber = (string) => {
+    const partOfNumber = string.match(/\d{3}/)[0];
+
+    if (partOfNumber === '375') {
+      return `This number ${string} from Belarus`;
+    }
+
+    if (partOfNumber === '380') {
+      return `This number ${string} from Ukraine`;
+    }
+
+    return 'unknown number';
+  };
+
+  whoseNumber('+375336100626');
+}
+solution7();
