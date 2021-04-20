@@ -9,25 +9,12 @@ class Serializable {
       Object.entries(this).map(([key, keyValue]) => {
         let objValue = keyValue;
 
-        if (objValue === undefined || typeof objValue === 'symbol') {
-          throw new Error('Unexpected value');
-        }
+        objValue = new Serializer(objValue).handleParser();
 
-        if (typeof objValue === 'number') {
-          objValue = {
-            type: 'number',
-            value: `${objValue}`,
-          };
-        } else if (typeof objValue === 'string') {
-          objValue = {
-            type: 'string',
-            value: `${objValue}`,
-          };
-        }
         return [key, objValue];
       }),
     );
-
+    console.log(improvedObject);
     obj = { ...obj, ...improvedObject };
 
     return JSON.stringify(obj);
@@ -45,18 +32,9 @@ class Serializable {
             );
           }
 
-          if (objValue.type === 'number') {
-            objValue = Number(objValue.value);
-          } else if (objValue.type === 'string') {
-            objValue = objValue.value;
-          }
+          objValue = new Serializer(objValue).handleParser();
 
-          const reISO = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*))(?:Z|(\+|-)([\d|:]*))?$/;
-          const temp = reISO.exec(objValue);
-          if (temp) {
-            objValue = new Date(temp[0]);
-          }
-          return [key, objValue];
+          return [key, objValue.value];
         }),
       );
 
@@ -67,19 +45,112 @@ class Serializable {
   }
 }
 
+class Serializer extends Serializable {
+  constructor(objValue) {
+    super();
+    this.obj =
+      typeof objValue === 'object' && !(objValue instanceof Date)
+        ? objValue
+        : { type: typeof objValue, value: objValue };
+  }
+
+  handleParser() {
+    let res;
+    if (this.obj.type === 'string') {
+      res = new StringFieldSerializer(this.obj).handleString();
+    }
+
+    if (this.obj.type === 'number') {
+      res = new NumberFieldSerializer(this.obj).handleNumber();
+    }
+
+    if (this.obj.type === 'object' || this.obj.type === 'date') {
+      res = new ObjectFieldSerializer(this.obj).handleObject();
+    }
+
+    if (!res) {
+      throw new Error('Unexpected value');
+    }
+
+    return res;
+  }
+}
+
+class StringFieldSerializer extends Serializer {
+  constructor(objValue) {
+    super();
+    this.objValue = objValue;
+  }
+
+  handleString() {
+    return {
+      type: 'string',
+      value: this.objValue.value,
+    };
+  }
+}
+
+class NumberFieldSerializer extends Serializer {
+  constructor(objValue) {
+    super();
+    this.objValue = objValue;
+  }
+
+  handleNumber() {
+    this.objValue.value =
+      typeof this.objValue.value === 'number' ? `${this.objValue.value}` : +this.objValue.value;
+
+    return {
+      type: 'number',
+      value: this.objValue.value,
+    };
+  }
+}
+
+class ObjectFieldSerializer extends Serializer {
+  constructor(objValue) {
+    super();
+    this.objValue = objValue;
+  }
+
+  handleObject() {
+    let { type } = this.objValue;
+    if (this.objValue.value instanceof Date) {
+      type = 'date';
+      this.objValue.value = this.objValue.value.toISOString();
+    }
+
+    if (typeof this.objValue.type === 'object') {
+      type = 'object';
+    }
+
+    if (this.objValue.type === 'date') {
+      this.objValue.value = new Date(this.objValue.value);
+    }
+
+    return {
+      type: type,
+      value: this.objValue.value,
+    };
+  }
+}
+
 class UserDTO extends Serializable {
-  constructor({ firstName, lastName, phone, birth } = {}) {
+  constructor({ firstName, lastName, phone, birth, infNumb } = {}) {
     super();
 
     this.firstName = firstName;
     this.lastName = lastName;
     this.phone = phone;
     this.birth = birth;
+    this.infNumb = infNumb;
   }
 
   printInfo() {
     console.log(
-      `${this.firstName[0]}. ${this.lastName} - ${this.phone}, ${this.birth.toISOString()}`,
+      `${this.firstName[0]}. ${this.lastName} - ${this.phone}, ${this.birth.toISOString()}, ${
+        this.infNumb
+      }`,
     );
   }
 }
@@ -87,8 +158,9 @@ class UserDTO extends Serializable {
 let tolik = new UserDTO({
   firstName: 'Anatoliy',
   lastName: 'Nashovich',
-  phone: '2020327',
+  phone: 2020327,
   birth: new Date('1999-01-02'),
+  infNumb: Infinity,
 });
 
 tolik.printInfo(); // A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
