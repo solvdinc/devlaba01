@@ -60,3 +60,19 @@ function digitCheck(str) {
 }
 console.log(digitCheck('1fsdfsdf'));
 console.log(digitCheck('fs1dfsdf'));
+
+// TASK 7 OPTIONAL Check if this entry is a phone number
+// Ukraine: +380 xx-xxx-xxxx
+// starts with 380 and after that 9 digits
+function checkPhoneNum(num) {
+  let number = num.replace(/\D+/g, '');
+  if (number.match(/380\d{9}/)) {
+    return true;
+  }
+  return false;
+};
+console.log(checkPhoneNum('380-67-584-93-28'));
+console.log(checkPhoneNum('380-67-584-93-2'));
+console.log(checkPhoneNum('80-67-584-93-28'));
+console.log(checkPhoneNum('380-67-5849328'));
+console.log(checkPhoneNum('3806-584-93-28'));
