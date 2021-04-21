@@ -1,14 +1,14 @@
 // task 1 link https://www.codewars.com/kata/55e7650c8d894146be000095/javascript
 function validateMessage(message) {
   if (message === null) throw ReferenceError('Message is null!');
-  if (typeof msg !== 'string') throw TypeError(`Message should be of type string but was of type ${typeof message}!`);
+  if (typeof message !== 'string') throw TypeError(`Message should be of type string but was of type ${typeof message}!`);
   if (message.length === 0) throw RangeError('Message contains 0 characters!');
   if (message.length > 255) throw RangeError(`Message contains ${message.length} characters!`);
   if (message.match(/<.+>/)) return false;
 
   return true;
 }
-validateMessage(null);
+validateMessage('null');
 
 // task 2 link https://www.codewars.com/kata/5a353a478f27f244a1000076
 async function sayJoke(apiUrl, jokeId) {
