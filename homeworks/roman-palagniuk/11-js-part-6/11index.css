@@ -1,0 +1,16 @@
+.row {
+  background-color: brown;
+  height: 40px;
+}
+
+.col {
+  width: 40px;
+}
+
+.selectedCell {
+  background-color: darkblue;
+}
+
+.selectedParent {
+  background-color: darkturquoise;
+}
