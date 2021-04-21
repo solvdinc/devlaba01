@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+    text-align: center;
+    min-width: 200px;
+}
+
+h1{
+    text-align: center;
+}
+
+.container{
+    width: 1000px;
+    margin: auto;
+}
+
+.fetch__list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.xml__list{
+    display: flex;
+    justify-content: space-around;
+}
