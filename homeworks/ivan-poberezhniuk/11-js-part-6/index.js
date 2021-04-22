@@ -9,6 +9,7 @@ let activeCells = [];
 table = table.map((row, rowIndex) =>
   row.map((column, columnINdex) => {
     const div = document.createElement('div');
+
     div.classList.add('container__item');
     div.dataset.row = rowIndex;
     div.dataset.column = columnINdex;
@@ -51,30 +52,19 @@ const onCellClick = (event) => {
 };
 
 const onCellOver = (event) => {
-  event.stopPropagation();
   const { target } = event;
   const { row, column } = target.dataset;
 
-  table.forEach((tableRow) => {
-    tableRow[column].classList.add('_hover');
-  });
-
-  table[row].forEach((cell) => {
-    cell.classList.add('_hover');
-  });
+  table.forEach((tableRow) => tableRow[column].classList.add('_hover'));
+  table[row].forEach((cell) => cell.classList.add('_hover'));
 };
 
 const onCellOut = (event) => {
   const { target } = event;
   const { row, column } = target.dataset;
 
-  table.forEach((tableRow) => {
-    tableRow[column].classList.remove('_hover');
-  });
-
-  table[row].forEach((cell) => {
-    cell.classList.remove('_hover');
-  });
+  table.forEach((tableRow) => tableRow[column].classList.remove('_hover'));
+  table[row].forEach((cell) => cell.classList.remove('_hover'));
 };
 
 container.addEventListener('click', onCellClick);
