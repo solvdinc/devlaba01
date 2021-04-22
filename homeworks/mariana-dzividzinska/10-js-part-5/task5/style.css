@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    border-bottom: 2px solid #117711;
+    color: #117711;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.users-container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.user {
+    padding: 20px;
+    text-align: center;
+}
+
+.user__photo {
+    border-radius: 50%;
+    border: 2px solid #117711;
+}
+
+.user__name {
+    font-weight: 700;
+}
+
+.user__location {
+    font-style: italic;
+}
