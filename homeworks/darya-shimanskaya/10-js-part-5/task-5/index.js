@@ -16,7 +16,8 @@ function randomUsersFetch(url) {
     .then((response) => response.json())
     .then((json) => json.results.forEach((user) => {
       createUserCard(user, '.fetch__user-card');
-    }));
+    }))
+    .catch((error) => console.log(error));
 }
 
 randomUsersFetch(URL);
