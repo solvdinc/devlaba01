@@ -5,14 +5,17 @@ const URL = 'https://randomuser.me/api/?gender=female&results=10';
 
 // Fetch request
 const getUsersWithFetch = async (cb) => {
-  const response = await fetch(URL).then((res) => res.json());
-  cb(response.results);
+  try {
+    const response = await fetch(URL).then((res) => res.json());
+    cb(response.results);
+  } catch (error) {
+    console.error(`Something went wrong... ${err.message}`);
+  }
 };
 
 // XmlHttpRequest
 const getUsersWithXmlHttpRequest = async (cb) => {
   const xhr = new XMLHttpRequest();
-
   try {
     xhr.open('GET', URL);
     xhr.send();
@@ -20,8 +23,6 @@ const getUsersWithXmlHttpRequest = async (cb) => {
       const response = JSON.parse(xhr.response);
       cb(response.results);
     };
-
-    return xhr;
   } catch (err) {
     console.error(`Something went wrong... ${err.message}`);
   }
