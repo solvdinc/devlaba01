@@ -40,13 +40,10 @@ const sayJoke = async (apiUrl, jokeId) => {
 
 // 3 setTimeout/setInterval
 let counter = 1;
-
-const fn = () => {
+const timer = setInterval((() => {
   console.log(`Elapsed time: ${counter} sec`);
   counter += 1;
-};
-
-const timer = setInterval(fn, 1000);
+}), 1000);
 
 setTimeout(() => {
   clearInterval(timer);
@@ -54,48 +51,12 @@ setTimeout(() => {
 
 // 4 Play around with this service and see how Event Loop works...
 
-// 5
-// https://randomuser.me/api/?results=7
-
-const url = 'https://randomuser.me/api/?results=5';
-const xhr = new XMLHttpRequest();
-
-xhr.open('GET', url, true);
-xhr.send();
-
-xhr.addEventListener('readystatechange', () => {
-  if (xhr.readyState === 4) {
-    const users = JSON.parse(xhr.response);
-    users.results.forEach((item) => {
-      const list = document.querySelector('.list1');
-      list.innerHTML += `<li ><img src='${item.picture.thumbnail}'><p>${item.name.first} ${item.name.last}</p>
-      </li>`;
-    });
-  } else if (xhr.readyState <= 4) {
-    const list = document.querySelector('.list');
-    list.innerHTML += 'loading...';
-  } else {
-    const users = JSON.parse(xhr.responseText);
-    console.error(users);
-  }
-});
-
-// fetch
-fetch('https://randomuser.me/api/?results=5')
-  .then((response) => response.json())
-  .then((json) => json.results.forEach((item) => {
-    const list2 = document.querySelector('.list2');
-    list2.innerHTML += `<li ><img src='${item.picture.thumbnail}'><p>${item.name.first} ${item.name.last}</p>
-    </li>`;
-  }));
-
 // 6 number
 const checkStr = (str) => {
   if (str.match(/^\d/)) {
-    console.log('string starts with number');
-  } else {
-    console.log('string starts with letter');
+    return true;
   }
+  return false;
 };
 
 // 7 optional
@@ -103,8 +64,7 @@ const checkStr = (str) => {
 
 const checkCountry = (str) => {
   if (str.match(/^\+?38?(0\d{9})$/)) {
-    console.log('Provided string is Ukrainian phone number');
-  } else {
-    console.log('Country with such phone number did not found');
+    return true;
   }
+  return false;
 };
