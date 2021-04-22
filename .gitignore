@@ -7,3 +7,7 @@ yarn-debug.log*
 yarn-error.log*
 .npm
 .vscode
+.history
+.cache
+lectures/09-js-part-5/practice/dist
+dist

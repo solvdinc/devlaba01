@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>
+      <span class="test1">
+        <b>321</b>
+        123
+      </span>
+      <span class="test2">qwe</span>
+      <a class="test-link" href="https://google.com">qwe</a>
+    </p>
+
+    <ul>
+      <li>1<b>qwe</b></li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+  </div>
+
+  <!-- <form action="">
+    <input type="text">
+    <button type="button">test</button>
+  </form> -->
+
+  <script>
+    // window.test = () => console.log('test was clicked');
+
+    // const element = document.querySelector('.test1');
+
+    // element.onclick = () => console.log('test was clicked once');
+    // element.onclick = () => console.log('test was clicked twice');
+
+    // element.addEventListener('click', (event) =>
+    //   console.log(event.currentTarget, event.target));
+    // element.addEventListener('click', () => console.log('test was clicked twice'));
+
+    // document.querySelectorAll('*').forEach((element) =>
+    //   element.addEventListener(
+    //     'click',
+    //     ({ currentTarget }) => alert('capture ' + currentTarget.tagName),
+    //     true,
+    //   ),
+    // );
+    // document.querySelectorAll('*').forEach((element) =>
+    //   element.addEventListener(
+    //     'click',
+    //     ({ currentTarget }) => alert('bubbling ' + currentTarget.tagName),
+    //   ),
+    // );
+
+    // const element = document.querySelector('.test1');
+    // const elementB = element.querySelector('b');
+
+    // element.addEventListener('click', (event) => {
+    //   console.log(1);
+    // });
+    // element.addEventListener('click', (event) => {
+    //   console.log(2);
+    //   event.stopImmediatePropagation();
+    // });
+    // element.addEventListener('click', (event) => {
+    //   console.log(3);
+    // });
+
+    // elementB.addEventListener('click', (event) => {
+    //   console.log('stopPropagation');
+    //   event.stopPropagation();
+    // });
+
+    // const handler = () => {
+    //   console.log(1);
+    //   // element.removeEventListener('click', handler, true);
+    // };
+
+    // element.addEventListener('click', () => {
+    //   console.log(1);
+    //   // element.removeEventListener('click', handler, true);
+    // });
+    // element.removeEventListener('click', () => {});
+    // фаза погружения
+    // фаза цели
+    // фаза всплытия
+
+    // document.querySelector('.test-link').addEventListener('click', (event) => {
+    //   event.preventDefault();
+    // });
+
+    // document.querySelectorAll('li').forEach((element, index) =>
+    //   element.addEventListener('click', ({ target }) => console.log(index, target)),
+    // );
+
+    // document.querySelector('ul').addEventListener('click', ({ target }) => {
+    //   const parentElement = target.closest('li');
+
+    //   if (parentElement) {
+    //     console.log(parentElement);
+    //   }
+    // });
+
+  </script>
+</html>
