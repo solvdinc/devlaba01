@@ -39,6 +39,7 @@ const onCellClick = (event) => {
 
     activeCells.forEach((activeCell) => {
       const prevActiveCell = table[activeCell.row][activeCell.column];
+
       prevActiveCell.classList.remove('_active');
       prevActiveCell.textContent = ``;
     });
