@@ -47,7 +47,7 @@ const sayJoke = async (apiUrl, jokeId) => {
 // Task 3 setTimeout/setInterval
 // https://github.com/qaprosoft/devlaba01/blob/master/lectures/10-js-part-5/task.md#3-settimeoutsetinterval
 let sec = 0;
-``;
+
 const timer = setInterval(() => {
   sec += 1;
   if (sec >= 5) {
