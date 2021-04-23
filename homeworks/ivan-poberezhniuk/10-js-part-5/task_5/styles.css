@@ -12,6 +12,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -20,4 +21,13 @@ h2 {
   align-items: center;
   width: 200px;
   padding: 1rem;
+}
+
+.error-msg {
+  border: 1px solid red;
+  border-radius: 5px;
+  color: red;
+  background-color: lightpink;
+  align-items: center;
+  padding: 20px;
 }
