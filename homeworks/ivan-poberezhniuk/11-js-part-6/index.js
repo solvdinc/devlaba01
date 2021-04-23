@@ -6,8 +6,8 @@ const columns = 20;
 let table = new Array(rows).fill(new Array(columns).fill(0));
 let activeCells = [];
 
-table = table.map((row, rowIndex) =>
-  row.map((column, columnINdex) => {
+table = table.map((row, rowIndex) => {
+  const filledRow = row.map((column, columnINdex) => {
     const div = document.createElement('div');
 
     div.classList.add('container__item');
@@ -15,8 +15,10 @@ table = table.map((row, rowIndex) =>
     div.dataset.column = columnINdex;
 
     return div;
-  })
-);
+  });
+
+  return filledRow;
+});
 
 table.forEach((row) => container.append(...row));
 
@@ -34,14 +36,14 @@ const onCellClick = (event) => {
       const prevActiveCell = table[activeCells[0].row][activeCells[0].column];
 
       prevActiveCell.classList.remove('_active');
-      prevActiveCell.textContent = ``;
+      prevActiveCell.textContent = '';
     }
 
     activeCells.forEach((activeCell) => {
       const prevActiveCell = table[activeCell.row][activeCell.column];
 
       prevActiveCell.classList.remove('_active');
-      prevActiveCell.textContent = ``;
+      prevActiveCell.textContent = '';
     });
 
     activeCells = [];
