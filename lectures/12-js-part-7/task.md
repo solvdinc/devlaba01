@@ -1,6 +1,6 @@
-# Javascript, Part 7 practice
+# Data structures and algorithms practice
 
-## Deadline 04.30.2021 (30 april 2021) 23:59 (GMT+3)
+## Deadline 05.08.2021 (30 april 2021) 23:59 (GMT+3)
 
 ## Overview
 
