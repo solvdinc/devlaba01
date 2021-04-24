@@ -1,6 +1,6 @@
 # Data structures and algorithms practice
 
-## Deadline 05.08.2021 (30 april 2021) 23:59 (GMT+3)
+## Deadline 05.08.2021 (8 May 2021) 23:59 (GMT+3)
 
 ## Overview
 
