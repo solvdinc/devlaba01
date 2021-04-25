@@ -9,31 +9,22 @@
 
 class Serializable {
     serialize() {
-        let obj = {
-            className: `${this.constructor.name}`
-        }
-        obj = { ...obj, ...this };
-
         try {
-            const serialized = JSON.stringify(obj, (key, value) => {
+            const serialized = JSON.stringify({ ...this }, (key, value) => {
                 Object.keys(value).forEach(el => {
                     if (value[el] instanceof Date) {
-                        value[el] = value[el].getTime()
+                        value[el] = { isDate: true, dateValue: value[el].getTime() }
                     } else if (Object.prototype.toString.call(value[el]) === '[object Array]') {
                         value[el] = value[el].join(',')
-                    } else if (value[el] === Infinity) {
-                        value[el] = 'Infinity'
-                    } else if (value[el] === -Infinity) {
-                        value[el] = '-Infinity'
+                    } else if (value[el] === Infinity || value[el] === -Infinity) {
+                        value[el] = value[el].toString()
                     } else if (value[el] === null) {
                         value[el] = 'null'
-                    } else if (value[el] !== value[el]) {
-                        value[el] = 'NaN'
                     }
                 });
                 return value;
             });
-
+            console.log(serialized)
             return serialized
         } catch (error) {
             throw new Error('Not valid object for JSON-serializing')
@@ -41,32 +32,21 @@ class Serializable {
     }
     wakeFrom(serialized) {
         const copyOfThis = new this.constructor;
-        const serializedKey = Object.keys(JSON.parse(serialized));
-        const thisKeys = Object.keys(copyOfThis);
-        const [className, ...copyserializedKey] = serializedKey;
-
-        if (JSON.parse(serialized).className === this.constructor.name) {
-            if (copyserializedKey.join('') === thisKeys.join('')) {
-                for (let i = 0; i < copyserializedKey.length; i++) {
-                    if (JSON.parse(serialized)[copyserializedKey[i]] === 'Infinity'
-                        || JSON.parse(serialized)[copyserializedKey[i]] === '-Infinity'
-                        || JSON.parse(serialized)[copyserializedKey[i]] === 'NaN') {
-                        copyOfThis[copyserializedKey[i]] = +JSON.parse(serialized)[copyserializedKey[i]];
-                    } else if (JSON.parse(serialized)[copyserializedKey[i]] === 'null') {
-                        copyOfThis[copyserializedKey[i]] = null
-                    } else if (copyserializedKey[i] === 'birth') {
-                        copyOfThis[copyserializedKey[i]] = new Date(JSON.parse(serialized)[copyserializedKey[i]]);
-                    } else {
-                        copyOfThis[copyserializedKey[i]] = JSON.parse(serialized)[copyserializedKey[i]];
-                    }
-                }
-            } else {
-                throw new Error('Dif keys of object');
+        const parsedSerialized = JSON.parse(serialized, (key, value) => {
+            if (value.isDate) {
+                return new Date(value.dateValue);
+            } else if (value === 'Infinity' || value === '-Infinity') {
+                return +value;
+            } else if (value === 'null') {
+                return null;
             }
-        } else {
-            throw new Error('Wrong class');
-        }
+            return value;
+        })
+        const keysparsedSerialized = Object.keys(parsedSerialized);
 
+        for (let i = 0; i < keysparsedSerialized.length; i++) {
+            copyOfThis[keysparsedSerialized[i]] = parsedSerialized[keysparsedSerialized[i]];
+        }
         return copyOfThis
     }
 }
@@ -74,6 +54,7 @@ class Serializable {
 class UserDTO extends Serializable {
     constructor({ firstName, lastName, phone, birth } = {}) {
         super();
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -97,10 +78,10 @@ tolik.printInfo(); //A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
 
 const serialized = tolik.serialize();
 
-tolik = null
+tolik = null;
 
 const resurrectedTolik = (new UserDTO()).wakeFrom(serialized);
-console.log(resurrectedTolik)
+console.log(resurrectedTolik);
 console.log(resurrectedTolik instanceof UserDTO); // true
 resurrectedTolik.printInfo(); // A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
 
@@ -117,6 +98,7 @@ class Post extends Serializable {
 class Types extends Serializable {
     constructor({ firstName, lastName, phone, birth } = {}) {
         super();
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -131,7 +113,7 @@ class Types extends Serializable {
 let test = new Types({
     firstName: Infinity,
     lastName: -Infinity,
-    phone: NaN,
+    phone: '380',
     birth: null,
 });
 
@@ -140,7 +122,7 @@ const serializedType = test.serialize();
 test = null;
 
 const resurrectedTest = (new Types()).wakeFrom(serializedType);
-console.log(resurrectedTest)
+console.log(resurrectedTest);
 console.log(resurrectedTest instanceof UserDTO);
 resurrectedTest.printInfo();
 
