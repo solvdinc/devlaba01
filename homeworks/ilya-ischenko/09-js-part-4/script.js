@@ -1,14 +1,19 @@
 class Serializable {
   serialize() {
-    const serialized = JSON.stringify(this, (keys, value) => {
+    const serialized = JSON.stringify({ ...this }, (keys, value) => {
+      if (value === Infinity) {
+        return { inf: true };
+      }
+
       Object.keys(value).forEach((key) => {
         if (value[key] instanceof Date) {
           value[key] = { isDate: true, dateValue: value[key].getTime() };
         }
       });
+
       return value;
     });
-
+    console.log(serialized);
     return serialized;
   }
 
@@ -19,6 +24,10 @@ class Serializable {
     if (serializeKeys === objKeys) {
       const serializedObj = new this.constructor(JSON.parse(obj));
       Object.keys(serializedObj).forEach((key) => {
+        if (serializedObj[key].inf) {
+          serializedObj[key] = Infinity;
+        }
+
         if (serializedObj[key].isDate) {
           serializedObj[key] = new Date(serializedObj[key].dateValue);
         }
@@ -32,7 +41,7 @@ class Serializable {
 }
 
 class User extends Serializable {
-  constructor({ firstName, lastName, phone, history, birth } = {}) {
+  constructor({ firstName, lastName, phone, history, birth, arr, inf } = {}) {
     super();
 
     this.firstName = firstName;
@@ -40,6 +49,8 @@ class User extends Serializable {
     this.phone = phone;
     this.history = history;
     this.birth = birth;
+    this.arr = arr;
+    this.inf = inf;
   }
 
   printInfo() {
@@ -55,6 +66,8 @@ const user = new User({
     city: 'Kyiv',
   },
   birth: new Date('1999-01-02'),
+  arr: [1, 2, 3],
+  inf: Infinity,
 });
 console.log(user);
 user.printInfo();
@@ -62,6 +75,8 @@ user.printInfo();
 const serialized = user.serialize();
 const resurrectedUser = (new User()).wakeFrom(serialized);
 console.log(resurrectedUser);
+
+console.log(user);
 console.log(resurrectedUser instanceof User);
 
 class Post extends Serializable {
