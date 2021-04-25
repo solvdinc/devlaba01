@@ -1,4 +1,4 @@
-import getData from './Data.js';
+import { getDataWithFetchMethod, getDataWithXMLHttpRequest } from './Data.js';
 import createDOMElement from './createDOMElement.js';
 
 export default class RandomUser {
@@ -9,24 +9,19 @@ export default class RandomUser {
   }
 
   handleData() {
-    // fetch
-    getData(this.gender, this.count).then((data) => {
-      this.data = data.results;
-      this.createUserCard();
-    });
+    getDataWithFetchMethod(this.gender, this.count)
+      .then((data) => {
+        this.data = data.results;
+        this.createUserCard();
+      })
+      .catch((err) => console.log(err));
 
-    // XMLHttpRequest
-    // const URL = 'https://randomuser.me/';
-    // const xhr = new XMLHttpRequest();
-
-    // xhr.open('GET', `${URL}api/?gender=${this.gender}&results=${this.count}`);
-
-    // xhr.send();
-
-    // xhr.onload = () => {
-    //   this.data = JSON.parse(xhr.response).results;
-    //   this.createUserCard();
-    // };
+    // getDataWithXMLHttpRequest(this.gender, this.count)
+    //   .then((data) => {
+    //     this.data = data.results;
+    //     this.createUserCard();
+    //   })
+    //   .catch((err) => console.log(err));
 
     return this;
   }
