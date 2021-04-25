@@ -1,8 +1,8 @@
 class Serializable {
   serialize() {
     const serialized = JSON.stringify({ ...this }, (keys, value) => {
-      if (value === Infinity) {
-        return { inf: true };
+      if (value === Infinity || value === -Infinity) {
+        return { inf: value.toString() };
       }
 
       Object.keys(value).forEach((key) => {
@@ -13,7 +13,6 @@ class Serializable {
 
       return value;
     });
-    console.log(serialized);
     return serialized;
   }
 
@@ -25,7 +24,7 @@ class Serializable {
       const serializedObj = new this.constructor(JSON.parse(obj));
       Object.keys(serializedObj).forEach((key) => {
         if (serializedObj[key].inf) {
-          serializedObj[key] = Infinity;
+          serializedObj[key] = serializedObj[key].inf;
         }
 
         if (serializedObj[key].isDate) {
@@ -67,7 +66,7 @@ const user = new User({
   },
   birth: new Date('1999-01-02'),
   arr: [1, 2, 3],
-  inf: Infinity,
+  inf: -Infinity,
 });
 console.log(user);
 user.printInfo();
