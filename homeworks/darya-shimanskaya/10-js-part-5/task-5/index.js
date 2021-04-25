@@ -11,8 +11,8 @@ function createUserCard(user, selector) {
   document.querySelector(selector).append(userCard);
 }
 
-function randomUsersFetch(url) {
-  fetch(url)
+async function fetchRandomUsers(url) {
+  await fetch(url)
     .then((response) => response.json())
     .then((json) => json.results.forEach((user) => {
       createUserCard(user, '.fetch__user-card');
@@ -20,9 +20,9 @@ function randomUsersFetch(url) {
     .catch((error) => console.log(error));
 }
 
-randomUsersFetch(URL);
+fetchRandomUsers(URL);
 
-function randomUsersXml(url) {
+async function xmlRandomUsers(url) {
   const xhr = new XMLHttpRequest();
 
   xhr.open('GET', url);
@@ -39,4 +39,4 @@ function randomUsersXml(url) {
   };
 }
 
-randomUsersXml(URL);
+xmlRandomUsers(URL);

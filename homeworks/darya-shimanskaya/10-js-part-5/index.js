@@ -8,6 +8,7 @@ function validateMessage(message) {
 
   return true;
 }
+
 validateMessage('null');
 
 // task 2 link https://www.codewars.com/kata/5a353a478f27f244a1000076
@@ -18,7 +19,7 @@ async function sayJoke(apiUrl, jokeId) {
   if (!response.jokes) throw new Error(`No jokes at url: ${apiUrl}`);
   if (!specifiedJoke) throw new Error(`No jokes found id: ${jokeId}`);
 
-  const jokeMethods = {
+  return {
     saySetup() {
       return specifiedJoke.setup;
     },
@@ -26,8 +27,8 @@ async function sayJoke(apiUrl, jokeId) {
       return specifiedJoke.punchLine;
     },
   };
-  return jokeMethods;
 }
+
 sayJoke();
 
 // task 3
@@ -36,12 +37,11 @@ function timer() {
 
   const timerId = setInterval(() => {
     sec += 1;
+    if (sec === 5) clearInterval(timerId);
     console.log(`Elapsed time: ${sec} sec`);
   }, 1000);
-  setTimeout(() => {
-    clearInterval(timerId);
-  }, 6000);
 }
+
 timer();
 
 // task 6
@@ -54,7 +54,7 @@ isDigit('34d233sdf');
 
 // task 7
 function phoneNumber(number) {
-  const reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?/;
+  const reg = /^(\s*)(\+)?([- ()]?\d){10,14}/;
   if (number.match(reg)) {
     console.log(number);
   } else console.log('Wrong number');
