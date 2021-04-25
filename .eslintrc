@@ -1,13 +1,13 @@
-// {
-//   "env": {
-//     "browser": true,
-//     "es6": true,
-//     "node": true
-//   },
-//   "extends": ["airbnb/base"],
-//   "rules": {
-//     "no-console": "off",
-//     "no-prototype-builtins": "off",
-//     "no-underscore-dangle": "off"
-//   }
-// }
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["airbnb/base"],
+  "rules": {
+    "no-console": "off",
+    "no-prototype-builtins": "off",
+    "no-underscore-dangle": "off"
+  }
+}
