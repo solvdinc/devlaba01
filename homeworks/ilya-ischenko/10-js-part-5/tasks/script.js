@@ -52,11 +52,7 @@ async function sayJoke(apiUrl, jokeId) {
 
 // TASK 6 Digit or not
 function digitCheck(str) {
-  if (str[0].match(/\d/)) {
-    return true;
-  }
-
-  return false;
+  return (/\d/).test(str[0]);
 }
 console.log(digitCheck('1fsdfsdf'));
 console.log(digitCheck('fs1dfsdf'));
@@ -65,13 +61,9 @@ console.log(digitCheck('fs1dfsdf'));
 // Ukraine: +380 xx-xxx-xxxx
 // starts with 380 and after that 9 digits
 function checkPhoneNum(num) {
-  const number = num.replace(/\D+/g, '');
-  if (number.match(/380\d{9}/)) {
-    return true;
-  }
-  return false;
+  return (/\+380-\d{2}-\d{3}-\d{2}-\d{2}/).test(num);
 }
-console.log(checkPhoneNum('380-67-584-93-28'));
+console.log(checkPhoneNum('+380-67-584-93-28'));
 console.log(checkPhoneNum('380-67-584-93-2'));
 console.log(checkPhoneNum('80-67-584-93-28'));
 console.log(checkPhoneNum('380-67-5849328'));
