@@ -1,0 +1,25 @@
+Versions:
+
+1.0.0
+
+major.minor.patch
+
+patch - bug fixes
+1.0.0
+1.0.10
+
+minor - new funcs
+1.0.0
+1.2.3
+
+major - new funcs
+1.100.0
+2.0.0
+
+$ 1.000.000
+10.0.0
+11.0.0
+
+10.0.0
+11.0.0
+12.0.0

@@ -1,0 +1,58 @@
+@import './typography.styl'
+
+$background = #f1f1f1
+$boxShadow = 0 0 5px green
+
+body
+  font-size $defaultFontSize
+  background $background
+  a
+    color blue
+    text-decoration none
+    span
+      text-decoration underline
+
+.modal
+  background $background
+  box-shadow $boxShadow
+
+.header
+  color green
+  &__logo
+    color red
+    &._active
+      color blue
+      &:hover
+        text-decoration underline
+
+$abstractLink
+  text-decoration none
+  &:hover
+    text-decoration underline
+
+$abstractHeaderLink
+  font-size 3.2rem
+
+.link
+  @extend $abstractLink
+  color blue
+
+.link-active
+  @extend $abstractLink
+  color orange
+
+.link-header
+  @extend $abstractHeaderLink, $abstractLink
+
+square(size, radius = 0)
+  width size
+  height size
+
+  if radius != 0
+    border-radius radius
+
+round(size)
+  square(size, 50%)
+
+.avatar
+  round(50px)
