@@ -1,0 +1,49 @@
+h1 {
+  font-size: 3.2rem; }
+
+h2 {
+  font-size: 2.4rem; }
+
+h3 {
+  font-size: 2.0rem; }
+
+body {
+  font-size: 1.4rem;
+  background: #f1f1f1; }
+  body a {
+    color: blue;
+    text-decoration: none; }
+    body a span {
+      text-decoration: underline; }
+
+.modal {
+  background: #f1f1f1;
+  box-shadow: 0 0 5px #000; }
+
+.header {
+  color: green; }
+  .header__logo {
+    color: red; }
+    .header__logo._active {
+      color: green; }
+      .header__logo._active:hover {
+        text-decoration: underline; }
+
+.link, .link-active, .link-header {
+  text-decoration: none; }
+  .link:hover, .link-active:hover, .link-header:hover {
+    text-decoration: underline; }
+
+.link-header {
+  font-size: 3.2rem; }
+
+.link {
+  color: blue; }
+
+.link-active {
+  color: orange; }
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; }
