@@ -108,6 +108,6 @@ solution6("3gggg");
 
 //task 7 Optional (advanced)
 function solution7(number) {
-  return (/^\+380[\s]\d{2}[\.-]\d{3}[\.-]\d{4}$/).test(number);
+  return (/^\+380[\s]\d{2}[\-]\d{3}[\-]\d{4}$/).test(number);
 }
 solution7("+380 94-171-4375");
