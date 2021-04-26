@@ -8,7 +8,6 @@ function validateMessage(msg) {
 }
 
 //2 task https://www.codewars.com/kata/5a353a478f27f244a1000076
-
 async function sayJoke(apiUrl, jokeId) {
   const response = await fetch(apiUrl);
   const jsonResponse = await response.json();
@@ -19,17 +18,16 @@ async function sayJoke(apiUrl, jokeId) {
   if (!result) throw new Error(`No jokes found id: ${jokeId}`);
 
   return {
-    saySetup: function () {
+    saySetup() {
       return result.setup;
     },
-    sayPunchLine: function () {
+    sayPunchLine() {
       return result.punchLine;
     }
   };
 }
 
 // 3 task
-
 let count = 0;
 const timer = setInterval(() => {
   count += 1;
@@ -40,7 +38,6 @@ const timer = setInterval(() => {
 }, 1000);
 
 // task 6
-
 function digitOrNot(str) {
   if (str[0].match(/^\d+/)) {
     return true;
