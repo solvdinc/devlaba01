@@ -1,5 +1,5 @@
 // Task 5 Fetch API/XMLHttpRequest
-const URL = 'https://randomuser.me/api/?gender=female&results=20';
+const URL = 'https://randomuser.me/api/?gender=female&results=5';
 
 function createCards(users) {
   const container = document.getElementById('container');
@@ -17,7 +17,7 @@ function createCards(users) {
     userCard.append(h2);
     container.append(userCard);
   });
-}
+};
 
 // Fetch request
 async function getUsersFetch(url, cb) {
@@ -32,21 +32,21 @@ async function getUsersFetch(url, cb) {
 getUsersFetch(URL, createCards);
 
 // XmlHttpRequest
-async function getUsersXmlHttpRequest(cb) {
-  const XMLHR = new XMLHttpRequest();
+function getUsersXmlHttpRequest(cb) {
+  return new Promise((resolve, reject) => {
+    const XMLHR = new XMLHttpRequest();
 
-  try {
-    XMLHR.open('GET', URL);
+    XMLHR.open('GET', URL, true);
     XMLHR.send();
     XMLHR.onload = () => {
-      const response = JSON.parse(XMLHR.response);
-      cb(response.results);
-    };
-
-    return XMLHR;
-  } catch (error) {
-    console.error('Smth went wrong, try to check URL');
-  }
+      if (XMLHR.status === 200) {
+        resolve(XMLHR.response);
+        const response = JSON.parse(XMLHR.response);
+        cb(response.results);
+      }
+    }
+    XMLHR.onerror = () => reject(XMLHR.status);
+  });
 }
 
 getUsersXmlHttpRequest(createCards);
