@@ -4,8 +4,10 @@ export default class Grid {
   constructor(cells, cols) {
     this.cells = cells;
     this.cols = cols;
-    this.activeCells = [];
+    this.activeCells;
     this.field = [];
+    this.activeCells;
+    this.isActive = false;
   }
 
   createGrid() {
@@ -22,6 +24,7 @@ export default class Grid {
           gridContainer,
           ['data-x', `${i}`],
           ['data-y', `${j}`],
+          ['data-active', false],
         );
       }
     }
@@ -35,27 +38,68 @@ export default class Grid {
   }
 
   handleCell = (event) => {
-    this.field = [...document.querySelectorAll('.grid-item')];
     const { target, shiftKey } = event;
 
-    if (shiftKey) {
-      this.removeActiveCells();
-      this.field.map((grid, index) => {
-        if (index < this.field.indexOf(target)) {
-          grid.classList.toggle('_active');
-          grid.innerHTML = `x:${grid.dataset.x} y:${grid.dataset.y}`;
-        }
-      });
-    }
+    if (target.dataset.active === 'true') {
+      target.classList.remove('_active');
+      target.innerHTML = '';
+      target.dataset.active = false;
+      this.removeHighlightCells(target.dataset.x, target.dataset.y);
+      this.checkForHighlight();
+    } else {
+      if (!shiftKey) {
+        this.removeActiveCells();
+        this.removeHighlightCells();
+      }
 
-    if (target.closest('.grid-item')) {
-      target.classList.toggle('_active');
-      target.innerHTML = `x:${target.dataset.x} y:${target.dataset.y}`;
+      if (target.dataset.active === 'false') {
+        target.classList.add('_active');
+        target.innerHTML = `x:${target.dataset.x} y:${target.dataset.y}`;
+        target.dataset.active = true;
+        this.makeHighlight(target.dataset.x, target.dataset.y);
+      }
     }
   };
 
+  makeHighlight(x, y) {
+    this.field = [...document.querySelectorAll('.grid-item')];
+
+    this.field.map((cell) => {
+      if (cell.dataset.x === x || cell.dataset.y === y) {
+        cell.classList.add('_highlight');
+        if (cell.dataset.active === 'true') {
+          cell.classList.remove('_highlight');
+        }
+      }
+    });
+  }
+
   removeActiveCells() {
-    this.activeCells = [...document.querySelectorAll('._active')];
-    this.activeCells.map((cell) => cell.classList.remove('_active'));
+    const activeCells = [...document.querySelectorAll('._active')];
+    activeCells.map((cell) => {
+      cell.classList.remove('_active');
+      cell.innerHTML = '';
+      cell.dataset.active = false;
+    });
+  }
+
+  removeHighlightCells(x, y) {
+    const highLightCells = [...document.querySelectorAll('._highlight')];
+    highLightCells.map((cell) => {
+      if ((x, y)) {
+        if (cell.dataset.x === x || cell.dataset.y === y) {
+          cell.classList.remove('_highlight');
+        }
+      } else {
+        cell.classList.remove('_highlight');
+      }
+    });
+  }
+
+  checkForHighlight() {
+    const activeCells = [...document.querySelectorAll('._active')];
+    activeCells.map((cell) => {
+      this.makeHighlight(cell.dataset.x, cell.dataset.y);
+    });
   }
 }
