@@ -1,22 +1,22 @@
 class Serializable {
   serialize() {
     try {
-      const serialized = JSON.stringify(this, (key, value) => {
-        Object.keys(value).forEach((el) => {
-          if (value[el] instanceof Date) {
-            value[el] = value[el].getTime();
-          } else if (value[el] === Infinity) {
-            value[el] = "Infinity";
-          } else if (value[el] === -Infinity) {
-            value[el] = "-Infinity";
-          } else if (value[el] === null) {
-            value[el] = "null";
-          } else if (value[el] !== value[el]) {
-            value[el] = "NaN";
-          }
-        });
-        return value;
-      });
+      const serialized = JSON.stringify(
+        this,
+        this.constructor.name,
+        (key, value) => {
+          Object.keys(value).forEach((el) => {
+            if (value[el] === Infinity) {
+              return Infinity;
+            } else if (value[el] === -Infinity) {
+              return -Infinity;
+            } else if (value[el] === null) {
+              return null;
+            }
+          });
+          return value;
+        }
+      );
       return serialized;
     } catch (error) {
       throw new Error("Not a JSON-serializing object");
@@ -24,32 +24,24 @@ class Serializable {
   }
 
   wakeFrom(obj) {
-    const copyOfThis = new this.constructor();
-    const serializeKeys = Object.keys(JSON.parse(obj));
-    const objKeys = Object.keys(copyOfThis);
-
-    if (JSON.stringify(serializeKeys) === JSON.stringify(objKeys)) {
-      for (let i = 0; i < serializeKeys.length; i++) {
-        copyOfThis[serializeKeys[i]] = JSON.parse(obj)[serializeKeys[i]];
-        if ([serializeKeys[i]] === "Infinity") {
-          return Infinity;
-        } else if ([serializeKeys[i]] === "-Infinity") {
-          return -Infinity;
-        } else if ([serializeKeys[i]] === "NaN") {
-          return NaN;
-        } else if (serializeKeys[i] === "birth") {
-          copyOfThis[serializeKeys[i]] = new Date(
-            JSON.parse(obj)[serializeKeys[i]]
-          );
-        } else {
-          copyOfThis[serializeKeys[i]] = JSON.parse(obj)[serializeKeys[i]];
-        }
+    const serializeKeys = JSON.parse(obj, (key, value) => {
+      const isDate = /^\d{4}(-\d\d(-\d\d(T\d\d:\d\d(:\d\d)?(\.\d+)?(([+-]\d\d:\d\d)|Z)?)?)?)?$/i.exec(
+        value
+      );
+      if (value === Infinity) {
+        return Infinity;
+      } else if (value === -Infinity) {
+        return -Infinity;
+      } else if (value === null) {
+        return null;
+      } else if (isDate) {
+        return new Date(isDate[0]);
       }
-      return copyOfThis;
-    }
+      return value;
+    });
+    return new this.constructor(serializeKeys);
   }
 }
-
 class UserDTO extends Serializable {
   constructor({ first1Name, lastName, phone, birth } = {}) {
     super();
