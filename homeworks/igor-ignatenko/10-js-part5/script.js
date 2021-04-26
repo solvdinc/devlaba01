@@ -10,7 +10,7 @@ function solution1() {
         else if (typeof msg !== 'string') {
             throw new TypeError(`Message should be of type string but was of type ${typeof msg}!`);
         }
-        else if (msg.length >= 264 || msg.length === 0) {
+        else if (msg.length >= 255 || msg.length === 0) {
             throw new RangeError(`Message contains ${msg.length} characters!`);
         }
         else if (msg.includes('<') && msg.includes('>')) {
@@ -74,19 +74,34 @@ function solution3() {
 
 // task 5   
 function solution5() {
-    function getData(url) {
 
-        fetch(url)
-            .then((res) => res.json())
-            .then(json => {
-                json.results.forEach((el) => {
-                    const list = document.querySelector('.list-fetch')
-                    list.innerHTML += `<li><img src='${el.picture.large}'/><p>'${el.name.first}'</p></li>`
-                });
-            })
+    function rendering(users) {
+        const UserList = users.results;
+
+        const wrapper = document.querySelector('.wrapper');
+        const container = document.createElement('div');
+        container.classList.add('container');
+
+        UserList.forEach((el) => {
+            container.innerHTML += `<img src='${el.picture.large}'/><p>'${el.name.first}'</p>`;
+        });
+
+        wrapper.append(container);
+
+    }
+    async function getDataFetch(url) {
+
+        const data = await fetch(url);
+
+        if(data.status === 200) {
+            const JSONdata =  await data.json();
+            rendering(JSONdata);
+        } else [
+            console.log(`Problems, check ${data.status}`)
+        ]
     }
 
-    getData('https://randomuser.me//api/?results=6')
+    getDataFetch('https://randomuser.me//api/?results=6')
 
     function getDataXML(url) {
 
@@ -101,12 +116,8 @@ function solution5() {
             if (xhr.status != 200) {
                 console.log(`${xhr.status}`)
             } else {
-                const parsedData = xhr.response
-
-                parsedData.results.forEach(el => {
-                    const list2 = document.querySelector('.list-XMLHTTPRequest');
-                    list2.innerHTML += `<li><img src='${el.picture.large}'/><p>'${el.name.first}'</p></li>`
-                });
+                const parsedData = xhr.response;
+                rendering(parsedData);
             }
         }
         xhr.onprogress = function (event) {
@@ -125,27 +136,22 @@ solution5()
 function solution6() {
 
     function DigitOrNot(str) {
-        return !!str.match(/^\d+/g)
+        return (/^\d/).test(str);
     }
 
     console.log(DigitOrNot('21231232132132')); // true
     console.log(DigitOrNot('h5')); // false
-    console.log(DigitOrNot('78g')); // false
+    console.log(DigitOrNot('78g')); // true
 }
-
+solution6()
 
 //task 7
 function solution7() {
 
     function validation(number) {
-
-        if (number.match(/^\+?380(\d{2})[.-](\d{3})[.-](\d{2})[.-](\d{2})/g)) {
-            return 'Hello from Ukraine'
-        }
-
-        return 'I don`t know your number'
-
+        return (/\+380 \d{2}-\d{3}-\d{2}-\d{2}/).test(number);
+        // return /\+380[ -]\d{2}[ -]\d{3}[ -]\d{2}[ -]\d{2}/.test(number); //for '+380 93 864 96 32' or '+380-93-864-96-32'
     }
-    validation('+38093-864-96-32')
+    console.log(validation('+380 93-864-96-32'));
 }
-
+solution7()

@@ -3,9 +3,15 @@
     padding: 0;
 }
 body {
-    
     background-color: blueviolet;
-
+}
+header {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 20px;
 }
 
 
@@ -17,7 +23,7 @@ body {
 
 }
 
-.list-fetch, .list-XMLHTTPRequest {
+.list{
     list-style: none;
 }
 
