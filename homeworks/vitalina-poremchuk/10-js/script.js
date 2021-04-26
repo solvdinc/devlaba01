@@ -102,16 +102,12 @@ solution5();
 
 //task 6 Digit or not
 function solution6(str) {
-  if (str[0].match(/^\d/)) {
-    return true;
-  }
+  return (/\d/).test(str[0]);
 }
 solution6("3gggg");
 
 //task 7 Optional (advanced)
 function solution7(number) {
-  if (number.match(/^\+380[\.-]\d{2}[\.-]\d{3}[\.-]\d{4}$/)) {
-    return true;
-  }
+  return (/^\+380[\s]\d{2}[\.-]\d{3}[\.-]\d{4}$/).test(number);
 }
-solution7("+380-94-171-4375");
+solution7("+380 94-171-4375");
