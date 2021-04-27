@@ -24,6 +24,7 @@ function makeGrid(row, column) {
   }
 
   function changeColor(event) {
+    const { target } = event;
     if (!event.shiftKey) {
       gridItems.forEach((item) => {
         const theItem = item;
@@ -31,16 +32,19 @@ function makeGrid(row, column) {
           theItem.classList.remove('_active');
           theItem.innerText = '';
         }
+        if (theItem.classList.contains('_around')) {
+          theItem.classList.remove('_around');
+        }
       });
     }
 
-    const x = getX(event.target.offsetLeft);
-    const y = getY(event.target.offsetTop);
+    const x = getX(target.offsetLeft);
+    const y = getY(target.offsetTop);
 
     highlightLines(x, y);
 
-    event.target.classList.add('_active');
-    event.target.innerText = `${event.target.id}`;
+    target.classList.add('_active');
+    target.innerText = `${target.id}`;
   }
   grid.addEventListener('click', changeColor);
 }
