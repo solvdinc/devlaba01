@@ -1,0 +1,23 @@
+{
+  "name": "13-envs-1-Inna-Smiiun",
+  "version": "1.0.0",
+  "description": "My CV created with HTML, CSS (SCSS).",
+  "keywords": ["Inna Smiiun", "CV", "HTML", "CSS", "preprocessors", "environment"],
+  "main": "./app/index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp scss",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innasmiiun"
+  },
+  "author": "Inna Smiiun",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
