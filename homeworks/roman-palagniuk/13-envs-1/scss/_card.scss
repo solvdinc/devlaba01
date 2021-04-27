@@ -1,0 +1,110 @@
+.card_wrap {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 50%;
+  min-width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.border {
+  height: 95%;
+  width: 95%;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+
+.border:hover {
+  border: 1px solid $dark;
+}
+
+.card {
+  border: 1px solid $dark;
+  height: 30em;
+  width: 20em;
+  background: rgb(235, 233, 233);
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card0 {
+  background: url('./img/Screenshot_3.jpg') center center no-repeat;
+  background-size: 300px;
+}
+
+.card0:hover {
+  background: url('./img/Screenshot_3.jpg') left center no-repeat;
+  background-size: 600px;
+}
+
+.card0:hover .card_title {
+  opacity: 1;
+}
+.card0:hover .card_text {
+  opacity: 1;
+}
+
+.card1 {
+  background: url('./img/Screenshot_4.jpg') center center no-repeat;
+  background-size: 300px;
+}
+
+.card1:hover {
+  background: url('./img/Screenshot_4.jpg') left center no-repeat;
+  background-size: 600px;
+}
+
+.card1:hover .card_title {
+  opacity: 1;
+}
+.card1:hover .card_text {
+  opacity: 1;
+}
+
+.card2 {
+  background: url('./img/Screenshot_4.jpg') center center no-repeat;
+  background-size: 300px;
+}
+
+.card2:hover {
+  background: url('./img/Screenshot_4.jpg') left center no-repeat;
+  background-size: 600px;
+}
+
+.card2:hover .card_title {
+  opacity: 1;
+}
+.card2:hover .card_text {
+  opacity: 1;
+}
+
+.card_title {
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  color: $dark;
+  background-color: rgba(119, 224, 243, 0.5);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.card_text {
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  color: $dark;
+  background-color: rgba(119, 224, 243, 0.5);
+  opacity: 0;
+  transition: opacity 1s;
+}
