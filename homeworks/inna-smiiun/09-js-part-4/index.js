@@ -2,8 +2,8 @@ class Serializable {
     serialize() {
         let obj = {
             className: `${this.constructor.name}`,
+            ...this
         };
-        obj = {...obj, ...this};
         return JSON.stringify(obj, (keys, value) => {
             Object.keys(value).forEach((key) => {
                 if (value[key] === undefined) {
@@ -18,6 +18,9 @@ class Serializable {
                 if (value[key] === -Infinity) {
                     value[key] = '-Infinity';
                 }
+                if (Number.isNaN(value[key])) {
+                    value[key] = 'NaN';
+                }
             });
             return value;
         });
@@ -29,6 +32,7 @@ class Serializable {
             if (value === 'Infinity') return Infinity;
             if (value === '-Infinity') return -Infinity;
             if (value === 'null') return null;
+            if (value === 'NaN') return NaN;
 
             return value;
         });
@@ -64,7 +68,7 @@ let tolik = new UserDTO({
 tolik.printInfo();
 
 const serialized = tolik.serialize();
-tolik = null
+tolik = null;
 
 const resurrectedTolik = (new UserDTO()).wakeFrom(serialized);
 
