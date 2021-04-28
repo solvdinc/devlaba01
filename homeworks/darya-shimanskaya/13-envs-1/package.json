@@ -1,7 +1,13 @@
 {
   "name": "13-envs-1",
   "version": "1.0.0",
-  "main": "npm.js",
+  "description": "CV with rewrite CSS (SCSS).",
+  "keywords": [
+    "Darya Shimanskaya",
+    "CV",
+    "preprocessors"
+  ],
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
