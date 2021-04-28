@@ -2,6 +2,8 @@
 const DATA = require('./MOCK_DATA');
 const assert = require('./assert');
 
+const duplicateData = [...DATA];
+
 let sortData = [];
 
 const testResults = {
@@ -11,6 +13,7 @@ const testResults = {
   selectionSort: [],
   mergeSort: [],
   insertionSort: [],
+  simpleQuickSort: [],
 };
 
 const getAllSku = (data) => {
@@ -39,29 +42,42 @@ const randomSku = (arr) => {
 
 const needleList = randomSku(arrOfAllSku);
 
+const simpleQuickSort = (arr) => arr.sort((a, b) => (a.sku < b.sku ? 1 : -1));
+
 const quickSort = (arr) => {
-  const array = [...arr];
-  return array.sort((a, b) => (a.sku < b.sku ? 1 : -1));
+  const less = [];
+  const greater = [];
+
+  if (arr.length < 2) return arr;
+
+  const mid = arr[Math.floor(arr.length - 1 / 2)];
+
+  arr.forEach((el) => {
+    if (el.sku > mid.sku) {
+      less.push(el);
+    } else if (el.sku < mid.sku) {
+      greater.push(el);
+    }
+  });
+  return [...quickSort(less), mid, ...quickSort(greater)];
 };
 
 const selectionSort = (arr) => {
-  const array = [...arr];
-
-  for (let i = 0; i < array.length; i += 1) {
+  for (let i = 0; i < arr.length; i += 1) {
     let min = i;
 
-    for (let j = i + 1; j < array.length; j += 1) {
-      if (array[j].sku > array[min].sku) {
+    for (let j = i + 1; j < arr.length; j += 1) {
+      if (arr[j].sku > arr[min].sku) {
         min = j;
       }
     }
     if (i !== min) {
-      const temp = array[i];
-      array[i] = array[min];
-      array[min] = temp;
+      const temp = arr[i];
+      arr[i] = arr[min];
+      arr[min] = temp;
     }
   }
-  return array;
+  return arr;
 };
 
 const merge = (arr1, arr2) => {
@@ -80,31 +96,32 @@ const merge = (arr1, arr2) => {
 };
 
 const mergeSort = (arr) => {
-  const array = [...arr];
+  if (arr.length <= 1) return arr;
 
-  if (array.length <= 1) return array;
-
-  const mid = Math.floor(array.length / 2);
-  const left = mergeSort(array.slice(0, mid));
-  const right = mergeSort(array.slice(mid));
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
 
   return merge(left, right);
 };
 
 const insertionSort = (arr) => {
-  const array = [...arr];
-  for (let i = 1; i < array.length; i += 1) {
+  for (let i = 1; i < arr.length; i += 1) {
     let j = i - 1;
-    const temp = array[i];
-    while (j >= 0 && array[j].sku < temp.sku) {
-      array[j + 1] = array[j];
+    const temp = arr[i];
+    while (j >= 0 && arr[j].sku < temp.sku) {
+      arr[j + 1] = arr[j];
       j -= 1;
     }
-    array[j + 1] = temp;
+    arr[j + 1] = temp;
   }
-  return array;
+  return arr;
 };
 
+assert(
+  'Quick with simpleQuick',
+  JSON.stringify(quickSort(DATA)) === JSON.stringify(simpleQuickSort(DATA)),
+);
 assert(
   'Quick with selection',
   JSON.stringify(quickSort(DATA)) === JSON.stringify(selectionSort(DATA)),
@@ -137,23 +154,21 @@ const binarySearch = (data, id) => {
       return data[mid];
     }
 
-    if (data[mid].sku > id) {
-      high = mid - 1;
+    if (data[mid].sku < id) {
+      high = mid + 1;
     } else {
-      low = mid + 1;
+      low = mid - 1;
     }
   }
 };
 
 // !straightSearch
 for (let i = 0; i < 20; i += 1) {
-  let start = process.hrtime();
-  start = start[0] * 1000000 + start[1];
+  const start = process.hrtime();
   // const t0 = performance.now();
   needleList.map((sku) => straightSearch(DATA, sku));
-  let finish = process.hrtime();
-  finish = finish[0] * 1000000 + finish[1];
-  testResults.straightSearch.push(finish - start);
+  const finish = process.hrtime(start);
+  testResults.straightSearch.push(finish[1]);
   // const t1 = performance.now();
   // testResults.straightSearch.push(t1 - t0);
 }
@@ -163,7 +178,7 @@ for (let i = 0; i < 20; i += 1) {
   let start = process.hrtime();
   start = start[0] * 1000000 + start[1];
   // const t0 = performance.now();
-  sortData = mergeSort(DATA);
+  sortData = mergeSort(duplicateData);
   let finish = process.hrtime();
   finish = finish[0] * 1000000 + finish[1];
   testResults.mergeSort.push(finish - start);
@@ -173,52 +188,55 @@ for (let i = 0; i < 20; i += 1) {
 
 // !insertionSort
 for (let i = 0; i < 20; i += 1) {
-  let start = process.hrtime();
-  start = start[0] * 1000000 + start[1];
+  const start = process.hrtime();
   // const t0 = performance.now();
-  sortData = insertionSort(DATA);
-  let finish = process.hrtime();
-  finish = finish[0] * 1000000 + finish[1];
-  testResults.insertionSort.push(finish - start);
+  sortData = insertionSort(duplicateData);
+  const finish = process.hrtime(start);
+  testResults.insertionSort.push(finish[1]);
   // const t1 = performance.now();
   // testResults.straightSearch.push(t1 - t0);
 }
 
 // !selectionSort
 for (let i = 0; i < 20; i += 1) {
-  let start = process.hrtime();
-  start = start[0] * 1000000 + start[1];
+  const start = process.hrtime();
   // const t0 = performance.now();
-  sortData = selectionSort(DATA);
-  let finish = process.hrtime();
-  finish = finish[0] * 1000000 + finish[1];
-  testResults.selectionSort.push(finish - start);
+  sortData = selectionSort(duplicateData);
+  const finish = process.hrtime(start);
+  testResults.selectionSort.push(finish[1]);
   // const t1 = performance.now();
   // testResults.straightSearch.push(t1 - t0);
 }
 
 // !quickSort
 for (let i = 0; i < 20; i += 1) {
-  let start = process.hrtime();
-  start = start[0] * 1000000 + start[1];
+  const start = process.hrtime();
   // const t0 = performance.now();
-  sortData = quickSort(DATA);
-  let finish = process.hrtime();
-  finish = finish[0] * 1000000 + finish[1];
-  testResults.quickSort.push(finish - start);
+  sortData = quickSort(duplicateData);
+  const finish = process.hrtime(start);
+  testResults.quickSort.push(finish[1]);
+  // const t1 = performance.now();
+  // testResults.straightSearch.push(t1 - t0);
+}
+
+// !simpleQuickSort
+for (let i = 0; i < 20; i += 1) {
+  const start = process.hrtime();
+  // const t0 = performance.now();
+  sortData = simpleQuickSort(duplicateData);
+  const finish = process.hrtime(start);
+  testResults.simpleQuickSort.push(finish[1]);
   // const t1 = performance.now();
   // testResults.straightSearch.push(t1 - t0);
 }
 
 // !binarySearch
 for (let i = 0; i < 20; i += 1) {
-  let start = process.hrtime();
-  start = start[0] * 1000000 + start[1];
+  const start = process.hrtime();
   // const t0 = performance.now();
   needleList.map((sku) => binarySearch(sortData, sku));
-  let finish = process.hrtime();
-  finish = finish[0] * 1000000 + finish[1];
-  testResults.binarySearch.push(finish - start);
+  const finish = process.hrtime(start);
+  testResults.binarySearch.push(finish[1]);
   // const t1 = performance.now();
   // testResults.binarySearch.push(t1 - t0);
 }
@@ -232,6 +250,9 @@ testResults.averageStraightPerformance = averageTime(
 testResults.averageBinaryPerformance = averageTime(testResults.binarySearch);
 
 testResults.averageQuickSortPerformance = averageTime(testResults.quickSort);
+testResults.averageSimpleQuickSortPerformance = averageTime(
+  testResults.simpleQuickSort,
+);
 testResults.averageSelectionSortPerformance = averageTime(
   testResults.selectionSort,
 );
@@ -240,34 +261,39 @@ testResults.averageInsertionSortPerformance = averageTime(
   testResults.insertionSort,
 );
 
-console.log('Binary search results(ms): ', testResults.binarySearch);
-console.log('Straight search results(ms): ', testResults.straightSearch);
-console.log('Quick sort results(ms): ', testResults.quickSort);
-console.log('Selection sort results(ms): ', testResults.selectionSort);
-console.log('Merge sort results(ms): ', testResults.mergeSort);
-console.log('Insertion sort results(ms): ', testResults.insertionSort);
+console.log('Binary search results(ns): ', testResults.binarySearch);
+console.log('Straight search results(ns): ', testResults.straightSearch);
+console.log('Quick sort results(ns): ', testResults.quickSort);
+console.log('Selection sort results(ns): ', testResults.selectionSort);
+console.log('Merge sort results(ns): ', testResults.mergeSort);
+console.log('Insertion sort results(ns): ', testResults.insertionSort);
+console.log('Simple quick sort results(ns): ', testResults.simpleQuickSort);
 
 console.log(
-  'averageBinaryPerformance(s): ',
+  'averageBinaryPerformance(ms): ',
   testResults.averageBinaryPerformance,
 );
 console.log(
-  'averageStraightPerformance(s): ',
+  'averageStraightPerformance(ms): ',
   testResults.averageStraightPerformance,
 );
 console.log(
-  'averageQuickSortPerformance(s): ',
+  'averageQuickSortPerformance(ms): ',
   testResults.averageQuickSortPerformance,
 );
 console.log(
-  'averageSelectionSortPerformance(s): ',
+  'averageSelectionSortPerformance(ms): ',
   testResults.averageSelectionSortPerformance,
 );
 console.log(
-  'averageMergeSortPerformance(s): ',
+  'averageMergeSortPerformance(ms): ',
   testResults.averageMergeSortPerformance,
 );
 console.log(
-  'averageInsertionSortPerformance(s): ',
+  'averageInsertionSortPerformance(ms): ',
   testResults.averageInsertionSortPerformance,
+);
+console.log(
+  'averageSimpleQuickSortPerformance(ms): ',
+  testResults.averageSimpleQuickSortPerformance,
 );
