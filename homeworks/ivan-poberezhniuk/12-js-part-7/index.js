@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 const userList = require('./MOCK_DATA');
 
 const needleList = [
@@ -24,27 +26,29 @@ const straightSearch = (array, value) => {
   for (let index = 0; index < array.length; index += 1) {
     const user = array[index];
     if (user.sku === value) {
-      return user;
+      return user.sku;
     }
   }
   return false;
 };
 
-const binarySearch = (array, value) => {
-  const midIndex = Math.floor(array.length / 2);
-  const midValue = array[midIndex];
-  const { sku } = { ...midValue };
+const binarySearch = (array, target) => {
+  let startIndex = 0;
+  let endIndex = array.length - 1;
 
-  if (value === sku) {
-    return midValue;
-  }
-  if (array.length > 1 && value < midValue.sku) {
-    return binarySearch(array.splice(0, midIndex), value);
-  }
-  if (array.length > 1 && value > midValue.sku) {
-    return binarySearch(array.splice(midIndex + 1, array.length), value);
-  }
+  while (startIndex <= endIndex) {
+    const middleIndex = Math.floor((startIndex + endIndex) / 2);
 
+    if (target === array[middleIndex].sku) {
+      return target;
+    }
+    if (target > array[middleIndex].sku) {
+      startIndex = middleIndex + 1;
+    }
+    if (target < array[middleIndex].sku) {
+      endIndex = middleIndex - 1;
+    }
+  }
   return false;
 };
 
@@ -66,16 +70,19 @@ const quickSort = (array) => {
   return [...quickSort(left), pivot, ...quickSort(right)];
 };
 
-const test = (cb, list) => needleList.map((sku) => cb(list, sku));
+const check = (cb, list) => needleList.map((sku) => cb(list, sku));
 
 console.time('straightSearch');
-console.log('straightSearch: ', test(straightSearch, userList));
-console.timeLog('straightSearch', '\n');
+const straightSearchResult = check(straightSearch, userList);
+console.timeLog('straightSearch', straightSearchResult, '\n');
 
+console.time('sortedUserList');
 const sortedUserList = quickSort(userList);
+console.timeLog('sortedUserList', '\n');
 
 console.time('binarySearch');
-console.log('binarySearch: ', test(binarySearch, sortedUserList));
-console.timeLog('binarySearch', '\n');
+const binarySearchResult = check(binarySearch, sortedUserList);
+console.timeLog('binarySearch', binarySearchResult, '\n');
 
-// binarySearch(sortedUserList, 'e04b6074-332f-4661-8f3a-4cdcb3adfb6a');
+assert.deepStrictEqual(needleList, binarySearchResult);
+assert.deepStrictEqual(needleList, straightSearchResult);
