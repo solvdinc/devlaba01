@@ -40,15 +40,19 @@ function highlightRowCell(event) {
   targetTd.textContent = `x: ${targetTd.dataset.x}, y: ${targetTd.dataset.y}`;
 
   activeCell.forEach((el) => {
-    if (el !== targetTd) el.classList.add("highlightRowCell");
+    if (el !== targetTd) {
+      el.classList.add("highlightRowCell");
+    }
   });
   activeRow.forEach((el) => {
-    if (el !== targetTd) el.classList.add("highlightRowCell");
+    if (el !== targetTd) {
+      el.classList.add("highlightRowCell");
+    }
   });
 }
 function clearRowCell() {
-  let activeTargetTd = document.querySelectorAll(".highlight");
-  let activeRows = document.querySelectorAll(".highlightRowCell");
+  const activeTargetTd = document.querySelectorAll(".highlight");
+  const activeRows = document.querySelectorAll(".highlightRowCell");
 
   for (let i = 0; i < activeTargetTd.length; i++) {
     activeTargetTd[i].classList.remove("highlight");
