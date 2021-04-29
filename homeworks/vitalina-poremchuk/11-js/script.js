@@ -47,12 +47,12 @@ function highlightRowCell(event) {
   });
 }
 function clearRowCell() {
-  let activeTargetTd = document.querySelector(".highlight");
+  let activeTargetTd = document.querySelectorAll(".highlight");
   let activeRows = document.querySelectorAll(".highlightRowCell");
 
-  if (activeTargetTd) {
-    activeTargetTd.classList.remove("highlight");
-    activeTargetTd.textContent = "";
+  for (let i = 0; i < activeTargetTd.length; i++) {
+    activeTargetTd[i].classList.remove("highlight");
+    activeTargetTd[i].textContent = "";
   }
 
   for (let i = 0; i < activeRows.length; i++) {
