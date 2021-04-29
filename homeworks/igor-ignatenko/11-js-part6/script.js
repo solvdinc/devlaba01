@@ -1,9 +1,7 @@
-console.log('hello')
 
 const gridder = document.querySelector('.gridder');
 const colomns = 20;
 const rows = 30;
-const arrActive = [];
 
 for (let i = 0; i < rows; i++) {
     for (let j = 0; j < colomns; j++) {
@@ -15,14 +13,18 @@ for (let i = 0; i < rows; i++) {
     }
 }
 
-
 gridder.addEventListener('click', onClickEl);
 
 function onClickEl(event) {
     const { target, shiftKey } = event;
 
     if (target.dataset.row && target.dataset.colomn) {
-        target.classList.toggle('_active-el');
+
+        if (!shiftKey) {
+            cleaning();
+        }
+
+        target.classList.add('_active-el');
         target.textContent = `x:${target.dataset.row}, y:${target.dataset.colomn}`;
 
         const activeRow = document.querySelectorAll(`[data-row = '${target.dataset.row}']`);
@@ -31,25 +33,16 @@ function onClickEl(event) {
         activeRow.forEach(el => { if (el !== target) el.classList.add('_active-row') });
         activeColomn.forEach(el => { if (el !== target) el.classList.add('_active-colomn') });
 
-        arrActive.push(target)
-        if (arrActive.length > 1) {
-            let prevValue = arrActive[0];
-            prevValue.textContent = '';
-            prevValue.classList.toggle('_active-el');
-
-            if (target.dataset.colomn === prevValue.dataset.colomn
-                && target.dataset.row === prevValue.dataset.row) {
-                prevValue.textContent = `x:${prevValue.dataset.row}, y:${prevValue.dataset.colomn}`;
-            }
-
-            if (target.dataset.row !== prevValue.dataset.row) {
-                document.querySelectorAll(`[data-row = '${prevValue.dataset.row}']`).forEach(el => el.classList.remove('_active-row'));
-            }
-            if (target.dataset.colomn !== prevValue.dataset.colomn) {
-                document.querySelectorAll(`[data-colomn = '${prevValue.dataset.colomn}']`).forEach(el => el.classList.remove('_active-colomn'));
-            }
-
-            arrActive.splice(0, 1);
+        function cleaning() {
+            const activeCell = document.querySelectorAll('._active-el');
+            activeCell.forEach(el => {
+                el.classList.remove('_active-el');
+                el.textContent = '';
+            })
+            const delActiveRow = document.querySelectorAll('._active-row');
+            const delActiveColomn = document.querySelectorAll('._active-colomn');
+            delActiveRow.forEach(el => { el.classList.remove('_active-row') });
+            delActiveColomn.forEach(el => { el.classList.remove('_active-colomn') });
 
         }
     }
