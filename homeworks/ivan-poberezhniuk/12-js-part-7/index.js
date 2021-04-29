@@ -32,20 +32,21 @@ const straightSearch = (array, value) => {
   return false;
 };
 
-const binarySearch = (array, target) => {
+const binarySearch = (array, value) => {
   let startIndex = 0;
   let endIndex = array.length - 1;
 
   while (startIndex <= endIndex) {
     const middleIndex = Math.floor((startIndex + endIndex) / 2);
+    const middleElement = array[middleIndex];
 
-    if (target === array[middleIndex].sku) {
-      return target;
+    if (value === middleElement.sku) {
+      return value;
     }
-    if (target > array[middleIndex].sku) {
+    if (value > middleElement.sku) {
       startIndex = middleIndex + 1;
     }
-    if (target < array[middleIndex].sku) {
+    if (value < middleElement.sku) {
       endIndex = middleIndex - 1;
     }
   }
