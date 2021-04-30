@@ -1,32 +1,63 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
+const browsersync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const replace = require('gulp-replace');
+const rename = require('gulp-rename');
+const del = require('del');
 
 const files = {
   scssPath: 'src/scss/**/*.scss',
+  htmlPath: 'src/*.html',
+  cssPath: 'src/css',
+  dist: 'dist/',
 };
 
-function scssTask() {
-  return src(files.scssPath)
+const browserSync = (done) => {
+  browsersync.init({
+    server: {
+      baseDir: './src',
+    },
+    port: 3000,
+  });
+  done();
+};
+
+const browserSyncReload = (done) => {
+  browsersync.reload();
+  done();
+};
+
+const scssTask = () =>
+  src(files.scssPath)
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(concat('styles.css'))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist'));
-}
+    .pipe(dest(files.cssPath));
 
-function watchTask() {
-  watch([files.scssPath], { interval: 1000, usePolling: true }, series(parallel(scssTask)));
-}
+const cssTask = () =>
+  src(`${files.cssPath}/**.css`)
+    .pipe(postcss([cssnano()]))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(files.dist));
 
-const watchTask1 = series(parallel(scssTask), watchTask);
-const buildTask = series(scssTask);
+const htmlTask = () => src(files.htmlPath).pipe(dest(files.dist));
 
-exports.watch = watchTask1;
+const watchTask = () =>
+  watch(
+    [files.scssPath, files.htmlPath],
+    { interval: 1000, usePolling: true },
+    series(scssTask, browserSyncReload)
+  );
+
+const cleanDistTask = () => del(files.dist);
+
+const buildTask = series(cleanDistTask, scssTask, parallel(cssTask, htmlTask));
+const watchSync = parallel(watchTask, browserSync);
+
+exports.watch = watchSync;
 exports.build = buildTask;
+exports.clean = cleanDistTask;
