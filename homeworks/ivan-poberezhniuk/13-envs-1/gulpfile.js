@@ -5,7 +5,6 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
-const rename = require('gulp-rename');
 const del = require('del');
 
 const files = {
@@ -41,8 +40,7 @@ const scssTask = () =>
 const cssTask = () =>
   src(`${files.cssPath}/**.css`)
     .pipe(postcss([cssnano()]))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(files.dist));
+    .pipe(dest(`${files.dist}/css`));
 
 const htmlTask = () => src(files.htmlPath).pipe(dest(files.dist));
 
