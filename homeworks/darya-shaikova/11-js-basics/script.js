@@ -36,19 +36,25 @@ function clearStyles() {
   });
 }
 
+
 function selectCell(event) {
-  if (!event.shiftKey) {
+  if (event.target.classList.contains('_selected')) {
     clearStyles();
+  } else {
+    if (!event.shiftKey) {
+      clearStyles();
+    }
+
+    const x = getX(event.target.offsetLeft);
+    const y = getY(event.target.offsetTop);
+
+    highlightLines(x, y);
+
+    event.target.innerText = `x:${x}\ny:${y}`;
+    event.target.classList.add('_selected');
   }
-  const x = getX(event.target.offsetLeft);
-  const y = getY(event.target.offsetTop);
-
-  highlightLines(x, y);
-
-  event.target.innerText = `x:${x}\ny:${y}`;
-  event.target.classList.add('_selected');
 }
 
-gridCells.forEach((element) => {
-  element.addEventListener('click', selectCell);
-});
+grid.addEventListener('click', selectCell)
+
+
