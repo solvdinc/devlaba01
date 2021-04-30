@@ -3,10 +3,10 @@
     flex-direction: column;
     padding: 0;
     grid-template-areas:
-      "header header header"
-      "aside aside aside"
-      "gallery gallery gallery"
-      "main main main";
+      'header header header'
+      'aside aside aside'
+      'gallery gallery gallery'
+      'main main main';
   }
 
   .header__name {
