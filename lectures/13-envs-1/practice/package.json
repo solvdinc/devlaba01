@@ -1,0 +1,14 @@
+{
+  "name": "@asdsfad/practice",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node npm.js",
+    "build": "parcel index.html"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "moment": "1.0.0",
+    "parcel": "^2.0.0-beta.2"
+  }
+}

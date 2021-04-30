@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    height: 100%;
+    font-size: 25px;
+    background-color: #cad7f9
+}
+
+.header__title {
+    text-align: center;
+    font-size: 3rem;
+    text-decoration: overline;
+    margin-bottom: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fetch, .xml {
+    margin: 0;
+    text-align: center;
+    width: 20%;
+}
+
+.fetch__title, .xml__title {
+    font-size: 2.2rem;
+    padding: 10px;
+}
+
+.user {
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    flex-direction: row;
+    border-top: 3px dotted black;
+    align-items: center;
+}
+
+.user__image {
+    height: 50%;
+    width: 50%;
+}
