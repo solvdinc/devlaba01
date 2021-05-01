@@ -4,7 +4,9 @@
   "description": "cv with using webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --config webpack.development.js",
+    "build": "webpack --config webpack.production.js",
+    "build:dev": "webpack --config webpack.development.js"
   },
   "keywords": [
     "webpack",
@@ -16,11 +18,18 @@
   ],
   "author": "emarf (Roman Ivashkevich)",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "css-loader": "^5.2.4",
+  "dependencies": {
+    "webpack-merge": "^5.7.3",
     "html-webpack-plugin": "^5.3.1",
-    "mini-css-extract-plugin": "^1.5.1",
+    "copy-webpack-plugin": "^8.1.1",
+    "mini-css-extract-plugin": "^1.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
