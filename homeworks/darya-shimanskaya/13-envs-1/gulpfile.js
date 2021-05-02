@@ -1,17 +1,34 @@
-const { src, dest, watch } = require('gulp');
+const {
+  src, dest, watch, task, series,
+} = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const clean = require('gulp-clean');
+const browserSync = require('browser-sync');
 
-exports.clean = () => src(['./styles'], { allowEmpty: true })
-  .pipe(clean());
+task('clean', () => src(['./dist'], { allowEmpty: true })
+  .pipe(clean()));
 
-exports.build = () => src(['./styles.scss'])
-  .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-  .pipe(dest('./styles'))
-  .pipe(rename('styles.css'));
+task('html', () => src(['./*.html'])
+  .pipe(dest('./dist'))
+  .pipe(browserSync.stream()));
 
-exports.start = () => watch(['./styles.scss'], (cb) => {
-  console.log('File ./styles.scs was changed');
-  cb();
+task('serve', () => {
+  browserSync.init({
+    server: {
+      baseDir: ['./dist'],
+    },
+  });
+
+  watch(['./dist/index.html', './dist/styles.css']).on('change', browserSync.reload);
 });
+
+task('sass', () => src('./*.scss')
+  .pipe(sass())
+  .pipe(dest('./dist'))
+  .pipe(rename('styles.css'))
+  .pipe(browserSync.stream()));
+
+task('build', series('clean', 'html', 'sass'));
+
+task('start', series('build', 'serve'));

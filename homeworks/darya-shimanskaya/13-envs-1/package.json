@@ -7,7 +7,7 @@
     "CV",
     "preprocessors"
   ],
-  "main": "gulpfile.js",
+  "main": "index.html",
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
@@ -25,10 +25,11 @@
   },
   "homepage": "https://github.com/solvdinc/devlaba01#readme",
   "dependencies": {
-    "gulp": "^4.0.2",
     "sass": "^1.32.11"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0"
