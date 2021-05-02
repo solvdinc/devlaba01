@@ -54,23 +54,23 @@
     }
 
     &__navbar {
-      display: block;
+      position: unset;
+      display: flex;
+      width: unset;
+      height: unset;
+      transform: unset;
+      background: unset;
+      flex-direction: row;
+      border-radius: 0;
     }
-  }
 
-  .navbar {
-    &__link {
-      color: #000;
-      text-decoration: none;
-      margin-left: 10px;
-      padding: 8px 10px;
-      transition: 0.3s ease-in-out;
-      border-radius: 12px;
-
-      &:hover,
-      &._active {
-        background: crimson;
-        color: rgb(255, 255, 255);
+    .navbar {
+      &__link {
+        font-size: inherit;
+        color: #000;
+        text-decoration: none;
+        margin: 0 0 0 10px;
+        padding: 8px 10px;
       }
     }
   }

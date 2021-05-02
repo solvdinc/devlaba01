@@ -94,10 +94,6 @@ body {
   cursor: pointer;
   pointer-events: all;
 }
-
-[data-dark="false"] {
-  color: #fff;
-}
 /* /Common */
 
 .wrapper {
@@ -189,59 +185,68 @@ body {
         transition: top 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
-
-    // &:hover {
-    //   .ncv-header-burger__inner {
-    //     transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-    //     transform: rotate(225deg);
-    //   }
-    //   .ncv-header-burger__inner::before {
-    //     transition: top 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    //     opacity: 0;
-    //     top: 0;
-    //   }
-    //   .ncv-header-burger__inner::after {
-    //     transition: top 0.4s ease-in-out, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-    //     top: 0;
-    //     transform: rotate(90deg);
-    //   }
-    // }
   }
-
-  // ._active-navbar {
-  //   transform: translate(0, 0) rotate(0);
-  // }
 
   &__navbar {
     position: fixed;
+    width: 95%;
     height: 100vh;
-    transform: translate(0, -100%) rotate(90deg);
+    transform: translate(300%, 0);
     transition: transform 0.3s ease-in-out;
     background: rgba($color: #000000, $alpha: 0.8);
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 100% 0% 0% 100% / 0% 100% 0% 100%;
+    border-radius: 20% 0 0 60%;
+  }
+
+  %navbar-link {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $main-color--light;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    margin: 2px 0;
   }
 
   .navbar {
     &__link {
+      font-size: 3rem;
+      position: relative;
       color: #000;
       text-decoration: none;
       margin: 10px 0;
-      padding: 8px 10px;
-      transition: 0.3s ease-in-out;
-      border-radius: 12px;
+      padding: 12px 80px;
 
-      &:hover,
+      &::after,
+      &::before {
+        @extend %navbar-link;
+      }
+
+      &::after {
+        bottom: 0;
+        transform-origin: right;
+      }
+
+      &::before {
+        top: 0;
+        transform-origin: left;
+      }
+
+      &:hover::after,
+      &:hover::before {
+        transform: scaleX(1);
+      }
+
       &._active {
-        background: crimson;
-        color: rgb(255, 255, 255);
+        font-weight: bold;
       }
     }
   }
@@ -250,6 +255,7 @@ body {
 ._active-header {
   .ncv-header {
     &__info {
+      transition: color 0.3s ease-in-out;
       color: #fff;
     }
 
