@@ -1,0 +1,26 @@
+{
+  "name": "13-envs-1",
+  "version": "1.0.0",
+  "description": "gulp task for the CV",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-watch": "^5.0.1"
+  },
+  "keywords": [
+    "CSS Preprocessors",
+    "gulp"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitalina Poremchuk",
+  "license": "ISC"
+}
