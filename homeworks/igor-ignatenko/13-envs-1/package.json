@@ -1,0 +1,26 @@
+{
+  "name": "ii-13-envs-1",
+  "version": "1.0.0",
+  "description": "Task #13",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Task #13"
+  ],
+  "author": "Igor Ignatenko",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-clean": "^0.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  }
+}
