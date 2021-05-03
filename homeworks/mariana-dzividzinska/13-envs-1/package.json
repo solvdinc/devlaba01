@@ -1,0 +1,36 @@
+{
+  "name": "my-updated-cv",
+  "version": "1.0.0",
+  "description": "Updated cv for my homework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "build": "gulp build",
+    "start": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qaprosoft/devlaba01.git"
+  },
+  "keywords": [
+    "devlaba01",
+    "cv",
+    "gulp"
+  ],
+  "author": "Mariana Dzividzinska <marianadzividzinska04@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qaprosoft/devlaba01/issues"
+  },
+  "homepage": "https://github.com/qaprosoft/devlaba01#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-image": "^6.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "node-sass": "^5.0.0"
+  }
+}
