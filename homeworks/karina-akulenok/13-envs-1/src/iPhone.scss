@@ -1,0 +1,27 @@
+@import "./mobile.scss";
+@import "./tablet.scss";
+@import "./laptop.scss";
+
+@media (max-width: 460px) {
+  .cotainer {
+    grid-template-rows: 12rem 70rem 130rem;
+  }
+
+  .heder__title {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-left: 20px;
+  }
+
+  .avtar-container {
+    width: 100px;
+    height: 100px;
+    background: url(./img/avatar.jpg) no-repeat -51px -51px;
+    background-size: auto 250px;
+  }
+
+  .skll-lists__item {
+    flex-direction: column;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "resume for devlaba using scss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qaprosoft/devlaba01.git"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "homework",
+    "envs"
+  ],
+  "author": "Karina Akulenok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qaprosoft/devlaba01/issues"
+  },
+  "homepage": "https://github.com/qaprosoft/devlaba01#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^6.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "gulp-sass": "^4.1.0"
+  }
+}

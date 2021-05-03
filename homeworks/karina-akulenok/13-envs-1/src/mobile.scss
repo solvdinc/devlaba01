@@ -1,0 +1,108 @@
+@import "./tablet.scss";
+@import "./laptop.scss";
+
+@media (max-width: 600px) {
+  .header {
+    &__title {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+      margin-left: 20px;
+    }
+
+    &__sub-title {
+      margin-left: 20px;
+      font-size: 1rem;
+    }
+
+    &__menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      background-color: #2d2d2d;
+    }
+
+    &__burger-menu {
+      display: inline-block;
+    }
+
+    &__menu-line1, &__menu-line2, &__menu-line3 {
+      width: 35px;
+      height: 3px;
+      background-color: rgb(247, 243, 233);
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    &__burger-menu:hover &__menu-line1 {
+      transform: rotate(45deg) translateY(12px);
+    }
+
+    &__burger-menu:hover &__menu-line2 {
+      opacity: 0;
+    }
+
+    &__burger-menu:hover &__menu-line3 {
+      transform: rotate(-45deg) translateY(-13px);
+    }
+  }
+
+  .avatar-container {
+    width: 120px;
+    height: 120px;
+    background: url(./img/avatar.jpg) no-repeat -51px -51px;
+    background-size: auto 270px;
+  }
+
+  .left-side__container {
+    margin-left: 20px;
+  }
+
+  .title-right {
+    margin-left: 20px;
+  }
+
+  .skill-lists {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &__item {
+      font-size: 0.8rem;
+    }
+  }
+
+  .description {
+    margin-left: 20px;
+  }
+
+  .scroll-button {
+    width: 70px;
+    height: 70px;
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    animation: up 2s infinite;
+
+    &__img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @keyframes up {
+    0%,  
+    100% {
+      transform: translateY(0);
+    } 
+    50% {
+      transform: translateY(10px);
+    }
+  }
+}
