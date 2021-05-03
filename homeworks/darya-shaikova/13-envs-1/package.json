@@ -1,0 +1,28 @@
+{
+  "name": "13-envs-1",
+  "version": "1.0.0",
+  "description": "My CV created with HTML, CSS (SCSS)",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qaprosoft/devlaba01"
+  },
+  "keywords": [
+    "Darya",
+    "Shaikova",
+    "CV",
+    "preprocessors"
+  ],
+  "author": "Darya Shaikova",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
