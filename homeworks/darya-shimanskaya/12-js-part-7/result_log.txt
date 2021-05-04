@@ -1,0 +1,11 @@
+quickSort in average took(ms): 0.334
+
+Assert simpleSort is OK
+simpleSort in average took(ms): 0.312
+
+Assert bubbleSort is OK
+bubbleSort in average took(ms): 6.737
+
+binarySearch in average took(ms): 0.020
+
+straightSearch in average took(ms): 0.028
