@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 40px);
+  grid-template-rows: repeat(30, 40px);
+}
+
+.grid__cell {
+  background-color: gainsboro;
+  border: 1px solid darkgrey;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__cell._line-active._selected {
+  background:blue;
+}
+
+.grid__cell._line-active {
+  background: lightblue;
+} 
