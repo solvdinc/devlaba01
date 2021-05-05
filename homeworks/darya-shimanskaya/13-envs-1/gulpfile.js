@@ -20,7 +20,7 @@ task('serve', () => {
     },
   });
 
-  watch(['./dist/index.html', './dist/styles.css']).on('change', browserSync.reload);
+  watch(['./*.html', './*.scss'], series('html', 'sass')).on('change', browserSync.reload);
 });
 
 task('sass', () => src('./*.scss')
