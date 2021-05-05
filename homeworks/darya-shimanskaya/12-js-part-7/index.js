@@ -2,12 +2,11 @@ const assert = require('./assert');
 const DATA = require('./MOCK_DATA');
 
 function getRandomSku(data, length) {
-  const allSku = [];
-  data.map((item) => allSku.push(item.sku));
+  const allSku = data.map(({ sku }) => sku);
   const skues = [];
   while (skues.length !== length) {
     const index = Math.floor(Math.random() * allSku.length);
-    if (skues.indexOf(allSku[index] === -1)) {
+    if (skues.indexOf(allSku[index]) === -1) {
       skues.push(allSku[index]);
     }
   }
