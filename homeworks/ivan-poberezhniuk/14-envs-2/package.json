@@ -1,30 +1,40 @@
 {
-  "name": "13-envs-1-gulp",
+  "name": "webpack-project",
   "version": "1.0.0",
-  "description": "Gulp to build project",
+  "description": "trying to bootstrap project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp watch",
-    "build": "gulp build"
+    "build": "webpack --mode development",
+    "start": "webpack serve --open"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qaprosoft/devlaba01/tree/ip-14-envs-2"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "I.Poberezhniuk",
   "license": "ISC",
-  "dependencies": {
-    "autoprefixer": "^9.*.*",
-    "cssnano": "^4.1.10",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
-  },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "vinyl-paths": "^3.0.1"
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-loader": "^5.2.4",
+    "html-webpack-plugin": "^5.3.1",
+    "prettier": "2.2.1",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "source-map-loader": "^2.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "ejs-webpack-loader": "^2.2.2"
   }
 }
