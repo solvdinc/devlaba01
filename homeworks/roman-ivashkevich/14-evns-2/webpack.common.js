@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 /** @type {import('webpack').Configuration} */
@@ -19,11 +18,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
+      chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       template: 'src/about.pug',
       filename: 'about.html',
       inject: true,
+      chunks: ['about'],
     }),
     new CopyPlugin({
       patterns: [{ from: './src/assets', to: 'assets' }],
@@ -33,16 +34,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/i,
         use: 'babel-loader',
       },
       {
-        test: /\.s[ca]ss$/,
+        test: /\.s[ca]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.pug$/,
-        use: ['html-loader', 'pug-html-loader'],
+        test: /\.pug$/i,
+        use: ['pug-loader'],
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+          },
+        },
       },
     ],
   },

@@ -7,6 +7,7 @@ const backdrop = document.querySelector('.backdrop');
 const header = document.querySelector('.ncv-header');
 const navBarLinks = document.querySelectorAll('.navbar__link');
 
+// Button to top
 const showBtn = () => {
   if (window.innerWidth < 600 && window.pageYOffset > 200) {
     scrollToTopBtn.style.display = 'block';
@@ -15,6 +16,15 @@ const showBtn = () => {
   }
 };
 
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo(window.pageXOffset, 0);
+});
+
+document.addEventListener('scroll', () => {
+  requestAnimationFrame(showBtn);
+});
+
+// Burger menu
 const removeActiveClass = () => {
   document.body.classList.remove('_overflow');
   backdrop.classList.remove('_active-backdrop');
@@ -31,14 +41,6 @@ const makeActiveLink = (event) => {
     target.classList.add('_active');
   }
 };
-
-scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo(window.pageXOffset, 0);
-});
-
-document.addEventListener('scroll', () => {
-  requestAnimationFrame(showBtn);
-});
 
 burgerButton.addEventListener('click', () => {
   document.body.classList.toggle('_overflow');

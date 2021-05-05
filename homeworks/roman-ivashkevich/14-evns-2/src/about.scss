@@ -27,10 +27,32 @@ body {
   overflow-x: hidden;
 }
 
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 ._overflow {
   overflow: hidden;
 }
 
+.backdrop {
+  position: fixed;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 10;
+  transition: opacity 0.4s ease-in;
+  pointer-events: none;
+}
+
+._active-backdrop {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+}
 /* /Common */
 
 .wrapper {
@@ -184,6 +206,41 @@ body {
       &._active {
         font-weight: bold;
       }
+    }
+  }
+}
+
+._active-header {
+  .about-header {
+    &__info {
+      transition: color 0.3s ease-in-out;
+      color: #fff;
+    }
+
+    &-burger {
+      .ncv-header-burger__inner {
+        transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: rotate(225deg);
+      }
+      .ncv-header-burger__inner::before {
+        transition: top 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        opacity: 0;
+        top: 0;
+      }
+      .ncv-header-burger__inner::after {
+        transition: top 0.4s ease-in-out, transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+
+    &__navbar {
+      transform: translate(0, 0);
+    }
+  }
+  .navbar {
+    &__link {
+      color: #fff;
     }
   }
 }
