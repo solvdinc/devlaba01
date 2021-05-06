@@ -1,21 +1,21 @@
 // task 1 https://www.codewars.com/kata/55e7650c8d894146be000095
 function solution1() {
-  const validateMessage = (massage) => {
-    if (massage === null) {
+  const validateMessage = (message) => {
+    if (message === null) {
       throw ReferenceError('Message is null!');
     }
 
-    if (typeof massage !== 'string') {
+    if (typeof message !== 'string') {
       throw TypeError(
-        `Message should be of type string but was of type ${typeof massage}!`,
+        `Message should be of type string but was of type ${typeof message}!`,
       );
     }
 
-    if (massage.length === 0 || massage.length > 255) {
-      throw RangeError(`Message contains ${massage.length} characters!`);
+    if (message.length === 0 || message.length > 255) {
+      throw RangeError(`Message contains ${message.length} characters!`);
     }
 
-    if (massage.includes('<') && massage.includes('>')) {
+    if (/<.+>/g.test(message)) {
       return false;
     }
 
@@ -32,12 +32,12 @@ function solution2() {
   const sayJoke = async (apiUrl, jokeId) => {
     const response = await fetch(apiUrl);
     const objOfJokes = await response.json();
-
-    if (!objOfJokes.jokes) {
+    console.log(objOfJokes);
+    if (!Array.isArray(objOfJokes)) {
       throw new Error(`No jokes at url: ${apiUrl}`);
     }
 
-    const resObj = objOfJokes.jokes.find((el) => el.id === jokeId);
+    const resObj = objOfJokes.find((el) => el.id === jokeId);
 
     if (!resObj) {
       throw new Error(`No jokes found id: ${jokeId}`);
@@ -48,38 +48,45 @@ function solution2() {
         return resObj.setup;
       },
       sayPunchLine() {
-        return resObj.punchLine;
+        return resObj.punchline;
       },
     };
   };
 
-  sayJoke('http://great.jokes/christmas', 101);
+  (async () => {
+    const joke = sayJoke(
+      'https://official-joke-api.appspot.com/jokes/programming/ten',
+      384,
+    );
+    console.log('Setup: ', (await joke).saySetup());
+    console.log('Punchline: ', (await joke).sayPunchLine());
+  })();
 }
 
 solution2();
 
 // timer
 // setTimeout
-const timer = (endTimer) => {
-  let time = 0;
-  const go = () => {
-    if (time < endTimer) {
-      setTimeout(go, 1000);
-    }
+// const timer = (endTimer) => {
+//   let time = 0;
+//   const go = () => {
+//     if (time < endTimer) {
+//       setTimeout(go, 1000);
+//     }
 
-    if (time === endTimer) {
-      console.clear();
-      return;
-    }
+//     if (time === endTimer) {
+//       console.clear();
+//       return;
+//     }
 
-    time += 1;
-    console.log(`Elapsed time: ${time} sec`);
-  };
+//     time += 1;
+//     console.log(`Elapsed time: ${time} sec`);
+//   };
 
-  setTimeout(go, 1000);
-};
+//   setTimeout(go, 1000);
+// };
 
-timer(5);
+// timer(5);
 
 // setInterval
 // const timer = (endTimer) => {
@@ -107,7 +114,7 @@ function solution6() {
     return false;
   };
 
-  digitOrNot('123str');
+  console.log(digitOrNot('123str'));
 }
 solution6();
 
@@ -127,6 +134,6 @@ function solution7() {
     return 'unknown number';
   };
 
-  whoseNumber('+375336100626');
+  console.log(whoseNumber('+375336100626'));
 }
 solution7();
