@@ -1,5 +1,6 @@
 import './styles.scss';
 import './media.scss';
+import './about.scss';
 
 const scrollToTopBtn = document.querySelector('.btn-top');
 const burgerButton = document.querySelector('.ncv-header-burger');

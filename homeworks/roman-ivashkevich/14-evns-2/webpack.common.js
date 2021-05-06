@@ -7,12 +7,17 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
     main: './src/index.js',
-    about: './src/about.js',
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/'),
     clean: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: false,
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -21,10 +26,10 @@ module.exports = {
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
-      template: 'src/about.pug',
+      template: 'src/index.pug',
       filename: 'about.html',
       inject: true,
-      chunks: ['about'],
+      chunks: ['main'],
     }),
     new CopyPlugin({
       patterns: [{ from: './src/assets', to: 'assets' }],
