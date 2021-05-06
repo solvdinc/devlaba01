@@ -1,0 +1,5 @@
+startBinary: 0.231ms
+straightSearch: 1.169ms
+bubbleSort: 215.514ms
+quickSort: 11.089ms
+selectionSort: 63.677ms
