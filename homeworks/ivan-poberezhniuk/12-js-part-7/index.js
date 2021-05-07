@@ -29,7 +29,7 @@ const straightSearch = (array, value) => {
       return user.sku;
     }
   }
-  return false;
+  return undefined;
 };
 
 const binarySearch = (array, value) => {
@@ -50,7 +50,7 @@ const binarySearch = (array, value) => {
       endIndex = middleIndex - 1;
     }
   }
-  return false;
+  return undefined;
 };
 
 const quickSort = (array) => {
