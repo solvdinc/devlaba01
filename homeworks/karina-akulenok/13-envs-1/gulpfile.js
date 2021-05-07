@@ -17,21 +17,22 @@ const paths = {
   newHtml: './src/*.html',
   styles: './src/styles/*.scss',
   images: './src/img/**/*.{jpg,jpeg,png,gif,svg}',
+  dist: './dist/',
 };
 
-const clean = () => src(['./dist/'], { allowEmpty: true })
+const clean = () => src(paths.dist, { allowEmpty: true })
   .pipe(gulpClean());
 
 const buildHtml = () => src(paths.newHtml)
   .pipe(rename('new.html'))
-  .pipe(dest('./dist'));
+  .pipe(dest(paths.dist));
 
 const buildCss = (type = false) => src(paths.styles)
   .pipe(gulpSass({ outputStyle: type }))
   .pipe(dest('./dist/styles'));
 
 const getImages = () => src(paths.images)
-  .pipe(changed('./dist'))
+  .pipe(changed(paths.dist))
   .pipe(cache(imagemin({
     interlaced: true,
     progressive: true,
@@ -42,10 +43,10 @@ const getImages = () => src(paths.images)
 
 const serve = () => {
   browserSync.init({
-    port: 1234,
+    port: process.env.PORT || 3000,
     reloadOnRestart: true,
     server: {
-      baseDir: ['./dist'],
+      baseDir: [paths.dist],
       directory: true,
     },
   });
