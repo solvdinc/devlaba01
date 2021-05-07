@@ -2,6 +2,7 @@ const {
   src,
   dest,
   series,
+  parallel,
   watch,
 } = require('gulp');
 const gulpClean = require('gulp-clean');
@@ -12,41 +13,45 @@ const changed = require('gulp-changed');
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const pngquant = require('imagemin-pngquant');
+const sourcemaps = require('gulp-sourcemaps');
+const path = require('path');
 
+const distPath = path.resolve(__dirname, './dist/');
 const paths = {
   newHtml: './src/*.html',
   styles: './src/styles/*.scss',
   images: './src/img/**/*.{jpg,jpeg,png,gif,svg}',
-  dist: './dist/',
 };
 
-const clean = () => src(paths.dist, { allowEmpty: true })
+const clean = () => src(distPath, { allowEmpty: true })
   .pipe(gulpClean());
 
 const buildHtml = () => src(paths.newHtml)
   .pipe(rename('new.html'))
-  .pipe(dest(paths.dist));
+  .pipe(dest(path.resolve(distPath)));
 
 const buildCss = (type = false) => src(paths.styles)
+  .pipe(sourcemaps.init())
   .pipe(gulpSass({ outputStyle: type }))
-  .pipe(dest('./dist/styles'));
+  .pipe(sourcemaps.write())
+  .pipe(dest(path.resolve(distPath, 'styles')));
 
 const getImages = () => src(paths.images)
-  .pipe(changed(paths.dist))
+  .pipe(changed(distPath))
   .pipe(cache(imagemin({
     interlaced: true,
     progressive: true,
     svgoPlugins: [{ removeViewBox: false }],
     une: [pngquant()],
   })))
-  .pipe(dest('./dist/img'));
+  .pipe(dest(path.resolve(distPath, 'img')));
 
 const serve = () => {
   browserSync.init({
     port: process.env.PORT || 3000,
     reloadOnRestart: true,
     server: {
-      baseDir: [paths.dist],
+      baseDir: [distPath],
       directory: true,
     },
   });
@@ -56,13 +61,13 @@ const serve = () => {
   watch(paths.images, series(getImages)).on('change', browserSync.reload);
 };
 
-exports.build = series(
+exports.build = parallel(
   buildHtml,
   buildCss.bind(null, 'compressed'),
   getImages,
 );
 
-exports.start = series(
+exports.start = parallel(
   buildHtml,
   buildCss,
   getImages,
