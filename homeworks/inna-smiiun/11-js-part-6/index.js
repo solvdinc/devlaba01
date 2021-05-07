@@ -1,14 +1,14 @@
-const columns = 20;
-const rows = 30;
-const blocksCount = rows * columns;
-
 const content = document.querySelector('.content');
 
-for (let i = 0; i < blocksCount; i += 1) {
-    const block = document.createElement('div');
-    block.classList.add('block');
-    content.appendChild(block);
-}
+(function initialization() {
+    const columns = 20;
+    const rows = 30;
+    for (let i = 0; i < rows * columns; i += 1) {
+        const block = document.createElement('div');
+        block.classList.add('block');
+        content.appendChild(block);
+    }
+}());
 
 let blocks = document.querySelectorAll('.block');
 
@@ -18,25 +18,24 @@ const getY = (offsetTop) => Math.floor((offsetTop - content.offsetTop) / 40) + 1
 function highlightLines(x, y) {
     blocks.forEach((item) => {
         if (getX(item.offsetLeft) === x || getY(item.offsetTop) === y) {
-            item.classList.add('block_lines');
+            fieldCreation(item);
         }
     });
+}
+
+function fieldCreation(block) {
+    block.classList.add('block_lines');
 }
 
 function clearStyles() {
     blocks.forEach((item) => {
-        if (item.classList.contains('block_selected')) {
-            item.classList.remove('block_selected');
-            item.innerText = '';
-        }
-
-        if (item.classList.contains('block_lines')) {
-            item.classList.remove('block_lines');
-        }
+        item.classList.remove('block_selected');
+        item.innerText = '';
+        item.classList.remove('block_lines');
     });
 }
 
-function selectedBLock(event) {
+content.onclick = function (event) {
     if (!event.shiftKey) {
         clearStyles();
     }
@@ -47,8 +46,4 @@ function selectedBLock(event) {
 
     event.target.innerText = `X:${x}\nY:${y}`;
     event.target.classList.add('block_selected');
-}
-
-blocks.forEach((element) => {
-    element.addEventListener('click', selectedBLock);
-});
+};
