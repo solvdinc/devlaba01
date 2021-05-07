@@ -63,7 +63,7 @@ body {
   color: #fff;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 20px;
   z-index: 10;
   border: none;
   outline: none;
@@ -81,8 +81,10 @@ body {
 .backdrop {
   position: fixed;
   opacity: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(41, 41, 41, 0.6);
   z-index: 10;
   transition: opacity 0.4s ease-in;
@@ -93,6 +95,74 @@ body {
   opacity: 1;
   cursor: pointer;
   pointer-events: all;
+}
+
+.modal {
+  display: none;
+  .modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 85%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
+    &__title {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    &__image {
+      max-width: 500px;
+      width: 100%;
+      object-fit: cover;
+      margin: 10px 0;
+    }
+    &__description {
+    }
+    &__close-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 5px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(1.2);
+      }
+    }
+    &__link {
+      text-decoration: none;
+      color: #000;
+      font-size: 2rem;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+._active-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 /* /Common */
 

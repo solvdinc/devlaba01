@@ -7,6 +7,9 @@ const burgerButton = document.querySelector('.ncv-header-burger');
 const backdrop = document.querySelector('.backdrop');
 const header = document.querySelector('.ncv-header');
 const navBarLinks = document.querySelectorAll('.navbar__link');
+const credentialLink = document.querySelector('.credential-link');
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('.modal-container__close-btn');
 
 // Button to top
 const showBtn = () => {
@@ -58,4 +61,17 @@ navBarLinks.forEach((link) => {
     removeActiveClass();
     makeActiveLink(event);
   });
+});
+
+credentialLink.addEventListener('click', () => {
+  modal.classList.add('_active-modal');
+  document.body.classList.add('_overflow');
+  backdrop.classList.add('_active-backdrop');
+  backdrop.style.zIndex = 50;
+});
+
+modalCloseBtn.addEventListener('click', () => {
+  modal.classList.remove('_active-modal');
+  document.body.classList.remove('_overflow');
+  backdrop.classList.remove('_active-backdrop');
 });
