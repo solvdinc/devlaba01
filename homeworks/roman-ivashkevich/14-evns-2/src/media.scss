@@ -13,6 +13,17 @@
       display: block;
     }
   }
+
+  .modal {
+    .modal-container {
+      &__title {
+        font-size: 2.4rem;
+      }
+      &__link {
+        font-size: 1.7rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 600px) {
@@ -96,6 +107,17 @@
       justify-content: space-around;
       flex-wrap: wrap;
       column-gap: 75px;
+    }
+  }
+
+  .modal {
+    .modal-container {
+      &__title {
+        font-size: 3rem;
+      }
+      &__link {
+        font-size: 2rem;
+      }
     }
   }
 }

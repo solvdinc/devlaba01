@@ -7,7 +7,7 @@ const burgerButton = document.querySelector('.ncv-header-burger');
 const backdrop = document.querySelector('.backdrop');
 const header = document.querySelector('.ncv-header');
 const navBarLinks = document.querySelectorAll('.navbar__link');
-const credentialLink = document.querySelector('.credential-link');
+const credentialLink = document.querySelector('.education__content-credential');
 const modal = document.querySelector('.modal');
 const modalCloseBtn = document.querySelector('.modal-container__close-btn');
 
@@ -32,14 +32,15 @@ document.addEventListener('scroll', () => {
 const removeActiveClass = () => {
   document.body.classList.remove('_overflow');
   backdrop.classList.remove('_active-backdrop');
+  backdrop.style.zIndex = 10;
   header.classList.remove('_active-header');
+  modal.classList.remove('_active-modal');
 };
 
 const makeActiveLink = (event) => {
   const { target } = event;
   const activeLink = document.querySelectorAll('._active');
-  console.log(activeLink[0]);
-  console.log(target === activeLink[0]);
+
   if (target !== activeLink[0]) {
     activeLink[0].classList.remove('_active');
     target.classList.add('_active');
@@ -71,7 +72,5 @@ credentialLink.addEventListener('click', () => {
 });
 
 modalCloseBtn.addEventListener('click', () => {
-  modal.classList.remove('_active-modal');
-  document.body.classList.remove('_overflow');
-  backdrop.classList.remove('_active-backdrop');
+  removeActiveClass();
 });

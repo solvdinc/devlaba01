@@ -98,20 +98,25 @@ body {
 }
 
 .modal {
-  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.3s ease-in-out;
+  transform: translate(-50%, -50%) scale(0);
+  max-width: 500px;
+  width: 85%;
+  z-index: 1000;
   .modal-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
-    width: 85%;
     background-color: #fff;
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
     &__title {
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 600;
     }
     &__image {
@@ -119,13 +124,15 @@ body {
       width: 100%;
       object-fit: cover;
       margin: 10px 0;
+      border: 3px solid #eee;
+      border-radius: 10px;
     }
     &__description {
     }
     &__close-btn {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 10px;
+      right: 10px;
       background: none;
       border: none;
       font-size: 2rem;
@@ -142,8 +149,9 @@ body {
     &__link {
       text-decoration: none;
       color: #000;
-      font-size: 2rem;
+      font-size: 1.4rem;
       transition: color 0.3s ease-in-out;
+      padding: 10px;
 
       &:hover {
         color: $main-color;
@@ -153,16 +161,7 @@ body {
 }
 
 ._active-modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  transform: translate(-50%, -50%) scale(1);
 }
 /* /Common */
 
@@ -464,30 +463,45 @@ body {
       font-weight: bold;
       margin-bottom: 7px;
     }
+
     &-credential {
-      font-style: italic;
-      margin: 7px 0;
+      display: inline-block;
+      text-decoration: none;
+      padding: 5px 6px;
+      font-weight: 600;
+      color: #000;
+      transition: 0.2s ease-in-out;
+      text-shadow: 0 5px rgba(196, 188, 162, 0.7);
+      animation: pulse 2s infinite;
+      border-radius: 25px;
+      cursor: pointer;
+      &:hover {
+        background: crimson;
+        color: #fff;
+        border-radius: 25px;
+      }
     }
+
     &-period {
     }
   }
 }
 
-.credential-link {
-  text-decoration: none;
-  padding: 5px 6px;
-  font-weight: 600;
-  color: #000;
-  transition: 0.2s ease-in-out;
-  text-shadow: 0 5px rgba(196, 188, 162, 0.7);
-  animation: pulse 2s infinite;
-  border-radius: 25px;
-  &:hover {
-    background: crimson;
-    color: #fff;
-    border-radius: 25px;
-  }
-}
+// .credential-link {
+//   text-decoration: none;
+//   padding: 5px 6px;
+//   font-weight: 600;
+//   color: #000;
+//   transition: 0.2s ease-in-out;
+//   text-shadow: 0 5px rgba(196, 188, 162, 0.7);
+//   animation: pulse 2s infinite;
+//   border-radius: 25px;
+//   &:hover {
+//     background: crimson;
+//     color: #fff;
+//     border-radius: 25px;
+//   }
+// }
 
 .portfolio {
   &__content {
