@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/solvdinc/devlaba01#readme",
   "dependencies": {
+    "gulp-sourcemaps": "^3.0.0",
     "sass": "^1.32.11"
   },
   "devDependencies": {

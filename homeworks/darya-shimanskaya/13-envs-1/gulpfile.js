@@ -1,6 +1,7 @@
 const {
-  src, dest, watch, task, series,
+  src, dest, watch, task, series, parallel,
 } = require('gulp');
+const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const clean = require('gulp-clean');
@@ -18,17 +19,20 @@ task('serve', () => {
     server: {
       baseDir: ['./dist'],
     },
+    port: '3000',
   });
 
   watch(['./*.html', './*.scss'], series('html', 'sass')).on('change', browserSync.reload);
 });
 
 task('sass', () => src('./*.scss')
+  .pipe(sourcemaps.init())
   .pipe(sass())
+  .pipe(sourcemaps.write())
   .pipe(dest('./dist'))
-  .pipe(rename('styles.css'))
+  .pipe(rename('[name].css'))
   .pipe(browserSync.stream()));
 
-task('build', series('clean', 'html', 'sass'));
+task('build', series('clean', parallel('html', 'sass')));
 
 task('start', series('build', 'serve'));
