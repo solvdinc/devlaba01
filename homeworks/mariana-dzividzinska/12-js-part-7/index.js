@@ -1,6 +1,6 @@
 const fs = require('fs');
 const {
-  performance
+  performance,
 } = require('perf_hooks');
 const inputData = require('./MOCK_DATA');
 
@@ -58,10 +58,10 @@ function partition(array, low, high, propName) {
 
 function quicksort(array, propName, low = 0, high = array.length - 1) {
   if (array.length > 1) {
-    let index = partition(array, low, high, propName)
+    const index = partition(array, low, high, propName);
 
     if (low < index - 1) {
-      quicksort(array, propName, low, index - 1)
+      quicksort(array, propName, low, index - 1);
     }
 
     if (index < high) {
@@ -72,8 +72,8 @@ function quicksort(array, propName, low = 0, high = array.length - 1) {
 }
 
 function bubbleSort(array, propName) {
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = 0; j < array.length - 1 - i; j++) {
+  for (let i = 0; i < array.length - 1; i += 1) {
+    for (let j = 0; j < array.length - 1 - i; j += 1) {
       if (array[j][propName] > array[j + 1][propName]) {
         swap(array, j, j + 1);
       }
@@ -82,44 +82,44 @@ function bubbleSort(array, propName) {
   return array;
 }
 
-//Tests
+// Tests
 
 function assert(name, ex) {
-  if (true !== !!ex) {
-    console.error(`${name}: Failed`)
-    return
+  if (!!ex !== true) {
+    console.error(`${name}: Failed`);
+    return;
   }
-  console.info(`${name}: OK`)
+  console.info(`${name}: OK`);
 }
 
 const isEqualArray = (array1, array2) => {
   if (array1.length !== array2.length) {
     return false;
   }
-  for (let i = 0; i < array1.length; i++) {
+  for (let i = 0; i < array1.length; i += 1) {
     if (JSON.stringify(array1[i]) !== JSON.stringify(array2[i])) {
-      return false
+      return false;
     }
   }
   return true;
-}
+};
 
 function searchTest(name, array, func, findValue, propName) {
-  const expectedVal = array.find(el => el[propName] === findValue);
+  const expectedVal = array.find((el) => el[propName] === findValue);
   const actualVal = func(array, findValue, propName);
 
   assert(name, JSON.stringify(expectedVal) === JSON.stringify(actualVal));
 }
 
 function sortTest(name, array, func, propName) {
-  const expectedRes = [...array].sort((el1, el2) => el1[propName] > el2[propName] ? 1 : -1);
+  const expectedRes = [...array].sort((el1, el2) => (el1[propName] > el2[propName] ? 1 : -1));
   const actualRes = func(array, propName);
 
   assert(name, isEqualArray(actualRes, expectedRes));
 }
 
 function measureTest(func) {
-  var time = performance.now();
+  const time = performance.now();
   func();
   return performance.now() - time;
 }
@@ -146,7 +146,7 @@ const needleList = [
 const skuPropName = 'sku';
 const sorted = quicksort(inputData, 'sku');
 
-needleList.forEach(el => {
+needleList.forEach((el) => {
   console.log(`Find sku ${el}`);
   searchTest('Straight search test', inputData, straightSearch, el, skuPropName);
   searchTest('Binary search test', sorted, binarySearch, el, skuPropName);
@@ -156,13 +156,13 @@ console.log();
 sortTest('Bubble sort test', inputData, bubbleSort, skuPropName);
 sortTest('Quick sort test', inputData, bubbleSort, skuPropName);
 
-const straightSearchExecutionTime = measureTest(function () {
+const straightSearchExecutionTime = measureTest(() => {
   needleList.forEach((el) => {
     straightSearch(inputData, el, skuPropName);
   });
 });
 
-const binarySearchExecutionTime = measureTest(function () {
+const binarySearchExecutionTime = measureTest(() => {
   needleList.forEach((el) => {
     binarySearch(inputData, el, skuPropName);
   });
@@ -170,32 +170,33 @@ const binarySearchExecutionTime = measureTest(function () {
 
 const bubbleSortExecutionTime = measureTest(() => {
   bubbleSort([...inputData], skuPropName);
-})
+});
 
 const quickSortExecutionTime = measureTest(() => {
   quicksort([...inputData], skuPropName);
-})
+});
 
-const result = [{
-    act: "Straight search",
+const result = [
+  {
+    act: 'Straight search',
     time: `${straightSearchExecutionTime} milliseconds`,
-    needleList: needleList,
+    needleList,
   },
   {
-    act: "Binary search",
+    act: 'Binary search',
     time: `${binarySearchExecutionTime} milliseconds`,
-    needleList: needleList,
+    needleList,
   },
   {
-    act: "Bubble sort",
+    act: 'Bubble sort',
     time: `${bubbleSortExecutionTime} milliseconds`,
   },
   {
-    act: "Quick sort",
+    act: 'Quick sort',
     time: `${quickSortExecutionTime} milliseconds`,
-  }
-]
-fs.writeFile('result.log', JSON.stringify(result, null, 1), function (err) {
+  },
+];
+fs.writeFile('result.log', JSON.stringify(result, null, 1), (err) => {
   if (err) throw err;
 });
 console.log(JSON.stringify(result, null, 1));
