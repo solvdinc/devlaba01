@@ -14,6 +14,7 @@ module.exports = {
     main: PATHS.src + '/js/main.js',
     home: PATHS.src + '/js/home.js',
     additional: PATHS.src + '/js/additional.js',
+    modalContent: PATHS.src + '/js/modal-content.js',
   },
   output: {
     path: PATHS.dist,
