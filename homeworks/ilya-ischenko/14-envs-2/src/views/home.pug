@@ -1,0 +1,137 @@
+extends layout
+block head
+  title Ilya Ischenko
+block content
+    main.box
+      .container
+        .box__inner
+          aside.aside
+            .aside__inner
+              .avatar-wrap
+                img(src='../img/avatar.jpg' alt='avatar')
+              section.aside-info
+                h3.section-title.section-title_line Personal
+                .aside-info__body
+                  table.info-table
+                    tbody
+                      tr
+                        td.info-table__key Name
+                        td.info-table__value Ilya Ischenko
+                      tr
+                        td.info-table__key D.O.P
+                        td.info-table__value 07/Sep/2000
+                      tr
+                        td.info-table__key Nationality
+                        td.info-table__value Ukrainian
+                      tr
+                        td.info-table__key Language
+                        td.info-table__value Ukraine, English, Russian
+              section.aside-info
+                h3.section-title.section-title_line Contact
+                .aside-info__body
+                  table.info-table
+                    tbody
+                      tr
+                        td.info-table__key Phone
+                        td.info-table__value
+                          a.info-table__link(href='tel:380675849328') 380 67 584 93 28
+                      tr
+                        td.info-table__key E-mail
+                        td.info-table__value
+                          a.info-table__link(href='mailto:ischenko2012@gmail.com') ischenko2012@gmail.com
+                      tr
+                        td.info-table__key City
+                        td.info-table__value Kyiv
+                      tr
+                        td.info-table__key Telegram
+                        td.info-table__value @Able0709
+              section.aside-info
+                h3.section-title.section-title_line Hard Skills
+                .aside-info__body
+                  ul.aside-info__list
+                    li Html/Css
+                    li JavaScript
+                    li Vue.js
+                    li Webpack
+                    li Node.js
+              section.aside-info.interests
+                h3.section-title.interests__title Interests
+                .interests__body
+                  .interests__item
+                    .interests__item-img-wrap
+                      img(src='../img/biking-solid.svg' alt='')
+                    p Cycling
+                  .interests__item
+                    .interests__item-img-wrap
+                      img(src='../img/desktop-solid.svg' alt='')
+                    p Prog.
+                  .interests__item
+                    .interests__item-img-wrap
+                      img(src='../img/walking-solid.svg' alt='')
+                    p Walking
+          div#header.header
+            .header__inner
+              h1.title Ilya Ischenko
+              h2.subtitle Frontend Developer
+          .main
+            .main__inner
+              section.main__section
+                h3.section-title.section-title_line-bold About Me
+                p.text
+                  | My name is Ilya, I am 20 years old studend of State University of Telecommunications in
+                  | Kyiv. I've been studying frontend development for a year, I like make layouts with interest design,
+                  | animations and logic.
+              section.main__section
+                h3.section-title.section-title_line-bold Work Experience
+                .timeline
+                  .timeline__item.timeline_done
+                    .timeline__left
+                      p.timeline__position Freelance
+                      p 2020
+                    .timeline__right
+                      p.timeline__job Position title
+                      p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque accusamus quibusdam praesentium at
+                        | commodi vel ducimus placeat consequatur inventore vero?
+                  .timeline__item.timeline_done
+                    .timeline__left
+                      p.timeline__position Freelance
+                      p 2020
+                    .timeline__right
+                      p.timeline__job Position title
+                      p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptates molestias laborum deserunt
+                        | sint veniam placeat excepturi optio ipsa nulla ut porro hic aspernatur distinctio ducimus, impedit
+                        | maiores? Debitis, architecto!
+                  .timeline__item
+                    .timeline__left
+                      p.timeline__position Freelance
+                      p 2020
+                    .timeline__right
+                      p.timeline__job Position title
+                      p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos architecto pariatur rerum
+                        | necessitatibus. Iure, possimus veritatis quam, sunt illum pariatur enim accusantium officiis
+                        | molestiae maxime, assumenda quos velit alias. Repudiandae!
+              section.main__section
+                h3.section-title.section-title_line-bold Education
+                .timeline
+                  .timeline__item.timeline_done
+                    .timeline__left
+                      p.timeline__position School
+                      p 2007
+                    .timeline__right
+                      p.timeline__job Position title
+                      p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque accusamus quibusdam praesentium at
+                        | commodi vel ducimus placeat consequatur inventore vero?
+                  .timeline__item
+                    .timeline__left
+                      p.timeline__position University
+                      p 2018
+                    .timeline__right
+                      p.timeline__job Position title
+                      p
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptates molestias laborum deserunt
+                        | sint veniam placeat excepturi optio ipsa nulla ut porro hic aspernatur distinctio ducimus, impedit
+                        | maiores? Debitis, architecto!
