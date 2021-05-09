@@ -7,6 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
     main: './src/index.js',
+    modal: './src/modalContent.js',
   },
   output: {
     filename: '[name].js',
