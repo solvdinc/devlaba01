@@ -1,3 +1,2 @@
 import './styles/index.scss';
-console.log('Hello webpack!');
-
+import './js/sidenav.js';

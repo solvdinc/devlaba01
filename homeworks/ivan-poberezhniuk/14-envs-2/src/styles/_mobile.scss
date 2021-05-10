@@ -11,7 +11,6 @@
 
   .header {
     width: 100%;
-    position: sticky;
     top: 0;
     padding: 1rem 1rem 3rem 1rem;
 
@@ -44,6 +43,12 @@
     }
   }
 
+  .sidenav {
+    &__open-menu-btn {
+      display: block;
+    }
+  }
+
   .side__toggle {
     display: block;
     width: 0px;
@@ -70,7 +75,7 @@
       width: 40px;
       height: 35px;
       opacity: 0;
-      z-index: 3333333333;
+      z-index: 333;
       transform: translate(-15%, -25%);
     }
 
