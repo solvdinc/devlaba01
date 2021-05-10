@@ -6,11 +6,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: {
-    main: './src/index.js',
-    modal: './src/modalContent.js',
+    main: './src/js/index.js',
+    about: './src/js/about.js',
+    modalContent: './src/js/modal.js',
   },
   output: {
-    filename: '[name].js',
+    filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist/'),
     clean: true,
   },
@@ -24,18 +25,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
+      hash: true,
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.pug',
       filename: 'about.html',
-      inject: true,
-      chunks: ['main'],
+      hash: true,
+      chunks: ['main', 'about'],
     }),
     new CopyPlugin({
       patterns: [{ from: './src/assets', to: 'assets' }],
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].css',
+    }),
   ],
   module: {
     rules: [
@@ -45,20 +49,16 @@ module.exports = {
       },
       {
         test: /\.s[ca]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.pug$/i,
         use: ['pug-loader'],
-      },
-      {
-        test: /\.(ico|jpg|jpeg|png|gif)$/i,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-          },
-        },
       },
     ],
   },

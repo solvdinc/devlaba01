@@ -1,6 +1,5 @@
-import './styles.scss';
-import './media.scss';
-import './about.scss';
+import '../styles/styles.scss';
+import '../styles/media.scss';
 
 const scrollToTopBtn = document.querySelector('.btn-top');
 const burgerButton = document.querySelector('.ncv-header-burger');
@@ -18,14 +17,6 @@ const showBtn = () => {
     scrollToTopBtn.style.display = 'none';
   }
 };
-
-scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo(window.pageXOffset, 0);
-});
-
-document.addEventListener('scroll', () => {
-  requestAnimationFrame(showBtn);
-});
 
 const makeActiveLink = (event) => {
   const { target } = event;
@@ -50,8 +41,25 @@ const modalToggler = () => {
   modal.classList.toggle('_active-modal');
 };
 
+function loadModalContent() {
+  import(/* webpackChunkName: "modal" */ './modal').then((data) => {
+    const loadedData = data.default;
+    insertModalContainer(loadedData());
+    setListener();
+  });
+}
+
+const setListener = () => {
+  const modalCloseBtn = document.querySelector('.modal-container__close-btn');
+  modalCloseBtn.addEventListener('click', handleModalCloseBtn);
+};
+
 const removeModalContainer = () => {
   modal.innerHTML = '';
+};
+
+const insertModalContainer = (data) => {
+  modal.append(data);
 };
 
 const removeModal = () => {
@@ -68,24 +76,13 @@ const handleModalCloseBtn = () => {
   removeModal();
 };
 
-const setListener = () => {
-  const modalCloseBtn = document.querySelector('.modal-container__close-btn');
-  modalCloseBtn.addEventListener('click', handleModalCloseBtn);
-};
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo(window.pageXOffset, 0);
+});
 
-function loadModalContent() {
-  import(/* webpackChunkName: "modalContent" */ './modalContent').then(
-    (data) => {
-      const loadedData = data.default;
-      insertModalContainer(loadedData());
-      setListener();
-    },
-  );
-}
-
-const insertModalContainer = (data) => {
-  modal.append(data);
-};
+document.addEventListener('scroll', () => {
+  requestAnimationFrame(showBtn);
+});
 
 burgerButton.addEventListener('click', () => {
   burgerToggler();
@@ -101,7 +98,9 @@ backdrop.addEventListener('click', () => {
 
 navBarLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
-    burgerToggler();
+    if (window.innerWidth < 600) {
+      burgerToggler();
+    }
     makeActiveLink(event);
   });
 });
