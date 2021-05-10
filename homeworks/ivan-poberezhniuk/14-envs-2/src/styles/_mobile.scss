@@ -68,6 +68,9 @@
     width: 100%;
     text-align: center;
     padding-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &__humburger-toggle {
       position: absolute;

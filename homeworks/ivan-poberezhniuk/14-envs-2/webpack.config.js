@@ -1,9 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const config = {
   mode: 'development',
+  devtool: false,
 
   module: {
     rules: [
@@ -45,4 +47,15 @@ module.exports = {
       proxy: 'http://localhost:8080/',
     }),
   ],
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === 'development') {
+    config.devtool = 'eval-source-map';
+  }
+
+  if (argv.mode === 'production') {
+    config.devtool = false;
+  }
+  return config;
 };
