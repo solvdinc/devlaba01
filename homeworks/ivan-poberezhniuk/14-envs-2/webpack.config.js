@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   mode: 'development',
   devtool: false,
-
   module: {
     rules: [
       {
@@ -39,7 +38,12 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: '!!ejs-webpack-loader!src/index.ejs',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: '!!ejs-webpack-loader!src/about.ejs',
     }),
     new BrowserSyncPlugin({
       host: 'localhost',

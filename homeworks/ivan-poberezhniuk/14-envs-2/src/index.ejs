@@ -11,12 +11,15 @@
   </head>
   <body>
     <div class="wrapper">
-      <% include shared/header %> 
-      <% include shared/aside %>
-      <% include shared/gallery %>
-      <% include containers/pages/profile %>
+      <%- require('!!ejs-webpack-loader!./shared/header.ejs')() %>
+      <%- require('!!ejs-webpack-loader!./shared/aside.ejs')() %>
+      <%- require('!!ejs-webpack-loader!./shared/gallery.ejs')() %>
+      <%- require('!!ejs-webpack-loader!./containers/pages/profile.ejs')() %>
     </div>
     <% include shared/sidenav/main %> 
     <% include shared/scrolltotop %> 
+    <%- require('!!ejs-webpack-loader!./shared/sidenav/main.ejs')() %>
+    <%- require('!!ejs-webpack-loader!./shared/scrolltotop.ejs')() %>
+
   </body>
 </html>
