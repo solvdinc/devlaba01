@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #a98b81;
+}
+
+.wrapper {
+  max-width: 1220px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: space-between;
+  text-align: center;
+  grid-gap: 40px;
+}
+
+.card {
+  border: 1px solid white;
+  padding: 20px 0;
+}
+
+.photo {
+  margin-bottom: 10px;
+}

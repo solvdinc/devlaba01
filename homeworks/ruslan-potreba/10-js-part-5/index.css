@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+
+.wrapper__title {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 15px;
+  grid-template-rows: auto;
+  grid-template-areas: '. . . .';
+  margin-top: 20px;
+}
+
+.user-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-card__avatar {
+  width: 90px;
+  border-radius: 50%;
+}
+
+.user-card__name {
+  margin-top: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}

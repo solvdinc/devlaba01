@@ -1,0 +1,60 @@
+/* MAIN STYLES ===== */
+
+body {
+  background: rgb(223, 161, 118);
+	margin: 0;
+  padding: 0;
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.field {
+  margin: 50px 0;
+}
+
+.field__inner {
+  border: 1px solid black;
+  width: 802px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field__item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.field__item._active-row {
+  background: rgba(96, 96, 173, 0.493);
+}
+
+.field__item._active-field {
+  background: rgb(39, 39, 243);
+}
