@@ -1,3 +1,21 @@
+.wrapper {
+    height: 100%;
+    display: grid;
+    grid-template:
+        "header header" 160px
+        "block-left block-right" auto
+        "footer footer" 30px
+        / 310px;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header {
+    grid-area: header;
+}
+
 .block-right {
     grid-area: block-right;
     display: flex;
@@ -29,10 +47,6 @@
     &:hover {
         color: #579280;
     }
-}
-
-.scroll-to-top {
-    display: none;
 }
 
 .portfolio__content {

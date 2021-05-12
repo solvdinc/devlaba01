@@ -1,4 +1,15 @@
 @media (max-width: 600px) {
+    .wrapper {
+        height: 100%;
+        display: grid;
+        grid-template:
+            "header" 130px
+            "block-left" 1fr
+            "block-right" 1fr
+            "footer" 30px
+            / auto;
+    }
+
     .block-left {
         text-align: center;
         font-size: 1.8rem;
