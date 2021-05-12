@@ -80,8 +80,6 @@ function selectionSort(data) {
 }
 
 // check
-let start;
-let end;
 
 function assert(n, ev) {
   if (!!ev !== true) {
@@ -92,44 +90,41 @@ function assert(n, ev) {
   console.info(`Assert ${n} OK`);
 }
 
+function testSort(sortFunc) {
+  const start = process.hrtime();
+  sortFunc(DATA);
+  const end = process.hrtime(start);
+  const result = Math.round(end[0] + end[1] / 10 ** 6);
+  return result;
+}
+
+const sortedData = easySort(needleList);
+
+function testSearch(searchFunc) {
+  let result;
+  for (let i = 0; i < needleList.length; i += 1) {
+    const start = process.hrtime();
+    searchFunc(sortedData, needleList[i]);
+    const end = process.hrtime(start);
+    result = end[0] + end[1] / 10 ** 6;
+  }
+  return result;
+}
+
 // sort
 
 assert('bubbleSort is', JSON.stringify(easySort(DATA)) === JSON.stringify(bubbleSort(DATA)));
 assert('selectionSort is', JSON.stringify(easySort(DATA)) === JSON.stringify(selectionSort(DATA)));
 
-start = process.hrtime();
-bubbleSort(needleList);
-end = process.hrtime(start);
-
-console.log(`bubbleSort have passed in ${(end[0] * 100000000 + end[1]) / 100000000} seconds.`);
-
-start = process.hrtime();
-selectionSort(needleList);
-end = process.hrtime(start);
-
-console.log(`selectionSort have passed in ${(end[0] * 100000000 + end[1]) / 100000000} seconds.`);
-
-start = process.hrtime();
-easySort(needleList);
-end = process.hrtime(start);
-
-console.log(`easySort have passed in ${(end[0] * 100000000 + end[1]) / 100000000} seconds.`);
+console.log(`bubbleSort have passed in ${testSort(bubbleSort)} ms.`);
+console.log(`selectionSort have passed in ${testSort(selectionSort)} ms.`);
+console.log(`easySort have passed in ${testSort(easySort)} ms.`);
 
 // search
-
-const sortedData = easySort(needleList);
 
 assert('straightSearch is', JSON.stringify(sortedData.indexOf(10)) === JSON.stringify(straightSearch(sortedData, 10)));
 assert('binarySearch is', JSON.stringify(sortedData.indexOf(9)) === JSON.stringify(binarySearch(sortedData, 9)));
 
-start = process.hrtime();
-straightSearch(sortedData, 10);
-end = process.hrtime(start);
+console.log(`straightSearch have passed in ${testSearch(straightSearch)} ms.`);
 
-console.log(`straightSearch have passed in ${(end[0] * 100000000 + end[1]) / 100000000} seconds.`);
-
-start = process.hrtime();
-binarySearch(sortedData, 9);
-end = process.hrtime(start);
-
-console.log(`binarySearch have passed in ${(end[0] * 100000000 + end[1]) / 100000000} seconds.`);
+console.log(`binarySearch have passed in ${testSearch(binarySearch)} ms.`);
