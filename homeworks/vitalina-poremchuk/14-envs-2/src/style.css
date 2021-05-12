@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000;
+}
+
+.menu__open {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.menu__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.side {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 101;
+  background: black;
+  width: 300px;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.side ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5rem;
+}
+
+.side ul li a {
+  display: block;
+  color: white;
+  padding-bottom: 10px;
+  margin-top: 1rem;
+  border-bottom: 2px solid #000;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+.side ul li a:hover {
+  border-bottom: 2px solid white;
+}
+
+.side ul li a:focus {
+  border-bottom: 2px solid white;
+}
+
+.show__menu {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100vh;
+}
+
+.show__overlay {
+  display: block;
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
