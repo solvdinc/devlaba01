@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(20, 40px);
+    grid-template-rows: repeat(30, 40px);
+}
+
+.grid__cell {
+    border: 1px solid #5089b8;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.grid__cell._row-active._selected {
+    background:#3b3bff;
+}
+
+.grid__cell._row-active {
+    background: #74abd8;
+}
