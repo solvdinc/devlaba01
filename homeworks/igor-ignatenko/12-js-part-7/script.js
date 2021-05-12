@@ -1,5 +1,6 @@
 const fs = require('fs');
 const data = require('./MOCK_DATA');
+const assert = require('./assert')
 const result = {};
 
 const needleList = [
@@ -83,7 +84,7 @@ function selectionSort(data) {
 function straightSearch(data, sku) {
     for (let i = 0; i < data.length; i++) {
         if (data[i].sku === sku) {
-            return true
+            return data[i].sku
         }
     }
     return null
@@ -97,11 +98,9 @@ function binarySearch(data, item) {
         const midNumberIndex = Math.floor((startIndex + maxIndex) / 2);
         const guess = data[midNumberIndex];
 
-
         if (guess.sku === item) {
             return guess;
         }
-
         if (guess.sku > item) {
             maxIndex = midNumberIndex - 1;
         } else {
@@ -112,10 +111,8 @@ function binarySearch(data, item) {
 }
 
 function checkSort(bodyFunc) {
-    const sortedData = [...data].sort((a, b) => (a.sku > b.sku ? 1 : -1));
     result[bodyFunc.name] = [];
-
-    if (JSON.stringify(sortedData) !== JSON.stringify(bodyFunc(data))) {
+    if (!assert(bodyFunc, data)) {
         return result[bodyFunc.name].push('Failed');
     }
 
@@ -126,16 +123,20 @@ function checkSort(bodyFunc) {
 }
 
 function checkSearch(bodyFunc) {
-    const sortedData = [...data].sort((a, b) => (a.sku > b.sku ? 1 : -1));
     result[bodyFunc.name] = [];
+    const sortedData = [...data].sort((a, b) => (a.sku > b.sku ? 1 : -1));
     let sum = 0;
 
     for (let i = 0; i < needleList.length; i++) {
-        let start = process.hrtime();
-        bodyFunc(sortedData, needleList[i]);
-        let finish = process.hrtime(start);
-        result[bodyFunc.name].push(finish[1]);
-        sum += finish[1];
+        if (!assert(bodyFunc, data, needleList[i])) {
+            result[bodyFunc.name].push('Failed');
+        } else {
+            let start = process.hrtime();
+            bodyFunc(sortedData, needleList[i]);
+            let finish = process.hrtime(start);
+            result[bodyFunc.name].push(finish[1]);
+            sum += finish[1];
+        }
     }
     result[bodyFunc.name].push({ 'avarage': ~~(sum / needleList.length) });
 }
