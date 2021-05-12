@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(href='https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap' rel='stylesheet')
+        title My CV
+    body
+        span.menu(style='font-size:30px;cursor:pointer') ☰ Menu 
+        .sidenav
+            a(href='http://localhost:3000/html/home.html') Home
+            a(href='http://localhost:3000/html/portfolio.html') Portfolio
+        #top.wrapper
+            header.header
+                .header__avatar-box
+                    .avatar-box__container
+                        img.header__image(src='../images/avatar.jpg' alt='avatar')
+                .header__title
+                    h1.title__name Ihor Ihnatenko
+                    hr(style='width: 200px; border: 1px solid black;')
+                    p.title__role Front-end Developer
+                .navigation
+                    .navigation__box
+                        input#checkbox.navigation__checkbox(type='checkbox')
+                        label.navigation__btn(for='checkbox')
+                            span
+                        nav.navigation__list
+                            a.navigation__item(href='http://localhost:3000/html/home.html') Home
+                            a.navigation__item(href='http://localhost:3000/html/portfolio.html') Contacts
+                            a.navigation__item(href='#') About
+            block aside
+            block content
+            footer.footer
+                p (c)Created by Ihor Ihnatenko 2021
+        .button-up
+            a(href='#top')  UP 
+
