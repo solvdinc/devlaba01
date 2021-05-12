@@ -23,13 +23,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'src/index.pug',
       filename: 'index.html',
       hash: true,
       chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.pug',
+      template: 'src/about.pug',
       filename: 'about.html',
       hash: true,
       chunks: ['main', 'about'],

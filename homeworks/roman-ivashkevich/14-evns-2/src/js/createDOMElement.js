@@ -42,8 +42,7 @@ export default function createDOMElement(
     dataAttributes.forEach(([attrName, attrValue]) => {
       if (attrValue === '') {
         element.setAttribute(attrName, '');
-      }
-      if (attrName.match(/id|src|href|target|alt/)) {
+      } else {
         element.setAttribute(attrName, attrValue);
       }
     });
