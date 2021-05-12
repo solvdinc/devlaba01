@@ -126,5 +126,4 @@ assert('straightSearch is', JSON.stringify(sortedData.indexOf(10)) === JSON.stri
 assert('binarySearch is', JSON.stringify(sortedData.indexOf(9)) === JSON.stringify(binarySearch(sortedData, 9)));
 
 console.log(`straightSearch have passed in ${testSearch(straightSearch)} ms.`);
-
 console.log(`binarySearch have passed in ${testSearch(binarySearch)} ms.`);
