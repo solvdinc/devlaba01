@@ -148,4 +148,4 @@ checkSort(selectionSort);
 checkSearch(straightSearch);
 checkSearch(binarySearch);
 
-fs.writeFileSync('result.js', JSON.stringify(result, null, 2));
+fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
