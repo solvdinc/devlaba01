@@ -1,14 +1,14 @@
 {
   "name": "14-envs-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Webpack CV Pug",
   "main": "src/home.js",
   "scripts": {
     "start": "webpack serve --config webpack.development.js",
     "build": "webpack --config webpack.production.js",
     "build:dev": "webpack --config webpack.development.js"
   },
-  "author": "",
+  "author": "Darya Shimanskaya",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.0",

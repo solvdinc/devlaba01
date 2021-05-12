@@ -1,0 +1,1 @@
+import './styles/template.scss';

@@ -1,51 +1,3 @@
-html, body {
-    box-sizing: border-box;
-    margin: 0;
-    height: 100%;
-    font-size: 10px;
-}
-
-* {
-    box-sizing: inherit;
-
-    &:after, &:before {
-        box-sizing: inherit;
-    }
-}
-
-.wrapper {
-    height: 100%;
-    display: grid;
-    grid-template:
-        "header header" 160px
-        "block-left block-right" auto
-        "footer footer" 30px
-        / 310px;
-}
-
-.footer {
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    font-size: 1.8rem;
-    padding: 20px;
-}
-
-.header {
-    grid-area: header;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 0 8px;
-    background: #000;
-    color: #cccccc;
-    letter-spacing: 5px;
-    font-size: 2rem;
-}
-
 .block-right {
     grid-area: block-right;
     display: flex;
@@ -65,13 +17,6 @@ html, body {
     color: #38485C;
 }
 
-.header__item-1 {
-    border: 3px solid whitesmoke;
-    padding: 10px;
-    margin-bottom: 0;
-    animation: update-border-color 2s infinite;
-}
-
 .skills, .contacts, .languages, .courses {
     margin-bottom: 20px;
 }
@@ -88,16 +33,6 @@ html, body {
 
 .scroll-to-top {
     display: none;
-}
-
-@keyframes update-border-color {
-    50% {
-        border-color: #66725c;
-    }
-
-    100% {
-        border-color: #c9e4dc;
-    }
 }
 
 .portfolio__content {

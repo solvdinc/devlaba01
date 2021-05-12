@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     home: './src/home.js',
     about: './src/about.js',
+    template: './src/template.js',
   },
   output: {
     filename: '[name].js',
@@ -16,14 +17,14 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/home.html',
+      template: './src/pages/home.pug',
       filename: 'home.html',
-      chunks: ['home'],
+      chunks: ['template', 'home'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/about.pug',
+      template: './src/pages/about.pug',
       filename: 'about.html',
-      chunks: ['about'],
+      chunks: ['template', 'about'],
     }),
     new CopyPlugin({
       patterns: [
