@@ -42,12 +42,7 @@ export default function createDOMElement(
     dataAttributes.forEach(([attrName, attrValue]) => {
       if (attrValue === '') {
         element.setAttribute(attrName, '');
-      }
-      if (
-        attrName.match(
-          /id|src|href|data-clock-night|placeholder|type|target|data-x|data-y|data-active/,
-        )
-      ) {
+      } else {
         element.setAttribute(attrName, attrValue);
       }
     });
