@@ -58,7 +58,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  transform: translateX(-100%);
+  transform: translate(0,-100%);
   z-index: 10;
   padding: 50px;
   background: #3c5760;
@@ -75,13 +75,13 @@ html, body {
 
 .sidenav_active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(0);
 }
 
 .sidenav__close-button {
   position: absolute;
   top: 20px;
-  right: 40px;
+  right: 25px;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -109,8 +109,7 @@ html, body {
 
 .header__menu {
   position: absolute;
-  left: 10px;
-  margin: 10px 0 auto 10px;
+  right: 20px;
   width: 25px;
   cursor: pointer;
 
