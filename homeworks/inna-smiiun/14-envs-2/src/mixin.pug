@@ -1,0 +1,39 @@
+mixin header(text)
+    header
+        div(class='container header')
+            img.header__photo(src='./assets/photo.jpg' alt='image')
+            .header__text
+                h1.header__title Inna Smiiun
+                p.header__desc Front-end Developer
+                h2.header= text
+                button(id="button__contacts" class="button__contacts") Contacts
+mixin footer()
+    footer
+        p Inna Smiiun - 2021
+
+
+mixin contacts()
+    nav.contacts
+        section(class="block contacts__container" id="contacts")
+            h2.block__header Contacts
+            ul.contacts__list
+                li.contacts__block
+                    img.contacts__icon(src="assets/icons/telephone.svg" alt="icon-phone")
+                    .contacts__text
+                        h4.contacts__title Phone:
+                        a.contacts__inf(href="tel:0686454003") +380 (68) 645 40 03
+                li.contacts__block
+                    img.contacts__icon(src="assets/icons/email.svg" alt="icon-email")
+                    .contacts__text
+                        h4.contacts__title Email:
+                        a.contacts__inf(href="mailto:innasmiyun@gmail.com") innasmiyun@gmail.com
+                li.contacts__block
+                    img.contacts__icon(src="assets/icons/home.svg" alt="icon-home")
+                    .contacts__text
+                        h4.contacts__title Address:
+                        a.contacts__inf(target="_blank" href="https://goo.gl/maps/uXQoTD97crF3zx446") Kovalskyi Lane, 5, Kyiv
+                li.contacts__block
+                    img.contacts__icon(src="assets/icons/github-logo.svg" alt="icon-github")
+                    .contacts__text
+                        h4.contacts__title GitHub:
+                        a.contacts__inf(target="_blank" href="https://github.com/innasmiiun") https://github.com/innasmiiun
