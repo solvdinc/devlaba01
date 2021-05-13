@@ -1,0 +1,41 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title CV by Mariana Dzividzinska
+
+body
+  .wrapper
+    block header
+      header.main-header
+        .main-header__hamburger-menu
+          input#menu__toggle.hamburger-menu__toggle(type='checkbox' name='menu__toggle')
+          label.hamburger-menu__btn(for='menu__toggle')
+            span.hamburger-menu__line
+            span.hamburger-menu__line
+            span.hamburger-menu__line
+          nav.main-header__main-navigation
+            ul.main-navigation__list
+              li.main-navigation-list__item
+                a.main-navigation-list__item-link(href='#education') Education
+              li.main-navigation-list__item
+                a.main-navigation-list__item-link(href='#skills') Skills
+              li.main-navigation-list__item
+                a.main-navigation-list__item-link(href='#experience') Experience
+              li.main-navigation-list__item
+                a.main-navigation-list__item-link(href='#hobby') Hobby
+              li.main-navigation-list__item
+                a.main-navigation-list__item-link(href='#contacts') Contacts
+        .main-header__intro
+          img.main-header-intro__photo(src='./assets/cv-photo.jpg' alt='cv photo')
+          h1.main-header-intro__name Mariana Dzividzinska
+    block sidebar
+    block content
+    block footer
+      footer.footer © 2021
+    .to-top-btn
+      a.to-top-btn__link(href='#body')
+        img.to-top-btn__img(src='https://ps.w.org/wpfront-scroll-top/assets/icon-256x256.png?rev=1534312' alt='to top button')
+  block scripts
+    script(src='./main.js')
