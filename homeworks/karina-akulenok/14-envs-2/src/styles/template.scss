@@ -81,6 +81,12 @@ body {
 }
 
 .side-nav {
+  opacity: 0;
+
+  &_active {
+    opacity: 1;
+  }
+
   &__list {
     list-style-type: none;
   }
@@ -132,12 +138,24 @@ body {
     &__title {
       line-height: 3rem;
     }
+
+    &__menu {
+      background-color: #2d2d2d;
+    }
   }
 
   .avatar-container {
     width: 150px;
     height: 150px;
     background-size: auto 350px;
+  }
+
+  .side-nav { 
+    &__link {
+      font-size: 1rem;
+      margin-right: 20px;
+      color: rgb(247, 243, 233);
+    }
   }
 }
 
@@ -156,6 +174,7 @@ body {
 
     &__menu {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100px;
@@ -184,6 +203,13 @@ body {
 
     &__burger-menu:hover &__menu-line3 {
       transform: rotate(-45deg) translateY(-13px);
+    }
+  }
+
+  .side-nav {
+    &__link {
+      font-size: 1rem;
+      margin-right: 0;
     }
   }
 
