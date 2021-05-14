@@ -1,0 +1,32 @@
+{
+  "name": "gulpscss",
+  "version": "1.0.0",
+  "description": "cv examle with scss and gulp usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "gulp style",
+    "start": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "skipped"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  },
+  "keywords": [
+    "gulpscss\u001b[D\u001b[D\u001b[D\u001b[D",
+    "scss"
+  ],
+  "author": "Roman Palagniuk",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.14"
+  }
+}

@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+      media="none"
+      onload="if(media!='all')media='all'"
+    />
+    <link rel="stylesheet" href="./dist/css/CV.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 1024px) and (min-width: 600px)"
+      href="./dist/css/tab.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 600px)"
+      href="./dist/css/mobile.css"
+    />
+    <title>CV</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__logo">
+          <i class="header__icon fa fa-user-secret">&#xf2be;</i>
+          <h1 class="header__title">Roman Palagniuk</h1>
+          <h2 class="header__subtitle">WEB DEVELOPER</h2>
+        </div>
+        <div class="burger">
+          <input type="checkbox" id="toggle" class="burger__toggle" />
+          <label class="burger__label" for="toggle"> </label>
+        </div>
+        <nav class="header__nav">
+          <a href="#about" class="header__link">About</a>
+          <a href="#experience" class="header__link">Experience</a>
+        </nav>
+      </header>
+      <aside class="side">
+        <section id="top" class="side__section">
+          <h3 class="side__section__title">Contacts</h3>
+          <ul class="side__section__list">
+            <li class="side__section__list-item">
+              <i
+                class="side__section__icon fa fa-phone-square"
+                aria-hidden="true"
+              ></i
+              >+380507575460;<br />
+              <i
+                class="side__section__icon fa fa-phone-square"
+                aria-hidden="true"
+              ></i
+              >+380978555097;
+            </li>
+            <li class="side__section__list-item">
+              <i
+                class="side__section__icon fa fa-envelope"
+                aria-hidden="true"
+              ></i
+              >n0tapr0b13m@gmail.com;
+            </li>
+            <li class="side__section__list-item">
+              <i
+                class="side__section__icon fa fa-rocket"
+                aria-hidden="false"
+              ></i
+              >live:cf0760c2f1916e70;
+            </li>
+            <li class="side__section__list-item">
+              <i
+                class="side__section__icon fa fa-share-alt-square"
+                aria-hidden="true"
+              ></i>
+              <a
+                href="https://github.com/RomanPalagniuk"
+                class="side__section__link"
+              >
+                GitHub
+              </a>
+            </li>
+            <li class="side__section__list-item">
+              <i
+                class="side__section__icon fa fa-info-circle"
+                aria-hidden="true"
+              ></i>
+              <a
+                href="https://www.linkedin.com/in/roman-palagniuk-a0364813a/"
+                class="side__section__link"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li class="side__section__list-item">
+              <i
+                class="side__section__icon fa fa-map-marker"
+                aria-hidden="true"
+              ></i
+              >Chernivtsi
+            </li>
+          </ul>
+        </section>
+        <section class="side__section">
+          <h3 class="side__section__title">Skills</h3>
+          <ul class="side__section__list side__section__list--square">
+            <li class="side__section__list-item">HTML</li>
+            <li class="side__section__list-item">CSS, SASS, Bootstrap</li>
+            <li class="side__section__list-item">JavaScript</li>
+            <li class="side__section__list-item">Node.js, Express, Koa.js</li>
+            <li class="side__section__list-item">React, Redux</li>
+            <li class="side__section__list-item">PostgreSQL, MongoDB</li>
+            <li class="side__section__list-item">Git, Webpack, Postman</li>
+          </ul>
+        </section>
+      </aside>
+      <main class="mn">
+        <section class="mn__section mn__section-about">
+          <h2 class="mn__section__header" id="about">About Me</h2>
+          <p class="mn__section__text">
+            So far I learned a lot as Developer during last year. Have a bit of
+            experience working as team member, as well by myself. Speaking about
+            professional skills - I have basic knowledge of HTML, CSS,
+            Bootstrap, JavaScript. Familiar with Node.js and most popular
+            back-end frameworks such as Express.js, Koa.js, Nest.js. Done a
+            couple basic CRUD APIs with each of them. Tested with Postman.
+            Worked with MongoDB and PostgreSQL databases. Familiar with React,
+            Firebase. Trying to improve usage of Redux and Hooks, TypeScript. Of
+            course my knowledge is basic and need a lot of improvements, and I
+            know it's not an easy path. But I seeing myself as future full-stack
+            developer.
+          </p>
+          <p class="mn__section__text">
+            To the list of life acomplishments I would put Masters degree at
+            information security. Wide working experience in different companies
+            including abroad. Also I'm persistent, careful, love to study and
+            learn something new to me. Curious about modern technologies,
+            electronics, software. Like sports, also competitive and active
+            rest. Think I am good at communication with people. Good worker.
+          </p>
+        </section>
+        <section class="mn__section mn__section-portfolio">
+          <h2 class="mn__section__header">My portfolio</h2>
+          <p class="mn__section__text">Examples of my work:</p>
+          <div class="card_wrap">
+            <div class="card card0">
+              <div class="border">
+                <h2 class="card_title">My portfolio</h2>
+                <div class="icons">
+                  <p class="card_text">
+                    This is example of my portfolio web page.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card card1">
+              <div class="border">
+                <h2 class="card_title">Some cool website.</h2>
+                <div class="icons">
+                  <p class="card_text">
+                    Here is my multi-featured project. Was working on it more
+                    than month.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card card2">
+              <div class="border">
+                <h2 class="card_title">3</h2>
+                <div class="icons">
+                  <p class="card_text">third</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mn__section mn__section-experience">
+          <h2 class="mn__section__header" id="experience">Experience</h2>
+          <article class="mn__article">
+            <h3 class="mn__section__subheader">
+              Web Deweloper (02.2020 - Now)
+            </h3>
+            <p class="mn__section__text">
+              Learning and doing small projects both in team and by myself.
+              Basic knowledge of HTML, CSS, JavaScript, some popular frameworks.
+            </p>
+          </article>
+          <article class="mn__article">
+            <h3 class="mn__section__subheader">
+              Construction worker, scaffolder (11.2018 – 01.2020)
+            </h3>
+            <p class="mn__section__text">
+              Get new experience as construction worker and scaffolder. Improved
+              my skills at work, and communication with people. Also gained in
+              speaking english.
+            </p>
+          </article>
+          <article class="mn__article">
+            <h3 class="mn__section__subheader">
+              Inspector at bank security department of region (“Oschadbank”,
+              06.2017 – 06.2018)
+            </h3>
+            <p class="mn__section__text">
+              Сontrolling of opening and closing departments, ATMs.
+              Сommunication with the police and the collection service. Video
+              monitoring using video surveillance system.
+            </p>
+          </article>
+          <article class="mn__article">
+            <h3 class="mn__section__subheader">
+              Seller ("Evrosota", 11.2012 - 09.2015)
+            </h3>
+            <p class="mn__section__text">
+              Selling of electronics. It was a start of my career as a seller. I
+              have learned many new things to me. Get experience in
+              communication with people, organization of store functioning.
+              Learned some selling techniques.
+            </p>
+          </article>
+        </section>
+        <section class="mn__section mn__section-education">
+          <h2 class="mn__section__header">Education</h2>
+          <h3 class="mn__section__subheader">
+            Chernivtsi National University (2007-2012)
+          </h3>
+          <p class="mn__section__text">
+            DEPARTMENT OF PHYSICS. MASTER'S DEGREE AT INFORMATION SECURITY.
+          </p>
+          <p class="mn__section__text">
+            Studied: Engineering and Computer Graphics; Electricity and
+            magnetism; Information theory; Cryptography and steganography;
+            Protection of objects; Telecommunication Systems and networks.
+          </p>
+          <h3 class="mn__section__subheader">Courses:</h3>
+          <p class="mn__section__text">SAMSUNG ACADEMY.</p>
+          <p class="mn__section__text">EPAM UNIVERSITY FRONT-END AUTUMN 2020</p>
+        </section>
+      </main>
+      <a href="#top" class="top">Scroll to top</a>
+      <footer class="footer">
+        <p>(c) 2021</p>
+      </footer>
+    </div>
+  </body>
+</html>

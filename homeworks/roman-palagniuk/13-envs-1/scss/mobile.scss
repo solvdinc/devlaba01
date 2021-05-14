@@ -1,0 +1,75 @@
+@import './variables';
+
+.container {
+  font-size: small;
+  text-align: center;
+  display: grid;
+  margin: 0 auto;
+  grid-template-areas:
+    'header '
+    'side'
+    'mn'
+    'footer';
+}
+
+.header {
+  position: sticky;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 3;
+  height: 230px;
+  width: 100%;
+}
+
+.top {
+  text-decoration: none;
+  display: block;
+  position: fixed;
+  right: 8%;
+  bottom: 10%;
+  font-weight: 600;
+  color: $light;
+  background-color:$dark;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 5;
+}
+
+.side {
+  margin: 15px auto;
+  font-size: small;
+}
+
+.mn {
+  width: 95%;
+  padding: 5px;
+  margin: 15px auto;
+}
+
+.header__nav {
+  display: none;
+}
+
+@import './_burger.scss';
+
+.side__section {
+  margin-top: 10px;
+}
+
+.mn__section,
+.mn__article,
+.mn__section__text,
+.mn__section__subheader {
+  margin-top: 10px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:$dark;
+  color: $light;
+  grid-area: footer;
+  padding: 10px;
+}

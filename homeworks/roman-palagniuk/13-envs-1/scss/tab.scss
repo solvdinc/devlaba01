@@ -1,0 +1,119 @@
+@import './variables';
+
+.container {
+  font-size: x-small;
+  text-align: center;
+  gap: 1rem;
+}
+
+.header {
+  position: sticky;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 3;
+  height: 230px;
+  width: 100%;
+}
+
+.top {
+  display: none;
+}
+
+.side {
+  margin-top: 1rem;
+  font-size: smaller;
+}
+
+.mn {
+  width: 95%;
+  padding: 0.3rem;
+  margin: 1rem auto;
+}
+
+.header__nav {
+  display: none;
+}
+
+.burger {
+  margin: 1.2rem;
+  display: block;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.burger__label {
+  margin-top: 1rem;
+  width: 50px;
+  height: 10px;
+  background-color: $dark;
+  position: absolute;
+  cursor: pointer;
+}
+
+.burger__label::before,
+.burger__label::after {
+  content: "";
+  width: 50px;
+  height: 10px;
+  background-color: $dark;
+  position: absolute;
+  display: block;
+  color: $dark;
+  transition: all 0.6s cubic-bezier(1, 0, 0, 1);
+}
+
+.burger__label::before {
+  top: -250%;
+  left: 0%;
+  transform: rotateZ(0deg);
+  transform-origin: left top;
+}
+
+.burger__label::after {
+  bottom: -250%;
+  left: 0%;
+  transform: rotateZ(0deg);
+  transform-origin: left bottom;
+}
+
+.burger__toggle:checked ~ .burger__label::before {
+  content: "";
+  background-color: $dark;
+  transform: rotateZ(65deg);
+  left: 10%;
+}
+
+.burger__toggle:checked ~ .burger__label::after {
+  content: "";
+  background-color: $dark;
+  transform: rotateZ(-65deg);
+  left: 10%;
+}
+
+.burger__toggle:checked ~ .burger__label {
+  background-color: white;
+}
+
+.burger__toggle ~ .burger__label {
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+input {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark;
+  color: rgb(119, 224, 243);
+  grid-area: footer;
+  padding: 2rem;
+}
