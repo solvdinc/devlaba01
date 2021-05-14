@@ -81,9 +81,8 @@ function solution6() {
 // task 7 https://www.codewars.com/kata/545a4c5a61aa4c6916000755
 function solution7() {
   const gimme = (inputArray) => {
-    const max = Math.max(...inputArray);
-    const min = Math.min(...inputArray);
-    return inputArray.findIndex((el) => el > min && el < max);
+    const arr = [...inputArray].sort((a, b) => a - b);
+    return inputArray.findIndex((el) => el === arr[1]);
   };
 
   gimme([2, 3, 1]);
@@ -129,9 +128,7 @@ function solution10() {
     const decipherArr = preDecipherArr.map((el) => {
       if (el.length > 2) {
         const tempArr = el.split('');
-        const [_, temp] = tempArr;
-        tempArr[1] = tempArr[tempArr.length - 1];
-        tempArr[tempArr.length - 1] = temp;
+        [tempArr[1], tempArr[tempArr.length - 1]] = [tempArr[tempArr.length - 1], tempArr[1]];
         return tempArr.join('');
       }
       return el;
