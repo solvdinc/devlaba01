@@ -24,11 +24,16 @@
   }
 
   &__open-menu-btn {
-    display: none;
     border: none;
     padding: 0.5rem;
     color: var(--main-bg-color-white);
     background-color: var(--main-bg-color);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--main-bg-color);
+      background-color: var(--main-bg-color-white);
+    }
   }
 
   &__close-menu-btn {
@@ -37,11 +42,14 @@
     top: 32px;
     width: 32px;
     height: 32px;
-    z-index: 222222222222;
+    z-index: 222;
 
     &:hover {
-      opacity: 1;
+      cursor: pointer;
+      color: var(--main-bg-color);
+      background-color: var(--main-bg-color-white);
     }
+
     &:before,
     &:after {
       position: absolute;
