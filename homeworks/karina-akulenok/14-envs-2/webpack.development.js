@@ -7,8 +7,9 @@ module.exports = merge(config, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    index: 'home.pug',
     compress: true,
     writeToDisk: true,
-    port: 9000,
+    port: process.env.PORT || 3000,
   },
 });
