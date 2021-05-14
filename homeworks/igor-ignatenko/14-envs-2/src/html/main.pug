@@ -7,32 +7,22 @@ html(lang='en')
         link(href='https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap' rel='stylesheet')
         title My CV
     body
-        span.menu(style='font-size:30px;cursor:pointer') ☰ Menu 
-        .sidenav
-            a(href='./home.html') Home
-            a(href='./portfolio.html') Portfolio
-        #top.wrapper
-            header.header
-                .header__avatar-box
-                    .avatar-box__container
-                        img.header__image(src='../images/avatar.jpg' alt='avatar')
-                .header__title
-                    h1.title__name Ihor Ihnatenko
-                    hr
-                    p.title__role Front-end Developer
+    .page
+        header.header-main
+            .container
+                span.menu(style='font-size:30px;cursor:pointer')
                 .navigation
-                    .navigation__box
-                        input#checkbox.navigation__checkbox(type='checkbox')
-                        label.navigation__btn(for='checkbox')
-                            span
-                        nav.navigation__list
-                            a.navigation__item(href='./home.html') Home
-                            a.navigation__item(href='./portfolio.html') Contacts
-                            a.navigation__item(href='#') About
-            block aside
-            block content
-            footer.footer
-                p (c)Created by Ihor Ihnatenko 2021
+                        .navigation__box
+                            input#checkbox.navigation__checkbox(type='checkbox')
+                            label.navigation__btn(for='checkbox')
+                                span
+                .sidenav
+                    a.menu__link(href='./home.html') Home
+                    a.menu__link(href='./portfolio.html') Portfolio
+        block content
+        footer.footer
+            p (c)Created by Ihor Ihnatenko 2021
         .button-up
             a(href='#top')  UP 
+    .overlay
 

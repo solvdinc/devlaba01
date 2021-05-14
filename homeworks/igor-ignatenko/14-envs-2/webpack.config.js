@@ -8,9 +8,10 @@ const loader = require('sass-loader');
 /** @type {import('webpack).Configuration} */
 module.exports = {
     entry: {
-        main:'./src/scripts/main.js',
+        main: './src/scripts/main.js',
         home: './src/scripts/home.js',
-        portfolio: './src/scripts/portfolio.js'
+        portfolio: './src/scripts/portfolio.js',
+        modalContent: './src/scripts/modal.js'
     },
 
     output: {
@@ -23,12 +24,12 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: './src/html/home.pug',
             filename: 'html/home.html',
-            chunks: [ 'main','home']
+            chunks: ['main', 'home']
         }),
         new HTMLWebpackPlugin({
             template: './src/html/portfolio.pug',
             filename: 'html/portfolio.html',
-            chunks: [ 'main','portfolio']
+            chunks: ['main', 'portfolio']
         }),
         new MiniCssExtractPlugin({
             filename: 'style/[name].css',

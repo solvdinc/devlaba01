@@ -6,7 +6,7 @@ module.exports = merge(config, {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist/'),
+        contentBase: path.resolve(__dirname, 'dist'),
         compress: true,
         writeToDisk: true,
         port: 3000

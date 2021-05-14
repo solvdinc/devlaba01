@@ -1,4 +1,3 @@
-
 import '../styles/styles-scss.scss';
 import '../styles/media.scss';
 import '../images/avatar.jpg';
@@ -6,10 +5,16 @@ import '../images/github-icon.png';
 import '../images/gmail-icon.png';
 import '../images/tel-icon.png';
 
-const menu = document.querySelector('.menu');
-const sidenav = document.querySelector(".sidenav")
+const sidenav = document.querySelector(".sidenav");
+const overlay = document.querySelector('.overlay');
+const navCheckBox = document.querySelector('.navigation__checkbox')
 
-function toggleButton() {
-    sidenav.classList.toggle("sidenav__opened")
+function handler({ target }) {
+    if ((target.closest('.navigation__checkbox')  ||  (target.classList.contains('overlay')) && sidenav.classList.contains('sidenav__opened'))) {
+        navCheckBox.classList.toggle('navigation__checkbox__checked')
+        sidenav.classList.toggle("sidenav__opened");
+        overlay.classList.toggle("overlay__active");
+    }
 }
-menu.addEventListener('click', toggleButton)
+
+window.addEventListener('click', handler)
