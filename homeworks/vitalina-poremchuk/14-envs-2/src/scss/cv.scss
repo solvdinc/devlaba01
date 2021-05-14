@@ -6,6 +6,7 @@ $bgСolorСircle: rgb(235, 228, 228);
   box-sizing: border-box;
 }
 body {
+  position: relative;
   margin: 0;
   height: 100%;
   font-family: Courier New;
@@ -16,15 +17,15 @@ body {
 }
 
 .container {
+  height: 100%;
   width: 1000px;
   margin: 0 auto;
   display: grid;
   grid-template-areas:
     "header header"
-    "aside main"
-    "footer footer";
-  grid-template-rows: 300px 1fr 30px;
-  grid-template-columns: 300px 1fr;
+    "aside main";
+  grid-template-rows: 300px 1fr;
+  grid-template-columns: 300px 1fr 30px;
   box-shadow: 0 0 10px rgba(133, 133, 133, 0.5);
 }
 
@@ -63,6 +64,7 @@ body {
 .aside {
   grid-area: aside;
   background-color: $bgСolor;
+  z-index: -1;
   &__contact {
     margin-top: 20px;
     padding: 20px;
@@ -117,7 +119,7 @@ body {
     position: relative;
     width: 100%;
     display: inline-block;
-    z-index: 1;
+    z-index: 0;
     position: relative;
     text-align: center;
     margin: 0 auto;
@@ -133,7 +135,7 @@ body {
     background-color: $bgСolor;
     height: 8px;
     top: 8px;
-    z-index: -1;
+    z-index: -2;
   }
   &__html {
     width: 0;
@@ -182,11 +184,6 @@ body {
     transform: rotate(-45deg);
   }
 }
-.footer {
-  grid-area: footer;
-  text-align: center;
-  padding-top: 10px;
-}
 
 @media (max-width: 600px) {
   .container {
@@ -195,9 +192,8 @@ body {
     grid-template-areas:
       "header"
       "aside"
-      "main"
-      "footer";
-    grid-template-rows: 200px 400px 1fr 30px;
+      "main";
+    grid-template-rows: 200px 400px 1fr;
     grid-template-columns: 1fr;
     box-shadow: none;
   }
@@ -261,9 +257,8 @@ body {
     grid-template-areas:
       "header"
       "aside"
-      "main"
-      "footer";
-    grid-template-rows: 400px 350px 1fr 30px;
+      "main";
+    grid-template-rows: 400px 350px 1fr;
     grid-template-columns: 1fr;
     box-shadow: none;
   }

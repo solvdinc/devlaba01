@@ -4,6 +4,7 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   height: 100%;
   font-family: Courier New;
@@ -15,15 +16,16 @@ body a {
 }
 
 .container {
+  height: 100%;
   width: 1000px;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header header" "aside main" "footer footer";
-  -ms-grid-rows: 300px 1fr 30px;
-      grid-template-rows: 300px 1fr 30px;
-  -ms-grid-columns: 300px 1fr;
-      grid-template-columns: 300px 1fr;
+      grid-template-areas: "header header" "aside main";
+  -ms-grid-rows: 300px 1fr;
+      grid-template-rows: 300px 1fr;
+  -ms-grid-columns: 300px 1fr 30px;
+      grid-template-columns: 300px 1fr 30px;
   -webkit-box-shadow: 0 0 10px rgba(133, 133, 133, 0.5);
           box-shadow: 0 0 10px rgba(133, 133, 133, 0.5);
 }
@@ -79,6 +81,7 @@ body a {
   -ms-grid-column: 1;
   grid-area: aside;
   background-color: #cac7d4;
+  z-index: -1;
 }
 
 .aside__contact {
@@ -150,7 +153,7 @@ body a {
   position: relative;
   width: 100%;
   display: inline-block;
-  z-index: 1;
+  z-index: 0;
   position: relative;
   text-align: center;
   margin: 0 auto;
@@ -166,7 +169,7 @@ body a {
   background-color: #cac7d4;
   height: 8px;
   top: 8px;
-  z-index: -1;
+  z-index: -2;
 }
 
 .main__html {
@@ -221,23 +224,14 @@ body a {
           transform: rotate(-45deg);
 }
 
-.footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: footer;
-  text-align: center;
-  padding-top: 10px;
-}
-
 @media (max-width: 600px) {
   .container {
     width: 100%;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "header" "aside" "main" "footer";
-    -ms-grid-rows: 200px 400px 1fr 30px;
-        grid-template-rows: 200px 400px 1fr 30px;
+        grid-template-areas: "header" "aside" "main";
+    -ms-grid-rows: 200px 400px 1fr;
+        grid-template-rows: 200px 400px 1fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -webkit-box-shadow: none;
@@ -305,9 +299,9 @@ body a {
     width: 100%;
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "header" "aside" "main" "footer";
-    -ms-grid-rows: 400px 350px 1fr 30px;
-        grid-template-rows: 400px 350px 1fr 30px;
+        grid-template-areas: "header" "aside" "main";
+    -ms-grid-rows: 400px 350px 1fr;
+        grid-template-rows: 400px 350px 1fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -webkit-box-shadow: none;

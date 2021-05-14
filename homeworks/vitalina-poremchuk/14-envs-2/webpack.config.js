@@ -5,30 +5,47 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: { main: "./src/script.js", home: "./src/cv.js" },
+  entry: {
+    main: "./src/js/index.js",
+    home: "./src/js/cv.js",
+    additional: "./src/js/additional.js",
+    modal: "./src/js/modal.js",
+  },
   output: {
-    filename: "[name].js",
+    path: path.resolve(__dirname, "dist/"),
+    filename: "[name].bundle.js",
     clean: true,
   },
   plugins: [
-    new MiniCssExtractPlugin(),
     new webpack.EnvironmentPlugin({
       VERSION: "1.0.0",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/page.pug",
-      filename: "index.html",
+      template: "./src/pug/page.pug",
+      filename: "main.html",
+      chunks: ["main", "home"],
+      minify: true,
     }),
     new HtmlWebpackPlugin({
-      template: "./src/cv.pug",
+      template: "./src/pug/cv.pug",
       filename: "cv.html",
-      chunks: [ 'main','home']
+      chunks: ["main", "home"],
+      minify: true,
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pug/additional.pug",
+      filename: "additional.html",
+      chunks: ["main", "additional", "modal"],
+      minify: true,
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "./src/img/",
-          to: "img",
+          from: "./src/img",
+          to: ".",
         },
       ],
     }),
@@ -37,6 +54,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: "babel-loader",
       },
       {

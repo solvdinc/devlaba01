@@ -1,5 +1,4 @@
-import './style.scss';
-import './cv.scss';
+import '../scss/page.scss';
 const side = document.querySelector(".side")
 const overlay = document.querySelector(".overlay")
 const menuOpen = document.querySelector(".menu__open")
