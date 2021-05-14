@@ -1,24 +1,49 @@
 class Serializable {
+  _transform(value) {
+    const valueType = typeof value;
+    if (valueType === 'string') {
+      return value;
+    }
+    if (valueType === 'number') {
+      return this._transformNumber(value);
+    }
+    if (Array.isArray(value)) {
+      return this._transformArray(value);
+    }
+    if (value instanceof Date) {
+      return value.toString();
+    }
+    if (valueType === 'object') return this._transformObj(value);
+
+    throw TypeError`Program doesn't work with ${valueType}`;
+  }
+
+  _transformNumber(value) {
+    if (value === Infinity) {
+      return 'Infinity';
+    }
+    if (value === -Infinity) {
+      return '-Infinity';
+    }
+    if (Number.isNaN(value)) {
+      return 'NaN';
+    }
+    return value;
+  }
+
+  _transformArray(array) {
+    const result = [...array];
+    for (let i = 0; i < array.length; i += 1) {
+      result[i] = this._transform(result[i]);
+    }
+    return result;
+  }
+
   _transformObj(obj) {
-    const availableTypes = ['string', 'object', 'number', 'undefined'];
     const transformedObj = { ...obj };
     const entries = Object.entries(obj);
     entries.forEach(([key, value]) => {
-      if (availableTypes.indexOf(typeof value) === -1) {
-        throw TypeError`Program doesn't work with ${typeof value}`;
-      }
-      if (value === Infinity) {
-        transformedObj[key] = 'Infinity';
-      }
-      if (value === -Infinity) {
-        transformedObj[key] = '-Infinity';
-      }
-      if (Number.isNaN(value) && (typeof value) === 'number') {
-        transformedObj[key] = 'NaN';
-      }
-      if ((typeof value === 'object') && !(value instanceof Date)) {
-        transformedObj[key] = this._transformObj(obj[key]);
-      }
+      transformedObj[key] = this._transform(value);
     });
     return transformedObj;
   }
@@ -28,8 +53,17 @@ class Serializable {
   }
 
   wakeFrom(string) {
+    if (typeof string !== 'string') {
+      throw TypeError(`Incorrect type of value. Expected 'string' type, but get '${typeof string}'`);
+    }
     const expectedKeys = Object.keys(this);
-    Object.keys(JSON.parse(string)).forEach((key) => {
+    let actualObj;
+    try {
+      actualObj = JSON.parse(string);
+    } catch (e) {
+      throw SyntaxError('Input string is incorrect. It isn\'t available to parse');
+    }
+    Object.keys(actualObj).forEach((key) => {
       if (expectedKeys.indexOf(key) === -1) {
         throw ReferenceError(`Can not find property ${key}`);
       }
@@ -55,12 +89,14 @@ class Numbers extends Serializable {
     b,
     c,
     d,
+    e,
   } = {}) {
     super();
     this.a = a;
     this.b = b;
     this.c = c;
     this.d = d;
+    this.e = e;
   }
 }
 
@@ -96,10 +132,6 @@ class UserDTO extends Serializable {
     this.birth = birth;
     this.job = job;
   }
-
-  printInfo() {
-    console.log(`${this.firstName[0]}. ${this.lastName} - ${this.phone}, ${this.birth.toISOString()}`);
-  }
 }
 
 const numbers = new Numbers({
@@ -107,6 +139,7 @@ const numbers = new Numbers({
   b: Infinity,
   c: -Infinity,
   d: 48,
+  e: [1, 2, 3, 4, Infinity, -Infinity, 10],
 });
 
 const tolikJob = new Job({
@@ -124,8 +157,6 @@ let tolik = new UserDTO({
   job: tolikJob,
 });
 
-tolik.printInfo(); // A. Nashovich - 2020327, 1999-01-02T00:00:00.000Z
-
 const serialized = tolik.serialize();
 console.log('serialied obj');
 console.log(serialized);
@@ -136,7 +167,6 @@ console.log('waked from obj');
 console.log(wakedFromTolik);
 
 console.log(wakedFromTolik instanceof UserDTO); // true
-console.log(wakedFromTolik.printInfo());
 
 class Post extends Serializable {
   constructor({
@@ -158,13 +188,38 @@ try {
   console.log(`Error: ${error}`);
 }
 
-const numbersTest1 = new Numbers({
+const numbersTest = new Numbers({
   a: NaN,
   b: Infinity,
   c: -Infinity,
   d: 48,
+  e: 10,
 });
 
+const serializedNumTest = numbersTest.serialize();
+console.log(serializedNumTest);
+console.log(new Numbers().wakeFrom(serializedNumTest));
+
+const numbersTest1 = new Numbers({
+  a: NaN, b: Infinity, c: -Infinity, d: 48, e: [4, NaN, Infinity],
+  // class Number was extended with this field
+});
+console.log('>>>>>>> stat to test some cases');
+console.log('original obj:', numbersTest1);
+console.log('is \'e\' field an array?:', Array.isArray((numbersTest1.e)));
 const serializedNumTest1 = numbersTest1.serialize();
-console.log(serializedNumTest1);
-console.log(new Numbers().wakeFrom(serializedNumTest1));
+console.log('serialized obj:', serializedNumTest1);
+const restoredSerializedNumTest1 = new Numbers().wakeFrom(serializedNumTest1);
+console.log('restored after serialization:', restoredSerializedNumTest1);
+console.log('check if restored \'e\' field is an array:', Array.isArray(restoredSerializedNumTest1.e));
+console.log('try to restore incorrect class:');
+try {
+  const restoredSerializedNumTest2 = new Numbers().wakeFrom(serialized);
+} catch (e) {
+  console.log(`Error: ${e}`);
+}
+try {
+  new Numbers().wakeFrom(serialized);
+} catch (e) {
+  console.log(`Error: ${e}`);
+}
