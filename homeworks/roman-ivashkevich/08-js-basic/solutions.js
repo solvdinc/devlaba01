@@ -38,6 +38,8 @@ function solution2() {
     const clonedObj = {};
     let value;
 
+    if (Array.isArray(obj)) return obj;
+
     if (typeof obj !== 'object' || obj === null) return obj;
 
     Object.keys(obj).forEach((key) => {
@@ -90,9 +92,6 @@ function solution3() {
       }
       if (hour) {
         diffArr.push(`${hour} hour${hour > 1 ? 's' : ''}`);
-      }
-      if (day) {
-        diffArr.push(`${day} day${day > 1 ? 's' : ''}`);
       }
     } else {
       diffArr.push(`${day} day${day > 1 ? 's' : ''}`);
@@ -158,7 +157,6 @@ function solution5() {
 // task 6 https://www.codewars.com/kata/547f1a8d4a437abdf800055c
 function solution6() {
   function NamedOne(first, last) {
-    // -- SHOULD be changed --
     this.firstName = first;
     this.lastName = last;
     Object.defineProperty(this, 'fullName', {
