@@ -123,10 +123,6 @@ html, body {
   transition: transform .3s ease-in-out;
 }
 
-.header__menu.menu_active {
-  opacity: 0;
-}
-
 @media (max-width: 600px) {
   .header {
     position: sticky;
