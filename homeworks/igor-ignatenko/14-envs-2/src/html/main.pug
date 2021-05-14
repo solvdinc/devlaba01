@@ -9,8 +9,8 @@ html(lang='en')
     body
         span.menu(style='font-size:30px;cursor:pointer') ☰ Menu 
         .sidenav
-            a(href='http://localhost:3000/html/home.html') Home
-            a(href='http://localhost:3000/html/portfolio.html') Portfolio
+            a(href='./home.html') Home
+            a(href='./portfolio.html') Portfolio
         #top.wrapper
             header.header
                 .header__avatar-box
@@ -18,7 +18,7 @@ html(lang='en')
                         img.header__image(src='../images/avatar.jpg' alt='avatar')
                 .header__title
                     h1.title__name Ihor Ihnatenko
-                    hr(style='width: 200px; border: 1px solid black;')
+                    hr
                     p.title__role Front-end Developer
                 .navigation
                     .navigation__box
@@ -26,8 +26,8 @@ html(lang='en')
                         label.navigation__btn(for='checkbox')
                             span
                         nav.navigation__list
-                            a.navigation__item(href='http://localhost:3000/html/home.html') Home
-                            a.navigation__item(href='http://localhost:3000/html/portfolio.html') Contacts
+                            a.navigation__item(href='./home.html') Home
+                            a.navigation__item(href='./portfolio.html') Contacts
                             a.navigation__item(href='#') About
             block aside
             block content
