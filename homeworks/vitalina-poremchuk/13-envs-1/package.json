@@ -7,6 +7,7 @@
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-image": "^6.2.1",
     "gulp-sass": "^4.1.0",

@@ -1,11 +1,11 @@
-const { src, dest, series} = require("gulp");
+const { src, dest, series } = require("gulp");
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
 const watch = require("gulp-watch");
 const browsersync = require("browser-sync");
-const cleanCSS = require("gulp-clean-css");
-const image = require('gulp-image');
+const image = require("gulp-image");
+const gulpClean = require("gulp-clean");
 
 function browsersyncServe(cb) {
   browsersync.init({
@@ -42,17 +42,16 @@ function sassCopmpile() {
     );
 }
 
-function clean() {
-  return src("src/css/*.css")
-    .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("dist"));
+function cleanDist() {
+  return src("./dist", { allowEmpty: true }).pipe(gulpClean());
 }
 
 function watchCopmpile() {
   watch("src/*.html", browsersyncReload);
   watch("src/scss/**/*.scss", series(sassCopmpile, browsersyncReload));
+  watch("src/image/*.jpg", series(image)).on("change", sync.reload);
 }
 
-exports.build = series(clean, htmlCompile, imagesCompile, sassCopmpile);
+exports.build = series(cleanDist, htmlCompile, imagesCompile, sassCopmpile);
 
 exports.start = series(browsersyncServe, watchCopmpile);
