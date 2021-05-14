@@ -42,6 +42,7 @@ body {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  background: url(../img/avatar.jpg) no-repeat -56px -72px;
   border: 1px solid rgb(247, 243, 233);
   background-size: auto 450px;
 }
@@ -147,6 +148,7 @@ body {
   .avatar-container {
     width: 150px;
     height: 150px;
+    background: url(../img/avatar.jpg) no-repeat -65px -72px;
     background-size: auto 350px;
   }
 
@@ -216,6 +218,7 @@ body {
   .avatar-container {
     width: 120px;
     height: 120px;
+    background: url(../img/avatar.jpg) no-repeat -51px -51px;
     background-size: auto 270px;
   }
 
@@ -265,6 +268,7 @@ body {
   .avatar-container {
     width: 100px;
     height: 100px;
+    background: url('../img/avatar.jpg') no-repeat -51px -51px;
     background-size: auto 250px;
   }
 }
@@ -279,6 +283,8 @@ body {
   .avatar-container {
     width: 80px;
     height: 80px;
+    height: 80px;
+    background: url(../img/avatar.jpg) no-repeat -51px -51px;
     background-size: auto 220px;
   }
 }

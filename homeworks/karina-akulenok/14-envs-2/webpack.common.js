@@ -46,6 +46,10 @@ module.exports = {
         use: 'babel-loader',
       },
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: 'url-loader',
+      },
+      {
         test: /\.pug$/,
         use: 'pug-loader',
       },
