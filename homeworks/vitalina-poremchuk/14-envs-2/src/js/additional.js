@@ -11,7 +11,7 @@ btn.addEventListener('click', loadData, { once: true });
 
 
 function loadData() {
-  import(/* webpackChunkName: "modal" */ './modal').then(module => {
+  import('./modal').then(module => {
     const print = module.default;
     print();
   });
