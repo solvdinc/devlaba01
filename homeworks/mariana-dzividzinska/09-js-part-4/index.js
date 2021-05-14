@@ -49,7 +49,7 @@ class Serializable {
   }
 
   serialize() {
-    return JSON.stringify(this._transformObj(this));
+    return JSON.stringify(this._transform(this));
   }
 
   wakeFrom(string) {
