@@ -1,5 +1,5 @@
 const dataList = require("./MOCK_DATA");
-
+const assert = require("./assert");
 const needleList = [
   "d462bb76-81ee-46af-9fdb-ebfe53a93d3f",
   "6df55f86-e3f5-4d7b-9cd5-906d8d7e804a",
@@ -101,7 +101,36 @@ function straightSearch(value) {
   return null;
 }
 
+assert(
+  "bubbleSort is",
+  JSON.stringify(quickSort(dataList)) === JSON.stringify(bubbleSort(dataList))
+);
+
+assert(
+  "selectionSort is",
+  JSON.stringify(quickSort(dataList)) ===
+    JSON.stringify(selectionSort(dataList))
+);
+
 const result = (func, data) => needleList.map((sku) => func(data, sku));
+function checkBinary(func, name) {
+  result[func.data] = [];
+  const sortedList = [...dataList].sort((a, b) => (a.sku > b.sku ? 1 : -1));
+
+  for (let i = 0; i < needleList.length; i++) {
+    if (!needleList[i] && !func(sortedList, needleList[i])) {
+      result[func.data].push("failed");
+    } else {
+      let start = process.hrtime();
+      func(sortedList, needleList[i]);
+      let end = process.hrtime(start);
+      result[func.data].push(end[1]);
+    }
+  }
+  console.log(name, result[func.data]);
+}
+checkBinary(straightSearch, "straightSearch is");
+checkBinary(binarySearch, "binarySearch is");
 
 console.time("startBinary");
 result(binarySearch, sortArr);
