@@ -1,38 +1,67 @@
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass');
 const sync = require('browser-sync').create();
+const gulpClean = require('gulp-clean')
 
-function scssTask() {
-    return src(['./src/styles/sass/styles-scss.scss', './src/styles/sass/media.scss'], { sourcemaps: true })
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(dest(['./src/styles/css'], { sourcemaps: '.' }))
+
+const path = {
+    dist: './dist/',
+    styles: './src/styles',
+    html: './src/html',
+    images: './src/images'
 }
 
-function browserSyncServer(cb) {
+function buildHtml() {
+    return src(path.html + '/*.html',)
+        .pipe(dest(path.dist + '/html'))
+}
+
+function buildCss(type = false, ) {
+    return src(path.styles + '/*.scss')
+        .pipe(sass({ outputStyle: type }))
+        .pipe(dest(path.dist + '/styles'))
+}
+function buildSourcemaps() {
+    return src(path.styles + '/*.scss', { sourcemaps: true })
+    .pipe(dest(path.dist + '/styles', { sourcemaps: '.' }))
+}
+
+function images() {
+    return src(path.images + '/*')
+        .pipe(dest(path.dist + '/images'))
+}
+
+function clean() {
+    return src((path.dist), { allowEmpty: true })
+        .pipe(gulpClean())
+}
+
+function browserSyncServer() {
     sync.init({
+        port: 3000,
+        reloadOnRestart: true,
         server: {
-            baseDir: '.'
+            baseDir: path.dist,
+            directory: true
         }
     });
-    cb()
-}
-
-function browserSyncReload(cb) {
-    sync.reload()
-    cb()
-}
-
-function watchTask() {
-    watch(['./src/html/index.html'], browserSyncReload)
-    watch(['./src/styles/sass/styles-scss.scss', , './src/styles/sass/media.scss'], series(scssTask, browserSyncReload))
+    watch(path.html + '/*.html', series(buildHtml)).on('change', sync.reload)
+    watch(path.styles + '/*.scss', series(buildCss)).on('change', sync.reload)
+    watch(path.images + '/*', series(images)).on('change', sync.reload)
 }
 
 exports.build = series(
-    watchTask
+    clean,
+    buildHtml,
+    buildCss.bind(null, 'compressed'),
+    images
 )
 
 exports.start = series(
-    scssTask,
-    browserSyncServer,
-    watchTask
+    clean,
+    buildHtml,
+    buildCss,
+    buildSourcemaps,
+    images,
+    browserSyncServer
 )
