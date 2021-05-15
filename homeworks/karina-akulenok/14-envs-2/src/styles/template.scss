@@ -36,6 +36,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .avatar-container {
@@ -45,6 +46,17 @@ body {
   background: url(../img/avatar.jpg) no-repeat -56px -72px;
   border: 1px solid rgb(247, 243, 233);
   background-size: auto 450px;
+}
+
+._bg {
+  position:absolute;
+  background: rgba(127, 127, 127,0.5);
+  width: 251px;
+  height: 251px;
+  border-radius: 50%;
+  display: none;
+  margin-left: -1px;
+  margin-top: -1px;
 }
 
 .header {
@@ -82,12 +94,6 @@ body {
 }
 
 .side-nav {
-  opacity: 0;
-
-  &_active {
-    opacity: 1;
-  }
-
   &__list {
     list-style-type: none;
   }
@@ -209,6 +215,12 @@ body {
   }
 
   .side-nav {
+    opacity: 0;
+
+    &_active {
+      opacity: 1;
+    }
+
     &__link {
       font-size: 1rem;
       margin-right: 0;
