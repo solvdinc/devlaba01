@@ -158,6 +158,11 @@ body {
     background-size: auto 350px;
   }
 
+  ._bg {
+    width: 151px;
+    height: 151px;
+  }
+
   .side-nav { 
     &__link {
       font-size: 1rem;
@@ -234,6 +239,11 @@ body {
     background-size: auto 270px;
   }
 
+  ._bg {
+    width: 121px;
+    height: 121px;
+  }
+
   .scroll-button {
     width: 70px;
     height: 70px;
@@ -283,6 +293,11 @@ body {
     background: url('../img/avatar.jpg') no-repeat -51px -51px;
     background-size: auto 250px;
   }
+
+  ._bg {
+    width: 101px;
+    height: 101px;
+  }
 }
 
 @media (max-width: 370px) {
@@ -295,8 +310,12 @@ body {
   .avatar-container {
     width: 80px;
     height: 80px;
-    height: 80px;
     background: url(../img/avatar.jpg) no-repeat -51px -51px;
     background-size: auto 220px;
+  }
+
+  ._bg {
+    width: 81px;
+    height: 81px;
   }
 }
