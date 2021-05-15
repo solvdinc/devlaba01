@@ -1,3 +1,5 @@
+@media screen and (max-width: 600px){
+  
 .burger {
   margin: 1.2rem;
   display: block;
@@ -192,4 +194,6 @@ input {
   color: rgb(255, 255, 255);
   grid-area: footer;
   padding: 20px;
+}
+
 }
