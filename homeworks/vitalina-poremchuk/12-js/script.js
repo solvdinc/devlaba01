@@ -101,23 +101,19 @@ function straightSearch(value) {
   return null;
 }
 
-const result = (func, data) => needleList.map((sku) => func(data, sku));
-
 function checkSort(name, func) {
-  result[func.data] = [];
   if (!assert(name, func, dataList)) {
-    return result[func.data].push("is failed");
+    return `${name} is failed`;
   }
   func(dataList);
 }
 
 function checkSearch(name, func) {
-  result[func.data] = [];
   const sortedList = [...dataList].sort((a, b) => (a.sku > b.sku ? 1 : -1));
 
   for (let i = 0; i < needleList.length; i++) {
     if (!assert(name, func, dataList, needleList[i])) {
-      return result[func.data].push("is failed");
+      return `${name} is failed`;
     }
     func(sortedList, needleList[i]);
   }
