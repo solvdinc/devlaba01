@@ -12,19 +12,13 @@ module.exports = {
     modal: "./src/js/modal.js",
   },
   output: {
-    path: path.resolve(__dirname, "dist/"),
+    path: path.resolve("dist/"),
     filename: "[name].bundle.js",
     clean: true,
   },
   plugins: [
     new webpack.EnvironmentPlugin({
       VERSION: "1.0.0",
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/pug/page.pug",
-      filename: "main.html",
-      chunks: ["main", "home"],
-      minify: true,
     }),
     new HtmlWebpackPlugin({
       template: "./src/pug/cv.pug",
