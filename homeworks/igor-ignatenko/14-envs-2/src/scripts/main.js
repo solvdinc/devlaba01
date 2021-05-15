@@ -10,7 +10,7 @@ const overlay = document.querySelector('.overlay');
 const navCheckBox = document.querySelector('.navigation__checkbox')
 
 function handler({ target }) {
-    if ((target.closest('.navigation__checkbox')  ||  (target.classList.contains('overlay')) && sidenav.classList.contains('sidenav__opened'))) {
+    if ((target.closest('.navigation__checkbox') || (target.classList.contains('overlay')) && sidenav.classList.contains('sidenav__opened'))) {
         navCheckBox.classList.toggle('navigation__checkbox__checked')
         sidenav.classList.toggle("sidenav__opened");
         overlay.classList.toggle("overlay__active");

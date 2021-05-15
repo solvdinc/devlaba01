@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer')
 const loader = require('sass-loader');
 
 /** @type {import('webpack).Configuration} */
+
 module.exports = {
     entry: {
         main: './src/scripts/main.js',
@@ -15,8 +16,8 @@ module.exports = {
     },
 
     output: {
-        filename: 'scripts/[name].js',
-        path: path.resolve(__dirname, 'dist/'),
+        filename: '[name].js',
+        path: path.resolve('dist'),
         clean: true,
         assetModuleFilename: 'images/[name][ext]',
     },
