@@ -1,22 +1,10 @@
-bubbleSort is OK
-selectionSort is OK
-straightSearch is [
-   69957, 38823, 40511,
-   38086, 38746, 41763,
-   38209, 38019, 39010,
-  225565, 39174, 40368,
-   38731, 38977, 39522,
-   38829, 71074
-]
-binarySearch is [
-  41728, 5969, 2259, 1680,
-   1476, 1029, 1231, 1427,
-   1255, 1226, 1391, 1319,
-    973, 1186, 1468, 1430,
-   1219
-]
-startBinary: 0.117ms
-straightSearch: 0.069ms
-bubbleSort: 195.861ms
-quickSort: 10.561ms
-selectionSort: 59.766ms
+straightSearch is Ok
+straightSearch: 3.647ms
+binarySearch is Ok
+binarySearch: 1.79ms
+bubbleSort is Ok
+bubbleSort: 12.394ms
+quickSort is Ok
+quickSort: 22.31ms
+selectionSort is Ok
+selectionSort: 5.559ms

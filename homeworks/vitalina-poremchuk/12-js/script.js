@@ -101,53 +101,45 @@ function straightSearch(value) {
   return null;
 }
 
-assert(
-  "bubbleSort is",
-  JSON.stringify(quickSort(dataList)) === JSON.stringify(bubbleSort(dataList))
-);
-
-assert(
-  "selectionSort is",
-  JSON.stringify(quickSort(dataList)) ===
-    JSON.stringify(selectionSort(dataList))
-);
-
 const result = (func, data) => needleList.map((sku) => func(data, sku));
-function checkBinary(func, name) {
+
+function checkSort(name, func) {
+  result[func.data] = [];
+  if (!assert(name, func, dataList)) {
+    return result[func.data].push("is failed");
+  }
+  func(dataList);
+}
+
+function checkSearch(name, func) {
   result[func.data] = [];
   const sortedList = [...dataList].sort((a, b) => (a.sku > b.sku ? 1 : -1));
 
   for (let i = 0; i < needleList.length; i++) {
-    if (!needleList[i] && !func(sortedList, needleList[i])) {
-      result[func.data].push("failed");
-    } else {
-      let start = process.hrtime();
-      func(sortedList, needleList[i]);
-      let end = process.hrtime(start);
-      result[func.data].push(end[1]);
+    if (!assert(name, func, dataList, needleList[i])) {
+      return result[func.data].push("is failed");
     }
+    func(sortedList, needleList[i]);
   }
   console.log(name, result[func.data]);
 }
-checkBinary(straightSearch, "straightSearch is");
-checkBinary(binarySearch, "binarySearch is");
-
-console.time("startBinary");
-result(binarySearch, sortArr);
-console.timeEnd("startBinary");
 
 console.time("straightSearch");
-result(straightSearch, dataList);
+checkSearch("straightSearch", straightSearch);
 console.timeEnd("straightSearch");
 
+console.time("binarySearch");
+checkSearch("binarySearch", binarySearch);
+console.timeEnd("binarySearch");
+
 console.time("bubbleSort");
-result(bubbleSort, dataList);
+checkSort("bubbleSort", bubbleSort);
 console.timeEnd("bubbleSort");
 
 console.time("quickSort");
-result(quickSort, dataList);
+checkSort("quickSort", quickSort);
 console.timeEnd("quickSort");
 
 console.time("selectionSort");
-result(selectionSort, dataList);
+checkSort("selectionSort", selectionSort);
 console.timeEnd("selectionSort");
