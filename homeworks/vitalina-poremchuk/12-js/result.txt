@@ -1,0 +1,10 @@
+straightSearch is Ok
+straightSearch: 3.647ms
+binarySearch is Ok
+binarySearch: 1.79ms
+bubbleSort is Ok
+bubbleSort: 12.394ms
+quickSort is Ok
+quickSort: 22.31ms
+selectionSort is Ok
+selectionSort: 5.559ms
