@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap' rel='stylesheet')
+    block head
+  body
+    div.page
+      header
+        div.container 
+          div.header__inner
+            button.burger-btn 
+              span.burger-btn__line
+            p HEADER
+      div.side-nav
+        button.close-btn 
+          .close-btn__line
+        p.side-nav__title Menu
+        ul.side-nav__list 
+          li.side-nav__item
+            a(href="home.html").side-nav__link Home 
+          li.side-nav__item
+            a(href="additional.html").side-nav__link Other page 
+      block content
+      footer
+        div.container 
+          div.footer__inner footer
+      .overlay
+      
+
