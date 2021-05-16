@@ -1,0 +1,38 @@
+{
+  "name": "13-envs-1",
+  "version": "1.0.0",
+  "description": "CV with rewrite CSS (SCSS).",
+  "keywords": [
+    "Darya Shimanskaya",
+    "CV",
+    "preprocessors"
+  ],
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solvdinc/devlaba01.git"
+  },
+  "author": "Darya Shimanskaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solvdinc/devlaba01/issues"
+  },
+  "homepage": "https://github.com/solvdinc/devlaba01#readme",
+  "dependencies": {
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.32.11"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0"
+  }
+}
