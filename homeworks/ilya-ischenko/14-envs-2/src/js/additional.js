@@ -1,14 +1,10 @@
 import '../styles/additional.scss';
 
-let modalText = document.querySelector('.modal__text');
-let openModalBtn = document.querySelector('.open-modal');
-let closeModalBtn = document.querySelector('.close-modal');
-let overlay = document.querySelector('.overlay');
-let modal = document.querySelector('.modal');
-
-openModalBtn.addEventListener('click', modalToggler);
-closeModalBtn.addEventListener('click', modalToggler);
-openModalBtn.addEventListener('click', loadData, { once: true });
+const modalText = document.querySelector('.modal__text');
+const openModalBtn = document.querySelector('.open-modal');
+const closeModalBtn = document.querySelector('.close-modal');
+const overlay = document.querySelector('.overlay');
+const modal = document.querySelector('.modal');
 
 function loadData() {
   import(/* webpackChunkName: "modal-content" */ './modal-content').then(data => {
@@ -26,3 +22,6 @@ function modalToggler() {
   overlay.classList.toggle('overlay_active');
 }
 
+openModalBtn.addEventListener('click', modalToggler);
+closeModalBtn.addEventListener('click', modalToggler);
+openModalBtn.addEventListener('click', loadData, { once: true });
