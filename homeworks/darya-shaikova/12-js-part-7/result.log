@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Straight search",
+    "time": "0.017299890518188477 milliseconds"
+  },
+  {
+    "type": "Binary search",
+    "time": "0.0011000633239746094 milliseconds"
+  },
+  {
+    "type": "Bubble sorting",
+    "time": "0.0009999275207519531 milliseconds"
+  }
+]
