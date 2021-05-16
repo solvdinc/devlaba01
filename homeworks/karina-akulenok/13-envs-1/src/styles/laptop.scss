@@ -1,0 +1,23 @@
+@media (max-width: 1200px) {
+  .left-side__container {
+    margin-left: 50px;
+  }
+
+  .contacts__title {
+    margin-left: 0;
+  }
+
+  .portfolio {
+    margin-left: 50px;
+
+    &__img {
+      width: 270px;
+      height: 180px;
+    }
+
+    &__mask {
+      width: 270px;
+      height: 180px;
+    }
+  }
+}
