@@ -1,0 +1,203 @@
+extends template.pug
+block head
+  title CV
+block aside
+  aside.left-side 
+    div.left-side__container
+      section#top.info
+        h2.title Info
+        p.sub-title Name:
+          span.desc Karina Akulenok
+        p.sub-title Age:
+          span.desc 19 years
+        p.sub-title Address:
+          span.desc Minsk, Belarus
+      section.about
+        h2.title About Me
+        p.desc.about__desc I'm going to start working as a junior Frontend developer at an IT company this year. I want to help people realize creative ideas, as well as implement my own startup. I am always learning something new and taking various courses to improve my skills and be more in demand. I am very ambitious and always go to the end.
+      section.facts
+        h2.title Some Interesting Facts
+        ul.facts__list(type='circle')
+          li.facts__item.desc Controlled the intellect and consciousness of the most gallant robot named Valera at the exhibition of robots;
+          li.facts__item.desc Subdued robots, forcing to entertain humanity with dances;
+          li.facts__item.desc Having studied the secrets of the physics of our galaxy, I was able to command lightning(though only at the Tesla show).
+      section.contacts
+        h2.title Contacts
+        div.contacts__item
+          a(href="tel:+375298583853")
+            img.contacts__img(src='../img/icons/phone.svg' alt='phone')
+          div.contacts__desc
+            p.sub-title.contacts__title Phone number:
+            a.contacts__link(href="tel:+375298583853") +375(29)858-38-53
+        div.contacts__item
+          a(href="mailto:karina_akulenok@mail.ru")
+            img.contacts__img(src='../img/icons/mail.svg' alt='mail')
+          div.contacts__desc
+            p.sub-title.contacts__title E-mail
+            a.contacts__link(href="mailto:karina_akulenok@mail.ru") karina_akulenok@mail.ru
+        div.contacts__item
+          a(href="https://github.com/Freshaku")
+            img.contacts__img(src='../img/icons/github.svg' alt='github')
+          div.contacts__desc
+            p.sub-title.contacts__title GitHub:
+            a.contacts__link(href="https://github.com/Freshaku") Freshaku
+        div.contacts__item
+          a(href="https://t.me/fresh_aku")
+            img.contacts__img(src='../img/icons/telegram.svg' alt='telegram')
+          div.contacts__desc
+            p.sub-title.contacts__title Telegram:
+            a.contacts__link(href="https://t.me/fresh_aku") @fresh_aku
+block main
+  main.right-side
+    section.skills
+      h2.title.title-right Skills
+      div.skill-lists
+        ul.skill-lists__list(type='circle')
+          li.skill-lists__item
+            span.skill-lists__name Html
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name Css
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name JavaScript
+            span.skill-lists__mark
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name Node.js
+            span.skill-lists__mark
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name React Native
+            span.skill-lists__mark
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+        ul.skill-lists__list(type='circle')
+          li.skill-lists__item
+            span.skill-lists__name Adobe PhotoShop
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name Figma
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name Git
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name MySQL
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name Firebase
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+    section.languages
+      h2.title.title-right Spoken languages
+      div.skill-lists
+        ul.skill-lists__list(type='circle')
+          li.skill-lists__item
+            span.skill-lists__name English(B1)
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+          li.skill-lists__item
+            span.skill-lists__name Russian
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span ★
+              span ★
+          li.skill-lists__item
+            span.skill-lists__name Belorussian
+            span.skill-lists__mark
+              span ★
+              span ★
+              span ★
+              span.skill-lists_color_grey ★
+              span.skill-lists_color_grey ★
+    section.work-examples
+      h2.title.title-right Work-examples
+      div.portfolio
+        div.portfolio__item
+          div.portfolio__img-container
+            img.portfolio__img(src='../img/portfolio/camels.jpg' alt='camels')
+          div.portfolio__mask
+            h3.portfolio__title Camels
+            p.portfolio__desc Lorem ipsum dolor sit amet.
+        div.portfolio__item
+          div.portfolio__img-container
+            img.portfolio__img(src='../img/portfolio/Sahara.jpg' alt='sahara')
+          div.portfolio__mask
+            h3.portfolio__title Sahara
+            p.portfolio__desc Lorem ipsum dolor sit amet.
+        div.portfolio__item
+          div.portfolio__img-container
+            img.portfolio__img(src='../img/portfolio/sahara-trees.jpg' alt='sahara-trees')
+          div.portfolio__mask
+            h3.portfolio__title Sahara trees
+            p.portfolio__desc Lorem ipsum dolor sit amet.
+        div.portfolio__item
+          div.portfolio__img-container
+            img.portfolio__img(src='../img/portfolio/shell.jpg' alt='shell')
+          div.portfolio__mask
+            h3.portfolio__title Shell
+            p.portfolio__desc Lorem ipsum dolor sit amet.
+    section.education
+      h2.title.title-right Education
+      p.description BSUIR affiliate MRK / Vocational diploma of Software Engineer Specialty: information technology software
+      p.description Sep 2017 – Jun 2021 / Minsk, Belarus
+    section.courses
+      h2.title.title-right Courses
+      ul(type='circle')
+        li.item.description Freecodecamp;
+        li.item.description RSSchool;
+        li.item.description JS Camping;
+        li.item.description HTML academy.
+
