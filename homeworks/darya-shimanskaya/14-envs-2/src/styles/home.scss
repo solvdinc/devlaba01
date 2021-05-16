@@ -1,0 +1,112 @@
+.wrapper {
+    height: 100%;
+    display: grid;
+    grid-template:
+        "header header" 160px
+        "block-left block-right" auto
+        "footer footer" 30px
+        / 310px;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header {
+    grid-area: header;
+}
+
+.block-right {
+    grid-area: block-right;
+    display: flex;
+    padding: 20px 25px 0 30px;
+    flex-direction: column;
+    font-size: 2.4rem;
+}
+
+.block-left {
+    grid-area: block-left;
+    display: flex;
+    background-color: #c9e4dc;
+    flex-direction: column;
+    padding: 20px 30px 0 25px;
+    text-align: right;
+    font-size: 2.2rem;
+    color: #38485C;
+}
+
+.skills, .contacts, .languages, .courses {
+    margin-bottom: 20px;
+}
+
+.contacts__item {
+    color: #2C3A4B;
+    text-decoration: none;
+    transition: color .2s ease;
+
+    &:hover {
+        color: #579280;
+    }
+}
+
+.portfolio__content {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+}
+
+.item__image {
+    object-fit: none;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio__item {
+    position: relative;
+    margin: 10px;
+    flex-basis: 400px;
+    height: 320px;
+    font-size: 2rem;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+.item__content-text {
+    position: absolute;
+    transform: translateX(100%);
+    padding: 5px;
+    top: 35%;
+    transition: transform .3s;
+}
+
+.portfolio__item:hover .item__content-text {
+    transform: translateX(0);
+}
+
+.item__content-title {
+    position: absolute;
+    transform: translateX(-100%);
+    top: 15%;
+    width: 100%;
+    transition: transform .3s;
+}
+
+.portfolio__item:hover .item__content-title {
+    transform: translateX(0);
+}
+
+.portfolio__item-mask {
+    position: absolute;
+    top: 0;
+    width: 500px;
+    height: 500px;
+    transition: transform .3s;
+    background-color: rgba(60, 83, 79, 0.8);
+    transform: translateY(100%);
+}
+
+.portfolio__item:hover .portfolio__item-mask {
+    transform: translateY(0) rotate(45deg);
+}

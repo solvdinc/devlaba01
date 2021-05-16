@@ -1,0 +1,88 @@
+extends template
+block head
+    title CV_Darya
+block content
+    div.block-left
+        section#skills.skills
+            h2.skills__title.title Skills
+            span.skills__item Html Css Scss Haml
+            br
+            span.skills__item Figma Bootstrap Git
+        section#courses.courses
+            h2.courses__title.title Courses
+            span.courses__item Freecodecamp
+            br
+            HTML academy
+        section#languages.languages
+            h2.languages__title.title Languages
+            p.languages__item Russian (native)<br>English (B1)<br>Polish (A2-B1)
+        section#contacts.contacts
+            h2.contacts__title.title Contacts
+            span telegram
+                a.contacts__item(href="https://t.me/va_stya") @va_stya
+                br
+            span email
+                br
+                a.contacts__item(href="mailto:shimanskayada@gmail.com") shimanskayada@gmail.com
+                br
+            span github
+                a.contacts__item(href="https://github.com/vastya") @vastya
+    div.block-right
+        section#profile.profile
+            h2.profile__title.title Profile
+            p.profile__item
+                | I consider myself a calm and a team person with a high level of responsibility and ability to learn.
+                | It is important for me to constantly learn something new, improve and find solutions even in the most difficult situation,
+                | which will be useful for further work.
+            hr
+        section#education.education
+            h2.education__title.title Education
+            span.education__item BSUIR affiliate “Minsk Radioengineering College”, Minsk Information Technology Software
+            br
+            span.education__item Sep 2019 – Jun 2023
+            hr
+        section#experience.experience
+            h2.experience__title.title Experience
+            h4.experience__title Pet project
+            span.experience__item june 2020-september 2020
+            p.experience__item
+                | Worked on a project for a real company that deals with industrial processing.
+                | Teamwork with 2 developers - 1 backend (Ruby, Rails, Postgres, Docker) and 1 frontend (erb, scss, bootstrap, js.)
+                | I worked with:
+            ul.list(type='circle')
+                li.list__item html.erb
+                li.list__item scss
+                li.list__item bootstrap
+                li.list__item vanilla js (callbacks buttons)
+        section.portfolio
+            h2.portfolio__title.title Portfolio
+            .portfolio__content
+                .portfolio__item
+                    img.item__image(src='../../assets/1.jpeg' alt='image')
+                    .portfolio__item-mask
+                    h2.item__content-title Lorem ipsum
+                    p.item__content-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        | do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                .portfolio__item
+                    img.item__image(src='../../assets/2.jpeg' alt='image')
+                    .portfolio__item-mask
+                    h2.item__content-title Lorem ipsum
+                    p.item__content-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        | do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                .portfolio__item
+                    img.item__image(src='../../assets/3.jpeg' alt='image')
+                    .portfolio__item-mask
+                    h2.item__content-title Lorem ipsum
+                    p.item__content-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        | do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                .portfolio__item
+                    img.item__image(src='../../assets/4.jpeg' alt='image')
+                    .portfolio__item-mask
+                    | git
+                    h2.item__content-title Lorem ipsum
+                    p.item__content-text
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        | do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.

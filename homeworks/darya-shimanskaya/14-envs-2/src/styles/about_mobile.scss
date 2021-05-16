@@ -1,0 +1,13 @@
+@media (max-width: 600px) {
+  .content {
+    font-size: 1.4rem;
+  }
+
+  .wrapper {
+    grid-template:
+        "header" 130px
+        "main" auto
+        "footer" 30px
+        / auto;
+  }
+}

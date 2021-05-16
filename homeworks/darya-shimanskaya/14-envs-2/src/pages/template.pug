@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width,initial-scale=1')
+        block head
+    body
+        div.wrapper
+            header.header
+                div.header__content
+                    h1.header__item-1 Shimanskaya Darya
+                    h3.header__item-2 Frontend Developer
+                div.header__menu
+                    .header__menu-content
+                div.sidenav
+                    .sidenav__close-button
+                    .sidenav__item
+                        a(href="home.html").sidenav__link Home
+                        br
+                        a(href="about.html").sidenav__link About
+            block content
+            footer.footer @2021
+        button.scroll-to-top Top

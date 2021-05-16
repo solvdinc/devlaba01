@@ -1,0 +1,25 @@
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template:
+        "header" 160px
+        "main" auto
+        "footer" 30px
+        / auto;
+}
+
+.main {
+  grid-area: main;
+  justify-self: center;
+  margin: 0;
+  padding: 40px;
+}
+
+.content {
+  font-size: 2.4rem;
+  text-align: justify;
+}
+
+.content__title {
+  text-align: center;
+}
