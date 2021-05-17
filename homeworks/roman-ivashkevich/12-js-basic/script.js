@@ -16,11 +16,7 @@ const testResults = {
   simpleQuickSort: [],
 };
 
-const getAllSku = (data) => {
-  const resArr = [];
-  data.map((el) => resArr.push(el.sku));
-  return resArr;
-};
+const getAllSku = (data) => data.map(({ sku }) => sku);
 
 const arrOfAllSku = getAllSku(DATA);
 
@@ -45,21 +41,21 @@ const needleList = randomSku(arrOfAllSku);
 const simpleQuickSort = (arr) => arr.sort((a, b) => (a.sku < b.sku ? 1 : -1));
 
 const quickSort = (arr) => {
+  if (arr.length < 2) return arr;
+
   const less = [];
   const greater = [];
 
-  if (arr.length < 2) return arr;
+  const pivot = arr[0];
 
-  const mid = arr[Math.floor(arr.length - 1 / 2)];
-
-  arr.forEach((el) => {
-    if (el.sku > mid.sku) {
-      less.push(el);
-    } else if (el.sku < mid.sku) {
-      greater.push(el);
+  for (let i = 1; i < arr.length; i += 1) {
+    if (pivot.sku < arr[i].sku) {
+      greater.push(arr[i]);
+    } else {
+      less.push(arr[i]);
     }
-  });
-  return [...quickSort(less), mid, ...quickSort(greater)];
+  }
+  return [...quickSort(greater), pivot, ...quickSort(less)];
 };
 
 const selectionSort = (arr) => {
@@ -154,10 +150,10 @@ const binarySearch = (data, id) => {
       return data[mid];
     }
 
-    if (data[mid].sku < id) {
-      high = mid + 1;
+    if (data[mid].sku > id) {
+      high = mid - 1;
     } else {
-      low = mid - 1;
+      low = mid + 1;
     }
   }
 };
