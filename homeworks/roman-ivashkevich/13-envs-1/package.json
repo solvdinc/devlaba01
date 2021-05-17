@@ -1,0 +1,29 @@
+{
+  "name": "personal-cv",
+  "version": "1.0.0",
+  "description": "cv with gulp and scss",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emarf"
+  },
+  "keywords": [
+    "gulp",
+    "scss"
+  ],
+  "author": "emarf(Roman Ivashkevich)",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0"
+  }
+}
