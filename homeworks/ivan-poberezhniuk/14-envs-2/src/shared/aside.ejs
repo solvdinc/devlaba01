@@ -1,0 +1,64 @@
+<aside class="side">
+  <div>
+    <input type="checkbox" class="side__humburger-toggle" />
+    <span class="side__humburger-icon"></span>
+    <span class="side__humburger-icon"></span>
+    <span class="side__humburger-icon"></span>
+    <ul class="side-list__outer">
+      <li>
+        <p>expertise</p>
+        <ul class="side-list__inner">
+          <li><p>Front-End Development</p></li>
+          <li><p>Markup</p></li>
+          <li><p>Programming</p></li>
+        </ul>
+      </li>
+      <li>
+        <p>education</p>
+        <ul class="side-list__inner">
+          <li>
+            <p>Chernivtsi Polytechnic College Radio engineering, specialist degree</p>
+          </li>
+          <li>
+            <p>
+              Chernivtsi National 'Juriy Fedkovych' University Radio engineering, bachelor degree
+            </p>
+          </li>
+          <li><p>Mate.Academy</p></li>
+          <li><p>OSF Global Service</p></li>
+          <li><p>freeCodeCamp</p></li>
+        </ul>
+      </li>
+      <li>
+        <p>contact</p>
+        <ul class="side-list__inner">
+          <li>
+            <a class="side-list__email" href="mailto:vanyapoberejnuk@gmail.com">
+              vanyapoberejnuk@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="skype:vanyokchernivts?chat"> skype: vanyokchernivtsi </a>
+          </li>
+          <li><a href="tel:+380990753991">+380 99 075 39 91</a></li>
+        </ul>
+      </li>
+      <li>
+        <p>skills</p>
+        <ul class="side-list__inner">
+          <li><p>Technologies: HTML/HML5, CSS/CSS3, AJAX, SASS</p></li>
+          <li>
+            <p>Tools: NPM, Gulp, Git, Photoshop, Chrome DevTools, Bash</p>
+          </li>
+          <li><p>Programming languages: JavaScript/ES6</p></li>
+          <li>
+            <p>Frameworks: Angular, React.js, Redux+Thunk, Express.js</p>
+          </li>
+          <li><p>Operating systems: Linux/Windows</p></li>
+          <li><p>Languages: Ukrainian, Russian, English</p></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <%- require('!!ejs-webpack-loader!./sidenav/open-btn.ejs')() %>
+</aside>
