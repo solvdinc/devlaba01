@@ -4,6 +4,7 @@ const del = require('del');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync');
+const minifyCss = require('gulp-clean-css');
 
 const srcFolder = './src/';
 const distFolder = './dist/';
@@ -23,6 +24,7 @@ task('sass', () =>
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer())
+    .pipe(minifyCss())
     .pipe(dest(`${distFolder}`))
     .pipe(browserSync.stream()),
 );
@@ -62,6 +64,4 @@ task('watch', () => {
 
 task('build', series('clear', 'html', 'sass', 'js', 'images'));
 
-task('dev', series('html', 'sass', 'js'));
-
-task('watch', series('build', parallel('serve', 'watch')));
+task('dev', series('build', parallel('serve', 'watch')));
