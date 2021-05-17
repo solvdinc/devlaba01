@@ -1,0 +1,7 @@
+.wrapper {
+  grid-template:
+    "header" 150px
+    "main" 1fr
+    "footer" 100px
+    / minmax(320px, 1fr);
+}

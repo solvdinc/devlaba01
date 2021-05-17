@@ -1,0 +1,96 @@
+extend layout
+
+block head
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  title Update CV
+
+block main 
+  aside.contacts
+    h1.contacts__title Contacts
+    div.contacts__items
+      div.contacts__content
+        a.contacts__link.email(href='mailto:roman.ivashkevich963@gmail.com') 
+          i.material-icons email
+          | roman.ivashkevich963@gmail.com
+      div.contacts__content
+        a.contacts__link.phone(href='tel:+375336100626')
+          i.material-icons phone
+          | +375336100626
+      div.contacts__content
+        a.contacts__link.telegram(href='javascript:void(0)')
+          i.material-icons connect_without_contact
+          | @emarf
+      div.contacts__content
+        a.contacts__link.email(href='https://www.google.com/maps/@53.9510705,27.6884397,17.75z',target="_blank")
+          i.material-icons email
+          | Minsk, Belarus
+  main.ncv-main 
+    section.profile-info.container
+      h2.profile-info__title.title Profile info
+      div.profile-info__content I’m going to start working as a Front-End Developer in IT company. My main goal is to become a highly qualified full-stack developer. I also want to improve my soft skills to work in a team and in the future become a lead developer, teach and improve my knowledge constantly. About my personal skills: Creative spirit, reliable and professional, organized, time management, team player, fast learner, motivated, goal-oriented, friendly.
+    section.skills.container
+      h2.skills__title.title Skills
+      div.skills__wrapper
+        div.skills__content
+          div.skill JavaScript         
+          div.skill CSS3         
+          div.skill HTML5         
+          div.skill Gulp
+        div.skills__content
+          div.skill Webpack         
+          div.skill SASS         
+          div.skill LESS         
+          div.skill GIT
+        div.skills__content
+          div.skill Material UI         
+          div.skill Bootstrap4         
+          div.skill NodeJS(elementary)         
+          div.skill React/Redux(elementary)
+      section.work-experience.container
+        h2.skills__title.title Work experience
+        div.work-experience__content
+          div.work-experience__content-wrapper
+            div.work-experience__content-name Dominos Delivery
+            div.work-experience__content-period Sep 2019 - present
+            div.work-experience__content-description 
+              | Experience working in a team and stressful situations.
+              | Personal responsibility.
+          div.work-experience__content-wrapper
+            div.work-experience__content-name Geodesy - Military photogrammetrist
+            div.work-experience__content-period Aug 2019 - Apr 2020
+            div.work-experience__content-description 
+              | Used terrain images to digitize the electronic map.
+              | Learning foreign and national landscapes.
+      section.education.container
+        h2.education__title.title Education
+        div.education__content
+          div.education__content-wrapper
+            div.education__content-name Rolling Scopes School - JS/FE 2020/2021(JavaScript/Front-End)
+            div.education__content-credential Rolling Scopes credential
+            div.education__content-period Sep 2019 - present
+          div.education__content-wrapper
+            div.education__content-name Polotsk State University - Faculty of information technologies(Geodesy)
+            div.education__content-period Aug 2014 - Jun 2019
+      section.portfolio.container
+        h2.portfolio__title.title Portfolio
+        div.portfolio__content
+          div.portfolio__item-wrapper
+            img.portfolio__img(src="./assets/img/img.jpg", alt="image")
+            div.overlay
+              div.overlay__title Title
+              div.overlay__content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime doloremque soluta quos temporibus debitis, eum iste velit ipsa quas tempore fuga blanditiis sit aliquid qui unde accusamus! Sit, quis at.
+              button.overlay__btn Click me
+          div.portfolio__item-wrapper
+            img.portfolio__img(src="./assets/img/img1.jpg", alt="image1")
+            div.overlay
+              div.overlay__title Title
+              div.overlay__content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime doloremque soluta quos temporibus debitis, eum iste velit ipsa quas tempore fuga blanditiis sit aliquid qui unde accusamus! Sit, quis at.
+              button.overlay__btn Click me
+          div.portfolio__item-wrapper
+            img.portfolio__img(src="./assets/img/img2.jpg", alt="image2")
+            div.overlay
+              div.overlay__title Title
+              div.overlay__content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime doloremque soluta quos temporibus debitis, eum iste velit ipsa quas tempore fuga blanditiis sit aliquid qui unde accusamus! Sit, quis at.
+              button.overlay__btn Click me
+
+
