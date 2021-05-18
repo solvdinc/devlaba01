@@ -1,0 +1,85 @@
+doctype html
+html(lang="en")
+    head
+        title Inna Smiiun CV
+        include ./mixin.pug
+    body
+        +header("Home")
+        .content__background
+            div(class="container content")
+                aside.aside
+                    +contacts
+                    section(class="block qualities__container")
+                        h2.block__header Personal Qualities:
+                        div.block__content
+                            ul.block__list
+                                each val in ["Fast learner", "Ambitious", "Sociable", "Reliable"]
+                                    li= val
+                    section(class="block portfolio__container")
+                        h2.block__header Portfolio:
+                        div(class="block__content portfolio__content")
+                            div.portfolio__view
+                                img.portfolio__photo(src="assets/images/slide1.jpg")
+                                div.portfolio__mask
+                                    h2.portfolio__title Art Director
+                                    p.portfolio__text Portfolio of art director Jackie Fineo.
+                            div.portfolio__view
+                                img.portfolio__photo(src="assets/images/slide3.jpg")
+                                div.portfolio__mask
+                                    h2.portfolio__title Model agency
+                                    p.portfolio__text Website for modeling agency "ELLA MODELS NEW YORK".
+                            div.portfolio__view
+                                img.portfolio__photo(src="assets/images/slide4.jpg")
+                                div.portfolio__mask
+                                    h2.portfolio__title Charley Knox
+                                    p.portfolio__text Portfolio of photographer Charley Knox with impressive works.
+                            div.portfolio__view
+                                img.portfolio__photo(src="assets/images/slide2.jpg")
+                                div.portfolio__mask
+                                    h2.portfolio__title Art Director
+                                    p.portfolio__text Portfolio of art director Jackie Fineo.
+                main.main
+                    section.block
+                        a(href="./about.html" style="text-decoration: none")
+                            h2.block__header About me
+                    section.block
+                        h2.block__header Summary
+                        div.block__content I am young, responsible, self-driven, inspired person who wants to learn to work in team and always looks forward to acquiring new knowledge and techniques.
+                    section.block
+                        h2.block__header Education
+                        div.block__content
+                            ul.block__list
+                                li.block__list__item
+                                    p
+                                      b
+                                        i 2016-2020:
+                                    p Bachelor&#8217s degree in Computer Engineering
+                                    p
+                                        b National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"
+                                    p Faculty of Applied Mathematics
+                                    p
+                                        i Specialization - System Programming
+                                li.block__list__item
+                                    p
+                                        b
+                                            i 2020-2021:
+                                    p Master&#8217s degree in Computer Engineering
+                                    p
+                                        b National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"
+                                    p Faculty of Applied Mathematics
+                                    p
+                                        i Specialization - System Programming
+                    section.block
+                        h2.block__header Summary
+                        div.block__content
+                            ul.block__list
+                                each val in ["HTML", "CSS, SCSS", "Methodology BEM", "JavaScript (basic)", "Bootstrap", "Webpack", "Figma, Zeplin", "Git"]
+                                    li= val
+                    section.block
+                        h2.block__header Languages Skills
+                        div.block__content
+                            ul.block__list
+                                each val in ["English: Intermediate", "Russian: Native", "Ukrainian: Native"]
+                                    li= val
+        +footer
+        button(class="btn__top" id="btn-top") Top
