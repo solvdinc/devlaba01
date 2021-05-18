@@ -40,3 +40,13 @@ Once PR is created you have to do the following things:
 | Apr 29th | Environment, Part 2 |
 | May 6th | Patterns & principles, Part1 |
 | May 13th | Patterns & principles, Part 2 |
+
+### Stage 3
+| Day | Theme | Materials |
+| :- | :- | :- |
+| May 24th | React basics |
+| May 27th | Class and Functional components |
+| May 31th | Hooks |
+| June 3th | React API, Code-splitting and Styling |
+| June 7th | Routing, Error Boundaries and Patterns |
+| June 10th | PropTypes and Redux |
