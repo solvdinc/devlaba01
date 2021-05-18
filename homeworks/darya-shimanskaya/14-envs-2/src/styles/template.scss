@@ -1,3 +1,5 @@
+@import './modal.scss';
+
 html, body {
   box-sizing: border-box;
   margin: 0;
@@ -121,6 +123,26 @@ html, body {
 .header__menu-content {
   @extend  %abstract-header__menu-content;
   transition: transform .3s ease-in-out;
+}
+
+.open-modal-button {
+  position: fixed;
+  bottom: 20px;
+  left: 25px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background .4s linear, color .4s;
+
+  &:hover {
+    background: white;
+    color: black;
+  }
 }
 
 @media (max-width: 600px) {

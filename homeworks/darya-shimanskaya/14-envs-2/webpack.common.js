@@ -19,7 +19,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/pages/home.pug',
       filename: 'home.html',
-      chunks: ['template', 'home'],
+      chunks: ['template', 'home',],
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/about.pug',

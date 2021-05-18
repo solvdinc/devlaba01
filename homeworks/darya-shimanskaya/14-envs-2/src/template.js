@@ -18,21 +18,39 @@ button.addEventListener('click', () => {
 
 window.onscroll = () => { checkScroll(); };
 
-// sidenav
+// sidenav and modal
 const sideNav = document.querySelector('.sidenav');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 
 function addMenuToggle() {
   sideNav.classList.toggle('sidenav_active');
 }
 
-function sidenavHandler({ target }) {
+function showModal() {
+  modal.classList.add('show');
+  overlay.classList.add('show');
+}
+
+function closeModal() {
+  modal.classList.remove('show');
+  overlay.classList.remove('show');
+}
+
+function handler({ target }) {
+  if (target.closest('.open-modal-button')) {
+    showModal();
+  }
+  if (target.closest('.modal__button')) {
+    closeModal();
+  }
   if (target.closest('.header__menu') && !sideNav.classList.contains('sidenav_active')) {
     addMenuToggle();
   }
 
-  if ((target.closest('.sidenav__close-button') && sideNav.classList.contains('sidenav_active'))) {
+  if (target.closest('.sidenav__close-button') && sideNav.classList.contains('sidenav_active')) {
     addMenuToggle();
   }
 }
 
-window.addEventListener('click', sidenavHandler);
+window.addEventListener('click', handler);
