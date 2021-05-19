@@ -50,3 +50,4 @@ Once PR is created you have to do the following things:
 | June 3th | React API, Code-splitting and Styling |
 | June 7th | Routing, Error Boundaries and Patterns |
 | June 10th | PropTypes and Redux |
+| June 14th - 19th | Development week |
