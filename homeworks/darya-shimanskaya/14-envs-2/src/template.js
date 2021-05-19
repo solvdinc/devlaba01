@@ -30,11 +30,13 @@ function addMenuToggle() {
 function showModal() {
   modal.classList.add('show');
   overlay.classList.add('show');
+  document.querySelector('body').style.overflowY = 'hidden';
 }
 
 function closeModal() {
   modal.classList.remove('show');
   overlay.classList.remove('show');
+  document.querySelector('body').removeAttribute('style');
 }
 
 function handler({ target }) {
