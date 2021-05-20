@@ -28,10 +28,10 @@
     &__main-navigation {
       position: static;
       visibility: visible;
-      opacity: 1;
       height: 40px;
       width: 100%;
       border: none;
+      transform: translateX(0);
     }
 
     &__intro {

@@ -1,8 +1,3 @@
-.main-header__main-navigation._open{
-  width: 50vw;
-  transition: width 500ms;
-}
-
 .main-header {
   background: $gradient;
   height: 60px;
@@ -14,15 +9,15 @@
 
   &__main-navigation {
     height: 100vh;
-    width: 0vw;
+    transform: translateX(51vw);
     position: absolute;
     top: 60px;
     right: 0;
     background-color: $color-light;
     border-left: $border-usually;
 
-    ._open {
-      width: 50vw;
+    &._open {
+      transform: translateX(0);
     }
   }
 

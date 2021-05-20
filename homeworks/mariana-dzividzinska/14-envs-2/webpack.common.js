@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "src/assets", to: "assets" },
+        { from: 'src/assets', to: 'assets' },
       ],
     }),
     new MiniCssExtractPlugin(),
@@ -36,11 +36,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.pug$/,
-        use: ["pug-loader"]
+        use: ['pug-loader'],
       },
       {
         test: /\.s[ca]ss$/,
