@@ -12,47 +12,52 @@ const {
   parallel,
 } = require('gulp');
 
-task('clean', function () {
-  return src('./dist', {
-      allowEmpty: true
+const distDir = './dist';
+const srcDir = './src';
+const distAssetsDir = `${distDir}/assets`;
+const srcAssetsDir = `${srcDir}/assets`;
+
+task('clean',  () => {
+  return src(distDir, {
+      allowEmpty: true,
     })
-    .pipe(clean())
-})
+    .pipe(clean());
+});
 
 task('images', function () {
-  return src('./src/assets/*')
+  return src(srcAssetsDir + '/*.jpg')
     .pipe(image())
-    .pipe(dest('./dist/assets'));
+    .pipe(dest(distAssetsDir));
 });
 
 task('buildHtml', function () {
-  return src('./src/cv.html')
+  return src(srcDir + '/cv.html')
     .pipe(dest('./dist'));
-})
+});
 
 task('buildCss', function () {
-  return src('./src/sass/*.scss')
+  return src(srcDir + '/sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'compressed',
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('./dist/css'));
+    .pipe(dest(distDir + '/css'));
 });
 
 task('serve', function () {
   browserSync.init({
     port: 1234,
     server: {
-      baseDir: "./dist",
-      directory: true
+      baseDir: distDir,
+      directory: true,
     }
   });
 });
 
 task('monitor', function () {
-  watch('./src/sass/*.*', series('buildCss'));
-})
+  watch(srcDir +'/sass/*.*', series('buildCss'));
+});
 
 task('build', series('clean', parallel('images', 'buildHtml', 'buildCss')));
 
