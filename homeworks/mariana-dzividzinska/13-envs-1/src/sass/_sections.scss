@@ -1,0 +1,141 @@
+@mixin section {
+  font-size: $font-size-usually;
+}
+
+.section-title {
+  padding-bottom: 10px;
+
+  &__name {
+    font-size: $font-size-usually;
+    text-align: left;
+    padding-left: 10px;
+    margin-bottom: 0;
+    font-weight: 900;
+    color: #32492f;
+  }
+
+  &__line {
+    margin-top: 5px;
+    width: 80%;
+    height: 2px;
+    background: $gradient;
+  }
+}
+
+.education-section {
+  @include section;
+
+  &__period {
+    font-style: italic;
+  }
+  &__university-name {
+    font-weight: 700;
+    width: 80%;
+  }
+  &__faculty-name,
+  &__speciality {
+    font-style: italic;
+  }
+}
+
+.skills-section {
+  @include section;
+
+  &__list {
+    padding-left: 15px;
+  }
+}
+
+.experience {
+  &__section {
+    @include section;
+  }
+
+  &-projects__item {
+    width: 80%;
+    height: 200px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+      background: #bffad2;
+      transition: 3s;
+
+      & > .experience-project-item__img-wrapper {
+        transform: scale(0);
+        opacity: 0.3;
+        transition: transform 1s;
+      }
+
+      .experience-project-item__content-wrapper {
+        transform: scale(1);
+        transition: 1.5s cubic-bezier(.32,1.52,.52,1.38);
+      }
+    }
+
+    &:not(:hover) {
+      background: $color-light;
+      transition: 5s;
+
+      & > .experience-project-item__img-wrapper {
+        transform: scale(1);
+        opacity: 1;
+        transition: transform 1s 500ms, opacity 3s;
+      }
+
+      .experience-project-item__content-wrapper {
+        transform: scale(0);
+        opacity: 0.3;
+        transition: 1.5s;
+      }
+    }
+  }
+
+  &-project-item {
+    &__img {
+      width: 100%;
+      height: 100%;
+
+      &-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    &__content-wrapper {
+      transform: scale(0);
+    }
+  }
+
+  &__name {
+    margin: 0 auto;
+    font-size: 1.2rem;
+  }
+
+  &__description, &__source-code {
+    font-style: italic;
+  }
+
+  &__technologies {
+    font-weight: 600;
+  }
+}
+
+.hobby-section {
+  @include section;
+
+  &__list {
+    padding-left: 15px;
+  }
+
+  &-list__item {
+    font-size: 1.4rem;
+  }
+}

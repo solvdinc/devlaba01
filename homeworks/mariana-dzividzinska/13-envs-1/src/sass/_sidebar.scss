@@ -1,0 +1,14 @@
+.sidebar-contacts {
+  padding-left: 10px;
+  padding-top: 70px;
+
+  &__list {
+    padding-left: 15px;
+  }
+  
+  &-list__item {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 10px 10px;
+  }
+}

@@ -1,0 +1,58 @@
+html,
+body {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+ul {
+    margin-top: 0;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+  text-decoration: underline;
+  color: $color-accent-light;
+
+  &:hover {
+    font-size: $font-size-accent;
+    transition: font-size 1s;
+  }
+
+  &:not(:hover) {
+    font-size: $font-size-usually;
+    transition: font-size 1s;
+  }
+}
+
+.wrapper {
+  padding: 0 5px;
+}
+
+.main-content {
+  margin-left: 7px;
+}
+
+.to-top-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+
+  &__img {
+    background: $color-accent-light;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+}

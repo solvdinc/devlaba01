@@ -1,0 +1,88 @@
+@media(min-width: 600px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 5px;
+    display: grid;
+    grid-template-areas: "header header"
+                        "sidebar content";
+    grid-template-columns: 30% 70%;
+    margin: 0 auto;
+  }
+
+  .main-header {
+    grid-area: header;
+    position: static;
+    height: 170px;
+
+    &__main-navigation {
+      top: 170px;
+    }
+
+    &__intro {
+      align-items: start;
+      justify-content: flex-start;
+    }
+
+    &-intro {
+      &__photo {
+        margin-top: 10px;
+        width: 150px;
+        height: 150px;
+        padding: 3px;
+      }
+
+      &__name {
+        padding-top: 40px;
+        padding-left: 100px;
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  .sidebar-contacts {
+    grid-area: sidebar;
+    padding: 0;
+
+    &__list {
+      margin-left: 10px;
+    }
+
+    &-list__item {
+      font-size: inherit;
+      font-size: 1.6rem;
+    }
+  }
+
+  .main-content {
+    grid-area: content;
+    margin-left: 20px;
+  }
+
+  .skills-section {
+    &__list {
+      padding-left: 15px;
+    }
+  }
+
+  .education-section {
+    font-size: 1.6rem;
+  }
+
+  .experience-section {
+    font-size: 1.6rem;
+  }
+
+  .to-top-btn {
+    visibility: hidden;
+  }
+
+  .hobby-section {
+    &__list {
+      padding-left: 15px;
+    }
+    
+    &-list__item {
+      font-size: 1.6rem;
+    }
+  }
+}
