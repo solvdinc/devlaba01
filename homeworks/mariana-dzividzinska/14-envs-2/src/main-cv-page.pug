@@ -1,0 +1,75 @@
+extends template.pug
+block sidebar
+  aside#contacts.sidebar-contacts
+    .section-title
+      h2.section-title__name Get in touch
+      .section-title__line
+    ul.sidebar-contacts__list
+      li.sidebar-contacts-list__item Email: mdzividzinska@ukr.net
+      li.sidebar-contacts-list__item
+        a.sidebar-contacts-list__item-link.link(href='https://github.com/DzividzinskaM') GitHub
+      li.sidebar-contacts-list__item
+        a.sidebar-contacts-list__item-link.link(href='https://www.linkedin.com/in/mariana-dzividzinska-3a2b4b1a3/') LinkedIn
+block content
+  main.main-content
+    section#education.education-section
+      .section-title
+        h2.section-title__name Education
+        .section-title__line
+      .education-section__period 2018-2022
+      .education-section__university-name National Technical University of Ukraine Igor Sikorsky Kyiv Polytechnic Institute;
+      .education-section__faculty-name Faculty of Informatics and Computer Science
+      .education-section__speciality Specialty: Software engineering
+    article#skills.skills-section
+      .section-title
+        h2.section-title__name Skills
+        .section-title__line
+      ul.skills-section__list
+        li.skills-section-list__item HTML/CSS/JS
+        li.skills-section-list__item Basic knowledge of React and Redux
+        li.skills-section-list__item Basic knowledge of OOP
+        li.skills-section-list__item C#, C++ programming languages
+        li.skills-section-list__item Relational database management system - SQL Server
+        li.skills-section-list__item GCP
+    article#experience.experience-section
+      .section-title
+        h2.section-title__name Experience
+        .section-title__line
+      .experience-section-projects__list
+        .experience-projects__item
+          .experience-project-item__img-wrapper
+            img.experience-project-item__img(src='./assets/test-cat.jpg' alt='project photo')
+          .experience-project-item__content-wrapper
+            h3.experience-project-item__name Social network
+            .experience-project-item__description Social network for developers
+            .experience-project-item__technologies Technologies: React, Redux, Axios
+            .experience-project-item__source-code
+              a.experience-project-item__source-code-link.link(href='https://github.com/DzividzinskaM/social-network')
+                | Source code
+        .experience-projects__item
+          .experience-project-item__img-wrapper
+            img.experience-project-item__img(src='./assets/test-cat.jpg' alt='project photo')
+          .experience-project-item__content-wrapper
+            h3.experience-project-item__name Future project
+            .experience-project-item__description Project description
+            .experience-project-item__technologies Project technologies
+            .experience-project-item__source-code
+              a.experience-project-item__source-code-link.link(href='#') Source code
+        .experience-projects__item
+          .experience-project-item__img-wrapper
+            img.experience-project-item__img(src='./assets/test-cat.jpg' alt='project photo')
+          .experience-project-item__content-wrapper
+            h3.experience-project-item__name Future project
+            .experience-project-item__description Project description
+            .experience-project-item__technologies Project technologies
+            .experience-project-item__source-code
+              a.experience-project-item__source-code.link(href='#') Source code
+    article#hobby.hobby-section
+      .section-title
+        h2.section-title__name Hobby
+        .section-title__line
+      ul.hobby-section__list
+        li.hobby-section-list__item Travelling
+        li.hobby-section-list__item Cooking
+block scripts
+  script(src='./cv.js')
