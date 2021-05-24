@@ -4,8 +4,7 @@
 
 [Presentation](https://docs.google.com/presentation/d/1ZjcnETn4dhSFbBva1tNXKpP9jR-6oXnFdmMb4-6gf0U/edit?usp=sharing)
 
-[Video](https://solvd.zoom.us/rec/share/zDgUm8bk8vjyo1R-rMzE4I38a77WstToUQa8DoZtf3wbl9zvXfWMkIJcxKH0IQO3.2MLS8SyqA5WINPIS)
-**Pass code**: aQ0w+7.e
+[Video](https://solvd.zoom.us/rec/share/peEalBzGu3qWXWDJMRa_T1gXpdkj8HXOnP9rJ2TvpfDXQ1rON1ykTSommOOLjlJp.zZp1CNyYiJf-uE9u?startTime=1621846979000)
 
 Useful links
 
