@@ -26,8 +26,7 @@ body {
   height: 560px;
   border-radius: 60px;
   background-color: #585f68;
-  box-shadow: inset 24px 0px 0px rgba(0, 0, 0, 0.1);
-  /* filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.25)); */
+  box-shadow: inset 24px 0px 0px rgba(0, 0, 0, 0.1), 6px 6px 10px rgba(0, 0, 0, 0.25);
 }
 
 .traffic-light-container::before {
