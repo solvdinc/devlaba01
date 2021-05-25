@@ -1,5 +1,3 @@
-let initialLight = -1;
-
 const Light = (props) => {
   return (
     <div
@@ -8,27 +6,50 @@ const Light = (props) => {
     ></div>
   );
 };
+class TrafficLight extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      initialValue: 0,
+    };
+  }
 
-const TrafficLight = (props) => {
-  return (
-    <div className="traffic-light-container">
-      <div className="light-container">
-        <Light color="#DF4040" active={props.initialValue === 0} />
-        <Light color="#E9EC6A" active={props.initialValue === 1} />
-        <Light color="#04CA00" active={props.initialValue === 2} />
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  countLight() {
+    return this.state.initialValue === 2
+      ? (this.state.initialValue = 0)
+      : (this.state.initialValue += 1);
+  }
+
+  tick() {
+    const lightCount = this.countLight();
+    this.setState({
+      initialValue: lightCount,
+    });
+  }
+
+  render() {
+    return (
+      <div className="traffic-light-container">
+        <div className="light-container">
+          <Light color="#DF4040" active={this.state.initialValue === 0} />
+          <Light color="#E9EC6A" active={this.state.initialValue === 1} />
+          <Light color="#04CA00" active={this.state.initialValue === 2} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+const App = () => {
+  return <TrafficLight initialValue={0} />;
 };
 
-const updateLight = () => {
-  const App = () => {
-    return <TrafficLight initialValue={initialLight} />;
-  };
-
-  initialLight === 2 ? (initialLight = 0) : (initialLight += 1);
-
-  ReactDOM.render(<App />, document.getElementById('root'));
-};
-
-setInterval(updateLight, 2000);
+ReactDOM.render(<App />, document.getElementById('root'));
