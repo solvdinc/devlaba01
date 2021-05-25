@@ -1,0 +1,40 @@
+#root {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.25));
+}
+.container {
+    position: relative;
+    width: 240px;
+    height: 560px;
+    background: #585F68;
+    border-radius: 60px;
+    z-index: 3;
+    box-shadow: inset 24px 0 0 rgba(0, 0, 0, 0.1);
+}
+#root:before {
+    position: absolute;
+    z-index: 0;
+    content: '';
+    width: 120px;
+    height: 378px;
+    bottom: 214px;
+    left: 60px;
+    background: #414447;
+    border-radius: 40px;
+}
+
+
+.light {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    top: 76px;
+    left: 60px;
+    margin-bottom: 24px;
+    background: #5B5B5B;
+    box-shadow: inset 10px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 60px;
+}
