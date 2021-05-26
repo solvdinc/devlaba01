@@ -3,11 +3,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 const TrafficBase = () => <div className="base" />;
 
-function TrafficHull({ children }) {
-  return <div className="hull">{children}</div>;
-}
+const TrafficHull = ({ children }) => <div className="hull">{children}</div>;
 
-function TrafficLight({ color = 'disabled', active = false }) {
+const TrafficLight = ({ color = 'disabled', active = false }) => {
   const setColor = () => {
     switch (color) {
       case 'green':
@@ -22,7 +20,7 @@ function TrafficLight({ color = 'disabled', active = false }) {
   };
 
   return <div className={`light  ${active ? setColor() : ''}`} />;
-}
+};
 
 const App = () => {
   const [indexOfActiveLight, setindexOfActiveLight] = React.useState(0);

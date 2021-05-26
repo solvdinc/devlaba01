@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { light, green, yellow, red } from './Traffic.module.scss';
 
-function TrafficLight({ color = 'disabled', active = false }) {
+const TrafficLight = ({ color = 'disabled', active = false }) => {
   const setColor = () => {
     switch (color) {
       case 'green':
@@ -17,7 +17,7 @@ function TrafficLight({ color = 'disabled', active = false }) {
   };
 
   return <div className={`${light}  ${active ? setColor() : ''}`} />;
-}
+};
 
 TrafficLight.propTypes = {
   color: PropTypes.string,

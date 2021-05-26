@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import { hull } from './Traffic.module.scss';
 
-function TraffictHull({ children }) {
+const TraffictHull = ({ children }) => {
   return <div className={hull}>{children}</div>;
-}
+};
 
 TraffictHull.propTypes = {};
 
