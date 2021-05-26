@@ -12,11 +12,11 @@ const TrafficLightHeader = () => <div className='traffic-light-header'></div>;
 
 const TrafficLight = () => {
   const colors = ['#DF4040', '#E9EC6A', '#04CA00'];
-  const [activeCellIndex, setColorIndex] = React.useState(0);
+  const [activeCellIndex, setActiveCell] = React.useState(0);
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      setColorIndex((activeCellIndex + 1) % 3);
+      setActiveCell((activeCellIndex + 1) % 3);
     }, 1000);
 
     return () => {
