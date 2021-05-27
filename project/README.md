@@ -4,6 +4,8 @@
 
 [Template](https://www.figma.com/file/RDurll6yYWuKmZhMqDfjpG/Template)
 
+[Assets](https://drive.google.com/drive/folders/1BBmuBeDXrDDNit9AzWFQL-mjlfFpF6A3?usp=sharing)
+
 # Teams
 
 **Team 1**
