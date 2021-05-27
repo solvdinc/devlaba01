@@ -35,6 +35,6 @@
     left: 60px;
     margin-bottom: 24px;
     background: #5B5B5B;
-    box-shadow: inset 10px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 10px 0 0 rgba(0, 0, 0, 0.1);
     border-radius: 60px;
 }
