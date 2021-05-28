@@ -31,12 +31,12 @@ const App = () => {
   ];
 
   React.useEffect(() => {
-    let lightDuration = setInterval(() => {
+    let lightDuration = setTimeout(() => {
       setActiveIndex(activeIndex === lights.length - 1 ? 0 : activeIndex + 1);
     }, 2000);
 
     return () => {
-      clearInterval(lightDuration);
+      setTimeout(lightDuration);
     }
   })
 
