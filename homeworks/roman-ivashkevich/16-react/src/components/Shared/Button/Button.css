@@ -1,27 +1,7 @@
-.add-btn {
-  position: relative;
-  width: 240px;
-  height: 240px;
-  border: 4px solid #5e217a;
-  border-radius: 16px;
-  background-color: transparent;
-  margin-top: 40px;
+.common-btn {
   cursor: pointer;
 }
 
-.add-btn:before,
-.add-btn:after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 8px;
-  background-color: #5e217a;
-}
-
-.add-btn:before {
-  transform: translate(-50%) rotate(90deg);
-}
-
-.add-btn:after {
-  transform: translate(-50%);
+button:disabled {
+  opacity: 0.4;
 }

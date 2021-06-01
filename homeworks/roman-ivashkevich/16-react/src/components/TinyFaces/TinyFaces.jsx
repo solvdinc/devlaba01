@@ -1,12 +1,14 @@
 import React from 'react';
+import changeImg from '../../assets/svg/001-refresh.svg';
 import './TinyFaces.css';
 import Button from '../Shared/Button/Button';
 import getPhotos from '../../services/getData';
 
-const Face = (props) => {
+const Face = ({ img, ...rest }) => {
   return (
     <div className="face">
-      <img className="face-img" src={props.img} alt="face" />
+      <img className="face-img" src={img} alt="face" {...rest} />
+      <img src={changeImg} alt="change" className="face-change" />
     </div>
   );
 };
@@ -15,44 +17,85 @@ export default class TinyFaces extends React.Component {
   constructor() {
     super();
     this.state = {
+      data: [],
       url: [],
+      isDisable: true,
     };
   }
 
-  getRandom(data) {
-    const min = data.length - data.length;
-    const max = data.length - 1;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  pushToState(data) {
-    let randNum = this.getRandom(data);
-    let newValue = data[randNum].avatars[3].url;
-
-    while (this.state.url.includes(newValue)) {
-      randNum = this.getRandom(data);
-      newValue = data[randNum].avatars[3].url;
-    }
-
-    this.setState({
-      url: [...this.state.url, newValue],
+  componentDidMount() {
+    getPhotos().then((data) => {
+      this.setState({
+        data: data,
+        isDisable: false,
+      });
     });
   }
 
-  pushImage = () => {
+  updateFaces = () => {
     getPhotos().then((data) => {
-      console.log(data);
-      this.pushToState(data);
+      this.setState({
+        data: data,
+      });
+
+      const url = this.state.url.map(
+        (el, i) => this.state.data[i].avatars[1].url,
+      );
+
+      this.setState({
+        url: url,
+      });
+    });
+  };
+
+  createFace = () => {
+    const face = this.state.data.find(
+      (el) => !this.state.url.includes(el.avatars[1].url),
+    );
+    if (face) {
+      this.setState({
+        url: [...this.state.url, face.avatars[1].url],
+      });
+    }
+    if (this.state.url.length === 13) {
+      this.setState({
+        isDisable: true,
+      });
+    }
+  };
+
+  changeFace = (e) => {
+    const face = this.state.data.find(
+      (el) => !this.state.url.includes(el.avatars[1].url),
+    );
+
+    const urls = this.state.url.map((el) =>
+      el === e.target.src ? face.avatars[1].url : el,
+    );
+
+    this.setState({
+      url: urls,
     });
   };
 
   render() {
     return (
-      <div className="tiny-faces-container">
-        {this.state.url.map((url, i) => (
-          <Face key={i} img={url} />
-        ))}
-        <Button className="add-btn" onClick={this.pushImage} />
+      <div className="container">
+        <div className="tiny-faces-container">
+          {this.state.url.map((url, i) => (
+            <Face key={i} img={url} onClick={this.changeFace} />
+          ))}
+          <Button
+            disabled={this.state.isDisable}
+            className="add-btn"
+            onClick={this.createFace}
+          />
+        </div>
+        <div className="refresh-btn-container">
+          <Button className="refresh-btn" onClick={this.updateFaces}>
+            Refresh All
+          </Button>
+        </div>
       </div>
     );
   }

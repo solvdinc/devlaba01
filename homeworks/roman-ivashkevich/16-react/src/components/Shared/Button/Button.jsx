@@ -1,8 +1,16 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ className, ...rest }) => {
-  return <button type="button" className={className} {...rest}></button>;
+const Button = ({ className, children, ...rest }) => {
+  return (
+    <button
+      type="button"
+      className={className ? `${className} common-btn` : 'common-btn'}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
