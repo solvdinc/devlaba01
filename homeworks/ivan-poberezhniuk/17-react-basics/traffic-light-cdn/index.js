@@ -6,20 +6,7 @@ const TrafficBase = () => <div className="base" />;
 const TrafficHull = ({ children }) => <div className="hull">{children}</div>;
 
 const TrafficLight = ({ color = 'disabled', active = false }) => {
-  const setColor = () => {
-    switch (color) {
-      case 'green':
-        return 'green';
-      case 'yellow':
-        return 'yellow';
-      case 'red':
-        return 'red';
-      default:
-        return '';
-    }
-  };
-
-  return <div className={`light  ${active ? setColor() : ''}`} />;
+  return <div className={`light  ${active ? color : ''}`} />;
 };
 
 const App = () => {
