@@ -9,7 +9,7 @@ const TrafficLight = ({ color = 'disabled', active = false }) => {
         return green;
       case 'yellow':
         return yellow;
-      case 'red': 
+      case 'red':
         return red;
       default:
         return;
