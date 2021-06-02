@@ -98,6 +98,11 @@ body {
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .container {
