@@ -11,7 +11,6 @@ AC:
 - Add "Please add at least one tile for refreshing all tiles" use Portals
 - Add "Request for adding a new tile was failed: {reason}" use Portals
 - Add "Request for Updating the tile was failed: {reason}" use Portals
-- Add possibility to add more than 16 tiles
-
+- Add number of tiles to the Refresh All button
 
 Good Luck!
