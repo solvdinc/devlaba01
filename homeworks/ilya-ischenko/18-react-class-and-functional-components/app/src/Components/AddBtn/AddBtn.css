@@ -1,0 +1,64 @@
+.add-btn {
+  position: relative;
+  width: calc(20% - 8px);
+  padding: 20px;
+  transition: transform .1s linear;
+}
+
+.add-btn:hover {
+  transform: scale(1.02);
+}
+
+.add-btn__inner {
+  padding-bottom: 100%;
+  width: 100%;
+  border: 4px solid #5E217A;
+  border-radius: 16px;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+
+.add-btn__line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 4px;
+  background: #5E217A;
+  transform: translate(-50%, -50%);
+}
+
+.add-btn__line::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: inherit;
+  background: inherit;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 1200px) {
+  .add-btn {
+    width: calc(25% - 8px);
+  }
+}
+
+@media (max-width: 990px) {
+  .add-btn {
+    width: calc(33.333% - 8px);
+  }
+}
+
+@media (max-width: 770px) {
+  .add-btn {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 570px) {
+  .add-btn {
+    width: calc(100% - 8px);
+  }
+}
