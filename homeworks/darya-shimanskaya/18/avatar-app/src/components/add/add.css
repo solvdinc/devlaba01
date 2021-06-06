@@ -1,0 +1,26 @@
+.add-item {
+    position: relative;
+    border: 4px solid #5e217a;
+    width: 240px;
+    height: 240px;
+    border-radius: 16px;
+    margin: 40px;
+}
+
+.add-item:before,
+.add-item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 4px;
+    width: 80px;
+    background: #5E217A;
+}
+
+.add-item:before {
+    transform: rotate(90deg);
+}
