@@ -1,0 +1,50 @@
+.card-container {
+  position: relative;
+  display: flex;
+  width: 240px;
+  height: 240px;
+  border-radius: 16px;
+  box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 40px;
+}
+
+.card_img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  fill: #fff;
+}
+
+.loading {
+  opacity: 1;
+  animation: circle 6s linear infinite;
+}
+
+.card-container:hover .overlay {
+  opacity: 1;
+}
+
+svg {
+  width: 90px;
+  height: 90px;
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
