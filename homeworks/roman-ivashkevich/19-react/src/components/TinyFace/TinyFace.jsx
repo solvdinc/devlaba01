@@ -20,10 +20,8 @@ const TinyFace = () => {
   };
 
   const addCard = () => {
-    console.log(1);
     getCards().then((asyncCards) => {
       const card = asyncCards.find((el) => !cards.includes(el.avatars[1].url));
-      console.log(card);
       if (card) {
         setCards((prevState) => [...prevState, card.avatars[1].url]);
       }
@@ -41,7 +39,6 @@ const TinyFace = () => {
     setLoadingCardIndex(currentIndex);
     getCards().then((asyncCards) => {
       const card = asyncCards.find((el) => !cards.includes(el.avatars[1].url));
-      console.log(card);
 
       const newCards = cards.map((el, index) =>
         index === currentIndex ? card.avatars[1].url : el,
@@ -55,16 +52,24 @@ const TinyFace = () => {
   return (
     <>
       <div className="cards-container">
-        {cards.map((el, i) => (
-          <Card
-            key={i}
-            src={el}
-            onClick={() => updateCard(i)}
-            index={i}
-            loadingCardIndex={loadingCardIndex}
-          />
-        ))}
-        <button disabled={isDisabled} className="add-btn" onClick={addCard} />
+        <div className="cards-wrapper">
+          {cards.map((el, i) => (
+            <Card
+              key={i}
+              src={el}
+              onClick={() => updateCard(i)}
+              index={i}
+              loadingCardIndex={loadingCardIndex}
+            />
+          ))}
+          <div className="add-btn-container">
+            <button
+              disabled={isDisabled}
+              className="add-btn"
+              onClick={addCard}
+            />
+          </div>
+        </div>
       </div>
       <div className="refresh-btn-container">
         <button

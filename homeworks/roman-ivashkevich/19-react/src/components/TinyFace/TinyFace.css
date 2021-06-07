@@ -1,12 +1,12 @@
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
+.add-btn-container {
+  width: 17.1%;
+  margin: 20px;
 }
 
 .add-btn {
+  width: 100%;
+  padding-bottom: 100%;
   position: relative;
-  width: 240px;
-  height: 240px;
   border: 4px solid #5e217a;
   border-radius: 16px;
   background-color: transparent;
@@ -17,8 +17,10 @@
 .add-btn:after {
   content: "";
   position: absolute;
-  width: 80px;
-  height: 8px;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 4px;
   background-color: #5e217a;
 }
 
@@ -34,11 +36,6 @@ button:disabled {
   opacity: 0.3;
 }
 
-.refresh-btn-container {
-  display: flex;
-  justify-content: center;
-}
-
 .refresh-btn {
   width: 320px;
   height: 40px;
@@ -46,4 +43,35 @@ button:disabled {
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .add-btn-container {
+    width: 23%;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-btn-container {
+    width: 33%;
+  }
+}
+
+@media (max-width: 580px) {
+  .add-btn-container {
+    width: 53%;
+  }
+}
+
+@media (max-width: 400px) {
+  .add-btn-container {
+    width: 73%;
+  }
+}
+
+@media (max-width: 320px) {
+  .add-btn-container {
+    width: 100%;
+  }
 }

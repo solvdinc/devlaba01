@@ -3,7 +3,7 @@ import TinyFace from './components/TinyFace/TinyFace';
 
 function App() {
   return (
-    <div className="face-container">
+    <div className="tiny-face-container">
       <TinyFace />
     </div>
   );
