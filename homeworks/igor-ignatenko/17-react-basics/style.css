@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  border: black solid 1px;
+  margin: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.traffic-light {
+  padding: 75px 0 75px 0;
+  position: relative;
+  background: #585F68;
+  width: 240px;
+  height: 560px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: inset 24px 0px 0px rgba(0, 0, 0, 0.1), 6px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.traffic-light-header {
+  background: #414447;
+  position: absolute;
+  width: 120px;
+  height: 378px;
+  top: -32px;
+  border-radius: 40px;
+  z-index: -1;
+}
+
+.traffic-light-cell {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  box-shadow: inset 10px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
