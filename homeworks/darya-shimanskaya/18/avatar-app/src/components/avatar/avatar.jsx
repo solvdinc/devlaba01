@@ -1,10 +1,10 @@
 import React from 'react';
 import './avatar.css';
 
-const Avatar = ({src, rest}) => {
+const Avatar = ({ src, callback }) => {
   return (
-    <div className="avatar">
-      <img className="avatar-image" src={src} alt="avatar" {...rest}/>
+    <div className="avatar" onClick={callback}>
+      <img className="avatar-image" src={src} alt="avatar"/>
       <svg className={'avatar-refresh'} height="512" viewBox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg">
         <g id="arrow-refresh-transfer-user_interface-interface"
            data-name="arrow-refresh-transfer-user interface-interface">

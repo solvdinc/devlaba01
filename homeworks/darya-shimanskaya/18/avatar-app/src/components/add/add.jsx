@@ -1,7 +1,7 @@
 import React from 'react';
 import './add.css'
 
-const Add = ({...rest}) => {
+const Add = ({ ...rest }) => {
   return(
     <div className={'add-item'}  {...rest} />
   )

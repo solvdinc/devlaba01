@@ -24,61 +24,42 @@ class AvatarApp extends React.Component {
   }
 
   componentDidMount() {
-    getData()
-      .then(
-        (data) => {
-          this.setState({
-            items: data
-          })
-        }
-      )
+    getData().then((data) => {this.setState({items: data})})
   }
 
   addItem = () => {
     const {items} = this.state;
-    const url = items[getRandom(items)].avatars[1].url;
 
-    this.setState((prevState) => ({
-      urls: [...prevState.urls, url],
-    }));
+    this.setState((prevState) => ({urls: [...prevState.urls, items[getRandom(items)].avatars[1].url]}));
   }
 
+
   refreshItem = (index) => {
-   }
+    const {items, urls} = this.state;
+    urls.splice(index, 1, items[getRandom(items)].avatars[1].url);
+    this.setState({ urls: urls });
+  }
 
   refreshAll = () => {
-    getData()
-      .then(
-        (data) => {
-          this.setState({
-            items: data
-          })
-        }
-      )
-
-      const {items} = this.state;
-      const url = this.state.urls.map( () => items[getRandom(items)].avatars[1].url);
-
-      this.setState({
-        urls: url,
-      }
-  );
+    const {items, urls} = this.state;
+    const url = urls.map( () => items[getRandom(items)].avatars[1].url);
+    this.setState({ urls: url });
 }
 
   render() {
     const {urls} = this.state;
 
-      return (
-        <div className="container">
-          <div className={'avatar-container'}>
-            {urls.map((url, index) => (
-              <Avatar key={index} src={url} onClick={this.refreshItem(index)}/>
-                ))}
-            <Add onClick={this.addItem}/>
-          </div>
-          <Button className={'refresh-btn'} onClick={this.refreshAll}>Refresh All</Button>
+    return (
+      <div className="container">
+        <div className={'avatar-container'}>
+          {urls.map((url, index) => (
+            <Avatar key={index} src={url} callback={() => this.refreshItem(index)}/>
+            ))}
+          <Add onClick={this.addItem}/>
         </div>
-      )
+        <Button className={'refresh-btn'} onClick={this.refreshAll}>Refresh All</Button>
+      </div>
+    )
     }
 }
 
