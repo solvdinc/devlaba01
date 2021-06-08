@@ -1,0 +1,96 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  align-items: center;
+}
+
+.add-btn-container {
+  display: flex;
+  width: 20%;
+  padding: 20px;
+}
+
+.add-btn {
+  width: 100%;
+  padding-bottom: 97%;
+  position: relative;
+  border: 4px solid #5e217a;
+  border-radius: 16px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-btn:before,
+.add-btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 8px;
+  background-color: #5e217a;
+}
+
+.add-btn:before {
+  transform: translate(-50%) rotate(90deg);
+}
+
+.add-btn:after {
+  transform: translate(-50%);
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+.refresh-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.refresh-btn {
+  width: 320px;
+  height: 40px;
+  background: #5e217a;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .add-btn-container {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    justify-content: center;
+  }
+  .add-btn-container {
+    width: 35%;
+  }
+
+  .refresh-btn-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .add-btn-container {
+    width: 55%;
+  }
+}
+
+@media (max-width: 400px) {
+  .add-btn-container {
+    width: 75%;
+  }
+}
+
+@media (max-width: 320px) {
+  .add-btn-container {
+    width: 100%;
+  }
+}
