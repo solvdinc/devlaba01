@@ -1,0 +1,104 @@
+.card-container {
+  width: 20%;
+  padding: 20px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 16px;
+  box-shadow: inset 4px 4px 4px rgb(0 0 0 / 25%), 4px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.card-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(0 0 0 / 25%);
+  opacity: 0;
+  border-radius: 16px;
+  transition: opacity 0.2 ease-in-out;
+  cursor: pointer;
+}
+
+.card_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.loading {
+  opacity: 1;
+  animation: circle 6s linear infinite;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  fill: #fff;
+  z-index: 10;
+}
+
+.card-wrapper:hover .overlay {
+  opacity: 1;
+}
+.card-wrapper:hover::after {
+  opacity: 1;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 35%;
+  }
+}
+
+@media (max-width: 580px) {
+  .card-container {
+    width: 55%;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-container {
+    width: 75%;
+  }
+}
+
+@media (max-width: 320px) {
+  .card-container {
+    width: 100%;
+  }
+}
