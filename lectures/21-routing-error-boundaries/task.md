@@ -11,7 +11,7 @@ The updated UI contains of PENDING state which represent that the request for th
 
 Expected response:
 
-```json
+```
 {
   avatar: string;
 }
@@ -19,7 +19,7 @@ Expected response:
 
 Unexpected response: 
 
-```json
+```
 {
   avatar: {
     height: number;
