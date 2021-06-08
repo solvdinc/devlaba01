@@ -20,18 +20,15 @@ export default class TinyFaces extends React.Component {
         cards: asyncData,
         isDisable: false,
       });
-
-      console.log('data load');
     });
   }
 
   componentDidUpdate() {
-    // if (this.state.url.length === 13) {
-    //   this.setState((prevState) => {
-    //     ...prevState,
-    //     isDisable: true,
-    //   });
-    // }
+    if (this.state.paths.length === 13 && this.state.isDisable === false) {
+      this.setState({
+        isDisable: true,
+      });
+    }
   }
 
   refreshAll = () => {
@@ -68,18 +65,26 @@ export default class TinyFaces extends React.Component {
     });
 
     getPhotos().then((asyncData) => {
-      const card = asyncData.find(
-        (el) => !this.state.paths.includes(el.avatars[1].url),
-      );
+      if (this.state.paths.length !== 13) {
+        const card = asyncData.find(
+          (el) => !this.state.paths.includes(el.avatars[1].url),
+        );
 
-      const newPaths = this.state.paths.map((el, index) =>
-        index === currentIndex ? card.avatars[1].url : el,
-      );
+        const newPaths = this.state.paths.map((el, index) =>
+          index === currentIndex ? card.avatars[1].url : el,
+        );
 
-      this.setState({
-        paths: newPaths,
-        loadingCardIndex: null,
-      });
+        this.setState({
+          paths: newPaths,
+          loadingCardIndex: null,
+        });
+      } else {
+        setTimeout(() => {
+          this.setState({
+            loadingCardIndex: null,
+          });
+        }, 5000);
+      }
     });
   };
 

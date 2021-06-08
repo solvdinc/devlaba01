@@ -13,3 +13,9 @@
   flex-wrap: wrap;
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+  .cards-wrapper {
+    justify-content: center;
+  }
+}
