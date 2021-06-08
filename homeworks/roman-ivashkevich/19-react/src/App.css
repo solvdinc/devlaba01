@@ -7,8 +7,6 @@
 .cards-container {
   padding: 20px;
   min-height: 90vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .cards-wrapper {
@@ -22,4 +20,10 @@
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .cards-wrapper {
+    justify-content: center;
+  }
 }

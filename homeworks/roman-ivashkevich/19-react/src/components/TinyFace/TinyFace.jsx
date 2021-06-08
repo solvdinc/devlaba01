@@ -38,14 +38,22 @@ const TinyFace = () => {
   const updateCard = (currentIndex) => {
     setLoadingCardIndex(currentIndex);
     getCards().then((asyncCards) => {
-      const card = asyncCards.find((el) => !cards.includes(el.avatars[1].url));
+      if (cards.length !== 13) {
+        const card = asyncCards.find(
+          (el) => !cards.includes(el.avatars[1].url),
+        );
 
-      const newCards = cards.map((el, index) =>
-        index === currentIndex ? card.avatars[1].url : el,
-      );
+        const newCards = cards.map((el, index) =>
+          index === currentIndex ? card.avatars[1].url : el,
+        );
 
-      setCards(newCards);
-      setLoadingCardIndex(null);
+        setCards(newCards);
+        setLoadingCardIndex(null);
+      } else {
+        setTimeout(() => {
+          setLoadingCardIndex(null);
+        }, 5000);
+      }
     });
   };
 

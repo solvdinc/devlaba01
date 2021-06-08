@@ -1,6 +1,6 @@
 .add-btn-container {
-  width: 17.1%;
-  margin: 20px;
+  width: 20%;
+  padding: 20px;
 }
 
 .add-btn {
@@ -20,7 +20,7 @@
   top: 50%;
   left: 50%;
   width: 30%;
-  height: 4px;
+  height: 8px;
   background-color: #5e217a;
 }
 
@@ -48,25 +48,25 @@ button:disabled {
 
 @media (max-width: 1024px) {
   .add-btn-container {
-    width: 23%;
+    width: 25%;
   }
 }
 
 @media (max-width: 768px) {
   .add-btn-container {
-    width: 33%;
+    width: 35%;
   }
 }
 
 @media (max-width: 580px) {
   .add-btn-container {
-    width: 53%;
+    width: 55%;
   }
 }
 
 @media (max-width: 400px) {
   .add-btn-container {
-    width: 73%;
+    width: 75%;
   }
 }
 
