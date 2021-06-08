@@ -13,7 +13,7 @@ Expected response:
 
 ```json
 {
-  url: string;
+  avatar: string;
 }
 ```
 
@@ -22,9 +22,16 @@ Unexpected response:
 ```json
 {
   avatar: {
+    height: number;
     url: string;
+    size: string;
+    width: number;
   }
 }
 ```
+
+Please pass `avatar` string or object directly into `return` statement and catch the error using error boundary if you have received the object (unexpected result).
+
+*Implementing recovery strategy for the tile is advanced and optional.*
 
 Good Luck!
