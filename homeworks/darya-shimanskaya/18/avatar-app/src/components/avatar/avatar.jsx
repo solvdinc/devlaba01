@@ -3,9 +3,9 @@ import './avatar.css';
 
 const Avatar = ({ src, callback }) => {
   return (
-    <div className="avatar" onClick={callback}>
+    <div className="avatar">
       <img className="avatar-image" src={src} alt="avatar"/>
-      <svg className={'avatar-refresh'} height="512" viewBox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg">
+      <svg className={'avatar-refresh'} onClick={callback} height="512" viewBox="0 0 64 64" width="512" xmlns="http://www.w3.org/2000/svg">
         <g id="arrow-refresh-transfer-user_interface-interface"
            data-name="arrow-refresh-transfer-user interface-interface">
           <path d="m59.008 34a2.921 2.921 0 0 0 -2.208-1.023h-.116a3.032 3.032 0 0 0 -2.966 2.616 21.653 21.653 0 0 1 -15.968
