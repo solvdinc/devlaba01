@@ -4,30 +4,51 @@ const Light = ({active, className}) => {
   );
 }
 
-const TrafficLight = () => {
-  const [activeColor, setActiveColor] = React.useState(0);
+const Red = () => {
+  return (
+    <TrafficLight active={1} className='red'/>
+  )
+};
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setActiveColor((activeColor + 1) % 3);
-    }, 1000);
-    return () => {
-      clearTimeout(timer);
-    };
-  });
+const Yellow = () => {
+  return (
+    <TrafficLight active={2} className='yellow'/>
+  )
+};
 
+const Green = () => {
+  return (
+    <TrafficLight active={3} className='green'/>
+  )
+};
+
+const LightsState = [
+  Red, Yellow, Green,
+];
+
+let active = 0;
+
+const TrafficLight = ({active, className}) => {
   return (
     <div className="traffic-light">
       <div className="head"></div>
       <div className="body">
         <div className="lights">
-          <Light active={activeColor === 0} className='red'/>
-          <Light active={activeColor === 1} className='yellow'/>
-          <Light active={activeColor === 2} className='green'/>
+          <Light className={className} active={active === 1}/>
+          <Light className={className} active={active === 2}/>
+          <Light className={className} active={active === 3}/>
         </div>
       </div>
     </div>
   );
 };
 
-ReactDOM.render(<TrafficLight />, document.querySelector('#root'));
+function timer(){
+  setInterval(() => {
+    active = (active + 1) % 3;
+    const ActiveLight = LightsState[active];
+    ReactDOM.render(<ActiveLight/>, document.getElementById('root'));
+  }, 1000);
+}
+
+timer();
