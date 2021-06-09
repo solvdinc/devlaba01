@@ -1,24 +1,32 @@
 .card__avatar {
+  position: relative;
   cursor: pointer;
-  padding-bottom: 100%;
+  height: 100%;
   width: 100%;
   background-position: center;
   border-radius: 16px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
 }
 
 .card__avatar:hover.card__avatar::before {
-  content: '';
+  content: "";
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   border-radius: 16px;
-  z-index: 1;
+  background-image: url("../assets/001-refresh.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-size: 100px;
 }
 
 .overlay {
@@ -33,20 +41,8 @@
 }
 
 .spinner {
-  width: 50px;
+  width: 100px;
   height: auto;
-  top: 50%;
-  left: 50%;
-  animation: spinner 1000ms infinite linear;
-}
-
-.spinner__card {
-  opacity: 1;
-  position: absolute;
-  width: 50px;
-  height: auto;
-  top: 50%;
-  left: 50%;
   animation: spinner 1000ms infinite linear;
 }
 
@@ -67,4 +63,3 @@
     transform: rotate(360deg);
   }
 }
-

@@ -1,7 +1,8 @@
 import React from 'react';
 import AddButton from '../components/AddButton.jsx';
 import Card from '../components/Card.jsx';
-import RefreshButton from '../components/RefreshButton.jsx'
+import './FetchUsers.css';
+import RefreshButton from '../components/RefreshButton.jsx';
 
 class FetchUser extends React.Component {
   constructor() {
@@ -35,7 +36,7 @@ class FetchUser extends React.Component {
     this.setState(prevState => ({ people: [...prevState.people, card], loading: false }));
   }
 
-  refreshAll =  async() => {
+  refreshAll = async () => {
     this.setState({ loading: true });
 
     const newState = await Promise.all([...this.state.people].map(async (el) => {
@@ -52,7 +53,6 @@ class FetchUser extends React.Component {
   }
 
   avatarChanger = async (e) => {
-
     const card = await this.getRandomCard();
     const curentItem = +e.target.id;
     const prevState = this.state.people;
@@ -68,7 +68,7 @@ class FetchUser extends React.Component {
           {this.state.people.map((person, index) => {
             return (
               <div className='card'>
-                <Card loading={this.state.loading} key={indexedDB} id={index} avatar={person.avatars[1].url} onClick={this.avatarChanger} ></Card>
+                <Card loading={this.state.loading} key={person.avatars_origin.id.toString()} id={index} avatar={person.avatars[1].url} onClick={this.avatarChanger} ></Card>
               </div>
             )
           })
@@ -79,6 +79,7 @@ class FetchUser extends React.Component {
           {this.state.people.length ? <RefreshButton onClick={this.refreshAll} /> : null}
         </div>
       </div>
+
     )
   }
 }
