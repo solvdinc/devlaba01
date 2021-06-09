@@ -40,7 +40,7 @@ export const AvatarsContainer = () => {
   
   let items = avatars.map((item, index) => {
     return index < showingAvatarCount
-      && <Tile imgLink={item.avatars[1].url} handleRefresh={() => refresh(index)} key={ index} />;
+      && <Tile imgLink={item.avatars[1].url} handleRefresh={() => refresh(index)} key={ index } />;
   });
 
   return (
