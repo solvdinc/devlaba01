@@ -4,14 +4,17 @@ import './avatarApp.css'
 import Avatar from "../avatar/avatar";
 import Add from "../add/add";
 
-
-function getRandom(item) {
+const getRandom = (item) => {
   return Math.floor(item.length * Math.random());
 }
 
 const getData =  async() => {
   return await fetch('https://tinyfac.es/api/users')
     .then(res => res.json());
+}
+
+const getRandomUrl = (items) => {
+  return items[getRandom(items)].avatars[1].url;
 }
 
 class AvatarApp extends React.Component {
@@ -30,19 +33,21 @@ class AvatarApp extends React.Component {
   addItem = () => {
     const {items} = this.state;
 
-    this.setState((prevState) => ({urls: [...prevState.urls, items[getRandom(items)].avatars[1].url]}));
+    this.setState((prevState) => ({urls: [...prevState.urls, getRandomUrl(items)]}));
   }
 
 
   refreshItem = (index) => {
     const {items, urls} = this.state;
-    urls.splice(index, 1, items[getRandom(items)].avatars[1].url);
+
+    urls.splice(index, 1, getRandomUrl(items));
     this.setState({ urls: urls });
   }
 
   refreshAll = () => {
     const {items, urls} = this.state;
-    const url = urls.map( () => items[getRandom(items)].avatars[1].url);
+
+    const url = urls.map( () => getRandomUrl(items));
     this.setState({ urls: url });
 }
 
