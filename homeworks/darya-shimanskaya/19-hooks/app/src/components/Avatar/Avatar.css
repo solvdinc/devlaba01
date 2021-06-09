@@ -1,0 +1,47 @@
+.avatar-refresh {
+    z-index: 2;
+    fill: white;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 240px;
+    height: 240px;
+    margin: 40px 0 0 40px;
+    border-radius: 16px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.avatar-image {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.avatar:hover .avatar-refresh {
+    opacity: 1;
+}
+
+.avatar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 16px;
+}
+
+.avatar:hover:after {
+    background: rgba(0, 0, 0, 0.6);
+}
