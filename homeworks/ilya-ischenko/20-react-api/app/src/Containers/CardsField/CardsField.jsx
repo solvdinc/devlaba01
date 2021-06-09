@@ -55,12 +55,12 @@ function CardsField({ setIsOverlay }) {
     }
 
     setLoader(true);
-    setOverlayValue(true);
+    setIsOverlay(true);
     const oldCards = fetchedCards;
     Promise.all(oldCards.map((card) => getRandomCard())).then((newCards) => {
       setFetchedCards(newCards);
       setLoader(false);
-      setOverlayValue(false);
+      setIsOverlay(false);
     });
   }
 
@@ -99,7 +99,7 @@ function CardsField({ setIsOverlay }) {
           </div>
           <div className="add-btn-wrap">
             <Button onClick={refreshAll}>
-              Refresh All{' '}
+              Refresh All
               {fetchedCards.length ? `(${fetchedCards.length})` : null}
             </Button>
           </div>
