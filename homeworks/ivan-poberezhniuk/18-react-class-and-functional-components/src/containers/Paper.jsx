@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Paper.css';
 
-import { debounce, findLastIndex } from 'lodash';
+import { debounce } from 'lodash';
 
 import { Add } from '../components/Add';
 import Avatar from '../components/Avatar';
@@ -18,10 +18,8 @@ export default class Paper extends Component {
   setLoading = (index, loadingValue) => {
     this.setState((state) => {
       const people = [...state.people];
-      console.log(people[index]);
 
       people[index].isLoading = loadingValue;
-      console.log(people[index]);
       return {
         ...state,
         people: people,

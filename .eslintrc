@@ -4,10 +4,14 @@
     "es6": true,
     "node": true
   },
-  "extends": ["airbnb/base"],
+
   "rules": {
     "no-console": "off",
     "no-prototype-builtins": "off",
     "no-underscore-dangle": "off"
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   }
 }
