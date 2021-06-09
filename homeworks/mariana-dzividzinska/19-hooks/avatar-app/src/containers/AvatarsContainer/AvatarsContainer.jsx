@@ -6,7 +6,7 @@ import style from './AvatarsContainer.module.css';
 import { Button } from '../../components/Button/Button';
 import { Tile } from '../../components/Tile/Tile';
 
-export const AvatarsContainerFunctional = () => {
+export const AvatarsContainer = () => {
   const [avatars, setAvatars] = useState([]);
   const [showingAvatarCount, setShowingAvatarCount] = useState(0);
 
