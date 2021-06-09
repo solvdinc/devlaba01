@@ -27,6 +27,7 @@ export const AvatarsContainer = () => {
   };
 
   const refresh = (index) => {
+    console.log(`refresh, show ${showingAvatarCount}, length ${avatars.length}`)
     const newArr = avatars;
     const updated = newArr.pop();
     newArr.splice(index, 1, updated);
@@ -39,7 +40,7 @@ export const AvatarsContainer = () => {
   
   let items = avatars.map((item, index) => {
     return index < showingAvatarCount
-      && <Tile imgLink={item.avatars[1].url} handleRefresh={() => refresh(index) } />;
+      && <Tile imgLink={item.avatars[1].url} handleRefresh={() => refresh(index)} key={ index} />;
   });
 
   return (
