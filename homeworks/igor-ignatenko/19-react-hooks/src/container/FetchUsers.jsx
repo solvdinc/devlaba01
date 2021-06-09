@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import AddButton from '../components/AddButton.jsx';
 import Card from '../components/Card.jsx';
-import RefreshButton from '../components/RefreshButton.jsx'
+import RefreshButton from '../components/RefreshButton.jsx';
+import './FetchUsers.css';
 
 function FetchUser() {
   const [people, setPeople] = useState([]);
@@ -64,7 +65,7 @@ function FetchUser() {
         {people.map((person, index) => {
           return (
             <div className='card'>
-              <Card loading={loader} key={indexedDB} id={index} avatar={person.avatars[1].url} onClick={avatarChanger} ></Card>
+              <Card loading={loader} key={person.avatars_origin.id.toString()} id={index} avatar={person.avatars[1].url} onClick={avatarChanger} ></Card>
             </div>
           )
         })
@@ -79,4 +80,4 @@ function FetchUser() {
 }
 
 
-export default FetchUser
+export default FetchUser;
