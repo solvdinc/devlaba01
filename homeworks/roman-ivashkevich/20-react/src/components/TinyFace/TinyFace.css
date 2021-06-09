@@ -28,7 +28,7 @@
   top: 50%;
   left: 50%;
   width: 30%;
-  height: 8px;
+  height: 4px;
   background-color: #5e217a;
 }
 
@@ -50,12 +50,22 @@ button:disabled {
 }
 
 .refresh-btn {
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  text-transform: uppercase;
   width: 320px;
   height: 40px;
   background: #5e217a;
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
+  border: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.refresh-btn:hover {
+  background: #8e31b9;
 }
 
 @media (max-width: 1024px) {

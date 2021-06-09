@@ -11,6 +11,21 @@
   width: 100%;
 }
 
+.card-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 16px;
+  cursor: pointer;
+  z-index: 5;
+}
+
 .card_img {
   position: absolute;
   width: 100%;
@@ -24,12 +39,38 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.card-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.card-wrapper:hover::after {
+  opacity: 1;
+}
+
+.loading {
+  opacity: 1;
+  animation: circle 6s linear infinite;
 }
 
 svg {
   width: 100%;
   height: 100%;
   fill: #fff;
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @media (max-width: 1024px) {

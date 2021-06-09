@@ -6,7 +6,9 @@ const Card = ({ src, onClick, index, loadingCardIndex }) => {
     <div className="card-container">
       <div className="card-wrapper" onClick={onClick}>
         <img src={src} alt="card" className="card_img" />
-        <div className="overlay">
+        <div
+          className={index === loadingCardIndex ? 'loading overlay' : 'overlay'}
+        >
           <RefreshSvg />
         </div>
       </div>
