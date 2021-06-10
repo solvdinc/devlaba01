@@ -1,30 +1,30 @@
 const Light = ({ style }) => (
   <div className = 'light'
-  style={{
+  style = {{
     ...style
   }}
   />
 );
 
-const Green = ({active}) => (
+const Green = ({ active }) => (
   <Light
-    style={{
+    style = {{
       backgroundColor: active ? '#00FF00' : '#5B5B5B',
     }}
   />
 );
 
-const Red = ({active}) => (
+const Red = ({ active }) => (
   <Light
-    style={{
+    style = {{
       backgroundColor: active ? '#DF4040' : '#5B5B5B',
     }}
   />
 );
 
-const Yellow = ({active}) => (
+const Yellow = ({ active }) => (
   <Light
-    style={{
+    style = {{
       backgroundColor: active ? '#E9EC6A': '#5B5B5B',
     }}
   />
@@ -32,13 +32,16 @@ const Yellow = ({active}) => (
 
 const lightDuration = 1500;
 
-const TrafficLight = ({value}) =>{
+const TrafficLight = ({ value }) => {
   const [colorIndex, setColorIndex] = React.useState(value);
+  const [blinking, setBlinking] = React.useState(false);
+
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setColorIndex((colorIndex + 1) % 3);
     }, lightDuration);
+
     return () => {
       clearTimeout(timer);
     };
@@ -56,7 +59,7 @@ const TrafficLight = ({value}) =>{
 const App = () => {
   return (
     <TrafficLight value={0} />
-    );
+  );
 }
 
 ReactDOM.render(<App />, document.querySelector('#root'));
