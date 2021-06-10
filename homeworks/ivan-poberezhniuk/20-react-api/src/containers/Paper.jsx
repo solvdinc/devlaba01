@@ -57,7 +57,6 @@ const Paper = () => {
 
   const refreshAllPersons = debounce(async () => {
     try {
-      console.log(123123);
       if (!people.length) {
         setIsOpen(true);
         setErrorMessage('Please add at least one tile FOR refreshING all tiles');
