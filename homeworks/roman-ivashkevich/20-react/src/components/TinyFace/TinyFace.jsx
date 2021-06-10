@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Card from '../Card/Card';
 import Modal from '../Modal/Modal';
 import './TinyFace.css';
@@ -6,17 +6,10 @@ import { useSpring } from 'react-spring';
 
 const TinyFace = () => {
   const [cards, setCards] = useState([]);
-  const [isDisabled, setDisabled] = useState(false);
   const [loadingCardIndex, setLoadingCardIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const modalRef = useRef(null);
-
-  // useEffect(() => {
-  //   if (cards.length === 13) {
-  //     setDisabled(true);
-  //   }
-  // }, [cards.length]);
 
   const getCards = async () => {
     const URL = 'https://tinyfac.es/api/users';
@@ -81,10 +74,13 @@ const TinyFace = () => {
     config: {
       duration: 250,
     },
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    pointerEvents: 'none',
     opacity: showModal ? 1 : 0,
-    transform: showModal
-      ? 'translate(-50%, -50%) scale(1)'
-      : 'translate(-50%, -50%) scale(0)',
   });
 
   return (
@@ -100,12 +96,7 @@ const TinyFace = () => {
           />
         ))}
         <div className="add-btn-container">
-          <button
-            type="button"
-            disabled={isDisabled}
-            className="add-btn"
-            onClick={addCard}
-          />
+          <button type="button" className="add-btn" onClick={addCard} />
         </div>
       </div>
       <div className="refresh-btn-container">
