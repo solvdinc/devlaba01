@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import AddButton from '../components/AddButton.jsx';
 import Card from '../components/Card.jsx';
-import RefreshButton from '../components/RefreshButton.jsx';
+import Button from '../components/Button.jsx';
 import './FetchUsers.css';
 
 function FetchUser() {
   const [people, setPeople] = useState([]);
   const [loader, setLoader] = useState(false);
-
 
   async function getCards() {
     const url = 'https://tinyfac.es/api/users';
@@ -33,14 +32,11 @@ function FetchUser() {
 
   async function refreshAll() {
     setLoader(true);
-    const oldState = people
+
+    const oldState = people;
     const newState = await Promise.all(oldState.map(async (el) => {
-      const cards = await getCards();
-      if (el === cards[0]) {
-        el = cards[1];
-      } else {
-        el = cards[0];
-      }
+      const card = await getRandomCard();
+      el = card;
       return el
     }));
 
@@ -49,7 +45,6 @@ function FetchUser() {
   }
 
   async function avatarChanger(e) {
-
     const card = await getRandomCard();
     const curentItem = +e.target.id;
     setPeople((prevState) => {
@@ -73,7 +68,9 @@ function FetchUser() {
         <AddButton onClick={addCard}></AddButton>
       </div>
       <div className='button-refresh-wrapper'>
-        {people.length ? <RefreshButton onClick={refreshAll} /> : null}
+        <div className='button-refresh-container'>
+          {people.length ? <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All </Button> : null}
+        </div>
       </div>
     </div>
   )
