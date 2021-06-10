@@ -1,4 +1,4 @@
-import Paper from './components/Paper';
+import Paper from './containers/Paper';
 import './App.css';
 
 function App() {
