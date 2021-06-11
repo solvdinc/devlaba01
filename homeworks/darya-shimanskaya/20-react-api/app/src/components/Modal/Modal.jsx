@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from '../Button/Button';
 import './Modal.css';
+import PropTypes from 'prop-types';
 
 const Modal = ({ content, callback }) => {
   return ReactDOM.createPortal(
@@ -16,5 +17,10 @@ const Modal = ({ content, callback }) => {
     document.querySelector('#modal'),
   );
 };
+
+Modal.propTypes = {
+  content: PropTypes.string.isRequired,
+  callback: PropTypes.func,
+}
 
 export default Modal;

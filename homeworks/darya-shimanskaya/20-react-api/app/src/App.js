@@ -49,7 +49,6 @@ const App = () => {
       (urls.length === 13) ? setModalText('Request for Updating the tile was failed: no unique avatars')
         : setModalText('Request for Updating the tile was failed: existing avatar. Please, repeat your request')
     }
-
   };
 
   const refreshAll = () => {
@@ -63,16 +62,6 @@ const App = () => {
     });
   };
 
-  const addContent = () => {
-    return (
-      modalText
-    )
-  };
-
-  const closeModal = () => {
-    setModalShow(false);
-  };
-
   return (
     <>
       <div className="container">
@@ -84,7 +73,7 @@ const App = () => {
         </div>
         <Button className={'refresh-btn'} onClick={refreshAll}>Refresh {urls.length > 0 && urls.length} tile{(urls.length > 1) ? `s ` : null}</Button>
       </div>
-      {showModal && <Modal content={addContent()}  callback={() => closeModal()}/>}
+      {showModal && <Modal content={modalText}  callback={() => setModalShow(false)}/>}
     </>
   );
 };

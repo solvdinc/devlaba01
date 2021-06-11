@@ -1,5 +1,6 @@
 import React from 'react';
 import './Avatar.css';
+import PropTypes from "prop-types";
 
 const Avatar = ({ src, callback }) => {
   return (
@@ -18,5 +19,10 @@ const Avatar = ({ src, callback }) => {
     </div>
   );
 };
+
+Avatar.propTypes = {
+  src: PropTypes.string.isRequired,
+  callback: PropTypes.func,
+}
 
 export default Avatar;
