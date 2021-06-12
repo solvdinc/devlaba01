@@ -1,35 +1,47 @@
 import { useRef, useState } from 'react';
 import Card from '../Card/Card';
+import ErrorCard from '../ErrorCard/ErrorCard';
 import Modal from '../Modal/Modal';
 import './TinyFace.css';
-import { useSpring } from 'react-spring';
+import AddBtn from '../AddBtn/AddBtn';
 
 const TinyFace = () => {
   const [cards, setCards] = useState([]);
+  const [isPending, setPending] = useState(false);
+  const [isError, setError] = useState(false);
   const [loadingCardIndex, setLoadingCardIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const modalRef = useRef(null);
 
-  const getCards = async () => {
-    const URL = 'https://tinyfac.es/api/users';
+  const getCard = async () => {
+    const URL = 'https://laba-backend.herokuapp.com/tile';
     const response = await fetch(URL);
+
     return response.json();
   };
 
   const addCard = () => {
-    if (cards.length === 13) {
-      setShowModal(true);
-      setModalContent(
-        'Request for adding a new tile was failed: no response from api',
-      );
-    }
-    getCards().then((asyncCards) => {
-      const card = asyncCards.find((el) => !cards.includes(el.avatars[1].url));
-      if (card) {
-        setCards((prevState) => [...prevState, card.avatars[1].url]);
-      }
-    });
+    setPending(true);
+    getCard()
+      .then(
+        (asyncCard) => {
+          if (typeof asyncCard.avatar === 'object') {
+            setError(true);
+          }
+          console.log(asyncCard);
+          setCards((prevState) => [...prevState, asyncCard.avatar]);
+          setPending(false);
+        },
+        (error) => {
+          setShowModal(true);
+          setModalContent(
+            `Request for adding a new tile was failed: ${error.message}`,
+          );
+          setPending(false);
+        },
+      )
+      .catch((error) => console.log(error.message));
   };
 
   const refreshAll = () => {
@@ -37,67 +49,64 @@ const TinyFace = () => {
       setShowModal(true);
       setModalContent('Please add at least one tile for refreshing all tiles');
     }
+    const cloneCard = cards;
 
-    getCards().then((asyncCards) => {
-      const newCards = cards.map((el, i) => asyncCards[i].avatars[1].url);
-      setCards(newCards);
-    });
+    Promise.allSettled(cloneCard.map((card) => getCard())).then(
+      (asyncCards) => {
+        const newCards = asyncCards.map((card) => {
+          if (card.value) {
+            return card.value.avatar;
+          }
+        });
+        setCards(newCards);
+        setError(false);
+      },
+    );
   };
 
   const updateCard = (currentIndex) => {
     setLoadingCardIndex(currentIndex);
-    getCards().then((asyncCards) => {
-      if (cards.length !== 13) {
-        const card = asyncCards.find(
-          (el) => !cards.includes(el.avatars[1].url),
-        );
+    getCard()
+      .then(
+        (asyncCard) => {
+          if (typeof asyncCard.avatar === 'object') {
+            setError(true);
+          }
+          const newCards = cards.map((el, index) =>
+            index === currentIndex ? asyncCard.avatar : el,
+          );
 
-        const newCards = cards.map((el, index) =>
-          index === currentIndex ? card.avatars[1].url : el,
-        );
-
-        setCards(newCards);
-        setLoadingCardIndex(null);
-      } else {
-        setTimeout(() => {
+          setCards(newCards);
           setLoadingCardIndex(null);
+        },
+        (error) => {
           setShowModal(true);
           setModalContent(
-            'Request for updating the tile was failed: no unique cards',
+            `Request for updating the tile was failed: ${error.message}`,
           );
-        }, 5000);
-      }
-    });
+          setLoadingCardIndex(null);
+        },
+      )
+      .catch((err) => console.log(err));
   };
-
-  const animation = useSpring({
-    config: {
-      duration: 250,
-    },
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    top: 0,
-    left: 0,
-    pointerEvents: 'none',
-    opacity: showModal ? 1 : 0,
-  });
 
   return (
     <>
       <div className="cards-container">
-        {cards.map((el, i) => (
-          <Card
-            key={i}
-            src={el}
-            onClick={() => updateCard(i)}
-            index={i}
-            loadingCardIndex={loadingCardIndex}
-          />
-        ))}
-        <div className="add-btn-container">
-          <button type="button" className="add-btn" onClick={addCard} />
-        </div>
+        {cards.map((el, i) =>
+          typeof el === 'string' ? (
+            <Card
+              key={i}
+              src={el}
+              onClick={() => updateCard(i)}
+              index={i}
+              loadingCardIndex={loadingCardIndex}
+            />
+          ) : (
+            <ErrorCard key={i} />
+          ),
+        )}
+        <AddBtn onClick={addCard} isPending={isPending} isError={isError} />
       </div>
       <div className="refresh-btn-container">
         <button type="button" className="refresh-btn" onClick={refreshAll}>
@@ -110,7 +119,6 @@ const TinyFace = () => {
         setShowModal={setShowModal}
         modalContent={modalContent}
         onClose={() => setShowModal(false)}
-        animation={animation}
       />
     </>
   );
