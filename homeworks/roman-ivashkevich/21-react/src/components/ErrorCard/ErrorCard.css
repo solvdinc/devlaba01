@@ -34,3 +34,45 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .error-card-container {
+    width: 23%;
+  }
+  .error-svg {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .error-card-container {
+    width:28%
+  }
+  .error-btn {
+    padding: 10px 29px;
+    margin-top: 33px;
+    margin-bottom: 17px;
+  }
+}
+
+@media (max-width: 580px) {
+
+  .error-card-container {
+    width: 48%;
+  }
+  .error-svg {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .error-card-container {
+    width: 64%;
+  }
+}
+
+@media (max-width: 320px) {
+  .error-card-container {
+    width: 100%;
+  }
+}
