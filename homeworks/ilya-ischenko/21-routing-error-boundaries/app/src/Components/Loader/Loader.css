@@ -1,0 +1,18 @@
+.spinner {
+  display: block;
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  animation: rotate 0.5s linear infinite normal;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(365deg);
+  }
+}

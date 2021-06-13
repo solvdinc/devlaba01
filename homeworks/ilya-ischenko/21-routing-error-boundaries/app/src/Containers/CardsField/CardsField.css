@@ -1,0 +1,57 @@
+.app__inner {
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.add-btn-wrap {
+  text-align: center;
+  margin-top: auto;
+}
+
+.overflow {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.modal-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 990px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 770px) {
+  .cards {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 570px) {
+  .cards {
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
