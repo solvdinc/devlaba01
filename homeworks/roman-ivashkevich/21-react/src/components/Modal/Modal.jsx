@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './Modal.css';
 
 const Modal = forwardRef(
-  ({ showModal, setShowModal, modalContent, onClose, animation }, ref) => {
+  ({ showModal, setShowModal, modalContent, onClose }, ref) => {
     if (!showModal) return null;
 
     const closeModal = (e) => {
@@ -16,7 +16,7 @@ const Modal = forwardRef(
     return ReactDOM.createPortal(
       <div className="modal" ref={ref} onClick={closeModal}>
         <div className="modal-dialog">
-          <div className="modal-content">{modalContent}</div>
+          <div className="modal-content">{showModal}</div>
           <button type="button" className="close-btn" onClick={onClose}>
             Close
           </button>
