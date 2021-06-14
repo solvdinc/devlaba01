@@ -1,0 +1,12 @@
+.add-button {
+  width: 240px;
+  height: 240px;
+  border: 4px solid #5E217A;
+  border-radius: 16px;
+  margin: 20px;
+}
+
+.add-button:hover {
+  cursor: pointer;
+  border: 4px solid #863da8;
+}
