@@ -1,0 +1,10 @@
+.down-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  z-index: 11;
+}

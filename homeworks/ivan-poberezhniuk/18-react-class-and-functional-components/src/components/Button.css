@@ -1,0 +1,23 @@
+.button {
+  width: 320px;
+  height: 40px;
+  background: #5e217a;
+  border-radius: 6px;
+  color: white;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: rgb(185, 184, 184);
+  cursor: not-allowed;
+}
