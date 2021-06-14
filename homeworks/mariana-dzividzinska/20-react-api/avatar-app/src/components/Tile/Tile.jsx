@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import style from './Tile.module.css';
 import { ReactComponent as RefreshImg } from '../../assets/001-refresh.svg';
 
-const Tile = ({imgLink, handleAdd, handleRefresh}) => {
+const Tile = ({ imgLink, handleAdd, handleRefresh }) => {
   return (
     <div className={style.container}>
       {
@@ -25,6 +25,6 @@ const Tile = ({imgLink, handleAdd, handleRefresh}) => {
       }
     </div>
   );
-}
+};
 
 export default Tile;

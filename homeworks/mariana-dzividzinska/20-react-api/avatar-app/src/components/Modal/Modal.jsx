@@ -22,13 +22,13 @@ const Modal = ({ children, handleClose }) => {
   const modal = <div className={style.paper}>
     <div className={style.container}>
       <div className={style.modal}>
-          <div className={style.content}>{ children}</div>
+        <div className={style.content}>{children}</div>
         <div className={style.btnWrapper}>
           <Button handleClick={handleClose}>Close</Button>
         </div>
       </div>
     </div>
-  </div>
+  </div>;
   const target = usePortal('root');
   return ReactDOM.createPortal(modal, target);
 };

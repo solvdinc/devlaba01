@@ -6,6 +6,7 @@ import style from './AvatarsContainer.module.css';
 import Button from '../../components/Button/Button';
 import Tile from '../../components/Tile/Tile';
 import Modal from '../../components/Modal/Modal';
+
 const AvatarsContainer = () => {
   const [avatars, setAvatars] = useState([]);
   const [showingAvatarCount, setShowingAvatarCount] = useState(0);
@@ -79,19 +80,19 @@ const AvatarsContainer = () => {
     <div>
       {isOpenModal && <Modal content={modalText} handleClose={closeModal}>{modalText}</Modal>}
       <div className={style.container}>
-      <div className={style.itemLst}>
-        {items}
-        <Tile handleAdd={addNew} />
-      </div>
-      <div className={style.footerWrapper}>
+        <div className={style.itemLst}>
+          {items}
+          <Tile handleAdd={addNew} />
+        </div>
+        <div className={style.footerWrapper}>
           <Button handleClick={refreshAll}>
             refresh all
             {showingAvatarCount > 0 && `(${showingAvatarCount})`}
           </Button>
+        </div>
       </div>
     </div>
-    </div>
   );
-}
+};
 
 export default AvatarsContainer;

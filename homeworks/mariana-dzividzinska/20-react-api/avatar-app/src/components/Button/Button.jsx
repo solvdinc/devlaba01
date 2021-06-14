@@ -4,6 +4,6 @@ const Button = ({ name, handleClick, children, ...props }) => {
   return (
     <button className={style.btn} onClick={handleClick}>{children}</button>
   );
-}
+};
 
 export default Button;
