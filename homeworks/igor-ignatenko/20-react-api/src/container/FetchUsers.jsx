@@ -38,7 +38,7 @@ function FetchUser() {
     }
   }
 
-  async function refreshAll() {
+  function refreshAll() {
     if (!people.length) {
       setModal(true)
       setMessage('Please add at least one tile for refreshing all tiles')
@@ -47,26 +47,23 @@ function FetchUser() {
 
     setLoader(true);
 
-    const oldState = people;
-    const newState = await Promise.all(oldState.map(async (el) => {
-      const card = await getRandomCard();
-      el = card;
-      return el
-    }));
+    const oldCards = people;
+    Promise.all(oldCards.map(() => getRandomCard())).then((newCards) => {
+      setPeople(newCards);
+      setLoader(false);
+    });
 
-    setPeople(newState);
-    setLoader(false);
   }
 
-  async function avatarChanger(e) {
+  function avatarChanger(index) {
     try {
-      const card = await getRandomCard();
-      const curentItem = +e.target.id;
-      setPeople((prevState) => {
-        const prev = [...prevState];
-        prev[curentItem] = card;
-        return prev
-      });
+      getRandomCard().then((card) => {
+        setPeople((prevState) => {
+          const oldCards = [...prevState];
+          oldCards[index] = card;
+          return oldCards
+        })
+      })
     } catch (error) {
       setMessage(`Request for updating the tile was failed: ${error}`)
     }
@@ -89,7 +86,7 @@ function FetchUser() {
         {people.map((person, index) => {
           return (
             <div className='card'>
-              <Card loading={loader} key={person.avatars_origin.id.toString()} id={index} avatar={person.avatars[1].url} onClick={avatarChanger} ></Card>
+              <Card loading={loader} index={index} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} ></Card>
             </div>
           )
         })
