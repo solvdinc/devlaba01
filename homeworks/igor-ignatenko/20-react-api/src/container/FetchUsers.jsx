@@ -13,59 +13,50 @@ function FetchUser() {
 
 
   async function getCards() {
-    const url = 'https://tinyfac.es/api/users';
-    const response = await fetch(url);
-    const data = await response.json();
-
-    return data
+    const response = await fetch('https://tinyfac.es/api/users');
+    return await response.json();
   }
 
   async function getRandomCard() {
     const cards = await getCards();
-    const radnomNumber = Math.floor(cards.length * Math.random());
-    const randomCard = await cards[radnomNumber];
-
-    return randomCard
+    const randomNumber = Math.floor(cards.length * Math.random());
+    return await cards[randomNumber];
   }
 
   async function addCard() {
     try {
       const card = await getRandomCard();
-
       setPeople(prevState => ([...prevState, card]));
     } catch (error) {
-      setMessage(`Request for adding a new tile was failed: ${error}`)
+      setMessage(`Request for adding a new tile was failed: ${error}`);
+      setModal(true);
     }
   }
 
-  function refreshAll() {
+  async function refreshAll() {
     if (!people.length) {
       setModal(true)
-      setMessage('Please add at least one tile for refreshing all tiles')
+      setMessage('Please add at least one tile for refreshing all tiles');
       return
     }
-
     setLoader(true);
-
     const oldCards = people;
-    Promise.all(oldCards.map(() => getRandomCard())).then((newCards) => {
-      setPeople(newCards);
-      setLoader(false);
-    });
-
+    const newState = await Promise.all(oldCards.map(() => getRandomCard()));
+    setPeople(newState);
+    setLoader(false);
   }
 
-  function avatarChanger(index) {
+  async function avatarChanger(index) {
     try {
-      getRandomCard().then((card) => {
-        setPeople((prevState) => {
-          const oldCards = [...prevState];
-          oldCards[index] = card;
-          return oldCards
-        })
+      const card = await getRandomCard();
+      setPeople((prevState) => {
+        const oldCards = [...prevState];
+        oldCards[index] = card;
+        return oldCards
       })
     } catch (error) {
-      setMessage(`Request for updating the tile was failed: ${error}`)
+      setMessage(`Request for updating the tile was failed: ${error}`);
+      setModal(true)
     }
   }
 
@@ -74,7 +65,6 @@ function FetchUser() {
   }
 
   return (
-
     <div className='container'>
       { modal &&
         <ModalWindow onClick={handlerModal}>
@@ -85,8 +75,8 @@ function FetchUser() {
       <div className='cards'>
         {people.map((person, index) => {
           return (
-            <div className='card'>
-              <Card loading={loader} index={index} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} ></Card>
+            <div className='card' key={index}>
+              <Card loading={loader} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} ></Card>
             </div>
           )
         })
@@ -99,9 +89,7 @@ function FetchUser() {
         </div>
       </div>
     </div>
-
   )
 }
-
 
 export default FetchUser;
