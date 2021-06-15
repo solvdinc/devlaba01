@@ -7,7 +7,6 @@ class Image extends Component {
       <div className='container__image'>
         <div
           className='image'
-          key={this.props.index}
           style={{ backgroundImage: `url(${this.props.src})` }}
           onClick={this.props.onClick}
         ></div>
