@@ -1,15 +1,15 @@
 import React from 'react';
-import Spinner from '../assets/001-refresh.svg';
+import refreshIcon from '../assets/001-refresh.svg';
 import './Card.css';
 
-const Card = ({ loading, id, avatar, onClick }) => (
+const Card = ({ loading, avatar, onClick }) => (
     <>
         {loading && <div className='overlay'>
-            <div className='refreshAll'>
-                <img src={Spinner} alt='spinner' className='spinner' ></img>
+            <div className='refresh-all'>
+                <img src={refreshIcon} alt='refresh' className='refresh' />
             </div>
         </div>}
-        <div className='card__avatar' key={id} id={id} onClick={onClick} style={{ backgroundImage: `url(${avatar})` }}>
+        <div className='card__avatar'  onClick={onClick} style={{ backgroundImage: `url(${avatar})` }}>
         </div>
     </>
 )

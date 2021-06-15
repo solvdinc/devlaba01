@@ -9,48 +9,35 @@ function FetchUser() {
   const [loader, setLoader] = useState(false);
 
   async function getCards() {
-    const url = 'https://tinyfac.es/api/users';
-    const response = await fetch(url);
-    const data = await response.json();
-
-    return data
+    const response = await fetch('https://tinyfac.es/api/users');
+    return await response.json();
   }
 
   async function getRandomCard() {
     const cards = await getCards();
-    const radnomNumber = Math.floor(cards.length * Math.random());
-    const randomCard = await cards[radnomNumber];
-
-    return randomCard
+    const randomNumber = Math.floor(cards.length * Math.random());
+    return await cards[randomNumber];
   }
 
   async function addCard() {
     const card = await getRandomCard();
-
     setPeople(prevState => ([...prevState, card]));
   }
 
   async function refreshAll() {
     setLoader(true);
-
     const oldState = people;
-    const newState = await Promise.all(oldState.map(async (el) => {
-      const card = await getRandomCard();
-      el = card;
-      return el
-    }));
-
+    const newState = await Promise.all(oldState.map(() => getRandomCard()));
     setPeople(newState);
     setLoader(false);
   }
 
-  async function avatarChanger(e) {
+  async function avatarChanger(index) {
     const card = await getRandomCard();
-    const curentItem = +e.target.id;
     setPeople((prevState) => {
-      const prev = [...prevState];
-      prev[curentItem] = card;
-      return prev
+      const oldCards = [...prevState];
+      oldCards[index] = card;
+      return oldCards
     });
   }
 
@@ -59,8 +46,8 @@ function FetchUser() {
       <div className='cards'>
         {people.map((person, index) => {
           return (
-            <div className='card'>
-              <Card loading={loader} key={person.avatars_origin.id.toString()} id={index} avatar={person.avatars[1].url} onClick={avatarChanger} ></Card>
+            <div className='card' key={index}>
+              <Card loading={loader}  avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} ></Card>
             </div>
           )
         })
