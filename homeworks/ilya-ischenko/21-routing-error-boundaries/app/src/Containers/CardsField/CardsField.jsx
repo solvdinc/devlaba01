@@ -10,89 +10,88 @@ import { ErrorBoundary } from 'react-error-boundary';
 import './CardsField.css';
 
 function CardsField({ setIsOverlay }) {
-  const [fetchedCards, setFetchedCards] = useState([]);
+  const [cards, setCards] = useState([]);
   const [overlayValue, setOverlayValue] = useState(false);
   const [modalText, setModalText] = useState('');
   const [addButton, setAddButton] = useState(true);
 
-  async function getCard() {
-    const data = await fetch('https://laba-backend.herokuapp.com/tile');
-    const res = await data.json();
-    return res.avatar;
-  }
+  const getCard = async () => {
+    const res = await fetch('https://laba-backend.herokuapp.com/tile');
+    const data = await res.json();
+    return data.avatar;
+  };
 
-  function addCard() {
+  const addCard = async () => {
     setAddButton(false);
-    setFetchedCards((prevCards) => [
-      ...prevCards,
-      { img: '', status: 'pending' },
-    ]);
-    getCard()
-      .then((card) => {
-        setFetchedCards(([...prevCards]) => {
-          const oldCards = prevCards;
-          oldCards[oldCards.length - 1].img = card;
-          oldCards[oldCards.length - 1].status = 'resolved';
-          return oldCards;
-        });
-      })
-      .catch((err) => {
-        setModal(`REQUEST for adding a new tile was failed: ${err}`);
-        setFetchedCards(([...prevCards]) => {
-          const oldCards = prevCards;
-          oldCards.splice(-1);
-          return oldCards;
-        });
-      })
-      .finally(() => {
-        setAddButton(true);
-      });
-  }
+    setCards((prevCards) => [...prevCards, { img: '', status: 'pending' }]);
 
-  function refreshCard(index) {
-    setFetchedCards(([...prevCards]) => {
-      const oldCards = prevCards;
+    try {
+      const card = await getCard();
+      setCards((prevCards) => {
+        const oldCards = [...prevCards];
+        oldCards[oldCards.length - 1].img = card;
+        oldCards[oldCards.length - 1].status = 'resolved';
+        return oldCards;
+      });
+    } catch (err) {
+      setModal(`REQUEST for adding a new tile was failed: ${err}`);
+      setCards((prevCards) => {
+        const oldCards = [...prevCards];
+        oldCards.pop();
+        return oldCards;
+      });
+    } finally {
+      setAddButton(true);
+    }
+  };
+
+  const refreshCard = async (index) => {
+    setCards((prevCards) => {
+      const oldCards = [...prevCards];
       oldCards[index].status = 'pending';
       return oldCards;
     });
-    getCard()
-      .then((img) => {
-        setFetchedCards(([...prevCards]) => {
-          const oldCards = prevCards;
-          oldCards[index].img = img;
-          oldCards[index].status = 'resolved';
-          return oldCards;
-        });
-      })
-      .catch((err) => {
-        setModal(`REQUEST for Updating the tile was failed: ${err}`);
-        setFetchedCards(([...prevCards]) => {
-          const oldCards = prevCards;
-          oldCards[index].status = 'resolved';
-          return prevCards;
-        });
+
+    try {
+      const card = await getCard();
+      setCards((prevCards) => {
+        const oldCards = [...prevCards];
+        oldCards[index].img = card;
+        oldCards[index].status = 'resolved';
+        return oldCards;
       });
-  }
+    } catch (err) {
+      setModal(`REQUEST for Updating the tile was failed: ${err}`);
+      setCards(([...prevCards]) => {
+        const oldCards = prevCards;
+        oldCards[index].status = 'resolved';
+        return prevCards;
+      });
+    }
+  };
 
-  function refreshAll() {
-    const oldCards = [...fetchedCards];
+  const refreshAll = async () => {
+    if (!cards.length) {
+      setModal('Please add at least one tile FOR refreshING all tiles');
+    }
+
+    const oldCards = [...cards];
     oldCards.map((card) => (card.status = 'pending'));
-    setFetchedCards(oldCards);
+    setCards(oldCards);
 
-    Promise.allSettled(oldCards.map((card, index) => getCard())).then(
-      (newCards) => {
-        setFetchedCards(([...prevCards]) => {
-          const oldCards = prevCards;
-          oldCards.map((card, index) => {
-            card.img = newCards[index].value;
-            card.status = 'resolved';
-            return card;
-          });
-          return oldCards;
-        });
-      },
+    const newCards = await Promise.allSettled(
+      oldCards.map((card, index) => getCard()),
     );
-  }
+    setCards((prevCards) => {
+      const oldCards = [...prevCards];
+      oldCards.map((card, index) => {
+        card.img = newCards[index].value;
+        card.status = 'resolved';
+        return card;
+      });
+      return oldCards;
+    });
+  };
 
   function setModal(text) {
     setOverlayValue(true);
@@ -118,7 +117,7 @@ function CardsField({ setIsOverlay }) {
       <div className="container">
         <div className="app__inner">
           <div className="cards">
-            {fetchedCards.map((card, index) => {
+            {cards.map((card, index) => {
               return card.status === 'pending' ? (
                 <Loader />
               ) : (
@@ -126,7 +125,7 @@ function CardsField({ setIsOverlay }) {
                   key={index}
                   FallbackComponent={CardWithError}
                   onReset={() => refreshCard(index)}
-                  resetKeys={[fetchedCards]}
+                  resetKeys={[cards]}
                 >
                   <Card card={card} onClick={() => refreshCard(index)} />
                 </ErrorBoundary>
@@ -137,7 +136,7 @@ function CardsField({ setIsOverlay }) {
           <div className="add-btn-wrap">
             <Button onClick={refreshAll}>
               Refresh All
-              {fetchedCards.length ? `(${fetchedCards.length})` : null}
+              {cards.length ? `(${cards.length})` : null}
             </Button>
           </div>
         </div>
