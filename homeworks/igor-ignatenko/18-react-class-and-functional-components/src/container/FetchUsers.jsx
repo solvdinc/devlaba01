@@ -10,55 +10,39 @@ class FetchUser extends React.Component {
     this.state = {
       loading: false,
       people: [],
-
     };
   }
 
   getCards = async () => {
     const url = 'https://tinyfac.es/api/users';
     const response = await fetch(url);
-    const data = await response.json();
-
-    return data
+    return await response.json();
   }
 
   getRandomCard = async () => {
     const cards = await this.getCards();
-    const radnomNumber = Math.floor(cards.length * Math.random());
-    const randomCard = await cards[radnomNumber];
-
-    return randomCard
+    const randomNumber = Math.floor(cards.length * Math.random());
+    return await cards[randomNumber];
   }
 
   addCard = async () => {
     const card = await this.getRandomCard();
-
-    this.setState(prevState => ({ people: [...prevState.people, card], loading: false }));
+    this.setState((prevState) => ({ people: [...prevState.people, card] }));
   }
 
   refreshAll = async () => {
     this.setState({ loading: true });
-
-    const newState = await Promise.all([...this.state.people].map(async (el) => {
-      const cards = await this.getCards();
-      if (el === cards[0]) {
-        el = cards[1];
-      } else {
-        el = cards[0];
-      }
-      return el
-    }));
-
+    const newState = await Promise.all(this.state.people.map(() => this.getRandomCard()));
     this.setState({ people: newState, loading: false });
   }
 
-  avatarChanger = async (e) => {
+  avatarChanger = async (index) => {
     const card = await this.getRandomCard();
-    const curentItem = +e.target.id;
-    const prevState = this.state.people;
-    prevState[curentItem] = card;
-
-    this.setState({ people: prevState, loading: false });
+    this.setState((prevState) => {
+      const oldCards = [...prevState.people];
+      oldCards[index] = card;
+      return { people: oldCards }
+    })
   }
 
   render() {
@@ -67,8 +51,8 @@ class FetchUser extends React.Component {
         <div className='cards'>
           {this.state.people.map((person, index) => {
             return (
-              <div className='card'>
-                <Card loading={this.state.loading} key={person.avatars_origin.id.toString()} id={index} avatar={person.avatars[1].url} onClick={this.avatarChanger} ></Card>
+              <div className='card' key={index}>
+                <Card loading={this.state.loading} avatar={person.avatars[1].url} onClick={() => this.avatarChanger(index)} ></Card>
               </div>
             )
           })
@@ -76,7 +60,7 @@ class FetchUser extends React.Component {
           <AddButton onClick={this.addCard}></AddButton>
         </div>
         <div className='button-refresh-wrapper'>
-          {this.state.people.length ? <RefreshButton onClick={this.refreshAll} /> : null}
+            {this.state.people.length ? <RefreshButton onClick={this.refreshAll} /> : null}
         </div>
       </div>
 

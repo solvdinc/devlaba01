@@ -1,10 +1,9 @@
 .user-button-refresh {
   padding: 8px;
-  max-width: 320px;
-  width: 100%;
+  width: 360px;
   font-size: 18px;
   border-radius: 6px;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.15s linear;
   font-weight: 500;
   color: #fff;
   background: #5e217a;
@@ -12,4 +11,10 @@
   outline: none;
   border: none;
   cursor: pointer;
+  margin-top: 48px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
 }
