@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ButtonAdd.scss';
 
-const ButtonAdd = ({ onClick, children }) => (
-  <button className='button__add' onClick={onClick}>
-    {children}
-  </button>
+const ButtonAdd = ({ onClick }) => (
+  <button className='button__add' onClick={onClick}></button>
 );
 export default ButtonAdd;
