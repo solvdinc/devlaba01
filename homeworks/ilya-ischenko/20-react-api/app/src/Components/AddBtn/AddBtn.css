@@ -7,11 +7,11 @@
   position: relative;
   padding-bottom: 100%;
   width: 100%;
-  border: 4px solid #5E217A;
+  border: 4px solid #5e217a;
   border-radius: 16px;
   cursor: pointer;
   box-sizing: content-box;
-  transition: transform .1s linear;
+  transition: transform 0.1s linear;
 }
 
 .add-btn__inner:hover {
@@ -24,7 +24,7 @@
   left: 50%;
   width: 30%;
   height: 4px;
-  background: #5E217A;
+  background: #5e217a;
   transform: translate(-50%, -50%);
 }
 

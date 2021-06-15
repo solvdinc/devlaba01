@@ -5,64 +5,64 @@ import Card from '../../Components/Card/Card';
 import Loader from '../../Components/Loader/Loader';
 import Modal from '../../Components/Modal/Modal';
 
+import './CardsField.css';
+
 function CardsField({ setIsOverlay }) {
-  const [fetchedCards, setFetchedCards] = useState([]);
-  const [loader, setLoader] = useState(false);
+  const [cards, setCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [overlayValue, setOverlayValue] = useState(false);
   const [modalText, setModalText] = useState('');
 
-  async function fetchCards() {
-    const data = await fetch('https://tinyfac.es/api/users');
-    const res = await data.json();
-    return res;
-  }
+  const fetchCards = async () => {
+    const res = await fetch('https://tinyfac.es/api/users');
+    return res.json();
+  };
 
-  async function getRandomCard() {
+  const getRandomCard = async () => {
     const cards = await fetchCards();
-    const radnomNumber = Math.floor(cards.length * Math.random());
-    return cards[radnomNumber];
-  }
+    const randomNumber = Math.floor(cards.length * Math.random());
+    return cards[randomNumber];
+  };
 
-  function addCard() {
+  const addCard = async () => {
     if (Math.random() * 10 > 6) {
       setModal('REQUEST for adding a new tile was failed: {reason}');
       return;
     }
 
-    getRandomCard().then((card) => {
-      setFetchedCards((prevCards) => [...prevCards, card]);
-    });
-  }
+    const card = await getRandomCard();
+    setCards((prevCards) => [...prevCards, card]);
+  };
 
-  function refreshCard(index) {
+  const refreshCard = async (index) => {
     if (Math.random() * 10 > 6) {
       setModal('REQUEST for Updating the tile was failed: {reason}');
       return;
     }
 
-    fetchCards().then((cards) => {
-      const oldCards = fetchedCards;
-      oldCards.splice(index, 1, cards[0]);
+    const card = await getRandomCard();
+    const oldCards = [...cards];
+    oldCards.splice(index, 1, card);
 
-      setFetchedCards([...oldCards]);
-    });
-  }
+    setCards(oldCards);
+  };
 
-  function refreshAll() {
-    if (!fetchedCards.length) {
+  const refreshAll = async () => {
+    if (!cards.length) {
       setModal('Please add at least one tile FOR refreshING all tiles');
       return;
     }
 
-    setLoader(true);
+    setIsLoading(true);
     setIsOverlay(true);
-    const oldCards = fetchedCards;
-    Promise.all(oldCards.map((card) => getRandomCard())).then((newCards) => {
-      setFetchedCards(newCards);
-      setLoader(false);
-      setIsOverlay(false);
-    });
-  }
+
+    const oldCards = [...cards];
+    const newCards = await Promise.all(oldCards.map((card) => getRandomCard()));
+
+    setCards(newCards);
+    setIsLoading(false);
+    setIsOverlay(false);
+  };
 
   function setModal(text) {
     setIsOverlay(true);
@@ -76,7 +76,7 @@ function CardsField({ setIsOverlay }) {
 
   return (
     <div className={overlayValue ? 'overflow' : null}>
-      {loader && <Loader />}
+      {isLoading && <Loader />}
 
       {modalText && (
         <Modal onClick={removeModal}>
@@ -88,7 +88,7 @@ function CardsField({ setIsOverlay }) {
       <div className="container">
         <div className="app__inner">
           <div className="cards">
-            {fetchedCards.map((card, index) => (
+            {cards.map((card, index) => (
               <Card
                 key={index}
                 img={card.avatars[1]}
@@ -100,7 +100,7 @@ function CardsField({ setIsOverlay }) {
           <div className="add-btn-wrap">
             <Button onClick={refreshAll}>
               Refresh All
-              {fetchedCards.length ? `(${fetchedCards.length})` : null}
+              {cards.length ? `(${cards.length})` : null}
             </Button>
           </div>
         </div>

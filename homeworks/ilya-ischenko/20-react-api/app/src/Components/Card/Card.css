@@ -32,7 +32,7 @@
   border-radius: inherit;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
-  transition: opacity .1s linear;
+  transition: opacity 0.1s linear;
 }
 
 .card__inner:hover::before {
@@ -45,7 +45,7 @@
   left: 50%;
   transform: translate(-50%, -20%);
   opacity: 0;
-  transition: opacity .1s linear, transform .2s linear;
+  transition: opacity 0.1s linear, transform 0.2s linear;
 }
 
 .card__inner:hover .refresh {

@@ -4,7 +4,7 @@
   width: 100%;
   font-size: 18px;
   border-radius: 6px;
-  transition: opacity .2s linear;
+  transition: opacity 0.2s linear;
   font-weight: 500;
   color: #fff;
   background: #5e217a;
@@ -15,5 +15,5 @@
 }
 
 .button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
