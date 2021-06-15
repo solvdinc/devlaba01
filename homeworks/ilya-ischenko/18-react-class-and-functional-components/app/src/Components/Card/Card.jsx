@@ -8,12 +8,12 @@ class Card extends Component {
     return (
       <div className="card">
         <div
-          onClick={(index) => this.props.onClick(index)}
+          onClick={this.props.onClick}
           className="card__inner"
           style={{ backgroundImage: `url(${this.props.img.url})` }}
         >
           <div className="refresh">
-            <img className="refresh__icon" src={refresfIcon} />
+            <img className="refresh__icon" src={refresfIcon} alt="refresh" />
           </div>
         </div>
       </div>

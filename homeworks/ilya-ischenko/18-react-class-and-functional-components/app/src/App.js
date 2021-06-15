@@ -7,60 +7,56 @@ import Loader from './Components/Loader/Loader';
 
 class App extends Component {
   state = {
-    fetchedCards: [],
-    loader: false,
+    cards: [],
+    isLoading: false,
   };
 
-  async fetchCards() {
-    const data = await fetch('https://tinyfac.es/api/users');
-    const res = await data.json();
-    return res;
-  }
+  fetchCards = async () => {
+    const res = await fetch('https://tinyfac.es/api/users');
+    return await res.json();
+  };
 
-  async getRandomCard() {
+  getRandomCard = async () => {
     const cards = await this.fetchCards();
-    const radnomNumber = Math.floor(cards.length * Math.random());
-    return cards[radnomNumber];
-  }
+    const randomNumber = Math.floor(cards.length * Math.random());
+    return cards[randomNumber];
+  };
 
-  addCard() {
-    this.getRandomCard().then((card) => {
-      this.setState((prevState) => ({
-        fetchedCards: [...prevState.fetchedCards, card],
-      }));
-    });
-  }
+  addCard = async () => {
+    const card = await this.getRandomCard();
+    this.setState((prevState) => ({
+      cards: [...prevState.cards, card],
+    }));
+  };
 
-  refreshCard(index) {
-    this.fetchCards().then((cards) => {
-      const oldCards = this.state.fetchedCards;
-      oldCards.splice(index, 1, cards[0]);
+  refreshCard = async (index) => {
+    const card = await this.getRandomCard();
+    const oldCards = [...this.state.cards];
+    oldCards.splice(index, 1, card);
 
-      this.setState({
-        fetchedCards: oldCards,
-      });
-    });
-  }
-
-  refreshAll() {
     this.setState({
-      loader: true,
+      cards: oldCards,
     });
-    const oldCards = this.state.fetchedCards;
-    Promise.all(oldCards.map((card) => this.getRandomCard())).then(
-      (newCards) => {
-        this.setState({
-          loader: false,
-          fetchedCards: newCards,
-        });
-      },
+  };
+
+  refreshAll = async () => {
+    this.setState({
+      isLoading: true,
+    });
+    const oldCards = [...this.state.cards];
+    const newCards = await Promise.all(
+      oldCards.map(() => this.getRandomCard()),
     );
-  }
+    this.setState({
+      isLoading: false,
+      cards: newCards,
+    });
+  };
 
   render() {
     return (
-      <div className={this.state.loader ? 'overflow' : null}>
-        {this.state.loader && (
+      <div className={this.state.isLoading ? 'overflow' : null}>
+        {this.state.isLoading && (
           <Overlay>
             <Loader />
           </Overlay>
@@ -68,18 +64,18 @@ class App extends Component {
         <div className="container">
           <div className="app__inner">
             <div className="cards">
-              {this.state.fetchedCards.map((card, index) => (
+              {this.state.cards.map((card, index) => (
                 <Card
                   key={index}
                   img={card.avatars[1]}
-                  onClick={this.refreshCard.bind(this, index)}
+                  onClick={() => this.refreshCard(index)}
                 />
               ))}
-              <AddBtn onClick={() => this.addCard()} />
+              <AddBtn onClick={this.addCard} />
             </div>
             <div className="add-btn-wrap">
-              {this.state.fetchedCards.length ? (
-                <Button onClick={() => this.refreshAll()}>Refresh All</Button>
+              {this.state.cards.length ? (
+                <Button onClick={this.refreshAll}>Refresh All</Button>
               ) : null}
             </div>
           </div>
