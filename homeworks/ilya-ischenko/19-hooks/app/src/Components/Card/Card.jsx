@@ -6,7 +6,7 @@ import refresfIcon from './../../assets/001-refresh.svg';
 const Card = ({ img, onClick }) => (
   <div className="card">
     <div
-      onClick={(index) => onClick(index)}
+      onClick={onClick}
       className="card__inner"
       style={{ backgroundImage: `url(${img.url})` }}
     >

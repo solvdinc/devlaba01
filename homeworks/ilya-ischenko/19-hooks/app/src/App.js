@@ -6,48 +6,45 @@ import Overlay from './Components/Overlay/Overlay';
 import Loader from './Components/Loader/Loader';
 
 function App() {
-  const [fetchedCards, setFetchedCards] = useState([]);
-  const [loader, setLoader] = useState(false);
+  const [cards, setcards] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  async function fetchCards() {
-    const data = await fetch('https://tinyfac.es/api/users');
-    const res = await data.json();
-    return res;
-  }
+  const fetchCards = async () => {
+    const res = await fetch('https://tinyfac.es/api/users');
+    return await res.json();
+  };
 
-  async function getRandomCard() {
+  const getRandomCard = async () => {
     const cards = await fetchCards();
-    const radnomNumber = Math.floor(cards.length * Math.random());
-    return cards[radnomNumber];
-  }
+    const randomNumber = Math.floor(cards.length * Math.random());
+    return cards[randomNumber];
+  };
 
-  function addCard() {
-    getRandomCard().then((card) => {
-      setFetchedCards((prevCards) => [...prevCards, card]);
-    });
-  }
+  const addCard = async () => {
+    const card = await getRandomCard();
+    setcards((prevCards) => [...prevCards, card]);
+  };
 
-  function refreshCard(index) {
-    fetchCards().then((cards) => {
-      const oldCards = fetchedCards;
-      oldCards.splice(index, 1, cards[0]);
+  const refreshCard = async (index) => {
+    const card = await getRandomCard();
+    const oldCards = [...cards];
+    oldCards.splice(index, 1, card);
 
-      setFetchedCards([...oldCards]);
-    });
-  }
+    setcards(oldCards);
+  };
 
-  function refreshAll() {
-    setLoader(true);
-    const oldCards = fetchedCards;
-    Promise.all(oldCards.map((card) => getRandomCard())).then((newCards) => {
-      setFetchedCards(newCards);
-      setLoader(false);
-    });
-  }
+  const refreshAll = async () => {
+    setIsLoading(true);
+    const oldCards = [...cards];
+    const newCards = await Promise.all(oldCards.map((card) => getRandomCard()));
+
+    setcards(newCards);
+    setIsLoading(false);
+  };
 
   return (
-    <div className={loader ? 'overflow' : null}>
-      {loader && (
+    <div className={isLoading ? 'overflow' : null}>
+      {isLoading && (
         <Overlay>
           <Loader />
         </Overlay>
@@ -55,7 +52,7 @@ function App() {
       <div className="container">
         <div className="app__inner">
           <div className="cards">
-            {fetchedCards.map((card, index) => (
+            {cards.map((card, index) => (
               <Card
                 key={index}
                 img={card.avatars[1]}
@@ -65,9 +62,7 @@ function App() {
             <AddBtn onClick={addCard} />
           </div>
           <div className="add-btn-wrap">
-            {fetchedCards.length && (
-              <Button onClick={refreshAll}>Refresh All</Button>
-            )}
+            {cards.length && <Button onClick={refreshAll}>Refresh All</Button>}
           </div>
         </div>
       </div>
