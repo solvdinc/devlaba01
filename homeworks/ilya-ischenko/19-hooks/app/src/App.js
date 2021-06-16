@@ -6,7 +6,7 @@ import Overlay from './Components/Overlay/Overlay';
 import Loader from './Components/Loader/Loader';
 
 function App() {
-  const [cards, setcards] = useState([]);
+  const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchCards = async () => {
@@ -22,7 +22,7 @@ function App() {
 
   const addCard = async () => {
     const card = await getRandomCard();
-    setcards((prevCards) => [...prevCards, card]);
+    setCards((prevCards) => [...prevCards, card]);
   };
 
   const refreshCard = async (index) => {
@@ -30,7 +30,7 @@ function App() {
     const oldCards = [...cards];
     oldCards.splice(index, 1, card);
 
-    setcards(oldCards);
+    setCards(oldCards);
   };
 
   const refreshAll = async () => {
@@ -38,7 +38,7 @@ function App() {
     const oldCards = [...cards];
     const newCards = await Promise.all(oldCards.map((card) => getRandomCard()));
 
-    setcards(newCards);
+    setCards(newCards);
     setIsLoading(false);
   };
 
