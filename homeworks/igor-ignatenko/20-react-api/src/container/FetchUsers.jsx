@@ -66,26 +66,23 @@ function FetchUser() {
 
   return (
     <div className='container'>
-      { modal &&
+      {modal &&
         <ModalWindow onClick={handlerModal}>
           <p>{message}</p>
           <Button arialLabel='Close Modal Window' onClick={handlerModal}>Close</Button>
         </ModalWindow>
       }
       <div className='cards'>
-        {people.map((person, index) => {
-          return (
-            <div className='card' key={index}>
-              <Card loading={loader} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} ></Card>
-            </div>
-          )
-        })
-        }
-        <AddButton onClick={addCard}></AddButton>
+      {people.map((person, index) => (
+          <div className='card' key={index}>
+            <Card loading={loader} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} />
+          </div>
+        ))}
+        <AddButton onClick={addCard} />
       </div>
       <div className='button-refresh-wrapper'>
         <div className='button-refresh-container'>
-          <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All  {people.length ? `(${people.length})` : null}</Button>
+          <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All {people.length ? `(${people.length})` : null}</Button>
         </div>
       </div>
     </div>

@@ -10,8 +10,7 @@ const ModalWindow = ({ children, onClick }) => {
       <div className='modal-window__contant' onClick={(e) => e.stopPropagation()}>
         {children}
       </div>
-    </div>)
-
+    </div>);
   return ReactDOM.createPortal(modal, rootElement);
 }
 

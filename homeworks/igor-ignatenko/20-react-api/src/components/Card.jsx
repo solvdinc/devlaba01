@@ -6,11 +6,10 @@ const Card = ({ loading, avatar, onClick }) => (
     <>
         {loading && <div className='overlay'>
             <div className='refresh-all'>
-                <img src={refreshIcon} alt='refresh' className='refresh' ></img>
+                <img src={refreshIcon} alt='refresh' className='refresh' />
             </div>
         </div>}
-        <div className='card__avatar'  onClick={onClick} style={{ backgroundImage: `url(${avatar})` }}>
-        </div>
+        <div className='card__avatar' onClick={onClick} style={{ backgroundImage: `url(${avatar})` }} />
     </>
 )
 
