@@ -5,9 +5,9 @@ import './AddBtn.css';
 
 const AddBtn = ({ onClick }) => (
   <Box>
-    <div className="add-btn" onClick={onClick}>
+    <button className="add-btn" onClick={onClick}>
       <div className="add-btn__line"></div>
-    </div>
+    </button>
   </Box>
 );
 

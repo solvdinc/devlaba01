@@ -133,7 +133,7 @@ function CardsField({ setIsOverlay }) {
             })}
             {addButton && <AddBtn onClick={addCard} />}
           </div>
-          <div className="add-btn-wrap">
+          <div className="refresh-btn-wrap">
             <Button onClick={refreshAll}>
               Refresh All
               {cards.length ? `(${cards.length})` : null}
