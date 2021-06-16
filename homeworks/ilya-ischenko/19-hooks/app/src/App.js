@@ -61,8 +61,10 @@ function App() {
             ))}
             <AddBtn onClick={addCard} />
           </div>
-          <div className="add-btn-wrap">
-            {cards.length && <Button onClick={refreshAll}>Refresh All</Button>}
+          <div className="refresh-btn-wrap">
+            {cards.length ? (
+              <Button onClick={refreshAll}>Refresh All</Button>
+            ) : null}
           </div>
         </div>
       </div>
