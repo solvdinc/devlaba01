@@ -1,9 +1,9 @@
-.add-btn {
+.add-btn-wrap {
   width: calc(20% - 8px);
   padding: 20px;
 }
 
-.add-btn__inner {
+.add-btn {
   position: relative;
   padding-bottom: 100%;
   width: 100%;
@@ -12,9 +12,11 @@
   cursor: pointer;
   box-sizing: content-box;
   transition: transform 0.1s linear;
+  background: transparent;
+  outline: none;
 }
 
-.add-btn__inner:hover {
+.add-btn:hover {
   transform: scale(1.05);
 }
 
@@ -40,25 +42,25 @@
 }
 
 @media (max-width: 1200px) {
-  .add-btn {
+  .add-btn-wrap {
     width: calc(25% - 8px);
   }
 }
 
 @media (max-width: 990px) {
-  .add-btn {
+  .add-btn-wrap {
     width: calc(33.333% - 8px);
   }
 }
 
 @media (max-width: 770px) {
-  .add-btn {
+  .add-btn-wrap {
     width: calc(50% - 8px);
   }
 }
 
 @media (max-width: 570px) {
-  .add-btn {
+  .add-btn-wrap {
     width: calc(100% - 8px);
   }
 }
