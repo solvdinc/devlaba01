@@ -4,6 +4,7 @@
 }
 
 .add-btn {
+  display: block;
   position: relative;
   padding-bottom: 100%;
   width: 100%;
