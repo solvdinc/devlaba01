@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .container {
   margin: 0 auto;
   display: flex;
@@ -6,7 +11,7 @@
   align-items: center;
   height: 100vh;
   max-width: 1440px;
-  padding: 40px;
+  padding: 20px 20px 0px 20px;
   &__card {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -15,8 +20,11 @@
   }
   &__refresh {
     margin-top: 5px;
-    bottom: 40px;
+    padding-bottom: 40px;
     z-index: 300;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 @media (max-width: 1400px) {
@@ -44,9 +52,6 @@
       grid-template-columns: repeat(2, 1fr);
       column-gap: 30px;
     }
-    &__refresh {
-      bottom: 2px;
-    }
   }
 }
 @media (max-width: 600px) {
@@ -57,9 +62,6 @@
       grid-template-columns: repeat(1, 1fr);
       column-gap: 10px;
       row-gap: 10px;
-    }
-    &__refresh {
-      bottom: 2px;
     }
   }
 }
