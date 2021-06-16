@@ -14,7 +14,7 @@ class App extends React.Component {
     };
   }
 
-  async getAvatar() {
+  getAvatar = async () => {
     const response = await fetch('https://tinyfac.es/api/users');
     if (!response.ok) {
       const message = `The response has the error: ${response.status}`;
@@ -22,17 +22,17 @@ class App extends React.Component {
     }
     const result = await response.json();
     return result[0];
-  }
+  };
 
-  async addAvatar() {
+  addAvatar = async () => {
     this.getAvatar().then((avatar) => {
       this.setState((prevAvatar) => ({
         people: [...prevAvatar.people, { ...avatar, loader: false }],
       }));
     });
-  }
+  };
 
-  async refreshAvatar(index) {
+  refreshAvatar = async (index) => {
     this.getAvatar().then((avatar) => {
       const refresh = [...this.state.people];
       refresh.splice(index, 1, avatar);
@@ -40,9 +40,9 @@ class App extends React.Component {
         people: refresh,
       });
     });
-  }
+  };
 
-  async refreshAllAvatars() {
+  refreshAllAvatars = async () => {
     this.setState({
       loader: true,
     });
@@ -54,7 +54,7 @@ class App extends React.Component {
       people: refreshAvatars,
       loader: false,
     });
-  }
+  };
 
   render() {
     return (
@@ -68,13 +68,11 @@ class App extends React.Component {
               loader={this.state.loader ? this.state.loader.toString() : null}
             />
           ))}
-          <ButtonAdd onClick={() => this.addAvatar()}></ButtonAdd>
+          <ButtonAdd onClick={this.addAvatar}></ButtonAdd>
         </div>
         <div className='container__refresh'>
           {this.state.people.length ? (
-            <Button onClick={() => this.refreshAllAvatars()}>
-              Refresh All
-            </Button>
+            <Button onClick={this.refreshAllAvatars}>Refresh All</Button>
           ) : null}
         </div>
       </div>

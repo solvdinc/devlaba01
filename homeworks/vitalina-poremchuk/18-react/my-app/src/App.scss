@@ -1,11 +1,13 @@
 .container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
   max-width: 1440px;
-  padding: 40px;
+  height: 100vh;
+  padding: 20px 20px 0px 20px;
+
   &__card {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -13,8 +15,11 @@
     row-gap: 20px;
   }
   &__refresh {
-    margin-top: 5px;
-    bottom: 40px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
   }
 }
 @media (max-width: 1400px) {
@@ -42,9 +47,6 @@
       grid-template-columns: repeat(2, 1fr);
       column-gap: 30px;
     }
-    &__refresh {
-      bottom: 2px;
-    }
   }
 }
 @media (max-width: 600px) {
@@ -55,9 +57,6 @@
       grid-template-columns: repeat(1, 1fr);
       column-gap: 10px;
       row-gap: 10px;
-    }
-    &__refresh {
-      bottom: 2px;
     }
   }
 }
