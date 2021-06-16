@@ -44,19 +44,16 @@ function FetchUser() {
   return (
     <div className='container'>
       <div className='cards'>
-        {people.map((person, index) => {
-          return (
-            <div className='card' key={index}>
-              <Card loading={loader}  avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} ></Card>
-            </div>
-          )
-        })
-        }
+        {people.map((person, index) => (
+          <div className='card' key={index}>
+            <Card loading={loader} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} />
+          </div>
+        ))}
         <AddButton onClick={addCard}></AddButton>
       </div>
       <div className='button-refresh-wrapper'>
         <div className='button-refresh-container'>
-          {people.length ? <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All </Button> : null}
+          {people.length ? <Button arialLabel='Refresh All' onClick={refreshAll}>Refresh All</Button> : null}
         </div>
       </div>
     </div>
