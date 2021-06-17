@@ -64,8 +64,8 @@ const App = () => {
 
   return (
     <>
-      <div className="container">
-        <div className={'avatar-container'}>
+      <div className='container'>
+        <div className='avatar-container'>
           {urls.map((url, index) => (
             <Avatar key={index} src={url} callback={() => refreshItem(index)}/>
           ))}
@@ -73,7 +73,7 @@ const App = () => {
         </div>
         <Button className={'refresh-btn'} onClick={refreshAll}>Refresh {urls.length > 0 && urls.length} tile{(urls.length > 1) ? `s ` : null}</Button>
       </div>
-      {showModal && <Modal content={modalText}  callback={() => setModalShow(false)}/>}
+      {showModal && <Modal children={modalText} onClick={() => setModalShow(false)}/>}
     </>
   );
 };

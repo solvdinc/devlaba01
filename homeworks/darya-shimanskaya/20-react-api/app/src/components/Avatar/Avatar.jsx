@@ -23,6 +23,6 @@ const Avatar = ({ src, callback }) => {
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
   callback: PropTypes.func,
-}
+};
 
 export default Avatar;

@@ -3,7 +3,7 @@ import './Add.css'
 
 const Add = ({ ...rest }) => {
   return (
-    <div className={'add-item'} {...rest} />
+    <div className='add-item' {...rest} />
   )
 };
 

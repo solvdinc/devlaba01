@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({ className, children, ...rest }) => {
   return (
-    <button type="button" className={className} {...rest}>
+    <button type='button' className={className} {...rest}>
       {children}
     </button>
   );
@@ -12,6 +12,6 @@ const Button = ({ className, children, ...rest }) => {
 Button.protoTypes = {
   className: PropTypes.string.isRequired,
   children: PropTypes.node,
-}
+};
 
 export default Button;

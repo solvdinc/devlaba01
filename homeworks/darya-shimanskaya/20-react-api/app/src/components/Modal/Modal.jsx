@@ -4,13 +4,13 @@ import Button from '../Button/Button';
 import './Modal.css';
 import PropTypes from 'prop-types';
 
-const Modal = ({ content, callback }) => {
+const Modal = ({ children, onClick }) => {
   return ReactDOM.createPortal(
-    <div className={'modal-wrapper'}>
-      <div className={'modal-container'}>
-        <div className={'modal-content'}>{content}</div>
-        <div className={'modal-footer'}>
-          <Button className={'close-modal-btn'} onClick={callback}>Close</Button>
+    <div className='modal-wrapper'>
+      <div className='modal-container'>
+        <div className='modal-content'>{children}</div>
+        <div className='modal-footer'>
+          <Button className='close-modal-btn' onClick={onClick}>Close</Button>
         </div>
       </div>
     </div>,
@@ -19,8 +19,8 @@ const Modal = ({ content, callback }) => {
 };
 
 Modal.propTypes = {
-  content: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   callback: PropTypes.func,
-}
+};
 
 export default Modal;
