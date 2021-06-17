@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.refresh-btn {
+    position: relative;
+    text-align: center;
+    align-self: center;
+    width: 320px;
+    height: 40px;
+    background: #5e217a;
+    color: white;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+}
