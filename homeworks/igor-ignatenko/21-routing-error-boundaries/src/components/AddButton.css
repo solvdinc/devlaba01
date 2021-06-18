@@ -1,0 +1,63 @@
+.card-button-add {
+  width: 238px;
+  height: 238px;
+  border: blueviolet solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
+  margin: 20px;
+}
+.card-button-add__spinner {
+  width: 238px;
+  height: 238px;
+  border: blueviolet solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
+  margin: 20px;
+}
+
+.card-button-add:before,
+.card-button-add:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 4px;
+  width: 80px;
+  background: #5e217a;
+}
+
+.card-button-add:before {
+  transform: rotate(90deg);
+}
+
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 80px;
+  width: 80px;
+  animation: refresh 1000ms infinite linear;
+  z-index: 10;
+}
+
+
+@keyframes refresh {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
