@@ -12,7 +12,7 @@ const getUsers = async() => {
 
 const getRandomUser = async () => {
   const users = await getUsers();
-  const randomUser = Math.floor(Math.random() * users.length)
+  const randomUser = Math.floor(Math.random() * users.length);
   const user = await users[randomUser];
   return user;
 }
@@ -30,14 +30,17 @@ class App extends React.Component {
   async refreshUser (index) {
     const users = await getUsers();
     const oldState = this.state.avatarCards;
-    oldState.splice(index, 1, users[0]);
-    this.setState({avatarCards: oldState});
+    const newState = oldState.slice();
+    newState.splice(index, 1, users[0]);
+    this.setState({avatarCards: newState});
   }
   
   refreshAll = () => {
     const oldState = this.state.avatarCards;
-    Promise.all(oldState.map((item) => getRandomUser()))
-      .then((state) => (this.setState({avatarCards: state})),
+    Promise.all(
+      oldState.map(() => getRandomUser())
+    ).then(
+      (state) => (this.setState({avatarCards: state}))
     );
   }
 
