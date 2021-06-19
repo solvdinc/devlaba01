@@ -52,12 +52,12 @@ class FetchUser extends React.Component {
           {this.state.people.map((person, index) => {
             return (
               <div className='card' key={index}>
-                <Card loading={this.state.loading} avatar={person.avatars[1].url} onClick={() => this.avatarChanger(index)} ></Card>
+                <Card loading={this.state.loading} avatar={person.avatars[1].url} onClick={() => this.avatarChanger(index)} />
               </div>
             )
           })
           }
-          <AddButton onClick={this.addCard}></AddButton>
+          <AddButton onClick={this.addCard} />
         </div>
         <div className='button-refresh-wrapper'>
             {this.state.people.length ? <RefreshButton onClick={this.refreshAll} /> : null}

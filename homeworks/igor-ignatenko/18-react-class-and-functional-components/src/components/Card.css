@@ -43,7 +43,7 @@
 .refresh {
   width: 100px;
   height: auto;
-  animation: spinner 1000ms infinite linear;
+  animation: refresh 1000ms infinite linear;
 }
 
 .refresh-all {
@@ -55,7 +55,7 @@
   align-items: center;
 }
 
-@keyframes spinner {
+@keyframes refresh {
   0% {
     transform: rotate(0deg);
   }
