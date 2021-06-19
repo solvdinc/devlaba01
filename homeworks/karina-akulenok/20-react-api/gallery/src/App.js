@@ -13,7 +13,7 @@ const getUsers = async() => {
 
 const getRandomUser = async () => {
   const users = await getUsers();
-  const randomUser = Math.floor(Math.random() * users.length)
+  const randomUser = Math.floor(Math.random() * users.length);
   const user = await users[randomUser];
   return user;
 }
@@ -27,6 +27,7 @@ function App() {
     if(avatarCards.length >= 8) {
       setModal(true);
       setModalMessage('Request for adding a new tile was failed: {Can not add more then 9 tile}');
+      return;
     }
     const user = await getRandomUser();
     setAvatarCards((state) => ([...state, user]));
@@ -36,8 +37,9 @@ function App() {
     try {
       const users = await getUsers();
       const oldState = avatarCards;
-      oldState.splice(index, 1, users[0]);
-      setAvatarCards([...oldState]);
+      const newState = oldState.slice();
+      newState.splice(index, 1, users[0]);
+      setAvatarCards([...newState]);
     } catch (error) {
       setModal(true);
       setModalMessage(`Request for Updating the tile was failed: ${error}`);
@@ -48,11 +50,12 @@ function App() {
     if(!avatarCards.length){
       setModal(true);
       setModalMessage('Please add at least one tile for refreshing all tiles');
-      console.log('print');
     }
     const oldState = avatarCards;
-    Promise.all(oldState.map((item) => getRandomUser()))
-      .then((state) => (setAvatarCards([...state])),
+    Promise.all(
+      oldState.map(() => getRandomUser())
+    ).then(
+      (state) => (setAvatarCards([...state])),
     );
   }
 
@@ -67,11 +70,16 @@ function App() {
         </div>
         <div className='footer'>
         {avatarCards.length ? (
-          <Button name={`refresh all ${avatarCards.length ? `(count: ${avatarCards.length}` : null})`} onClick={refreshAll}/>
-        ) : <Button name='refresh all' onClick={refreshAll}/>}
+          <Button onClick={refreshAll}>
+            refresh all
+            {avatarCards.length ? `(count: ${avatarCards.length})` : null}
+          </Button>
+        ) : <Button name='refresh all' onClick={refreshAll}>
+              refresh all
+            </Button>}
         </div>
       </div>
-      {<Modal content={modalMessage} showModal={modal} onClick={() => setModal(false)}/>}
+      {<Modal showModal={modal} onClick={() => setModal(false)}>{modalMessage}</Modal>}
     </div>
   );
 }
