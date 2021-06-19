@@ -12,7 +12,7 @@ const getUsers = async() => {
 
 const getRandomUser = async () => {
   const users = await getUsers();
-  const randomUser = Math.floor(Math.random() * users.length)
+  const randomUser = Math.floor(Math.random() * users.length);
   const user = await users[randomUser];
   return user;
 }
@@ -28,14 +28,17 @@ function App() {
   const refreshUser = async (index) => {
     const users = await getUsers();
     const oldState = avatarCards;
-    oldState.splice(index, 1, users[0]);
-    setAvatarCards([...oldState]);
+    const newState = oldState.slice();
+    newState.splice(index, 1, users[0]);
+    setAvatarCards([...newState]);
   }
   
   const refreshAll = () => {
     const oldState = avatarCards;
-    Promise.all(oldState.map((item) => getRandomUser()))
-      .then((state) => (setAvatarCards([...state])),
+    Promise.all(
+      oldState.map(() => getRandomUser())
+    ).then(
+      (state) => (setAvatarCards([...state]))
     );
   }
 
