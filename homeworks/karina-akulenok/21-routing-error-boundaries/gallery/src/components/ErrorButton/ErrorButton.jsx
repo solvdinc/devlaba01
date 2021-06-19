@@ -7,7 +7,9 @@ const ErrorButton = ({onClick, refreshCard}) => {
   return (
     <button className='refresh-button-card' onClick={onClick}>
       <img src={ErrorImg} alt='error' />
-      <Button name='refresh' className='refresh-card' onClick={refreshCard}/>
+      <Button className='refresh-card' onClick={refreshCard}>
+        refresh
+      </Button>
     </button>
   );
 };

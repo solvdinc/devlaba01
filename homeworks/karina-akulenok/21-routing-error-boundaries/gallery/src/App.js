@@ -77,11 +77,19 @@ function App() {
         </div>
         <div className='footer'>
         {avatarCards.length ? (
-          <Button name={`refresh all ${avatarCards.length ? `(count: ${avatarCards.length}` : null})`} onClick={refreshAll}/>
-        ) : <Button name='refresh all' onClick={refreshAll}/>}
+          <Button onClick={refreshAll}>
+            refresh all
+            {avatarCards.length ? `(count: ${avatarCards.length})` : null}
+          </Button>
+        ) : <Button onClick={refreshAll}>
+              refresh all
+            </Button>
+        }
         </div>
       </div>
-      {<Modal content={modalMessage} showModal={modal} onClick={() => setModal(false)}/>}
+      {<Modal showModal={modal} onClick={() => setModal(false)}>
+        {modalMessage}
+      </Modal>}
     </div>
   );
 }
