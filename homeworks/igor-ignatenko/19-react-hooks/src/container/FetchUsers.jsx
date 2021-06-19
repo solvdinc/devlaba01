@@ -49,7 +49,7 @@ function FetchUser() {
             <Card loading={loader} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} />
           </div>
         ))}
-        <AddButton onClick={addCard}></AddButton>
+        <AddButton onClick={addCard} />
       </div>
       <div className='button-refresh-wrapper'>
         <div className='button-refresh-container'>
@@ -59,6 +59,5 @@ function FetchUser() {
     </div>
   )
 }
-
 
 export default FetchUser;
