@@ -6,7 +6,7 @@ const rootElement = document.querySelector('#root');
 
 const ModalWindow = ({ children, onClick }) => {
   const modal =
-    (<div className='modal-window__wrapper' onClick={onClick}>
+    (<div className='modal-window' onClick={onClick}>
       <div className='modal-window__contant' onClick={(e) => e.stopPropagation()}>
         {children}
       </div>
@@ -15,4 +15,4 @@ const ModalWindow = ({ children, onClick }) => {
   return ReactDOM.createPortal(modal, rootElement);
 }
 
-export default ModalWindow
+export default ModalWindow;

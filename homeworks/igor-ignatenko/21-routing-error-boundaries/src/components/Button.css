@@ -11,6 +11,7 @@
   outline: none;
   border: none;
   cursor: pointer;
+  margin-top: 48px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
@@ -20,4 +21,4 @@
 
 .button:hover {
   opacity: 0.75;
-}
+} 

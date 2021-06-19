@@ -22,7 +22,7 @@ function FetchUser() {
     };
     window.addEventListener('keydown', close);
     return () => window.removeEventListener('keydown', close);
-  });
+  }, []);
 
   async function getCards() {
     const response = await fetch('https://laba-backend.herokuapp.com/tile');
@@ -31,8 +31,8 @@ function FetchUser() {
   }
 
   async function addCard() {
-    setAddButtonLoading(true);
     try {
+      setAddButtonLoading(true);
       const card = await getCards();
       setPeople((prevState) => ([...prevState, card]));
     } catch (error) {
@@ -45,13 +45,12 @@ function FetchUser() {
 
   async function refreshAll() {
     if (!people.length) {
-      setModal(true)
-      setMessage('Please add at least one tile for refreshing all tiles')
+      setModal(true);
+      setMessage('Please add at least one tile for refreshing all tiles');
     }
     setLoader(true);
     const oldCards = [...people];
     const newState = await Promise.allSettled(oldCards.map(() => getCards()));
-
     setPeople((prevState) => {
       const oldCards = [...prevState];
       const newCards = oldCards.map((card, index) => {
@@ -86,7 +85,7 @@ function FetchUser() {
       {modal &&
         <ModalWindow onClick={handlerModal}>
           <p>{message}</p>
-          <Button arialLabel='Close Modal Window' onClick={handlerModal}>Close</Button>
+          <Button arialLabel='Close' onClick={handlerModal}>Close</Button>
         </ModalWindow>
       }
       <div className='cards'>
@@ -94,26 +93,22 @@ function FetchUser() {
           return (
             <ErrorBoundary
               key={index}
-              FallbackComponent={CardWithError}
-              onReset={() => avatarChanger(index)}
+              FallbackComponent={() => <CardWithError loading={loader} onClick={() => avatarChanger(index)} />}
               resetKeys={[people]}
             >
-              <div className='card'>
-                <Card loading={loader} index={index} person={person} onClick={() => avatarChanger(index)} ></Card>
-              </div>
+              <Card loading={loader} index={index} avatar={person} onClick={() => avatarChanger(index)} />
             </ErrorBoundary>
           )
         })
         }
-        <AddButton loading={addButtonLoading} onClick={addCard}></AddButton>
+        <AddButton loading={addButtonLoading} onClick={addCard} />
       </div>
       <div className='button-refresh-wrapper'>
         <div className='button-refresh-container'>
-          <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All  {people.length ? `(${people.length})` : null}</Button>
+          <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All  {people.length ? `(${people.length})` : null} </Button>
         </div>
       </div>
     </div>
-
   )
 }
 
