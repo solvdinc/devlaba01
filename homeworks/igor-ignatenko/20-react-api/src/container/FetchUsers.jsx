@@ -35,7 +35,7 @@ function FetchUser() {
 
   async function refreshAll() {
     if (!people.length) {
-      setModal(true)
+      setModal(true);
       setMessage('Please add at least one tile for refreshing all tiles');
       return
     }
@@ -56,7 +56,7 @@ function FetchUser() {
       })
     } catch (error) {
       setMessage(`Request for updating the tile was failed: ${error}`);
-      setModal(true)
+      setModal(true);
     }
   }
 
@@ -69,11 +69,11 @@ function FetchUser() {
       {modal &&
         <ModalWindow onClick={handlerModal}>
           <p>{message}</p>
-          <Button arialLabel='Close Modal Window' onClick={handlerModal}>Close</Button>
+          <Button arialLabel='Close' onClick={handlerModal}>Close</Button>
         </ModalWindow>
       }
       <div className='cards'>
-      {people.map((person, index) => (
+        {people.map((person, index) => (
           <div className='card' key={index}>
             <Card loading={loader} avatar={person.avatars[1].url} onClick={() => avatarChanger(index)} />
           </div>

@@ -11,7 +11,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
 }
 
 .card__avatar:hover::before {
@@ -35,15 +34,13 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 16px;
-  top: 0;
-  left: 0;
   z-index: 1000;
 }
 
 .refresh {
   width: 100px;
   height: auto;
-  animation: spinner 1000ms infinite linear;
+  animation: refresh 1000ms infinite linear;
 }
 
 .refresh-all {
@@ -55,7 +52,7 @@
   align-items: center;
 }
 
-@keyframes spinner {
+@keyframes refresh {
   0% {
     transform: rotate(0deg);
   }
