@@ -12,7 +12,7 @@ const Card = ({ card, onClick }) => {
   return (
     <Box>
       <div
-        onClick={(index) => onClick(index)}
+        onClick={onClick}
         className="card"
         style={{ backgroundImage: `url(${card.img})` }}
       >
