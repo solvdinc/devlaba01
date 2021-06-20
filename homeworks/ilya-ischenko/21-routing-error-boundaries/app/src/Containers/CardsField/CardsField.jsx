@@ -9,11 +9,11 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import './CardsField.css';
 
-function CardsField({ setIsOverlay }) {
+function CardsField({ setShowOverlay }) {
   const [cards, setCards] = useState([]);
   const [overlayValue, setOverlayValue] = useState(false);
   const [modalText, setModalText] = useState('');
-  const [addButton, setAddButton] = useState(true);
+  const [showAddButton, setShowAddButton] = useState(true);
 
   const getCard = async () => {
     const res = await fetch('https://laba-backend.herokuapp.com/tile');
@@ -22,7 +22,7 @@ function CardsField({ setIsOverlay }) {
   };
 
   const addCard = async () => {
-    setAddButton(false);
+    setShowAddButton(false);
     setCards((prevCards) => [...prevCards, { img: '', status: 'pending' }]);
 
     try {
@@ -41,7 +41,7 @@ function CardsField({ setIsOverlay }) {
         return oldCards;
       });
     } finally {
-      setAddButton(true);
+      setShowAddButton(true);
     }
   };
 
@@ -96,13 +96,13 @@ function CardsField({ setIsOverlay }) {
   function setModal(text) {
     setOverlayValue(true);
     setModalText(text);
-    setIsOverlay(true);
+    setShowOverlay(true);
   }
 
   function removeModal() {
     setOverlayValue(false);
     setModalText('');
-    setIsOverlay(false);
+    setShowOverlay(false);
   }
 
   return (
@@ -131,7 +131,7 @@ function CardsField({ setIsOverlay }) {
                 </ErrorBoundary>
               );
             })}
-            {addButton && <AddBtn onClick={addCard} />}
+            {showAddButton && <AddBtn onClick={addCard} />}
           </div>
           <div className="refresh-btn-wrap">
             <Button onClick={refreshAll}>

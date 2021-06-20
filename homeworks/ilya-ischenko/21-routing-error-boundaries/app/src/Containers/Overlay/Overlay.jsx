@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import './Overlay.css';
 
 const Overlay = ({ children }) => {
-  const [isOverlay, setIsOverlay] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   return (
     <>
-      {isOverlay && <div className="overlay"></div>}
-      {children(setIsOverlay)}
+      {showOverlay && <div className="overlay"></div>}
+      {children(setShowOverlay)}
     </>
   );
 };

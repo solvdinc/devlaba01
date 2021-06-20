@@ -5,7 +5,7 @@ import Overlay from './containers/Overlay/Overlay.jsx';
 const App = () => {
   return (
     <Overlay>
-      {(setIsOverlay) => <CardsField setIsOverlay={setIsOverlay} />}
+      {(setShowOverlay) => <CardsField setShowOverlay={setShowOverlay} />}
     </Overlay>
   );
 };
