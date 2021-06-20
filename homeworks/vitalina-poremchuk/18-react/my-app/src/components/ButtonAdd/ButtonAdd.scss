@@ -1,0 +1,32 @@
+.button__add {
+  width: 240px;
+  height: 240px;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 4px solid #5e217a;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: "";
+    background: #5e217a;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 80px;
+    transform: translateX(100%);
+  }
+  &::before{
+    position: absolute;
+    content: "";
+    background: #5e217a;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 80px;
+    transform: translateY(100%);
+  }
+}
