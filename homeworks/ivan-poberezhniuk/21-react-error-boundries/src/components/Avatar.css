@@ -1,0 +1,55 @@
+.avatar {
+  cursor: pointer;
+  position: relative;
+  min-width: 240px;
+  width: 240px;
+  min-height: 240px;
+  height: 240px;
+  border-radius: 16px;
+  margin: 20px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  background: #5e217a57;
+}
+
+.avatar__refresh {
+  cursor: pointer;
+  visibility: hidden;
+  content: '';
+  position: absolute;
+  top: 90px;
+  left: 90px;
+  width: 100px;
+  height: 100px;
+  z-index: 11;
+  background: url('../assets/001-refresh.svg') no-repeat center;
+  background-size: contain;
+}
+
+.avatar__refresh:hover {
+  visibility: visible;
+}
+
+.avatar:hover ~ .avatar__refresh {
+  visibility: visible;
+}
+
+.avatar__container {
+  position: relative;
+}
+
+.avatar__loading {
+  visibility: visible;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
