@@ -1,6 +1,6 @@
 import React from 'react';
-import CardsField from './Containers/CardsField/CardsField.jsx';
-import Overlay from './Containers/Overlay/Overlay.jsx';
+import CardsField from './containers/CardsField/CardsField.jsx';
+import Overlay from './containers/Overlay/Overlay.jsx';
 
 const App = () => {
   return (

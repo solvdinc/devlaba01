@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../../Components/Button/Button';
-import Box from '../../Components/Box/Box';
+import Button from '../../components/Button/Button';
+import Box from '../../components/Box/Box';
 import errorIcon from '../../assets/001-error.svg';
 
 import './CardWithError.css';

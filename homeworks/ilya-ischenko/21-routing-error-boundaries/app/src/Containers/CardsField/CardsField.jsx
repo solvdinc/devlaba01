@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Button from '../../Components/Button/Button.jsx';
-import AddBtn from '../../Components/AddBtn/AddBtn';
-import Card from '../../Components/Card/Card';
-import Modal from '../../Components/Modal/Modal';
+import Button from '../../components/Button/Button.jsx';
+import AddBtn from '../../components/AddBtn/AddBtn';
+import Card from '../../components/Card/Card';
+import Modal from '../../components/Modal/Modal';
 import CardWithError from '../CardWithError/CardWithError.jsx';
-import Loader from '../../Components/Loader/Loader.jsx';
+import Loader from '../../components/Loader/Loader.jsx';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import './CardsField.css';
