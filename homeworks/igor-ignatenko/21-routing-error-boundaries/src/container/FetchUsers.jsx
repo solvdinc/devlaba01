@@ -76,16 +76,16 @@ function FetchUser() {
     }
   }
 
-  function handlerModal() {
+  function closeModal() {
     setModal(false);
   }
 
   return (
     <div className='container'>
       {modal &&
-        <ModalWindow onClick={handlerModal}>
+        <ModalWindow onClick={closeModal}>
           <p>{message}</p>
-          <Button arialLabel='Close' onClick={handlerModal}>Close</Button>
+          <Button ariaLabel='Close' onClick={closeModal}>Close</Button>
         </ModalWindow>
       }
       <div className='cards'>
@@ -105,7 +105,7 @@ function FetchUser() {
       </div>
       <div className='button-refresh-wrapper'>
         <div className='button-refresh-container'>
-          <Button arialLabel='Refresh All' onClick={refreshAll}> Refresh All  {people.length ? `(${people.length})` : null} </Button>
+          <Button ariaLabel='Refresh All' onClick={refreshAll}> Refresh All  {people.length ? `(${people.length})` : null} </Button>
         </div>
       </div>
     </div>
