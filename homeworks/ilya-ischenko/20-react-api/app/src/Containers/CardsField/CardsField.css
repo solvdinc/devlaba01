@@ -1,0 +1,22 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.refresh-btn-wrap {
+  text-align: center;
+  margin-top: auto;
+}
+
+.overflow {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.modal-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+}
