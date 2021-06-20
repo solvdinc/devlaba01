@@ -1,0 +1,23 @@
+.container {
+  width: 240px;
+  height: 240px;
+  border: 4px solid #D47878;
+  border-radius: 16px;
+  padding: 40px 0 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  fill: #D47878;
+  width: 70px;
+  height: 96px;
+}
+
+.btn {
+  background: #D47878;
+  height: 40px;
+  width: 160px;
+}
