@@ -1,0 +1,62 @@
+.error-boundary {
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.error-boundary__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 240px;
+  width: 240px;
+  margin: 20px;
+  min-height: 240px;
+  background: #5e217a57;
+  height: 240px;
+  border-radius: 16px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.error-boundary__refresh:hover {
+  visibility: visible;
+}
+
+.error-boundary:hover ~ .error-boundary__refresh {
+  visibility: visible;
+}
+
+.error-boundary__refresh {
+  cursor: pointer;
+  visibility: hidden;
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  width: 100px;
+  height: 100px;
+  z-index: 11;
+  background: url('../assets/001-refresh.svg') no-repeat center;
+  background-size: contain;
+}
+
+.error-boundary__loading {
+  visibility: visible;
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
