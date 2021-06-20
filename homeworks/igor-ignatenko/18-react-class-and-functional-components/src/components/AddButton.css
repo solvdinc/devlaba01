@@ -1,0 +1,23 @@
+.card-button-add {
+  width: 240px;
+  height: 240px;
+  border: #5e217a solid 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
+}
+
+.card-button-add:before,
+.card-button-add:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 80px;
+  background: #5e217a;
+}
+
+.card-button-add:before {
+  transform: rotate(90deg);
+}

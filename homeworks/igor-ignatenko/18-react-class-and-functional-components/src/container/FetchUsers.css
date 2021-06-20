@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 40px 40px 0px 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.card {
+  position: relative;
+  height: 240px;
+}
+
+.button-refresh-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
