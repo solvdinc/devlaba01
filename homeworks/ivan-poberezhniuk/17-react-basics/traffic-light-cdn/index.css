@@ -1,0 +1,50 @@
+.hull {
+  position: relative;
+  background-color: #585f68;
+  width: 240px;
+  height: 560px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.base {
+  position: absolute;
+  background-color: #414447;
+  width: 120px;
+  height: 378px;
+  border-radius: 40px;
+  top: -32px;
+  left: 60px;
+  z-index: -3;
+}
+
+.light {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background-color: #5b5b5b;
+  margin-bottom: 24px;
+  box-shadow: inset 10px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.green {
+  background-color: #04ca00;
+}
+
+.yellow {
+  background-color: #e9ec6a;
+}
+
+.red {
+  background-color: #df4040;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}

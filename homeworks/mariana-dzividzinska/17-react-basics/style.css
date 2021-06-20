@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  width: 120px;
+  height: 378px;
+  background: #414447;
+  border-radius: 40px;
+  position: absolute;
+  top: calc(50% - 280px - 32px);
+}
+
+.body {
+  width: 240px;
+  height: 560px;
+  background: #585F68;
+  box-shadow: inset 24px 0 0 rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.25));
+  border-radius: 60px;
+}
+
+.lights-wrapper {
+  height: 408px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+}
+
+.light {
+  width: 120px;
+  height: 120px;
+  box-shadow: inset 10px 0 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background: #5B5B5B;
+}
