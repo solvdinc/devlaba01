@@ -1,0 +1,29 @@
+.modal-window__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.modal-window__contant {
+  padding: 40px 70px 40px 70px;
+  max-width: 460px;
+  background-color: #fff;
+  color: black;
+  border-radius: 6px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.modal-window__contant > p {
+  text-align: center;
+}
