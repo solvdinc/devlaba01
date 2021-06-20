@@ -1,5 +1,5 @@
 import React from 'react';
-import refresfIcon from './../../assets/001-refresh.svg';
+import refreshIcon from './../../assets/001-refresh.svg';
 import Box from '../Box/Box.jsx';
 
 import './Card.css';
@@ -17,7 +17,7 @@ const Card = ({ card, onClick }) => {
         style={{ backgroundImage: `url(${card.img})` }}
       >
         <div className="refresh">
-          <img className="refresh__icon" src={refresfIcon} alt="avatar" />
+          <img className="refresh__icon" src={refreshIcon} alt="avatar" />
         </div>
       </div>
     </Box>

@@ -72,7 +72,7 @@ function CardsField({ setShowOverlay }) {
 
   const refreshAll = async () => {
     if (!cards.length) {
-      setModal('Please add at least one tile FOR refreshING all tiles');
+      setModal('Please add at least one tile for refreshing all tiles');
     }
 
     const oldCards = [...cards];
