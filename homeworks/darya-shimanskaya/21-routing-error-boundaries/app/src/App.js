@@ -5,7 +5,7 @@ import Add from './components/Add/Add';
 import Button from './components/Button/Button';
 import Modal from './components/Modal/Modal';
 import { ErrorBoundary } from 'react-error-boundary';
-import ErrorAvatar from "./components/ErrorAvatar/ErrorAvatar";
+import ErrorAvatar from './components/ErrorAvatar/ErrorAvatar';
 
 
 const App = () => {
@@ -13,7 +13,6 @@ const App = () => {
   const [status, setStatus] = useState('');
   const [modalText, setModalText] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const [addButton, setAddButton] = useState(true);
 
   const getData =  async() => {
     return await fetch('https://laba-backend.herokuapp.com/tile')
@@ -41,7 +40,7 @@ const App = () => {
         setItems((prevState) => {
           const items = [...prevState];
           items[i] = data;
-          return items
+          return items;
         });
       })
       .catch((error) => {
@@ -53,11 +52,11 @@ const App = () => {
   const refreshAll = async () => {
     if (!items.length) {
       setShowModal(true);
-      setModalText('Please add at least one tile for refreshing all tiles')
+      setModalText('Please add at least one tile for refreshing all tiles');
     }
     Promise.allSettled(items.map(() => getData()))
       .then((avatars) => {
-        const newItems = avatars.map((item) => { return item.value;});
+        const newItems = avatars.map((item) => { return item.value});
         setItems(newItems);
       });
   };
@@ -80,7 +79,7 @@ const App = () => {
             })}
             <Add onClick={addItem} status={status}/>
           </div>
-          <Button className={'refresh-btn'} onClick={refreshAll}>Refresh all {items.length ? `(${items.length})` : null}</Button>
+          <Button className='refresh-btn' onClick={refreshAll}>Refresh all {items.length ? `(${items.length})` : null}</Button>
       </div>
       {showModal &&
         <Modal onClick={() => setShowModal(false)}>
