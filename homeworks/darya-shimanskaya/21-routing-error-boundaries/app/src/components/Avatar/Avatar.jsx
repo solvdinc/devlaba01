@@ -10,7 +10,7 @@ const Avatar = ({ src, onClick }) => {
   }
 
   return (
-    <div className='avatar' >
+    <div className='avatar'>
       <img className='avatar-image' src={src} alt='avatar'/>
       <Refresh className={'avatar-refresh'} onClick={onClick} />
     </div>

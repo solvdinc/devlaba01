@@ -13,6 +13,7 @@ const App = () => {
   const [status, setStatus] = useState('');
   const [modalText, setModalText] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [addButton, setAddButton] = useState(true);
 
   const getData =  async() => {
     return await fetch('https://laba-backend.herokuapp.com/tile')
@@ -37,8 +38,11 @@ const App = () => {
   const refreshItem = (i) => {
     getData()
       .then((data) => {
-        const newItems = items.map((item, index) => i === index ? data : item);
-        setItems(newItems);
+        setItems((prevState) => {
+          const items = [...prevState];
+          items[i] = data;
+          return items
+        });
       })
       .catch((error) => {
         setShowModal(true);
@@ -58,10 +62,6 @@ const App = () => {
       });
   };
 
-  const ErrorFallback = ({resetErrorBoundary}) => {
-    return <ErrorAvatar resetErrorBoundary={resetErrorBoundary}/>
-  }
-
   return (
     <>
       <div className='container'>
@@ -70,7 +70,7 @@ const App = () => {
               return (
                 <ErrorBoundary
                   key={index}
-                  FallbackComponent={ErrorFallback}
+                  FallbackComponent={ErrorAvatar}
                   onReset={() => refreshItem(index)}
                   resetKeys={[items]}
                 >
@@ -82,7 +82,11 @@ const App = () => {
           </div>
           <Button className={'refresh-btn'} onClick={refreshAll}>Refresh all {items.length ? `(${items.length})` : null}</Button>
       </div>
-      {showModal && <Modal children={modalText}  onClick={() => setShowModal(false)}/>}
+      {showModal &&
+        <Modal onClick={() => setShowModal(false)}>
+          <p>{modalText}</p>
+        </Modal>
+      }
     </>
   );
 };
