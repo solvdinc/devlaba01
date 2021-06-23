@@ -1,0 +1,60 @@
+.card__avatar {
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__avatar:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-image: url("../assets/001-refresh.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-size: 100px;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  z-index: 1000;
+}
+
+.refresh {
+  width: 100px;
+  height: auto;
+  animation: refresh 1000ms infinite linear;
+}
+
+.refresh-all {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes refresh {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

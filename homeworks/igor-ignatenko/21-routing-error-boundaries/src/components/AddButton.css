@@ -1,0 +1,52 @@
+.card-button-add {
+  width: 240px;
+  height: 240px;
+  border: #5e217a solid 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
+}
+
+.card-button-add__spinner {
+  width: 240px;
+  height: 240px;
+  border: #5e217a solid 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.card-button-add:before,
+.card-button-add:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 80px;
+  background: #5e217a;
+}
+
+.card-button-add:before {
+  transform: rotate(90deg);
+}
+
+.spinner {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  animation: spinner 1000ms infinite linear;
+  z-index: 10;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
