@@ -1,0 +1,20 @@
+.container {
+  min-height: 100vh;
+  width: 1440px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerWrapper {
+  margin-top: 20px;
+}
+
+.itemLst {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 40px;
+  row-gap: 20px;
+}
