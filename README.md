@@ -55,14 +55,14 @@ Once PR is created you have to do the following things:
 ### Stage 4
 | Day | Theme |
 | :- | :- |
-| Jun 29 | Introducing into back-end |
-| Jul 1 | Project, docs, REST |
-| Jul 6 | Persisting, IoC, Test. Part 1 |
-| Jul 8 | Persisting, IoC, Test. Part 2 |
-| Jul 13 | Middleware, Auth, Express, Logs |
-| Jul 15 | RDBMS, SQL, Docker basics. Part 1 |
-| Jul 20 | RDBMS, SQL, Docker basics. Part 2 |
-| Jul 22 | Migrations, workers |
-| Jul 27 | Integrations, environments |
-| Jul 29 | Deploy, CI/CD |
-| Aug 2 - 6 | Development week |
+| Jul 6 | Introducing into back-end |
+| Jul 8 | Project, docs, REST |
+| Jul 13 | Persisting, IoC, Test. Part 1 |
+| Jul 15 | Persisting, IoC, Test. Part 2 |
+| Jul 20 | Middleware, Auth, Express, Logs |
+| Jul 22 | RDBMS, SQL, Docker basics. Part 1 |
+| Jul 27 | RDBMS, SQL, Docker basics. Part 2 |
+| Jul 29 | Migrations, workers |
+| Aug 3 | Integrations, environments |
+| Aug 5 | Deploy, CI/CD |
+| Aug 9 - 13 | Development week |
