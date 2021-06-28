@@ -51,3 +51,18 @@ Once PR is created you have to do the following things:
 | June 7th | Routing, Error Boundaries and Patterns |
 | June 10th | PropTypes and Redux |
 | June 14th - 19th | Development week |
+
+### Stage 4
+| Day | Theme |
+| :- | :- |
+| Jun 29 | Introducing into back-end |
+| Jul 1 | Project, docs, REST |
+| Jul 6 | Persisting, IoC, Test. Part 1 |
+| Jul 8 | Persisting, IoC, Test. Part 2 |
+| Jul 13 | Middleware, Auth, Express, Logs |
+| Jul 15 | RDBMS, SQL, Docker basics. Part 1 |
+| Jul 20 | RDBMS, SQL, Docker basics. Part 2 |
+| Jul 22 | Migrations, workers |
+| Jul 27 | Integrations, environments |
+| Jul 29 | Deploy, CI/CD |
+| Aug 2 - 6 | Development week |
