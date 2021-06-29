@@ -1,0 +1,21 @@
+.refresh-button {
+  width: 320px;
+  height: 40px;
+  background: #5E217A;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.refresh-button:hover {
+  cursor: pointer;
+  background: #863da8;
+}
