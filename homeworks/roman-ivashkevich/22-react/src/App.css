@@ -1,0 +1,94 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.chart {
+  width: 40px;
+  height: 20px;
+  background: #e1e1e1;
+  margin-right: 8px;
+}
+
+.chart:last-child {
+  margin: 0;
+}
+
+.range-input {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 8px;
+  background: #d0d0d0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  appearance: none;
+}
+
+.range-input::before,
+.range-input::after {
+  position: absolute;
+  top: 20px;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.range-input::before {
+  content: "0.1s";
+  left: 0;
+}
+
+.range-input::after {
+  content: "1s";
+  right: 0;
+}
+
+.normal-distribution {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+  min-height: 400px;
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.normal-distribution-btn {
+  max-width: 180px;
+  padding: 10px;
+  width: 100%;
+  background: #4c6eaf;
+  border-radius: 6px;
+  margin-top: 32px;
+  border: none;
+  color: #fff;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.normal-distribution-btn:first-child {
+  margin-right: 16px;
+}
