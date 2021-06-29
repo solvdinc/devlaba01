@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/solvdinc/devlaba01#readme",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "regenerator-runtime": "^0.13.7"
   }
 }
