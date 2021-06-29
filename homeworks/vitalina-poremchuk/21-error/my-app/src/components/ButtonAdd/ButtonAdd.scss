@@ -1,0 +1,64 @@
+.button__add {
+  width: 240px;
+  height: 240px;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 4px solid #5e217a;
+  position: relative;
+  text-transform: uppercase;
+  &::after {
+    position: absolute;
+    content: '';
+    background: #5e217a;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 80px;
+    transform: translateX(100%);
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    background: #5e217a;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 80px;
+    transform: translateY(100%);
+  }
+}
+
+.spinner__container {
+  border-radius: 16px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.spinner {
+  animation: spinner 1.2s linear infinite;
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(365deg);
+  }
+}

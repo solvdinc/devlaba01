@@ -1,0 +1,39 @@
+.image {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  &__container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+  }
+  &__refresh {
+    width: 100px;
+    height: 100%;
+  }
+  &:hover ::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    background-image: url('../assets/refresh.svg');
+    background-repeat: no-repeat;
+    background-size: 100px 200px;
+    background-position: center;
+  }
+}
