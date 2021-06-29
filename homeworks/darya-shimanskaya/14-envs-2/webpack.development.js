@@ -8,8 +8,6 @@ module.exports = merge(config, {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     index: 'home.pug',
-    compress: true,
-    writeToDisk: true,
-    port: 3000,
+    port: process.env.PORT || 3000,
   },
 });
