@@ -1,0 +1,18 @@
+.button {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+  background: #4C6EAF;
+  border-radius: 6px;
+  text-transform: uppercase;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  transition: opacity .2s linear;
+  &:hover {
+    opacity: .8;
+  }
+}
