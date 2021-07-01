@@ -1,58 +1,61 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Chart from './components/Chart/Chart';
 import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 
+interface IConfig {
+  id: number;
+  height: number;
+}
+
 function App() {
-  const NUMBER_OF_BARS = 10;
-  const [inputRange, setInputRange] = useState(0.1);
-  const [barsConfig, setBarsConfig] = useState([]);
-  const [start, setStart] = useState(false);
+  const NUMBER_OF_BARS: number = 10;
+  const [inputRange, setInputRange] = useState<number>(0.1);
+  const [barsConfig, setBarsConfig] = useState<IConfig[]>([]);
+  const [start, setStart] = useState<boolean>(false);
 
   useEffect(() => {
     createInitialBars();
   }, []);
 
   const createInitialBars = () => {
-    let config = [];
+    const config: { id: number; height: number }[] = [];
     for (let i = 0; i < NUMBER_OF_BARS; i += 1) {
-      config[i] = { [i]: 0, height: 0 };
+      config[i] = { id: i, height: 0 };
     }
 
     setBarsConfig(config);
   };
 
-  const toggleInputRange = (e) => {
+  const toggleInputRange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputRange(+e.target.value);
   };
 
   const getRandomNumber = () => {
-    const max = NUMBER_OF_BARS - 1;
-    const min = 0;
+    const max: number = NUMBER_OF_BARS - 1;
+    const min: number = 0;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
   useEffect(() => {
-    let intervalId;
-
     if (start) {
-      intervalId = setInterval(() => {
+      const intervalId = setInterval(() => {
         const randNum = getRandomNumber();
         const updateBarsConfig = barsConfig.map((bar, i) =>
           i === randNum
-            ? Object.fromEntries(
-                Object.entries(bar).map(([key, value]) => [key, (value += 1)]),
-              )
+            ? (Object.fromEntries(
+                Object.entries(bar).map(([key, value]) =>
+                  key === 'height' ? [key, (value += 1)] : [key, value],
+                ),
+              ) as IConfig)
             : bar,
         );
         setBarsConfig(updateBarsConfig);
       }, inputRange * 100);
-    } else {
-      clearInterval(intervalId);
-    }
 
-    return () => clearInterval(intervalId);
+      return () => clearInterval(intervalId);
+    }
   }, [barsConfig, inputRange, start]);
 
   const toggleStartBtn = () => {
