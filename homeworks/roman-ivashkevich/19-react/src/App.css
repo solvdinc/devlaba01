@@ -1,0 +1,29 @@
+.tiny-face-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cards-container {
+  padding: 20px;
+  min-height: 90vh;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.refresh-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .cards-wrapper {
+    justify-content: center;
+  }
+}
