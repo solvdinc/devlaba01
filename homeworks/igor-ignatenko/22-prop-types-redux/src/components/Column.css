@@ -1,0 +1,10 @@
+.column {
+  width: 40px;
+  background-color: #e1e1e1;
+  margin-top: auto;
+}
+.column_max {
+  margin-top: auto;
+  width: 40px;
+  background-color: rgba(186, 0, 0, 0.6);
+}

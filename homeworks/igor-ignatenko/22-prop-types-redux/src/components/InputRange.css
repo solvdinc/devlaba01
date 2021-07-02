@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+}
+.input-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0 32px 0;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}

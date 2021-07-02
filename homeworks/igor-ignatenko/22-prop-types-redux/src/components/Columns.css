@@ -1,0 +1,9 @@
+.input-range-columns {
+  width: 472px;
+  height: 238px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-self: flex-end;
+}
