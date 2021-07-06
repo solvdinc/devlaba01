@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.range-input {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.buttons-wrap {
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  max-width: 180px;
+  width: 100%;
+}
+
+.button:not(:last-child) {
+  margin-right: 16px;
+}
