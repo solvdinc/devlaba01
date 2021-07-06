@@ -2,8 +2,10 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 
-const hostname = '127.0.0.1';
-const port = 1337;
+require('dotenv').config();
+
+const hostname = process.env.HOST_NAME;
+const port = process.env.PORT;
 const PATH = {
   HOME: '/',
   STYLES: 'styles',
@@ -47,7 +49,6 @@ const server = http.createServer(async (req, res) => {
   }
   if (PATH.JS === path[1]) {
     try {
-      console.log(req.url);
       fs.readFile(`./1-cv/${req.url}`, (err, data) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/js');
