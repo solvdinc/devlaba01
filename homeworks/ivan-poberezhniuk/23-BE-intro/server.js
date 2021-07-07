@@ -2,7 +2,13 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 
-require('dotenv').config();
+const data = fs.readFileSync('./.env');
+const rows = data.toString().split('\n');
+
+rows.forEach((row) => {
+  const [name, value] = row.split('=');
+  process.env[name] = value;
+});
 
 const hostname = process.env.HOST_NAME;
 const port = process.env.PORT;
@@ -30,6 +36,7 @@ const server = http.createServer(async (req, res) => {
       return;
     }
   }
+
   if (PATH.STYLES === path[1]) {
     try {
       fs.readFile(`./1-cv/styles/${path[path.length - 1]}`, (err, data) => {
