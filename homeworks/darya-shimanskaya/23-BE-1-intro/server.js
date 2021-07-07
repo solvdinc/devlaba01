@@ -13,19 +13,16 @@ const server = http.createServer(  (req, res) => {
 
   if (path.pathname === '/') {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.readFile(__dirname + '/index.html', (error, data) => {
-      res.write(data);
-    });
+    const stream = fs.createReadStream(__dirname + '/index.html')
+    stream.pipe(res)
   } else if (path.pathname === '/assets/main.js') {
     res.writeHead(200, {'Content-Type': 'text/js'});
-    fs.readFile(__dirname + '/assets/main.js', (error, data) => {
-      res.write(data);
-    });
+    const stream = fs.createReadStream(__dirname + '/assets/main.js')
+    stream.pipe(res)
   } else if (path.pathname === '/assets/main.css') {
     res.writeHead(200, {'Content-Type': 'text/css'});
-    fs.readFile(__dirname + '/assets/main.css', (error, data) => {
-      res.write(data);
-    });
+    const stream = fs.createReadStream(__dirname + '/assets/main.css')
+    stream.pipe(res)
   } else {
     res.writeHead(404, {})
     res.end("page not found")
