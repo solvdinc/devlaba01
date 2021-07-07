@@ -1,6 +1,6 @@
 'use strict';
 import http from 'http';
-import fileSystem from 'fs';
+import fs from 'fs';
 import { URL } from 'url';
 
 const PORT = 5000;
@@ -15,7 +15,7 @@ http
     const urlInfo = new URL(req.url, `http://${req.headers.host}`);
 
     const openFile = (filePath, contentType) => {
-      fileSystem.readFile(filePath, (err, data) => {
+      fs.readFile(filePath, (err, data) => {
         try {
           if (err) {
             throw new Error('Can`t find path');
@@ -50,7 +50,7 @@ http
       }
       case PATHS.JS: {
         try {
-          openFile('./client/assets/main.js', 'application/javascript');
+          openFile('./client/assets/main.js', 'text/js');
           break;
         } catch (e) {
           console.log(e);
