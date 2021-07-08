@@ -31,35 +31,27 @@ http
       });
     };
 
-    switch (urlInfo.pathname) {
-      case PATHS.HTML: {
-        try {
-          openFile('./client/index.html', 'text/html');
-          break;
-        } catch (e) {
-          console.log(e);
-        }
+    if (urlInfo.pathname === PATHS.HTML) {
+      try {
+        openFile('./client/index.html', 'text/html');
+      } catch (e) {
+        console.log(e);
       }
-      case PATHS.CSS: {
-        try {
-          openFile('./client/assets/main.css', 'text/css');
-          break;
-        } catch (e) {
-          console.log(e);
-        }
+    } else if (urlInfo.pathname === PATHS.CSS) {
+      try {
+        openFile('./client/assets/main.css', 'text/css');
+      } catch (e) {
+        console.log(e);
       }
-      case PATHS.JS: {
-        try {
-          openFile('./client/assets/main.js', 'text/js');
-          break;
-        } catch (e) {
-          console.log(e);
-        }
+    } else if (urlInfo.pathname === PATHS.JS) {
+      try {
+        openFile('./client/assets/main.js', 'text/js');
+      } catch (e) {
+        console.log(e);
       }
-      default: {
-        res.statusCode = 404;
-        res.end('Page not found');
-      }
+    } else {
+      res.statusCode = 404;
+      res.end('Page not found');
     }
   })
   .listen(PORT, 'localhost', () => {
