@@ -1,6 +1,13 @@
 const http = require('http');
 const fs = require('fs');
 
+const env = fs.readFileSync('.env', 'utf-8');
+const port = env
+  .split('\n')
+  .find((str) => str.includes('PORT'))
+  .split('=')[1];
+process.env.PORT = +port || 8080;
+
 const server = http.createServer((req, res) => {
   if (req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -16,10 +23,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-fs.readFile('port.env', 'utf8', function (err, data) {
-  process.env.PORT = +data || 8080;
-
-  server.listen(process.env.PORT, 'localhost', () => {
-    console.log('Listening');
-  });
+server.listen(process.env.PORT, 'localhost', () => {
+  console.log('Listening');
 });
