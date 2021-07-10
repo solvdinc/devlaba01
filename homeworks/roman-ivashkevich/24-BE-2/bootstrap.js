@@ -1,7 +1,10 @@
 const path = require('path');
-
 global.APP_PATH = path.resolve(__dirname);
 
-const app = new (require(APP_PATH + '/infrastructure/App'))();
+// Logger
+/** @type {ILogger} */
+const logger = new (require(APP_PATH + '/infrastructure/ConsoleLogger'))();
+
+const app = new (require(APP_PATH + '/infrastructure/App'))(logger);
 
 module.exports = app;

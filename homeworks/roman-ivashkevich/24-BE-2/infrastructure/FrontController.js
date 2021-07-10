@@ -1,3 +1,4 @@
+require('dotenv').config();
 class FrontController {
   /**
    *
@@ -19,7 +20,9 @@ class FrontController {
     );
     const sign = this._router.makeSign(req.method, urlInfo.pathname);
 
-    let handler = this._router.resolve(sign) || this._router.resolve('default');
+    let handler =
+      this._router.resolve(sign) ||
+      this._router.resolve(process.env.DEFAULT_HANDLER);
 
     if (typeof handler !== 'function') {
       res.writeHead(404);
