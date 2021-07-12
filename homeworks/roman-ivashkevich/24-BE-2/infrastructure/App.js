@@ -1,6 +1,4 @@
 const fs = require('fs');
-require('dotenv').config();
-
 class App {
   _routeList;
   _router;
@@ -49,7 +47,7 @@ class App {
 
   start() {
     //http listen
-    this._http.listen(process.env.PORT || 7000, 'localhost', () => {
+    this._http.listen(process.env.PORT || 7000, process.env.HOST, () => {
       this._logger.info(`Server start on PORT=${process.env.PORT}`);
     });
   }

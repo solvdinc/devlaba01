@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 global.APP_PATH = path.resolve(__dirname);
 

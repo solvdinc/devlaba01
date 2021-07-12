@@ -4,14 +4,6 @@ class WelcomeController {
   }
 
   static async notFound(req, res) {
-    const jsonContent = { error: `Route ${req.urlInfo.pathname} not found` };
-    const stringContent = JSON.stringify(jsonContent);
-
-    await require('fs').promises.writeFile(
-      APP_PATH + '/error.json',
-      stringContent,
-    );
-
     let pageContent = await require('fs').promises.readFile(
       APP_PATH + '/views/404.html',
     );

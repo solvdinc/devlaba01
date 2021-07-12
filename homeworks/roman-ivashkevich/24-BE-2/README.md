@@ -1,5 +1,11 @@
 # API
 
+## Exceptions
+
+- 400 Bad request
+- 404 Not found
+- 409 Conflict
+
 ## End-points
 
 ### start page
@@ -24,21 +30,13 @@ Response example
 </body>
 ```
 
-Also we create JSON file with error like
-
-```json
-{
-  "error": "Route {url pathname} not found"
-}
-```
-
 ### get sum of two numbers
 
 `GET /sum`
 
 Request example
 
-`/sum?20&50`
+`/sum?num1=number&num2=number`
 
 Response example
 
@@ -50,8 +48,14 @@ Response example
 }
 ```
 
-```html
-<h1>Sum: 20 + 50 = 70</h1>
+Expected errors
+
+- 400
+
+```json
+{
+  "error": { "msg": "Not enough numbers for operations" }
+}
 ```
 
 ### get index of a substring in a string
@@ -60,22 +64,29 @@ Response example
 
 Request example
 
-`/substr?apple&a`
+`/substr?str=apple&start=1&length=2`
 
 Response example
 
 ```json
 {
   "word": "apple",
-  "char": "a",
-  "index": "No matches or index"
+  "startIndex": "1",
+  "length": "2",
+  "substring": "pp"
 }
 ```
 
-```html
-<h1>Word: apple</h1>
-<h1>Char: a</h1>
-<h1>Index: 1</h1>
+Expected errors
+
+- 400
+
+```json
+{
+  "error": {
+    "msg": "Not enough params"
+  }
+}
 ```
 
 ### get reversing letters in a string
@@ -84,7 +95,7 @@ Response example
 
 Request example
 
-`/reverse?apple`
+`/reverse?string=apple`
 
 Response example
 
@@ -95,7 +106,12 @@ Response example
 }
 ```
 
-```html
-<h1>String: apple</h1>
-<h1>Reverse string: elppa</h1>
+Expected errors
+
+- 409
+
+```json
+{
+  "error": { "msg": "Invalid string" }
+}
 ```

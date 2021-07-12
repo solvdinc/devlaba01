@@ -1,4 +1,3 @@
-require('dotenv').config();
 class FrontController {
   /**
    *

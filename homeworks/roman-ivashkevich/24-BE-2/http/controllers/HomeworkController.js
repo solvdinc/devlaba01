@@ -1,108 +1,100 @@
 class HomeworkController {
   static async sum(req, res) {
     if (!req.urlInfo.search) {
-      res.end('Enter numbers');
+      res.end(JSON.stringify({ message: 'Enter numbers' }));
       return;
     } else {
-      let pageContent = await require('fs').promises.readFile(
-        APP_PATH + '/views/sum.html',
-      );
-      pageContent = pageContent.toString().trim();
+      const params = req.urlInfo.searchParams;
+      const num1 = params.get('num1') || null;
+      const num2 = params.get('num2') || null;
 
-      const arrOfNumbers = req.urlInfo.search.match(/(\-?)(\d+)/g);
-      if (!arrOfNumbers) {
-        throw new Error('Not enough numbers for operations');
+      if (!num1 || !num2) {
+        res.writeHead(400);
+        res.end(
+          JSON.stringify({
+            error: { msg: 'Not enough numbers for operations' },
+          }),
+        );
+        return;
       }
-      const sumOfNumbers = arrOfNumbers.reduce(
-        (acc, el) => acc + Number(el),
-        0,
-      );
 
-      const obj = {
-        num1: +arrOfNumbers[0],
-        num2: +arrOfNumbers[1],
+      const sumOfNumbers = Number(num1) + Number(num2);
+
+      const readyObject = {
+        num1: +num1,
+        num2: +num2,
         sum: sumOfNumbers,
       };
 
-      const readyContent = pageContent.replace(
-        /%([a-zA-Z0-9]+)%/g,
-        (_, sub) => obj[sub],
-      );
-
       res.writeHead(200);
-      res.end(readyContent);
+      res.end(JSON.stringify(readyObject));
       return;
     }
   }
 
   static async substr(req, res) {
     if (!req.urlInfo.search) {
-      res.end('Enter string and char');
+      res.end(JSON.stringify({ message: 'Enter string and another params' }));
       return;
     } else {
-      let pageContent = await require('fs').promises.readFile(
-        APP_PATH + '/views/substr.html',
-      );
-      pageContent = pageContent.toString().trim();
+      console.log(req.urlInfo);
 
-      const [string, char] = req.urlInfo.search.match(/([A-Za-z]+)/g);
+      const params = req.urlInfo.searchParams;
+      const string = params.get('str');
+      const startIndex = params.get('start');
+      const length = params.get('length');
 
-      if (!string || !char) {
-        throw new Error('No string or char');
+      if (!string || !startIndex || !length) {
+        res.writeHead(400);
+        res.end(
+          JSON.stringify({
+            error: { msg: 'Not enough params' },
+          }),
+        );
       }
 
-      const index = string.indexOf(char);
+      const substring = string.slice(+startIndex, +length + 1);
 
-      const obj = {
+      const readyObject = {
         word: string,
-        char: char,
-        index: index < 0 ? 'No matches' : index,
+        startIndex: startIndex,
+        length: length,
+        substring: substring,
       };
 
-      const readyContent = pageContent.replace(
-        /%([a-zA-Z]+)%/g,
-        (_, sub) => obj[sub],
-      );
-
       res.writeHead(200);
-      res.end(readyContent);
+      res.end(JSON.stringify(readyObject));
       return;
     }
   }
 
   static async reverse(req, res) {
     if (!req.urlInfo.search) {
-      res.end('Enter string');
+      res.end(JSON.stringify({ message: 'Enter string' }));
       return;
     } else {
-      let pageContent = await require('fs').promises.readFile(
-        APP_PATH + '/views/reverse.html',
-      );
-      pageContent = pageContent.toString().trim();
+      const params = req.urlInfo.searchParams;
 
-      const reqString = req.urlInfo.search
-        .match(/([A-Za-z]+)/g)
-        .join('')
-        .trim();
+      const string = params.get('string');
 
-      if ('string' !== typeof reqString) {
-        throw new Error('Invalid string');
+      if ('string' !== typeof string) {
+        res.writeHead(409);
+        res.end(
+          JSON.stringify({
+            error: { msg: 'Invalid string' },
+          }),
+        );
       }
 
-      const reverseStr = reqString.split('').reverse().join('');
+      const reverseStr = string.split('').reverse().join('');
 
-      const obj = {
-        string: reqString,
+      const readyObject = {
+        string: string,
         reverse: reverseStr,
       };
 
-      const readyContent = pageContent.replace(
-        /%([a-zA-Z]+)%/g,
-        (_, sub) => obj[sub],
-      );
-
       res.writeHead(200);
-      res.end(readyContent);
+      res.end(JSON.stringify(readyObject));
       return;
     }
   }
