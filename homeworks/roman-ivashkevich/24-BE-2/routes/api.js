@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     method: 'get',
-    path: '**404',
+    path: '*',
     resolver: {
       controller: 'WelcomeController',
       action: 'notFound',

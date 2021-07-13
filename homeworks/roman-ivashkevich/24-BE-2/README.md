@@ -1,10 +1,9 @@
-# API
+# Homework
 
 ## Exceptions
 
 - 400 Bad request
 - 404 Not found
-- 409 Conflict
 
 ## End-points
 
@@ -18,16 +17,14 @@ Response example
 
 ### page not found
 
-`GET **404`
+`GET *`
 
 Response example
 
-```html
-<body style="background-color: crimson;">
-  <h1 style="color: white; text-align: center; vertical-align: center;">
-    PAGE NOT FOUND
-  </h1>
-</body>
+```json
+{
+  "error": "Route request.url not found"
+}
 ```
 
 ### get sum of two numbers
@@ -36,25 +33,26 @@ Response example
 
 Request example
 
-`/sum?num1=number&num2=number`
+`/sum?num1=20&num2=50`
 
 Response example
 
 ```json
 {
-  "num1": 20,
-  "num2": 50,
-  "sum": 70
+  "result": 70
 }
 ```
 
 Expected errors
 
-- 400
+- 404
 
 ```json
 {
-  "error": { "msg": "Not enough numbers for operations" }
+  "error": {
+    "status": 400,
+    "msg": "Not enough numbers for operations"
+  }
 }
 ```
 
@@ -70,10 +68,7 @@ Response example
 
 ```json
 {
-  "word": "apple",
-  "startIndex": "1",
-  "length": "2",
-  "substring": "pp"
+  "result": "pp"
 }
 ```
 
@@ -84,6 +79,7 @@ Expected errors
 ```json
 {
   "error": {
+    "status": 400,
     "msg": "Not enough params"
   }
 }
@@ -101,17 +97,19 @@ Response example
 
 ```json
 {
-  "string": "apple",
-  "reverse": "elppa"
+  "result": "elppa"
 }
 ```
 
 Expected errors
 
-- 409
+- 400
 
 ```json
 {
-  "error": { "msg": "Invalid string" }
+  "error": {
+    "status": 400,
+    "msg": "Invalid string"
+  }
 }
 ```

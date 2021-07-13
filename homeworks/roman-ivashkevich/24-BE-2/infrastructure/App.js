@@ -34,11 +34,6 @@ class App {
   }
 
   boot() {
-    this._router.set(
-      process.env.DEFAULT_HANDLER,
-      this._router.resolve('get **404'),
-    );
-
     this._http = require('http').createServer(
       this._frontController.handle.bind(this._frontController),
     );

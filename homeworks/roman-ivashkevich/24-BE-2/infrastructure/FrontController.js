@@ -19,13 +19,21 @@ class FrontController {
     );
     const sign = this._router.makeSign(req.method, urlInfo.pathname);
 
-    let handler =
-      this._router.resolve(sign) ||
-      this._router.resolve(process.env.DEFAULT_HANDLER);
+    let handler = this._router.resolve(sign);
+
+    if (!handler) {
+      handler = this._router.resolve('get *');
+    }
 
     if (typeof handler !== 'function') {
       res.writeHead(404);
-      res.end('NOT FOUND');
+      res.end(
+        JSON.stringify({
+          err: {
+            msg: 'Unexpected handler',
+          },
+        }),
+      );
       return;
     }
 
