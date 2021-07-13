@@ -3,32 +3,38 @@ const fs = require('fs')
 const { URL } = require('url')
 
 if (fs.existsSync('./.env')) {
-  process.env.PORT = (fs.readFileSync('./.env')).toString().split(':')[1].trim()
+  fs.readFileSync('./.env').toString().split('\n').forEach((line) => {
+   const [variable, value] = line.split('=')
+    process.env[variable] = value
+    }
+  )
 }
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
+const HOST = process.env.HOST
 
-const server = http.createServer(  (req, res) => {
+const server = http.createServer((req, res) => {
   const path = new URL(req.url, `http://${req.headers.host}`)
 
   if (path.pathname === '/') {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    const stream = fs.createReadStream(__dirname + '/index.html')
-    stream.pipe(res)
-  } else if (path.pathname === '/assets/main.js') {
-    res.writeHead(200, {'Content-Type': 'text/js'});
-    const stream = fs.createReadStream(__dirname + '/assets/main.js')
-    stream.pipe(res)
-  } else if (path.pathname === '/assets/main.css') {
-    res.writeHead(200, {'Content-Type': 'text/css'});
-    const stream = fs.createReadStream(__dirname + '/assets/main.css')
-    stream.pipe(res)
+    res.writeHead(200, {'Content-Type': 'text/html'})
+    fs.createReadStream(__dirname + '/index.html').pipe(res)
   } else {
-    res.writeHead(404, {})
-    res.end("page not found")
+      if (fs.existsSync(__dirname + `${path.pathname}`)){
+        const contentType = path.pathname
+          .split('/')
+          .pop()
+          .split('.')
+          .pop()
+        res.writeHead(200, {'Content-Type': `text/${contentType}`})
+        fs.createReadStream(__dirname + `${path.pathname}`).pipe(res)
+      } else {
+          res.writeHead(404, {})
+          res.end('page not found')
+      }
   }
 });
 
-server.listen( PORT, 'localhost', () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+server.listen(PORT, HOST, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 })
