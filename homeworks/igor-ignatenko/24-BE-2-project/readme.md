@@ -29,7 +29,7 @@
 
 ```json
 {
-  "error": "Router ${req.url} not found"
+ "error": `Router ${req.url} not found`, "status": 404
 }
 ```
 
@@ -43,7 +43,8 @@
 
 ```json
 {
-  "result": 19
+  "result": 19,
+  "status": 200
 }
 ```
 
@@ -53,7 +54,8 @@
 
 ```json
 {
-    { "error": "Pls enter all numbers" }
+  "error": "Pls enter all numbers",
+  "status": 404
 }
 ```
 
@@ -67,7 +69,8 @@
 
 ```json
 {
-  "result": "olleh"
+  "result": "olleh",
+  "status": 200
 }
 ```
 
@@ -77,7 +80,8 @@
 
 ```json
 {
-    { "error": "Pls enter yr string" }
+  "error": "Pls enter yr string",
+  "status": 404
 }
 ```
 
@@ -85,7 +89,8 @@
 
 ```json
 {
-    { "error": "Invalid data" }
+  "error": "Invalid data",
+  "status": 400
 }
 ```
 
@@ -99,7 +104,8 @@
 
 ```json
 {
-  "result": "ea"
+  "result": "ea",
+  "status": 200
 }
 ```
 
@@ -109,7 +115,8 @@
 
 ```json
 {
-    { "error": "Enter all parameters" }
+  "error": "Enter all parameters",
+  "status": 404
 }
 ```
 
@@ -117,7 +124,8 @@
 
 ```json
 {
-    { "error": "Invalid data" }
+    "error": "Invalid data",
+    "status": 400
 }
 ```
 

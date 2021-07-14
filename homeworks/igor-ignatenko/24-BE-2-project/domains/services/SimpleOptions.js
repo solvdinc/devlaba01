@@ -5,7 +5,7 @@ class SimpleOptions {
     const num2 = queryString.get('num2');
 
     if (!request.urlInfo.search || num1 === '' || num2 === '') {
-      return JSON.stringify({ "error": "Pls enter all numbers", "status": 400 })
+      return JSON.stringify({ "error": "Pls enter all numbers", "status": 404 })
     }
 
     const result = +num1 + +num2;
