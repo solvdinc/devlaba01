@@ -1,3 +1,4 @@
+const StringService = require('../../app/StringService');
 const nodePath = require('path');
 const fs = require('fs');
 
@@ -9,23 +10,7 @@ class ReverseController {
   }
 
   static getReverseString(req, res) {
-    let body = '';
-    req.on('data', (chunk) => {
-      body += chunk;
-    });
-
-    req.on('end', () => {
-      try {
-        const { string } = JSON.parse(body);
-        const result = string.split('').reverse().join('');
-
-        res.writeHead(200);
-        res.end(JSON.stringify({ result }));
-      } catch (e) {
-        res.writeHead(400);
-        res.end(JSON.stringify({ error: 'smth went wrong' }));
-      }
-    });
+    StringService.getReverseString(req, res);
   }
 }
 
