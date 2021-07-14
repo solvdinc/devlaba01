@@ -1,0 +1,34 @@
+[
+  {
+    "method": "get",
+    "path": "/indexOf",
+    "resolver": {
+      "controller": "StringOpController",
+      "action": "indexOfGetPage"
+    }
+  },
+  {
+    "method": "post",
+    "path": "/indexOf",
+    "resolver": {
+      "controller": "StringOpController",
+      "action": "indexOfPost"
+    }
+  },
+  {
+    "method": "get",
+    "path": "/reverse",
+    "resolver": {
+      "controller": "StringOpController",
+      "action": "reverseGetPage"
+    }
+  },
+  {
+    "method": "post",
+    "path": "/reverse",
+    "resolver": {
+      "controller": "StringOpController",
+      "action": "reversePost"
+    }
+  }
+]
