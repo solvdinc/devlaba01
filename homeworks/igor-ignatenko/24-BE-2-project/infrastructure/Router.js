@@ -16,7 +16,7 @@ class Router {
       const controller = require(APP_PATH +
         '/controllers/' +
         route.resolver.controller);
-      console.log(typeof controller[route.resolver.action])
+        
       if (typeof controller[route.resolver.action] !== 'function') {
         throw new Error(`No action found for ${route.resolver.action}`)
       }

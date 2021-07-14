@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 class App {
   _routeList;
   _router;

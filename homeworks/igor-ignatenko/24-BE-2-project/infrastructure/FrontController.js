@@ -18,7 +18,6 @@ class FrontController {
         `http://${req.headers.host}`,
       );
       const sign = this._router.makeSign(req.method, urlInfo.pathname);
-  
       let handler = this._router.resolve(sign) || this._router.resolve(process.env.DEFAULT_HANDLER);
   
       if (typeof handler !== 'function') {
