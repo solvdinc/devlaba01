@@ -121,6 +121,6 @@
 }
 ```
 
-## Used packeges
+## Used packages
 
 - dotenv(https://www.npmjs.com/package/dotenv)
