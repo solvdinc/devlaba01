@@ -62,7 +62,7 @@ Once PR is created you have to do the following things:
 | Jul 20 | Middleware, Auth, Express, Logs |
 | Jul 22 | RDBMS, SQL, Docker basics. Part 1 |
 | Jul 27 | RDBMS, SQL, Docker basics. Part 2 |
-| Jul 29 | Migrations, workers |
-| Aug 3 | Integrations, environments |
-| Aug 5 | Deploy, CI/CD |
+| Jul 29 | Deploy, CI/CD |
+| Aug 3 | Migrations, workers |
+| Aug 5 | Integrations, environments |
 | Aug 9 - 13 | Development week |
