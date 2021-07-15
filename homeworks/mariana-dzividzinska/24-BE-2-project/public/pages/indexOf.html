@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String operations</title>
+  </head>
+  <body>
+    <div class="index-of">
+      <h1>Index of</h1>
+      <div class="">
+        <label for="index-of-initialString">String</label>
+        <input
+          type="text"
+          name="index-of-initialString"
+          id="index-of-initialString"
+        />
+      </div>
+      <div class="">
+        <label for="index-of-substr">Substring</label>
+        <input type="text" name="index-of-substr" id="index-of-substr" />
+      </div>
+      <div class="index-of__result"></div>
+      <button class="index-of__btn">Index of</button>
+    </div>
+  </body>
+  <script>
+    const btnIndexOf = document.querySelector('.index-of__btn');
+    const stringIndexOf = document.querySelector('#index-of-initialString');
+    const substrIndexOf = document.querySelector('#index-of-substr');
+    const resultElIndexOf = document.querySelector('.index-of__result');
+
+    btnIndexOf.addEventListener('click', async (e) => {
+      try {
+        const response = await fetch('/indexOf', {
+          method: 'POST',
+          body: JSON.stringify({
+            string: stringIndexOf.value,
+            substring: substrIndexOf.value,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const jsonRes = await response.json();
+
+        let result;
+        if (jsonRes.error) {
+          result = 'Error: ' + jsonRes.error.msg;
+        } else {
+          result =
+            'Result: ' +
+            (jsonRes.index == -1
+              ? "Substring isn't part of string"
+              : jsonRes.index + 1);
+        }
+        resultElIndexOf.innerHTML = result;
+      } catch (error) {
+        throw Error(error);
+      }
+    });
+  </script>
+</html>

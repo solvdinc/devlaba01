@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String operations</title>
+  </head>
+  <body>
+    <div class="reverse">
+      <h1>Reverse</h1>
+      <div class="">
+        <label for="reverse-initialString">String</label>
+        <input
+          type="text"
+          name="reverse-initialString"
+          id="reverse-initialString"
+        />
+      </div>
+      <div class="reverse__result"></div>
+      <button class="reverse__btn">Reverse</button>
+    </div>
+  </body>
+  <script>
+    const btn = document.querySelector('.reverse__btn');
+    const initialString = document.querySelector('#reverse-initialString');
+    const result = document.querySelector('.reverse__result');
+    btn.addEventListener('click', async (e) => {
+      try {
+        const response = await fetch('/reverse', {
+          method: 'POST',
+          body: JSON.stringify({
+            string: initialString.value,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const jsonRes = await response.json();
+
+        if (jsonRes.error) {
+          result.innerHTML = 'Error: ' + jsonRes.error.msg;
+        } else {
+          initialString.value = jsonRes.reverseString;
+          result.innerHTML = '';
+        }
+      } catch (error) {
+        throw Error(error);
+      }
+    });
+  </script>
+</html>

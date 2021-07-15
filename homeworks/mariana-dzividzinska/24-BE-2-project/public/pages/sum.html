@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of two numbers</title>
+  </head>
+  <body>
+    <div>
+      <label for="num1">Number 1:</label>
+      <input type="number" name="num1" id="num1" value="0" />
+    </div>
+    <div>
+      <label for="num2">Number 2:</label>
+      <input type="number" name="num2" id="num2" value="0" />
+    </div>
+    <div class="result"></div>
+    <button class="btn">Calculate sum</button>
+  </body>
+  <script>
+    const btn = document.querySelector('.btn');
+    const num1 = document.querySelector('#num1');
+    const num2 = document.querySelector('#num2');
+    const resultEl = document.querySelector('.result');
+
+    btn.addEventListener('click', async (e) => {
+      try {
+        const response = await fetch('/sum', {
+          method: 'POST',
+          body: JSON.stringify({ num1: num1.value, num2: num2.value }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const jsonRes = await response.json();
+
+        let result;
+        if(jsonRes.error){
+          result = 'Error: ' + jsonRes.error.msg;
+        } else {
+          result = 'Result: ' + jsonRes.sum;
+        }
+        resultEl.innerHTML = result
+      } catch (error) {
+        throw Error(error)
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "method": "get",
+    "path": "/sum",
+    "resolver": {
+      "controller": "ArithmeticOpController",
+      "action": "sumGet"
+    }
+  },
+  {
+    "method": "post",
+    "path": "/sum",
+    "resolver": {
+      "controller": "ArithmeticOpController",
+      "action": "sumPost"
+    }
+  }
+]
